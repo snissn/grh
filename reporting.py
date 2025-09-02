@@ -84,9 +84,11 @@ def plot_and_report(cert_mode: str, trace: Dict[str, Any], base_dir: str = "repo
         e_lo, e_hi = trace["epsilon_iv"]
         s_hi = _to_float(s_hi)
         e_hi = _to_float(e_hi)
-        ax.bar(["sqrt(1-eta)", "epsilon"], [s_hi, e_hi], color=["#2ca02c", "#d62728"])
+        sum_hi = s_hi + e_hi
+        ax.bar(["sqrt(1-eta)", "epsilon", "sum"], [s_hi, e_hi, sum_hi],
+               color=["#2ca02c", "#d62728", "#9467bd"])
         ax.axhline(1.0, color='k', linestyle='--', label='Threshold 1')
-        ax.set_ylim(0, max(1.1, s_hi + e_hi + 0.05))
+        ax.set_ylim(0, max(1.1, sum_hi + 0.05))
         ax.set_title("Annihilation: sqrt(1-eta) + epsilon < 1 (using upper bounds)")
         ax.legend()
         fig.tight_layout()
@@ -147,4 +149,3 @@ def plot_and_report(cert_mode: str, trace: Dict[str, Any], base_dir: str = "repo
         f.write("".join(md_lines))
 
     return out_dir
-

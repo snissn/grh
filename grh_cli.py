@@ -49,11 +49,13 @@ def main():
 
     if args.mode in ("bl", "all", "max"):
         cert = build_zeta_gl1_certificate_bl_evaluate(X=X, a=a, tau=tau)
-        run_and_print("BL-evaluate", cert)
+        tag = f"BL-evaluate_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
 
     if args.mode in ("heat", "all", "max"):
         cert = build_zeta_gl1_certificate_heat_evaluate(X=X, a=a, tau=tau)
-        run_and_print("Heat-evaluate", cert)
+        tag = f"Heat-evaluate_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
 
 
 if __name__ == "__main__":
