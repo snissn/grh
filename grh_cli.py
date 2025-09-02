@@ -15,13 +15,18 @@ from lfunc_examples import (
     build_gl2_newform_11a1_bl_evaluate,
     build_gl2_11a1_heat_evaluate,
     build_gl3_sym2_11a1_bl_evaluate,
+    build_dirichlet_bl_evaluate,
+    build_dirichlet_heat_evaluate,
 )
 
 
 def main():
     parser = argparse.ArgumentParser(description="GRH Certificate Verifier CLI (Zeta GL(1) examples)")
-    parser.add_argument("--mode", choices=["rs", "bl", "heat", "gl2", "gl2-heat", "sym2", "all", "max"], default="max",
+    parser.add_argument("--mode", choices=["rs", "bl", "heat", "gl2", "gl2-heat", "sym2", "dir", "dir-heat", "all", "max"], default="max",
                         help="Which mode to run: rs (RS-positivity), bl (BL evaluate), heat (heat evaluate), all (rs+bl+heat), max (most comprehensive)")
+    parser.add_argument("--ap-file", type=str, default=None, help="Path to a file with 'p a_p' lines for GL2 11a1 (optional)")
+    parser.add_argument("--q", type=int, default=3, help="Dirichlet modulus (prime) for 'dir' modes")
+    parser.add_argument("--r", type=int, default=1, help="Dirichlet character exponent r (chi(g)=exp(2πi r/(q-1)))")
     parser.add_argument("--X", type=float, default=6.0, help="Band-limit X (for BL) or cutoff u for heat tail")
     parser.add_argument("--a", type=float, default=0.8, help="Heat test parameter a (>1/2)")
     parser.add_argument("--tau", type=float, default=2.0, help="Heat Gaussian tau")
@@ -74,11 +79,11 @@ def main():
 
     # GL2 (holomorphic newform 11a1)
     if args.mode in ("gl2", "all", "max"):
-        cert = build_gl2_newform_11a1_bl_evaluate(X=X, a=a, tau=tau)
+        cert = build_gl2_newform_11a1_bl_evaluate(X=X, a=a, tau=tau, ap_file=args.ap_file)
         tag = f"GL2_11a1_BL_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
         run_and_print(tag, cert)
     if args.mode in ("gl2-heat", "all", "max"):
-        cert = build_gl2_11a1_heat_evaluate(X=X, a=a, tau=tau)
+        cert = build_gl2_11a1_heat_evaluate(X=X, a=a, tau=tau, ap_file=args.ap_file)
         tag = f"GL2_11a1_Heat_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
         run_and_print(tag, cert)
 
@@ -86,6 +91,16 @@ def main():
     if args.mode in ("sym2", "all", "max"):
         cert = build_gl3_sym2_11a1_bl_evaluate(X=X, a=a, tau=tau)
         tag = f"GL3_Sym2_11a1_BL_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
+
+    # Dirichlet L(s,chi) mod q
+    if args.mode in ("dir", "all", "max"):
+        cert = build_dirichlet_bl_evaluate(q=args.q, r=args.r, X=X, a=a, tau=tau)
+        tag = f"Dirichlet_BL_mod{args.q}_r{args.r}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
+    if args.mode in ("dir-heat", "all", "max"):
+        cert = build_dirichlet_heat_evaluate(q=args.q, r=args.r, X=X, a=a, tau=tau)
+        tag = f"Dirichlet_Heat_mod{args.q}_r{args.r}_X{X}_a{a}_tau{tau}"
         run_and_print(tag, cert)
 
 

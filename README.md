@@ -104,3 +104,10 @@ Additional modes
 - `gl2`: GL(2) newform 11a1 (level 11, weight 2), BL evaluate
 - `gl2-heat`: GL(2) 11a1, heat evaluate with Gaussian tail bound
 - `sym2`: GL(3) Sym^2 of 11a1, BL evaluate
+- `dir`: Dirichlet L(s, χ) mod q (prime q), BL evaluate (params: `--q`, `--r`)
+- `dir-heat`: Dirichlet L(s, χ), heat evaluate (params: `--q`, `--r`)
+
+GL2 a_p data
+- You can provide an expanded table of coefficients for 11a1 via a file:
+  - `--ap-file path/to/ap_11a1.txt` with lines `p a_p` (comments with `#` allowed).
+  - If omitted, a small built-in table is used (sufficient for demos).
