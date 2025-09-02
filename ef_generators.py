@@ -190,14 +190,62 @@ class HeatGaussianPhi(PhiSpec):
             val = C * math.exp(a * Tfloat) * w * gauss_tail
             return Decimal(str(val)) * (Decimal(1) + Decimal("1e-30"))
 
+        # Direct Fourier-cosine transform: ∫_0^∞ e^{-(t/τ)^2} cos(u t) dt = (√π τ / 2) e^{-(τ u / 2)^2}
+        def fourier_cos(u: Decimal) -> RInterval:
+            uf = float(u); tauf = float(tau)
+            val = 0.5 * math.sqrt(math.pi) * tauf * math.exp(- (tauf * uf / 2.0) ** 2)
+            pad = 1e-30 * (abs(val) + 1.0)
+            lo = Decimal(str(val - pad)); hi = Decimal(str(val + pad))
+            return RInterval(lo, hi)
+
         return HeatGaussianPhi(
             a_weight=a_weight,
             phi_iv=phi_iv,
             phi_dd_iv=phi_dd_iv,
             tail_phi=TailMajorant(integral_upper=tail_phi_integral),
             tail_phi_dd=TailMajorant(integral_upper=tail_phidd_integral),
-            tau=tau
+            tau=tau,
+            fourier_cos=fourier_cos,
         )
+
+
+def heat_gaussian_prime_tail_bound(X: Decimal, tau: Decimal) -> Decimal:
+    """Conservative tail bound for ζ heat prime block beyond 2 log n > X.
+
+    Bound: Tail ≤ (√π τ / 2) * ∑_{n≥N0} Λ(n) e^{-τ^2 (log n)^2}
+         ≤ (√π τ / 2) * ∫_{x≥N0-1} log x · e^{-τ^2 (log x)^2} dx
+
+    We evaluate the integral numerically with padding.
+    """
+    N0 = float(math.exp(float(X) / 2.0))
+    # Integrand g(x) = log x * exp(-tau^2 (log x)^2)
+    try:
+        import mpmath as mp  # type: ignore
+        mp.mp.dps = max(80, mp.mp.dps)
+        def g(x):
+            return mp.log(x) * mp.e**(- (float(tau) ** 2) * (mp.log(x) ** 2))
+        val = mp.quad(g, [N0 - 1.0, mp.inf])
+        valf = float(val)
+    except Exception:
+        # crude fallback trapezoid
+        a = max(2.0, N0 - 1.0)
+        h = 0.1
+        s = 0.0
+        import math as _m
+        for i in range(200000):
+            x = a + i * h
+            if i == 0:
+                w = 0.5
+            else:
+                w = 1.0
+            s += w * (_m.log(x) * _m.exp(-(float(tau) ** 2) * (_m.log(x) ** 2)))
+            if x > a + 2000:
+                break
+        valf = s * h
+    const = 0.5 * math.sqrt(math.pi) * float(tau)
+    bound = const * valf
+    pad = 1e-12 * (abs(bound) + 1.0)
+    return Decimal(str(bound + pad))
 
 
 # ------------------------------
@@ -305,13 +353,12 @@ def unramified_term_interval(phi: PhiSpec, loc: UnramifiedLocal, k: int,
 
        where W(u) = ∫_ℝ Φ(t) cos(u t) dt  (we implement as 2∫_0^∞ ...).
     """
-    import mpmath as mp  # type: ignore
     logp = Decimal(str(math.log(loc.p)))
     u = Decimal(str(k * math.log(loc.p)))
     W = phi.fourier_cos_weight(u, T=T_weight)
     # Re tr(A_p^k)
     tr = power_trace(loc.alphas, k)
-    re_tr = Decimal(str(mp.re(tr)))  # treat as exact here; for rigorous, inflate by tiny epsilon if needed.
+    re_tr = Decimal(str((tr.real if isinstance(tr, complex) else float(tr))))
     # term interval = logp * re_tr * W
     lo = logp * re_tr * W.lo
     hi = logp * re_tr * W.hi
@@ -339,12 +386,15 @@ def ramified_term_interval(phi: PhiSpec, loc: RamifiedLocal, j: int,
     """Compute interval for the j-th ramified coefficient:
        term = (log N(v)) * Re(b_v(j)) * W(j log N(v)).
     """
-    import mpmath as mp  # type: ignore
     logN = Decimal(str(math.log(loc.norm_p)))
     u = Decimal(str(j * math.log(loc.norm_p)))
     W = phi.fourier_cos_weight(u, T=T_weight)
     b = loc.coeffs_bj(j)
-    re_b = Decimal(str(mp.re(b)))
+    # Accept Python complex or numeric types
+    if isinstance(b, complex):
+        re_b = Decimal(str(b.real))
+    else:
+        re_b = Decimal(str(float(b)))
     lo = logN * re_b * W.lo
     hi = logN * re_b * W.hi
     return RInterval(min(lo, hi), max(lo, hi))

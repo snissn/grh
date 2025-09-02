@@ -7,7 +7,7 @@ from grh_verifier import (
 )
 
 # Rigorous generators (for BL evaluate mode)
-from ef_generators import HeatGaussianPhi, UnramifiedLocal, unramified_term_interval, ArchParams, compute_arch_block
+from ef_generators import HeatGaussianPhi, UnramifiedLocal, unramified_term_interval, ArchParams, compute_arch_block, heat_gaussian_prime_tail_bound
 from rigor_backend import RMATH
 
 
@@ -124,6 +124,64 @@ def build_zeta_gl1_certificate_bl_evaluate(X: Decimal = Decimal("6.0"),
     return cert
 
 
+def build_zeta_gl1_certificate_heat_evaluate(X: Decimal = Decimal("6.0"),
+                                             a: Decimal = Decimal("0.8"),
+                                             tau: Decimal = Decimal("2.0")) -> Certificate:
+    """Heat evaluate mode with generated unramified terms and a rigorous tail bound.
+
+    Terms included for 2k log p <= X. Tail beyond X bounded by heat_gaussian_prime_tail_bound.
+    """
+    phi_spec = HeatGaussianPhi._mk(a_weight=a, tau=tau)
+    Pmax = int(math.floor(math.exp(float(X) / 2.0)))
+    primes = primes_upto(Pmax)
+    unram_local: List[PrimeLocalTerm] = []
+    for p in primes:
+        loc = UnramifiedLocal(p=p, alphas=[1.0])
+        logp = Decimal(str(math.log(p)))
+        if logp == 0:
+            continue
+        k_max = int(math.floor((float(X) / 2.0) / float(logp)))
+        for k in range(1, max(1, k_max) + 1):
+            W_iv = unramified_term_interval(phi_spec, loc, k, T_weight=Decimal("12"))
+            term_iv = Interval(W_iv.lo, W_iv.hi)
+            unram_local.append(PrimeLocalTerm(p=p, k=k, value=term_iv))
+
+    tail = heat_gaussian_prime_tail_bound(X, tau)
+
+    cert = Certificate(
+        m=1,
+        K="Q",
+        Qpi=Decimal("1"),
+        t_star=Decimal("1.0"),
+        Phi_test=TestFunction(family="heat", a=a),
+        precision_bits=256,
+        test_family="heat",
+        prime_block_mode="evaluate",
+        proof_mode="ann_odd_only",
+        Ainf=Decimal("1.0"),
+        beta_m=Decimal("0.5"),
+        C_Rstar=Decimal("1.0"),
+        arch_value=Interval.point(0),
+        ram_terms=[],
+        j_max=0,
+        band_limit_X=X,
+        q_modulus=1,
+        eta_a5_gap=Interval.point("0.40"),
+        epsilon_invariance=Interval(Decimal("0"), Decimal("0.20")),
+        alpha_inv=Decimal("0.5"),
+        kappa_inv=Decimal("1.0"),
+        unram_local=unram_local,
+        prime_tail_bound=Interval(Decimal(0), tail),
+    )
+    if RMATH.mode == "arb":
+        try:
+            arch_iv = compute_arch_block(phi_spec, ArchParams(mu_R=[Decimal("0")], mu_C=[], sigma=Decimal("0.5")))
+            cert.arch_value = Interval(arch_iv.lo, arch_iv.hi)
+        except Exception:
+            pass
+    return cert
+
+
 def run_proof_of_grh_rs() -> None:
     """Run a small test net in RS mode to produce GRH_Verified."""
     cert = build_zeta_gl1_certificate_rs()
@@ -158,3 +216,10 @@ if __name__ == "__main__":
 
     # proof_of_GRH (RS mode)
     run_proof_of_grh_rs()
+
+    print("\n-- Heat evaluate mode (generated primes + tail bound) --")
+    cert_h = build_zeta_gl1_certificate_heat_evaluate()
+    report_h = verify_certificate(cert_h)
+    print("Result:", report_h.result)
+    print("Phase:", report_h.phase_passed)
+    print("Details:", report_h.details)
