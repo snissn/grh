@@ -11,11 +11,16 @@ from zeta_gl1_cert import (
     build_zeta_gl1_certificate_heat_evaluate,
     run_proof_of_grh_rs,
 )
+from lfunc_examples import (
+    build_gl2_newform_11a1_bl_evaluate,
+    build_gl2_11a1_heat_evaluate,
+    build_gl3_sym2_11a1_bl_evaluate,
+)
 
 
 def main():
     parser = argparse.ArgumentParser(description="GRH Certificate Verifier CLI (Zeta GL(1) examples)")
-    parser.add_argument("--mode", choices=["rs", "bl", "heat", "all", "max"], default="max",
+    parser.add_argument("--mode", choices=["rs", "bl", "heat", "gl2", "gl2-heat", "sym2", "all", "max"], default="max",
                         help="Which mode to run: rs (RS-positivity), bl (BL evaluate), heat (heat evaluate), all (rs+bl+heat), max (most comprehensive)")
     parser.add_argument("--X", type=float, default=6.0, help="Band-limit X (for BL) or cutoff u for heat tail")
     parser.add_argument("--a", type=float, default=0.8, help="Heat test parameter a (>1/2)")
@@ -65,6 +70,22 @@ def main():
     if args.mode in ("heat", "all", "max"):
         cert = build_zeta_gl1_certificate_heat_evaluate(X=X, a=a, tau=tau)
         tag = f"Heat-evaluate_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
+
+    # GL2 (holomorphic newform 11a1)
+    if args.mode in ("gl2", "all", "max"):
+        cert = build_gl2_newform_11a1_bl_evaluate(X=X, a=a, tau=tau)
+        tag = f"GL2_11a1_BL_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
+    if args.mode in ("gl2-heat", "all", "max"):
+        cert = build_gl2_11a1_heat_evaluate(X=X, a=a, tau=tau)
+        tag = f"GL2_11a1_Heat_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
+        run_and_print(tag, cert)
+
+    # GL3 Sym^2 of 11a1
+    if args.mode in ("sym2", "all", "max"):
+        cert = build_gl3_sym2_11a1_bl_evaluate(X=X, a=a, tau=tau)
+        tag = f"GL3_Sym2_11a1_BL_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
         run_and_print(tag, cert)
 
 

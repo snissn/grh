@@ -98,4 +98,9 @@ Modes
 - `bl`: BL evaluate mode (generates (p,k) terms with `2k log p <= X`)
 - `heat`: Heat evaluate mode (generates (p,k) terms with `2k log p <= X` + Gaussian tail bound)
 - `all`: Runs rs + bl + heat
-- `max` (default): Runs proof_of_GRH (rs) + bl + heat
+- `max` (default): Runs proof_of_GRH (rs) + bl + heat + gl2 + sym2
+
+Additional modes
+- `gl2`: GL(2) newform 11a1 (level 11, weight 2), BL evaluate
+- `gl2-heat`: GL(2) 11a1, heat evaluate with Gaussian tail bound
+- `sym2`: GL(3) Sym^2 of 11a1, BL evaluate
