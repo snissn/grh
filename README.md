@@ -78,4 +78,14 @@ print(report.details)
 ## Repository Layout
 
 - `grh_verifier.py`: main implementation and a tiny synthetic demo in `__main__`.
+- `ef_generators.py`: rigorous EF-side generators (Φ spec, Arch/prime/ramified helpers).
+- `rigor_quad.py`: validated (and padded-fallback) quadrature utilities.
+- `rigor_backend.py`: backend facade for rigorous interval math.
+- `zeta_gl1_cert.py`: GL(1) Riemann zeta example (RS mode and BL evaluate mode).
 
+## Zeta GL(1) quick start
+
+- RS-positivity baseline:
+  - `python3 zeta_gl1_cert.py` (prints RS and BL-evaluate runs)
+- BL evaluate mode (generated unramified terms up to `2k log p <= X`):
+  - See `build_zeta_gl1_certificate_bl_evaluate` in `zeta_gl1_cert.py` for parameters (`X`, `a`, `tau`).
