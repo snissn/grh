@@ -393,6 +393,9 @@ def verify_certificate(cert: Certificate) -> VerifierReport:
         for i, Phi_i in enumerate(cert.test_net):
             sub = Certificate(**{**cert.__dict__})
             sub.Phi_test = Phi_i
+            # Prevent infinite recursion: evaluate each test independently
+            sub.proof_mode = "ann_odd_only"
+            sub.test_net = None
             subres = verify_certificate(sub)
             if subres.result != "AnnOdd_Verified":
                 return VerifierReport(phase_passed=6, result=subres.result,
@@ -428,4 +431,3 @@ def _demo():
 
 if __name__ == "__main__":
     _demo()
-
