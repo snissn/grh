@@ -3,6 +3,8 @@ from decimal import Decimal
 import argparse
 
 from grh_verifier import verify_certificate
+from verifier_trace import compute_trace
+from reporting import plot_and_report
 from zeta_gl1_cert import (
     build_zeta_gl1_certificate_rs,
     build_zeta_gl1_certificate_bl_evaluate,
@@ -19,6 +21,9 @@ def main():
     parser.add_argument("--a", type=float, default=0.8, help="Heat test parameter a (>1/2)")
     parser.add_argument("--tau", type=float, default=2.0, help="Heat Gaussian tau")
     parser.add_argument("--proof", action="store_true", help="Run proof_of_GRH test net (RS baseline)")
+    parser.add_argument("--report", dest="report", action="store_true", help="Generate a detailed report with plots (default)")
+    parser.add_argument("--no-report", dest="report", action="store_false", help="Disable report generation")
+    parser.set_defaults(report=True)
 
     args = parser.parse_args()
 
@@ -30,6 +35,10 @@ def main():
         rep = verify_certificate(cert)
         print(f"\n[{tag}] -> {rep.result} (phase {rep.phase_passed})")
         print("details:", rep.details)
+        if args.report:
+            trace = compute_trace(cert)
+            out_dir = plot_and_report(tag, trace)
+            print(f"report written to: {out_dir}")
 
     if args.mode in ("rs", "all", "max"):
         cert = build_zeta_gl1_certificate_rs()
@@ -49,4 +58,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
