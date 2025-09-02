@@ -82,10 +82,20 @@ print(report.details)
 - `rigor_quad.py`: validated (and padded-fallback) quadrature utilities.
 - `rigor_backend.py`: backend facade for rigorous interval math.
 - `zeta_gl1_cert.py`: GL(1) Riemann zeta example (RS mode and BL evaluate mode).
+- `grh_cli.py`: CLI runner for modes and parameters.
 
 ## Zeta GL(1) quick start
 
-- RS-positivity baseline:
-  - `python3 zeta_gl1_cert.py` (prints RS and BL-evaluate runs)
-- BL evaluate mode (generated unramified terms up to `2k log p <= X`):
-  - See `build_zeta_gl1_certificate_bl_evaluate` in `zeta_gl1_cert.py` for parameters (`X`, `a`, `tau`).
+- One-shot demo:
+  - `python3 zeta_gl1_cert.py` (RS, BL evaluate, proof_of_GRH, heat evaluate)
+- CLI (recommended):
+  - `./grh_cli.py --mode max`  # runs proof_of_GRH (RS) + BL + heat
+  - `./grh_cli.py --mode all --X 8.0 --a 0.85 --tau 2.5`
+  - `./grh_cli.py --mode bl --X 7.0`  (single mode)
+
+Modes
+- `rs`: RS-positivity baseline (optionally `--proof` to run a small test net)
+- `bl`: BL evaluate mode (generates (p,k) terms with `2k log p <= X`)
+- `heat`: Heat evaluate mode (generates (p,k) terms with `2k log p <= X` + Gaussian tail bound)
+- `all`: Runs rs + bl + heat
+- `max` (default): Runs proof_of_GRH (rs) + bl + heat
