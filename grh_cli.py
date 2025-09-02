@@ -2,7 +2,7 @@
 from decimal import Decimal
 import argparse
 
-from grh_verifier import verify_certificate
+from grh_verifier import verify_certificate, TestFunction
 from verifier_trace import compute_trace
 from reporting import plot_and_report
 from zeta_gl1_cert import (
@@ -42,10 +42,20 @@ def main():
 
     if args.mode in ("rs", "all", "max"):
         cert = build_zeta_gl1_certificate_rs()
+        # Reflect CLI cutoff into RS cert for context naming
+        cert.band_limit_X = X
         if args.proof or args.mode == "max":
-            run_proof_of_grh_rs()
+            cert.proof_mode = "proof_of_GRH"
+            cert.test_net = [
+                TestFunction(family="heat", a=Decimal("0.7")),
+                TestFunction(family="heat", a=Decimal("0.8")),
+                TestFunction(family="heat", a=Decimal("0.9")),
+            ]
+            tag = f"RS-proof_GL{cert.m}_{cert.K}_X{X}"
+            run_and_print(tag, cert)
         else:
-            run_and_print("RS", cert)
+            tag = f"RS_GL{cert.m}_{cert.K}_X{X}"
+            run_and_print(tag, cert)
 
     if args.mode in ("bl", "all", "max"):
         cert = build_zeta_gl1_certificate_bl_evaluate(X=X, a=a, tau=tau)
