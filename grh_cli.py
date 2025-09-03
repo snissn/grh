@@ -33,6 +33,8 @@ def main():
     parser.add_argument("--proof", action="store_true", help="Run proof_of_GRH test net (RS baseline)")
     parser.add_argument("--report", dest="report", action="store_true", help="Generate a detailed report with plots (default)")
     parser.add_argument("--no-report", dest="report", action="store_false", help="Disable report generation")
+    parser.add_argument("--sym2-amplifier", type=int, default=None,
+                        help="Enable Sym^2 amplifier with Fejér length L (prototype). If omitted or <=0, amplifier is off.")
     parser.set_defaults(report=True)
 
     args = parser.parse_args()
@@ -106,7 +108,5 @@ def main():
         run_and_print(tag, cert)
 
 
-    parser.add_argument("--sym2-amplifier", type=int, default=None,
-                        help="Enable Sym^2 amplifier with Fejér length L (prototype). If omitted or <=0, amplifier is off.")
 if __name__ == "__main__":
     main()
