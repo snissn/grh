@@ -117,7 +117,7 @@ def build_gl2_newform_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
         k_max = int(math.floor((float(X) / 2.0) / float(logp)))
         for k in range(1, max(1, k_max) + 1):
             W_iv = unramified_term_interval(phi_spec, loc, k)
-            unram.append(PrimeLocalTerm(p=p, k=k, value=Interval(W_iv.lo, W_iv.hi)))
+            unram.append(PrimeLocalTerm(p=p, k=k, value=Interval(W_iv.lo, W_iv.hi), meta={"alphas": alphas}))
 
     cert = Certificate(
         m=2,
@@ -178,7 +178,7 @@ def build_gl3_sym2_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
         k_max = int(math.floor((float(X) / 2.0) / float(logp)))
         for k in range(1, max(1, k_max) + 1):
             W_iv = unramified_term_interval(phi_spec, loc, k)
-            unram.append(PrimeLocalTerm(p=p, k=k, value=Interval(W_iv.lo, W_iv.hi)))
+            unram.append(PrimeLocalTerm(p=p, k=k, value=Interval(W_iv.lo, W_iv.hi), meta={"alphas": alphas}))
 
     cert = Certificate(
         m=3,
@@ -307,7 +307,7 @@ def build_dirichlet_bl_evaluate(q: int = 3, r: int = 1,
         k_max = int(math.floor((float(X) / 2.0) / float(logp)))
         for k in range(1, max(1, k_max) + 1):
             W_iv = unramified_term_interval(phi_spec, loc, k)
-            unram.append(PrimeLocalTerm(p=p, k=k, value=Interval(W_iv.lo, W_iv.hi)))
+            unram.append(PrimeLocalTerm(p=p, k=k, value=Interval(W_iv.lo, W_iv.hi), meta={"alphas": [alpha]}))
 
     cert = Certificate(
         m=1,

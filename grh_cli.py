@@ -89,7 +89,9 @@ def main():
 
     # GL3 Sym^2 of 11a1
     if args.mode in ("sym2", "all", "max"):
-        cert = build_gl3_sym2_11a1_bl_evaluate(X=X, a=a, tau=tau)
+        use_amp = args.sym2_amplifier is not None and args.sym2_amplifier > 0
+        amp_L = int(args.sym2_amplifier) if use_amp else 0
+        cert = build_gl3_sym2_11a1_bl_evaluate(X=X, a=a, tau=tau, use_amplifier=use_amp, amp_L=amp_L)
         tag = f"GL3_Sym2_11a1_BL_GL{cert.m}_{cert.K}_X{X}_a{a}_tau{tau}"
         run_and_print(tag, cert)
 
@@ -104,5 +106,7 @@ def main():
         run_and_print(tag, cert)
 
 
+    parser.add_argument("--sym2-amplifier", type=int, default=None,
+                        help="Enable Sym^2 amplifier with Fejér length L (prototype). If omitted or <=0, amplifier is off.")
 if __name__ == "__main__":
     main()

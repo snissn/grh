@@ -104,6 +104,8 @@ Additional modes
 - `gl2`: GL(2) newform 11a1 (level 11, weight 2), BL evaluate
 - `gl2-heat`: GL(2) 11a1, heat evaluate with Gaussian tail bound
 - `sym2`: GL(3) Sym^2 of 11a1, BL evaluate
+  - Default uses an RS lower-bound prime block to avoid spurious positivity failures without a true amplifier.
+  - Prototype amplifier (Fejér kernel): enable with `--sym2-amplifier L` (e.g., 8 or 16). This switches Sym^2 to evaluate mode and applies a nonnegative, bandlimited weight to each `(p^k)` term. This is intended for experimentation; arch/ram are not reweighted.
 - `dir`: Dirichlet L(s, χ) mod q (prime q), BL evaluate (params: `--q`, `--r`)
 - `dir-heat`: Dirichlet L(s, χ), heat evaluate (params: `--q`, `--r`)
 

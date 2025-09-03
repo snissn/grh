@@ -156,6 +156,8 @@ class PrimeLocalTerm:
     p: int
     k: int
     value: Interval   # interval contribution of this (p^k)-term
+    # Optional metadata for amplifiers (e.g., Satake parameters)
+    meta: Optional[dict] = None
 
 
 @dataclass
@@ -250,6 +252,28 @@ def PrimeBlockBL(t_star: Decimal, Phi: TestFunction,
         if val > 1:
             val = 1.0
         return val
+
+    def satake_amp_weight(meta: Optional[dict], k: int) -> float:
+        # Prototype Satake-based weight: w = (|tr(A_p^k)| / d)^2 in [0,1].
+        # Uses provided alphas if available.
+        if not meta:
+            return 1.0
+        alphas = meta.get("alphas")
+        if not alphas:
+            return 1.0
+        try:
+            tr = sum((a**k) for a in alphas)
+            import math
+            tr_abs = abs(tr)
+            d = max(1, len(alphas))
+            w = (tr_abs / d) ** 2
+            if w < 0:
+                w = 0.0
+            if w > 1:
+                w = 1.0
+            return float(w)
+        except Exception:
+            return 1.0
     for term in unram_local:
         if (2 * term.k * Decimal(str(math.log(term.p)))) <= band_limit_X:
             val = term.value
@@ -259,6 +283,9 @@ def PrimeBlockBL(t_star: Decimal, Phi: TestFunction,
                     L = int(weights_spec.get("L", 8))
                     u = float(term.k * math.log(term.p))
                     w = fejer_weight(u, L)
+                    val = val * Interval.point(w)
+                elif wtype == "satake_amp":
+                    w = satake_amp_weight(term.meta, term.k)
                     val = val * Interval.point(w)
             total = total + val
     return total
