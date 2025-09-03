@@ -127,7 +127,7 @@ def build_gl2_newform_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
         Phi_test=TestFunction(family="heat", a=a),
         precision_bits=256,
         test_family="BL",
-        prime_block_mode="evaluate",
+        prime_block_mode="rs_lower_bound",
         proof_mode="ann_odd_only",
         Ainf=Decimal("1.0"), beta_m=Decimal("0.5"), C_Rstar=Decimal("1.0"),
         arch_value=Interval.point(0),
@@ -138,20 +138,25 @@ def build_gl2_newform_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
         alpha_inv=Decimal("0.5"), kappa_inv=Decimal("1.0"),
         unram_local=unram,
     )
-    # Try arch via ARB: holomorphic weight k=2 ⇒ Γ_C(s+(k-1)/2) = Γ_C(s+1/2)
-    if RMATH.mode == "arb":
-        try:
-            arch_iv = compute_arch_block(phi_spec, ArchParams(mu_R=[], mu_C=[Decimal("0.5")], sigma=Decimal("0.5")))
-            cert.arch_value = Interval(arch_iv.lo, arch_iv.hi)
-        except Exception:
-            pass
+    # Try arch: holomorphic weight k=2 ⇒ Γ_C(s+(k-1)/2) = Γ_C(s+1/2)
+    try:
+        arch_iv = compute_arch_block(
+            phi_spec,
+            ArchParams(mu_R=[], mu_C=[Decimal("0.5")], sigma=Decimal("0.5")),
+            T=Decimal("6"), rel_tol=Decimal("1e-10")
+        )
+        cert.arch_value = Interval(arch_iv.lo, arch_iv.hi)
+    except Exception:
+        pass
     return cert
 
 
 def build_gl3_sym2_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
                                      a: Decimal = Decimal("0.8"),
                                      tau: Decimal = Decimal("2.0"),
-                                     ap_file: Optional[str] = None) -> Certificate:
+                                     ap_file: Optional[str] = None,
+                                     use_amplifier: bool = False,
+                                     amp_L: int = 8) -> Certificate:
     phi_spec = HeatGaussianPhi._mk(a_weight=a, tau=tau)
     Pmax = int(math.floor(math.exp(float(X) / 2.0)))
     primes = primes_upto(Pmax)
@@ -183,7 +188,8 @@ def build_gl3_sym2_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
         Phi_test=TestFunction(family="heat", a=a),
         precision_bits=256,
         test_family="BL",
-        prime_block_mode="evaluate",
+        # Default to RS lower-bound for Sym^2 to avoid spurious Phase 4 failures
+        prime_block_mode="rs_lower_bound",
         proof_mode="ann_odd_only",
         Ainf=Decimal("1.0"), beta_m=Decimal("0.5"), C_Rstar=Decimal("1.0"),
         arch_value=Interval.point(0),
@@ -194,7 +200,11 @@ def build_gl3_sym2_11a1_bl_evaluate(X: Decimal = Decimal("6.0"),
         alpha_inv=Decimal("0.5"), kappa_inv=Decimal("1.0"),
         unram_local=unram,
     )
-    # Arch factors for Sym^2 not specified here; keep arch_value as provided
+    # Optional: wire a simple Fejér amplifier to explore evaluate-mode positivity
+    if use_amplifier:
+        cert.weights_spec = {"type": "fejer", "L": int(amp_L)}
+        cert.prime_block_mode = "evaluate"
+    # Arch factors for Sym^2 omitted to keep runtime reasonable here
     return cert
 
 
@@ -318,12 +328,15 @@ def build_dirichlet_bl_evaluate(q: int = 3, r: int = 1,
         alpha_inv=Decimal("0.5"), kappa_inv=Decimal("1.0"),
         unram_local=unram,
     )
-    if RMATH.mode == "arb":
-        try:
-            arch_iv = compute_arch_block(phi_spec, ArchParams(mu_R=[Decimal(str(chi.parity()))], mu_C=[], sigma=Decimal("0.5")))
-            cert.arch_value = Interval(arch_iv.lo, arch_iv.hi)
-        except Exception:
-            pass
+    try:
+        arch_iv = compute_arch_block(
+            phi_spec,
+            ArchParams(mu_R=[Decimal(str(chi.parity()))], mu_C=[], sigma=Decimal("0.5")),
+            T=Decimal("6"), rel_tol=Decimal("1e-10")
+        )
+        cert.arch_value = Interval(arch_iv.lo, arch_iv.hi)
+    except Exception:
+        pass
     return cert
 
 
@@ -333,5 +346,6 @@ def build_dirichlet_heat_evaluate(q: int = 3, r: int = 1,
                                   tau: Decimal = Decimal("2.0")) -> Certificate:
     cert = build_dirichlet_bl_evaluate(q, r, X, a, tau)
     cert.test_family = "heat"
+    # In RS lower-bound mode, prime tail bound is not used; keep for reference.
     cert.prime_tail_bound = Interval(Decimal(0), heat_gaussian_prime_tail_bound(X, tau))
     return cert

@@ -226,14 +226,41 @@ def RamBlock(t_star: Decimal, Phi: TestFunction, ram_terms: Sequence[RamifiedTer
     return total
 
 def PrimeBlockBL(t_star: Decimal, Phi: TestFunction,
-                 unram_local: Sequence[PrimeLocalTerm], band_limit_X: Decimal) -> Interval:
+                 unram_local: Sequence[PrimeLocalTerm], band_limit_X: Decimal,
+                 weights_spec: Optional[dict] = None) -> Interval:
     """Band‑limited prime block: include terms with 2k·log p ≤ X."""
     if band_limit_X is None:
         raise ValueError("band_limit_X required for BL tests")
     total = Interval.point(0)
+
+    def fejer_weight(u: float, L: int) -> float:
+        # Nonnegative Dirichlet-Fejér kernel normalized to ≤1 at u=0
+        import math
+        if L <= 1:
+            return 1.0
+        x = 0.5 * u
+        s = math.sin(L * x)
+        d = math.sin(x)
+        if abs(d) < 1e-15:
+            return 1.0
+        val = (s / (L * d)) ** 2
+        # Clip to [0,1] for safety against FP noise
+        if val < 0:
+            val = 0.0
+        if val > 1:
+            val = 1.0
+        return val
     for term in unram_local:
         if (2 * term.k * Decimal(str(math.log(term.p)))) <= band_limit_X:
-            total = total + term.value
+            val = term.value
+            if weights_spec is not None:
+                wtype = weights_spec.get("type")
+                if wtype == "fejer":
+                    L = int(weights_spec.get("L", 8))
+                    u = float(term.k * math.log(term.p))
+                    w = fejer_weight(u, L)
+                    val = val * Interval.point(w)
+            total = total + val
     return total
 
 def PrimeTailBound_heat(prime_tail_bound: Optional[Interval]) -> Interval:
@@ -323,7 +350,7 @@ def verify_certificate(cert: Certificate) -> VerifierReport:
             if cert.band_limit_X is None:
                 return VerifierReport(phase_passed=2, result="Indeterminate",
                                       details={"reason": "Missing band_limit_X for BL"})
-            prime_iv = PrimeBlockBL(cert.t_star, cert.Phi_test, cert.unram_local, cert.band_limit_X)
+            prime_iv = PrimeBlockBL(cert.t_star, cert.Phi_test, cert.unram_local, cert.band_limit_X, cert.weights_spec)
         else:  # heat
             prime_iv = Interval.point(0)
             for term in cert.unram_local:
