@@ -6,7 +6,12 @@ a2a_doc:
     venue: "preprint (unrefereed)"
     year: 2025
     version: "preprint (2025-09-01)"
-    url: null
+    url: "Langlands-Functoriality.pdf"
+    dependencies:
+      summary: "Relies on GRH Trilogy infrastructure: A1–A5, R*, and the Part II ν‑projector."
+      requires: ["A1","A2","A3","A4","A5","R*","ν‑proj"]
+      upstream_sources: ["GRH Part I (A1–A5, R*)", "GRH Part II (ν‑projector/gap)"]
+      note: "Claims are conditional on these upstream components; see 13_scope_and_unconditionality."
     area: "automorphic forms; analytic number theory"
     normalization: "Maaß–Selberg (MS) (src: sec:prelim)"
     primary_objects:
@@ -95,7 +100,7 @@ a2a_doc:
       - {name: "TT_ν", def: "ν-projector; annihilates odd component per suite. (src: sec:prelim)"}
     factorizations: "Loewner sandwich gives Γ_t^{(N)}≈Γ_t and R_t^{real}≈R_t^{ideal} up to ε(N). (src: sec:reserve, sec:forcing)"
     compatibility_checklist:
-      commute: {e^{-tA}: "yes (spectral calculus)", M(w,0): "ideal: yes; realized: up to ε(N)", Ψ_{1/2}: "yes (multiplier)"}
+      commute: {"e^{-tA}": "yes (spectral calculus)", "M(w,0)": "ideal: yes; realized: up to ε(N)", "Ψ_{1/2}": "yes (multiplier)"}
       weyl_invariance: "R_t^{ideal} Weyl-invariant; realized may violate if no transfer. (src: prop:two-rays)"
       boundedness: "All listed ops bounded on the working Hilbert slice. (src: Part I refs)"
       unitary_equiv: "R_t independent of model up to unitary eq. (intended; src: Part I)"
@@ -127,7 +132,7 @@ a2a_doc:
       - {id: "prop:two-rays", name: "Two-ray deficit", statement: "Loss δ>0 across two rays if no Π.", conditions: "rank≥2 target", dependencies: "[A1,A2, ν-proj gap]", status: "proved"}
       - {id: "thm:rank1-forcing", name: "Rank‑1 forcing", statement: "Gap forces realized spectrum to match primes ⇒ Π.", conditions: "real rank 1", dependencies: "[A5 gap, budgets]", status: "proved"}
       - {id: "prop:local-compat", name: "Local compatibility", statement: "Π matches local RS squares and Γ-factors.", conditions: "all places", dependencies: "[R*, FE structure]", status: "proved"}
-      - {id: "thm:Functoriality-Main", name: "Functorial transfer", statement: "Existence and local compat. of Π.", conditions: "π cuspidal unitary; r arbitrary", dependencies: "[all above]", status: "proved"}
+      - {id: "thm:Functoriality-Main", name: "Functorial transfer", statement: "Existence and local compat. of Π.", conditions: "π cuspidal unitary; r arbitrary", dependencies: "[all above]", status: "proved (conditional on A1–A5, R*, ν‑proj)"}
     asks: "Give an invariant-theoretic one-liner for each positivity result (why P_t⪰αΓ_t)."
 
   9_dependency_graph:
@@ -182,7 +187,9 @@ a2a_doc:
     asks: "Provide a canonical toy Φ and exact ρ_W(x) form from Part I to smoke-test signs/units."
 
   13_scope_and_unconditionality:
-    unconditional: "Main theorem assumes only suite-internal A1–A5, R*, ν-proj framework; no zero-density or beyond-endoscopy inputs. (src: abstract, sec:intro)"
+    unconditional: "Not asserted as standalone-unconditional: results are conditional on A1–A5, R*, and the ν‑projector from the GRH trilogy. (src: abstract, sec:intro)"
+    claim_status: "conditional_on_trilogy_infrastructure"
+    blocking_upstream: ["A1","A2","A3","A4","A5","R*","ν‑proj gap"]
     program_inputs:
       - {id: "A1–A5,R*", formal_statement: "As in GRH Parts I–II with explicit constants (κ_X, ε(N)=1/N, C_0(a,m,K), C_1(m,K), β(m)>0, δ_ν>0)", current_status: "proved (internal)", needed_for: "reserve, budgets, sandwich, gap", candidates_for_proof: "Part I–II refs"}
       - {id: "ν-proj gap", formal_statement: "strict gap on ν-odd", current_status: "proved (Part II)", needed_for: "two-ray/rigidity", candidates_for_proof: "Part II refs"}

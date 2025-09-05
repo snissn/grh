@@ -3,10 +3,12 @@ a2a_doc:
     title_long: "Weil Positivity via Mellin–Torsion on the Modulus Line"
     title_short: "Weil Positivity via Mellin–Torsion"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
+    venue: "Zenodo (preprint)"
     year: "2025"
     version: "preprint"
-    url: UNKNOWN
+    url: "https://doi.org/10.5281/zenodo.16930095"
+    doi: "10.5281/zenodo.16930095"
+    license: "CC-BY 4.0"
     area: "analytic number theory, automorphic forms"
     normalization: "Maaß–Selberg (MS), symmetric PV at $s=\tfrac12$"
     primary_objects:
@@ -35,7 +37,7 @@ a2a_doc:
       - {id: "T1", name: "Decomposition", status: "proved", statement: "$Q_{\\mathrm{geom}}(g)=P(g)+\\Wcont(g)$ with $\\Wcont(g)=\\int_0^\\infty \\widehat g(x)\\,\\rho_W(x)\\,dx$, $\\rho_W>0$ on $(0,\\infty)$.", src: "thm:main-decomposition, prop:rhoW-density"}
       - {id: "T2", name: "Band-limited positivity", status: "proved", statement: "If $g\\in\\CW\\cap\\ABL$, then $Q_{\\mathrm{geom}}(g)\\ge0$ and hence $\\mathcal W(g)\\ge0$.", src: "thm:BL, cor:W_pos_ABL"}
       - {id: "T3", name: "Spectral handshake (extension)", status: "proved", statement: "$\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)$ for autocorrelations via Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)$.", src: "thm:handshake-consolidated"}
-      - {id: "T4", name: "RH closure", status: "program", statement: "Assuming H.1–H.5, $\\mathcal W(g_\\Phi)\\ge0$ for all $\\Phi\\in\\Sscr(\\A)$ and by the classical criterion RH holds.", src: "thm:RH-closure; H.4"}
+      - {id: "T4", name: "RH closure", status: "claimed-pending-review", statement: "Assuming H.1–H.5, $\\mathcal W(g_\\Phi)\\ge0$ for all $\\Phi\\in\\Sscr(\\A)$ and by the classical criterion RH holds.", src: "thm:RH-closure; H.4"}
       - {id: "L1", name: "Mellin–torsion identity", status: "proved", statement: "$\\TorsionOp=(\\Id-\\Eop^{1/2})(\\Id-\\Eop)^{-1}$ acts by kernel $\\T(x)=\\tfrac{1-e^{-x/2}}{1-e^{-x}}=\\tfrac1{1+e^{-x/2}}$ on $(0,\\infty)$.", src: "lem:torsion"}
     route_map:
       - {id: "R1", name: "Positivity→Handshake→Weil", inputs: "[H.1,H.2,H.3,H.5]+$g_\\Phi$", output: "RH via H.4", status: "program"}
@@ -81,8 +83,8 @@ a2a_doc:
       - {name: "$\\TorsionOp$", formula: "$(\\Id-\\Eop^{1/2})(\\Id-\\Eop)^{-1}$", props: "acts by $\\T(x)=\\tfrac1{1+e^{-x/2}}>0$", src: "lem:torsion"}
       - {name: "$\\rho_W$", formula: "$\\rho_W(x)=\\tfrac1{2\\pi}(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})$", props: "strictly positive on $(0,\\infty)$", src: "prop:rhoW-density"}
     compatibility_checklist:
-      pairwise_commute: UNKNOWN
-      weyl_invariant: UNKNOWN
+      pairwise_commute: "Yes — (E^a) commute; and since C_{1/2}=(Id+E^{1/2})^{-1}, it commutes with E^a on (0,\\infty)."
+      weyl_invariant: "Yes — GL(1) Weyl reflection acts by \\tau\\mapsto-\\tau; we work with even tests and symmetric PV, so the constructions depend on |x| (even extension), hence Weyl-invariant."
       bounded: "Torsion kernel bounded by 1; $\\rho_W$ bounded near 0."
       unitary_equiv_independent: "Fejér–Gaussian scheme-independence proved."
     asks: "State the functional calculus used and exact symbol bounds."
@@ -100,31 +102,36 @@ a2a_doc:
       - {term: "$Q_{\\mathrm{geom}}$", condition: "$g\\in\\CW\\cap\\ABL$", status: "≥0"}
     asks: "Confirm which test classes guarantee $\\gb\\ge0$ and PV-finiteness."
 
-  main_results:
-    - {id: "T1", name: "Decomposition", statement: "As above.", conditions: "$g\\in\\Sscr(\\R)$ even", dependencies: [], status: "proved", src: "thm:main-decomposition"}
-    - {id: "T2", name: "BL positivity", statement: "As above.", conditions: "$g\\in\\CW\\cap\\ABL$", dependencies: ["T1"], status: "proved", src: "thm:BL"}
-    - {id: "T3", name: "Handshake extension", statement: "As above.", conditions: "autocorr. $g_\\Phi$", dependencies: ["T1","T2","H.1","H.2","H.5"], status: "proved", src: "thm:handshake-consolidated"}
-    - {id: "T4", name: "RH closure", statement: "As above.", conditions: "H.1–H.5", dependencies: ["T2","T3","H.4"], status: "program", src: "thm:RH-closure"}
-    - {id: "L1", name: "Mellin–torsion kernel", statement: "As above.", conditions: "$C_c^\\infty(0,\\infty)$ then distributional", dependencies: [], status: "proved", src: "lem:torsion"}
-    asks: "Give a one-line invariant-theoretic reason for each positivity."
+  
 
+  imports:
+    - {id: "H.1", imported_from: "GRH-01.pdf", status: "imported"}
+    - {id: "H.2", imported_from: "GRH-02.pdf", status: "imported"}
+    - {id: "H.3", imported_from: "GRH-03.pdf", status: "imported"}
+    - {id: "H.4", imported_from: "RH-01.pdf",   status: "imported"}
+    - {id: "H.5", imported_from: "RH-03B.pdf",  status: "imported"}
   dependency_graph:
     nodes: ["H.1","H.2","H.3","H.4","H.5","T1","T2","T3","T4","L1"]
     edges:
-      - {from: "H.1", to: "T1"}; - {from: "H.2", to: "T1"}; - {from: "T1", to: "T2"}
-      - {from: "H.5", to: "T3"}; - {from: "T2", to: "T3"}; - {from: "T3", to: "T4"}; - {from: "H.4", to: "T4"}
+      - {from: "H.1", to: "T1"}
+      - {from: "H.2", to: "T1"}
+      - {from: "T1", to: "T2"}
+      - {from: "H.5", to: "T3"}
+      - {from: "T2", to: "T3"}
+      - {from: "T3", to: "T4"}
+      - {from: "H.4", to: "T4"}
     asks: "Mark any optional branches or cycles."
 
   proof_skeletons:
-    - id: "T4"
-      steps:
-        - "AEF+dictionary ⇒ $Q_{\\mathrm{geom}}=P+\\int \\gb\\rho_W$ with $\\rho_W>0$."
-        - "$g\\in\\CW\\cap\\ABL$ ⇒ $\\gb\\ge0$ ⇒ $Q_{\\mathrm{geom}}\\ge0$."
-        - "Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)$."
-        - "Continuity ⇒ $\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)\\ge0$."
-        - "Weil criterion (H.4) ⇒ RH."
-      fragile_step: "Dominated convergence/continuity across atomic+continuous parts using strict $\\sigma>\\tfrac12$."
-      alt_route: "Alternative regularizations or direct positivity on a larger cone."
+    list:
+      - id: "T4"
+        steps:
+          - "AEF+dictionary ⇒ $Q_{\\mathrm{geom}}=P+\\int \\gb\\rho_W$ with $\\rho_W>0$."
+          - "$g\\in\\CW\\cap\\ABL$ ⇒ $\\gb\\ge0$ ⇒ $Q_{\\mathrm{geom}}\\ge0$."
+          - "Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)."
+          - "Continuity ⇒ $\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)\\ge0$."
+          - "Weil criterion (H.4) ⇒ RH."
+        fragile_step: "Dominated convergence/continuity across atomic+continuous parts using strict $\\sigma>\\tfrac12$."
     asks: "Identify the step most likely to fail in higher rank."
 
   limits_and_continuity:
@@ -166,4 +173,3 @@ a2a_doc:
       - "Automorphic scattering in higher rank: growth/normalization needed for a positive density."
       - "Strengthen test spaces beyond autocorrelations while preserving positivity."
     asks: "Prioritize milestones and a verification plan (ledger generalization, density positivity, handshake continuity)."
-

@@ -3,11 +3,18 @@ a2a_doc:
     title_long: "Cauchy, Laurent, and Residues as Holonomy on a Constrained Heisenberg Slice"
     title_short: "Cauchy, Laurent, and Residues as Holonomy on H₁"
     authors: ["Michael Seiler"]
+    author_email: "mgs33@cornell.edu"
+    author_orcid: "https://orcid.org/0009-0009-5529-2008"
     venue: "preprint (CC BY 4.0 license noted)"
-    year: "UNKNOWN"
+    year: "2025"
     version: "preprint"
-    url: "UNKNOWN"
+    date: "2025-09-03"
+    license: "CC BY 4.0"
+    url: "file:///mnt/data/Heisenberg-holonomy-I.pdf"
     area: "complex analysis; CR/Heisenberg geometry; holonomy"
+    msc_primary: "30E20"
+    msc_secondary: ["53C17","30F35"]
+    keywords: ["Heisenberg group", "holonomy", "Cauchy integral", "Laurent expansion", "residues", "Hardy/Smirnov classes"]
     normalization: "α_H=dθ on H₁; α_C=dz/z on |z|=1; quarter‑turn J with J²=-I; 1/(2πi) Cauchy norm."
     primary_objects:
       - name: "ℍ"
@@ -32,8 +39,8 @@ a2a_doc:
         type: "map H₁→ℝ²"
         role: "‘shadow’ projection to the plane"
     normalization_sheet:
-      finite_places: "UNKNOWN"
-      arch_place: "UNKNOWN"
+      finite_places: "N/A"
+      arch_place: "N/A"
       dictionary_constants:
         - "dz = z α_C = J z α_H on |z|=1 (src: lem:kernel-identity)"
         - "α_C = J α_H on |z|=1 (src: eq:kernel-identity)"
@@ -49,11 +56,11 @@ a2a_doc:
   problem_and_claim:
     problem: "Reinterpret classical one‑variable contour calculus (Cauchy/Laurent/residues) as a holonomy calculus on a constrained Heisenberg slice H₁, with the complex plane appearing as its projection."
     core_claims:
-      - {id: L1, name: "Kernel identity", status: proved, statement: "On |z|=1, α_C = J α_H.", src: lem:kernel-identity}
-      - {id: T1, name: "Coefficient extraction", status: proved, statement: "Laurent/Cauchy coefficients equal holonomy Fourier coefficients on S¹ (eq:coeff).", src: thm:coeff}
-      - {id: T2, name: "Residues as holonomy", status: proved, statement: "Vertical holonomy for A_g equals −2π Σ Res g; equivalently (1/2πi)∮ g dz = (1/2π)∫(z g)α_H.", src: thm:res-hol}
-      - {id: P1, name: "Centers/radii absorption", status: proved, statement: "For z=z₀+r e^{Jθ}, centers/radii are absorbed into the weight; kernel remains α_H.", src: prop:center-radius}
-      - {id: P2, name: "Distributional residue theorem", status: proved, statement: "d(g dz)=∂̄g d\bar z∧dz=2πi Σ Res g δ_a dx∧dy; Stokes gives residue theorem.", src: sec:distribution}
+      - {id: L1, name: "Kernel identity", status: proved, statement: "On |z|=1, α_C = J α_H.", src: "lem:kernel-identity"}
+      - {id: T1, name: "Coefficient extraction", status: proved, statement: "Laurent/Cauchy coefficients equal holonomy Fourier coefficients on S¹ (eq:coeff).", src: "thm:coeff"}
+      - {id: T2, name: "Residues as holonomy", status: proved, statement: "Vertical holonomy for A_g equals −2π Σ Res g; equivalently (1/2πi)∮ g dz = (1/2π)∫(z g)α_H.", src: "thm:res-hol"}
+      - {id: P1, name: "Centers/radii absorption", status: proved, statement: "For z=z₀+r e^{Jθ}, centers/radii are absorbed into the weight; kernel remains α_H.", src: "prop:center-radius"}
+      - {id: P2, name: "Distributional residue theorem", status: proved, statement: "d(g dz)=∂̄g d\\bar z∧dz=2πi Σ Res g δ_a dx∧dy; Stokes gives residue theorem.", src: "sec:distribution"}
     route_map:
       - {id: R1, name: "Form‑theoretic route", inputs: ["param z=e^{Jθ}", "α_C=Jα_H"], output: "T1,T2", status: "proved"}
       - {id: R2, name: "Connection/holonomy route", inputs: ["A_g=dt+(z g)α_H"], output: "T2 via Δt", status: "proved"}
@@ -109,7 +116,7 @@ a2a_doc:
     counterexamples_or_limits: ["Pole on S¹ invalidates naive equalities without PV; reversing orientation inserts − sign (src: app:signs)."]
     asks: "State sharpness (e.g., minimal boundary regularity for Φ, necessity of z‑factor)."
 
-  constructions_and_kernels:
+    constructions_and_kernels:
     operators:
       - {name: "α_H", formula: "dθ on H₁", properties: "closed on S¹; invariant under rotations"}
       - {name: "α_C", formula: "dz/z on |z|=1", properties: "pullback by z=e^{Jθ} gives Jα_H"}
@@ -118,29 +125,29 @@ a2a_doc:
       - "dz = z α_C = J z α_H (|z|=1)"
       - "α_C = J α_H (kernel identity)"
     compatibility_checklist:
-      commute_pairwise: "UNKNOWN"
-      weyl_invariant: "UNKNOWN"
-      bounded_on_Hilbert_space: "UNKNOWN"
-      model_independence_R_t: "UNKNOWN"
-    asks: "Specify functional calculus used (none/elementary) and where symbol bounds enter, if any."
+      commute_pairwise: "N/A"
+      weyl_invariant: "N/A"
+      bounded_on_Hilbert_space: "N/A"
+      model_independence_R_t: "N/A"
+      asks: "Specify functional calculus used (none/elementary) and where symbol bounds enter, if any."
 
   explicit_formula_block:
-    geometric_side: "UNKNOWN"
-    spectral_side: "UNKNOWN"
-    regularizations: "UNKNOWN"
-    weil_functional_GL1: "UNKNOWN"
-    rho_W_density: "UNKNOWN"
-    ramified_ledger: {when_present: "UNKNOWN", sign: "UNKNOWN", bound: "UNKNOWN", vanishing_cases: "UNKNOWN"}
-    positivity_table: "UNKNOWN"
+    geometric_side: "N/A"
+    spectral_side: "N/A"
+    regularizations: "N/A"
+    weil_functional_GL1: "N/A"
+    rho_W_density: "N/A"
+    ramified_ledger: {when_present: "N/A", sign: "N/A", bound: "N/A", vanishing_cases: "N/A"}
+    positivity_table: "N/A"
     asks: "Confirm not applicable; else map each EF term to a holonomy analogue."
 
   main_results:
     results:
-      - {id: L1, name: "Kernel identity", statement: "α_C=J α_H on |z|=1.", conditions: "z(θ)=e^{Jθ}", dependencies: [A1], status: proved, src: lem:kernel-identity}
-      - {id: T1, name: "Coefficient extraction", statement: "a_n=(1/2πi)∮ f(z)z^{-(n+1)}dz=(1/2π)∫ f(e^{Jθ})e^{-Jnθ}α_H.", conditions: "f holomorphic near 𝔻̄", dependencies: [A1,A2,L1], status: proved, src: thm:coeff}
-      - {id: T2, name: "Residues as holonomy", statement: "Δt=−∫(z g)α_H=−2πΣ Res g and (1/2πi)∮ g dz=(1/2π)∫(z g)α_H.", conditions: "g meromorphic annulus; no S¹ poles", dependencies: [A1,A3,L1], status: proved, src: thm:res-hol}
-      - {id: P1, name: "Centers/radii absorption", statement: "For z=z₀+r e^{Jθ}, weights absorb (z₀,r); kernel α_H unchanged.", conditions: "holomorphic near circle", dependencies: [A1], status: proved, src: prop:center-radius}
-      - {id: P2, name: "Distributional residue theorem", statement: "d(g dz)=2πi Σ Res g δ_a dx∧dy; Stokes ⇒ residue theorem.", conditions: "no poles on ∂Ω", dependencies: [A4], status: proved, src: sec:distribution}
+      - {id: L1, name: "Kernel identity", statement: "α_C=J α_H on |z|=1.", conditions: "z(θ)=e^{Jθ}", dependencies: [A1], status: proved, src: "lem:kernel-identity"}
+      - {id: T1, name: "Coefficient extraction", statement: "a_n=(1/2πi)∮ f(z)z^{-(n+1)}dz=(1/2π)∫ f(e^{Jθ})e^{-Jnθ}α_H.", conditions: "f holomorphic near 𝔻̄", dependencies: [A1,A2,L1], status: proved, src: "thm:coeff"}
+      - {id: T2, name: "Residues as holonomy", statement: "Δt=−∫(z g)α_H=−2πΣ Res g and (1/2πi)∮ g dz=(1/2π)∫(z g)α_H.", conditions: "g meromorphic annulus; no S¹ poles", dependencies: [A1,A3,L1], status: proved, src: "thm:res-hol"}
+      - {id: P1, name: "Centers/radii absorption", statement: "For z=z₀+r e^{Jθ}, weights absorb (z₀,r); kernel α_H unchanged.", conditions: "holomorphic near circle", dependencies: [A1], status: proved, src: "prop:center-radius"}
+      - {id: P2, name: "Distributional residue theorem", statement: "d(g dz)=2πi Σ Res g δ_a dx∧dy; Stokes ⇒ residue theorem.", conditions: "no poles on ∂Ω", dependencies: [A4], status: proved, src: "sec:distribution"}
     asks: "Provide one‑line invariant explanation for positivity/monotonicity claims (if any)."
 
   dependency_graph:
@@ -225,4 +232,3 @@ a2a_doc:
       - "CR‑geometric rephrasing on boundaries of strictly pseudoconvex domains."
       - "Smirnov classes on arcs; PV refinements for boundary poles."
     asks: "Prioritize milestones (H₂ case, PV rigor, domain‑change constants) and outline a verification plan with explicit test families."
-

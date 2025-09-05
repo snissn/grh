@@ -3,17 +3,17 @@ a2a_doc:
     title_long: "Heisenberg Holonomy VI: Higher Holonomy and the Geometric Annihilation Principle for GL(m)"
     title_short: "Heisenberg Holonomy VI"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
-    year: UNKNOWN
-    version: UNKNOWN
-    url: UNKNOWN
+    venue: "Preprint"
+    year: "2025"
+    version: "Unrefereed preprint (draft)"
+    url: "local:/mnt/data/Heisenberg-holonomy-VI.pdf"
     area: "analytic number theory; automorphic forms; representation theory; geometric Langlands"
     normalization: "Maaß–Selberg (MS)"
     primary_objects:
       - name: "G=GL(m)"
         type: group
         role: ambient
-      - name: "H_{m-1}(\mathbb A)=\\HmA"
+      - name: "H_{m-1}(\\mathbb A)=\\HmA"
         type: adelic Heisenberg group
         role: phase_space
         src: "sec:HmA"
@@ -24,10 +24,14 @@ a2a_doc:
       - name: "\\Gnum"
         type: operator
         role: geometric_nu
+        domain: "H (MS W‑model; even abelian slices)"
+        codomain: "H"
         src: "def:Gnum"
       - name: "\\TTnu"
         type: involution
         role: algebraic_nu (functional equation)
+        domain: "H (ledger side; spectral transform space)"
+        codomain: "H"
         src: "eq:Tnu-spectral-m"
       - name: "w_0"
         type: Weyl_element
@@ -54,7 +58,7 @@ a2a_doc:
       arch_place:
         gamma_to_μ∞: "μ̂_∞(n)=−Re(d/ds log γ_∞(s))|_{s=1/2+i n}, n∈ℤ"
         spectral_pairing: "⟨φ,μ⟩=∑_n φ_n μ̂(n) on S^1 with φ(θ)=∑ φ_n e^{inθ}"
-        scattering_PV: UNKNOWN
+        scattering_PV: "Maaß–Selberg PV pairing dξ(τ) = (1/2π) φ′(τ) dτ; no δ₀ at τ=0"
         src: "eq:muarith-hat; sec:spectral-ledger-measure"
       dictionary_constants:
         isometry: "⟨W_Φ,W_Ψ⟩_{WeylC}=⟨ĝ_Φ,ĝ_Ψ⟩_{MS}"
@@ -103,7 +107,7 @@ a2a_doc:
   spaces_and_classes:
     classes:
       - {name: "𝒮(𝔞)", crit: "Schwartz on 𝔞, K‑finite", src: "lem:weyl-uncertainty"}
-      - {name: "SA^2(a)=\\SAa", crit: UNKNOWN, src: "prop:Gnum-isometry"}
+      - {name: "SA^2(a)=\\SAa", crit: "even ĝ_b with ∫_0^∞ (|ĝ_b|+|ĝ_b''|) e^{a x}(1+x)^2 dx < ∞ for a>1/2; IBP boundary terms controlled on fixed‑heat window", src: "prop:Gnum-isometry"}
       - {name: "trig poly on S^1", crit: "ψ(θ)=∑_{|n|≤N} c_n e^{inθ}", src: "sec:weil-positivity"}
     asks: "Give minimal examples/counterexamples for each class and exact norms/seminorms used."
 
@@ -130,11 +134,11 @@ a2a_doc:
         props: "involutive isometry"
         src: "def:Gnum; prop:Gnum-isometry"
     compatibility_checklist:
-      commute_pairwise: "R^{(m)} and T^{(m)}_π commute on spherical data; general case UNKNOWN"
+      commute_pairwise: "Holds on MS spherical class (TνUχ=UχTν; multiplier + reflection commute); general non‑spherical case open"
       Weyl_invariant: "yes"
       bounded_on_Hilbert: "unitary on the W‑model used"
-      model_independence: "unitary equivalence claimed; details UNKNOWN"
-    asks: "State the functional calculus used (spectral/Mellin) and where symbol bounds enter."
+      model_independence: "Unitary equivalence on the fixed‑heat window (Weil pairing); proved for Tν in Part II (appendix), realized geometrically via Mellin/log‑Mellin dictionary"
+      asks: "State the functional calculus used (spectral/Mellin) and where symbol bounds enter."
 
   explicit_formula_block:
     zero_side:
@@ -148,8 +152,9 @@ a2a_doc:
             −½ log Q + μ̂_∞(0) − ord_{s=1}L − ord_{s=0}L, n=0 }
       arch_term: "μ̂_∞(n)=−Re(d/ds log γ_∞(s))|_{s=1/2+i n}"
       src: "eq:muarith-hat"
-    ledger_identity: "⟨φ,μ_Z⟩=⟨φ,μ_arith⟩ for even φ (tempered)", src: "thm:ledger-measure"
-    weil_functional_GL1: UNKNOWN
+    ledger_identity: "⟨φ,μ_Z⟩=⟨φ,μ_arith⟩ for even φ (tempered)"
+    ledger_identity_src: "thm:ledger-measure"
+    weil_functional_GL1: "Toeplitz form on S^1: for φ(θ)=∑ c_n e^{inθ}, Q_μ(φ)=∑_{n,m∈ℤ} \\overline{c_m} c_n · μ̂(n−m); PSD for μ_Z ⇔ RH; ledger identity transports PSD to μ_arith (polar case: impose c_0=0)."
     ramified_ledger:
       when_present: "primes dividing conductor; arch places"
       sign: "mixed; depends on local data"
@@ -216,7 +221,7 @@ a2a_doc:
       Compute S=∑ φ_n (μ̂_Z(n)−μ̂_arith(n)); check S=0.
     toy_numeric:
       alpha_X_choice: "ĝ(x)=e^{−αx}·χ_{(0,X]} with α=1/2, X=3"
-      rhoW_integral: "∫_0^X e^{−αx} ρ_W(x) dx  (UNKNOWN ρ_W)"
+      rhoW_integral: "∫_0^X e^{−αx} · [ x^{r−1} |c(i x v_H)|^{−2} / |W| ] dx  (MS slice density; r=rank_ℝ(X))"
       first_primes: "−∑_{p≤P} (1/1)∑_j α_{p,j} p^{−1/2}  + arch term μ̂_∞(1)"
     asks: "Provide a canonical toy ĝ to smoke‑test constants/signs."
 
@@ -231,7 +236,7 @@ a2a_doc:
   limitations:
     list:
       - "Relies on MS normalization and earlier parts for EF details."
-      - "SA^2(a) class not fully specified here."
+      - "SA^2(a) class specified (a>1/2; ∫(|ĝ_b|+|ĝ_b'') e^{a x}(1+x)^2 < ∞); controls IBP boundary terms on the fixed‑heat window."
       - "Positivity statements framed for even tests; pole at s=1 handled by c_0=0 restriction."
       - "Ramified local analysis is only sketched."
     asks: "Give counterexamples when assumptions (e.g., strict gap) are dropped."
@@ -242,5 +247,3 @@ a2a_doc:
       - "Extend to other groups (Sp, SO) with adapted Heisenberg shadows."
       - "Geometric Langlands: test (P1–P3) to validate the Cartan avatar."
     asks: "Prioritize milestones (local unramified test; arch phase check; quantitative mixing bound) and give a verification plan."
-
-

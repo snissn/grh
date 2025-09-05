@@ -4,8 +4,8 @@ a2a_doc:
     title_short: "Fixed‑Heat EF — Part III"
     authors: ["Michael Seiler"]
     venue: "Preprint"
-    year: UNKNOWN
-    version: UNKNOWN
+    year: 2025
+    version: "preprint (unrefereed)"
     url: UNKNOWN
     area: "analytic number theory, automorphic forms"
     normalization: "fixed‑heat explicit formula on spherical model; slice frame (A1), half‑shift (A2), conductor‑uniform fixed‑heat bounds (A3), unramified prime positivity (A4), amplifier gap (A5), ramified damping R*"
@@ -21,9 +21,13 @@ a2a_doc:
       - {name: "A_p", type: "Satake matrix at p", role: "finite Euler factor"}
       - {name: "𝒢_H, L_H", type: "Gram kernel, slice map", role: "A1 frame"}
     normalization_sheet:
+      prime_block: "Rankin–Selberg positivity on PD+: Prime_{π×π̃}(Φ)=∑_{p∤Q(π)}∑_{k≥1}(log p) p^{−k/2} |Tr(A_p^k)|^2 · ĝ(2k log p) ≥ 0. src: Part III Lemma 19."
       finite_places: "Euler factor via Satake params; measure/Satake conv. = UNKNOWN; src: paper:general."
       arch_place: "heat‑regularized EF; PV/scattering/spectral measure conv. = UNKNOWN; src: paper:general."
-      dictionary_constants: "Ĝ(x)=2\\sinh(x/2)·ĝ(2x) (prime vs spectral scaling); src: def:PD-cone."
+      dictionary_constants: "Ĝ(x)=2\\sinh(x/2)·ĝ(2x); ρ_W(x)=(1/(2π))[(1/(1+e^{-x/2}))+2e^{-x/2}], T_{1/2}(x)=1/(1+e^{-x/2}). src: Part III §2.1."
+      terminology: "'MS ledger' = Maaß–Selberg normalization used in Parts I–II; distinct from 'M–S' (Montgomery–Soundararajan) normalization used in Part III §2.1. src: Part III §2.1 header."
+      gl1_notes: "For π=1 (ζ), u₁(t)=π^{it} Γ(1/4−it/2)/Γ(1/4+it/2) is unimodular and even; the fixed‑heat EF gauge (MS‑ledger) yields arch cancellation on the ν‑odd sector. src: Part II §10."
+      notes: "Dictionary aligns abelian slice x with prime grid samples 2k log p; see finite_places entry."
     identities_checked:
       - "GL(m) ledger EF: $W^{(t)}_{zeros}(Φ)=\\sum_{p\\nmid Q}\\sum_{k\\ge1}(\\log p)p^{-k/2}\\Re\\,\\Tr(A_p^k)\\,ĝ(2k\\log p)+\\mathrm{Arch}^{(t)}(Φ)+W^{(t)}_{ram}(Φ)$; src: eq:GLm-ledger-EF."
       - "Finite EF ledger & ε‑net reduction hold for BL tests; src: lem:finite-ledger, lem:finite-net."
@@ -33,7 +37,7 @@ a2a_doc:
   problem_and_claim:
     problem: "Build a finite, reproducible certificate–verifier scheme using fixed‑heat EF that decides GRH(π) (prove/deny) under recorded budgets and positivity filters."
     core_claims:
-      - {id: C1, name: "GRH Certificate Schema completeness", status: program, statement: "Schema + Verifier Phases 0–6 suffice to conclude GRH(π) or produce a falsifying EF witness under A1–A5,R* and ν‑annih⇔GRH from Part II; src: sec:certificates, sec:verifier, alg:verifier."}
+      - {id: C1, name: "GRH Certificate Schema completeness", status: design_complete, src: "def:certificate-schema, alg:verifier-A, alg:verifier"}
       - {id: C2, name: "Amplified Positivity", status: proved, statement: "∃ modulus q, amplifier weights, admissible $Φ∈\\mathcal{PD}^+$ s.t. $\\Geom^{(t)}_{\\mathrm{Amp}}(Φ;q)\\ge0$ for all unitary cuspidal π; src: thm:amplified-positivity."}
       - {id: C3, name: "Finite ledger & ε‑net", status: proved, statement: "BL tests reduce EF to finitely many prime blocks + arch/ram bounds with certified enclosures; a finite ε‑net of tests suffices; src: lem:finite-ledger, lem:finite-net."}
       - {id: C4, name: "ν‑annihilation⇔GRH(π)", status: proved, statement: "Equivalence imported from Part II; src: PII-thm:main-unconditional-II."}
@@ -69,21 +73,21 @@ a2a_doc:
 
   assumptions:
     list:
-      - {id: A1, statement: "Slice frame: measurable family of rays H⊂𝔞 with positive self‑adjoint Gram kernels 𝒢_H giving an L^2 frame", params: "frame constants depend only on X", proved_here: false, proof_src: hyp:foundational, portability: "spherical models across G/K"}
-      - {id: A2, statement: "Raywise half‑shift with distortion: $\\|T^{(H)}_{1/2}-T_{1/2}\\|≤ε_H$, Weyl‑invariant multiplier", params: "ε_H small; κ_X<∞ controls loss", proved_here: false, proof_src: hyp:foundational, portability: "Weyl‑invariant spherical calculus"}
-      - {id: A3, statement: "Fixed‑heat, conductor‑uniform bounds and absolute convergence of $W^{(t)}_{zeros}(Φ)$", params: "$a>1/2$, $t∈[t_{min},t_0]$, constants $C_0(a,m,K),C_1(m,K)$", proved_here: false, proof_src: hyp:foundational, portability: "GL(m)/K"}
-      - {id: A4, statement: "Unramified prime moment positivity", params: "test class PD+/BL; unramified p", proved_here: false, proof_src: hyp:foundational, portability: "Satake‑param models"}
-      - {id: A5, statement: "Quantitative amplifier gap on ν‑odd subspace", params: "gap>0 explicit; depends on (m,K)", proved_here: false, proof_src: hyp:foundational, portability: "depends on spectral gap tech"}
-      - {id: R*, statement: "Ramified damping: conductor‑uniform bounds yielding budget $B_{R*}$ for $\\mathrm{Arch}^{(t)}$ and $W^{(t)}_{ram}$", params: "depends on (m,K,a,t_0)", proved_here: false, proof_src: sec:prelim, portability: "local‑global decomposition"}
+      - {id: A1, statement: "Slice frame: measurable family of rays H⊂𝔞 with positive self‑adjoint Gram kernels 𝒢_H giving an L^2 frame", params: "frame constants depend only on X", proved_here: false, proof_src: "hyp:foundational", portability: "spherical models across G/K"}
+      - {id: A2, statement: "Raywise half‑shift with distortion: $\\|T^{(H)}_{1/2}-T_{1/2}\\|≤ε_H$, Weyl‑invariant multiplier", params: "ε_H small; κ_X<∞ controls loss", proved_here: false, proof_src: "hyp:foundational", portability: "Weyl‑invariant spherical calculus"}
+      - {id: A3, statement: "Fixed‑heat, conductor‑uniform bounds and absolute convergence of $W^{(t)}_{zeros}(Φ)$", params: "$a>1/2$, $t∈[t_{min},t_0]$, constants $C_0(a,m,K),C_1(m,K)$", proved_here: false, proof_src: "hyp:foundational", portability: "GL(m)/K"}
+      - {id: A4, statement: "Unramified prime moment positivity", params: "test class PD+/BL; unramified p", proved_here: false, proof_src: "hyp:foundational", portability: "Satake‑param models"}
+      - {id: A5, statement: "Quantitative amplifier gap on ν‑odd subspace", params: "gap>0 explicit; depends on (m,K)", proved_here: false, proof_src: "hyp:foundational", portability: "depends on spectral gap tech"}
+      - {id: R*, statement: "Ramified damping: conductor‑uniform bounds yielding budget $B_{R*}$ for $\\mathrm{Arch}^{(t)}$ and $W^{(t)}_{ram}$", params: "depends on (m,K,a,t_0)", proved_here: false, proof_src: "sec:prelim", portability: "local‑global decomposition"}
     counterexamples_or_limits: "UNKNOWN"
     asks: "Clarify sharpness and portability (which parts survive other normalizations/groups)."
 
   constructions_and_kernels:
     operators:
-      - {name: "e^{-tA}", formula: "heat semigroup on X; positivity‑preserving", PSD: "yes", src: hyp:foundational}
-      - {name: "Ψ_{1/2}", formula: "spherical half‑shift multiplier", PSD: "UNKNOWN", src: hyp:foundational}
-      - {name: "𝒢_H", formula: "Gram kernel on rays", PSD: "yes", src: hyp:foundational}
-      - {name: "Geom^{(t)}_{Amp}(Φ;q)", formula: "amplified geometric ledger (prime+arch+ram)", PSD: "≥0 under C2", src: thm:amplified-positivity}
+      - {name: "e^{-tA}", formula: "heat semigroup on X; positivity‑preserving", PSD: "yes", src: "hyp:foundational"}
+      - {name: "Ψ_{1/2}", formula: "spherical half‑shift multiplier", PSD: "UNKNOWN", src: "hyp:foundational"}
+      - {name: "𝒢_H", formula: "Gram kernel on rays", PSD: "yes", src: "hyp:foundational"}
+      - {name: "Geom^{(t)}_{Amp}(Φ;q)", formula: "amplified geometric ledger (prime+arch+ram)", PSD: "≥0 under C2", src: "thm:amplified-positivity"}
     factorizations: "EF ledger splits into unramified prime blocks + Arch^{(t)} + Ram^{(t)}; src: eq:GLm-ledger-EF."
     compatibility_checklist:
       commute: "Do $e^{-tA}$, $M(w,0)$, $Ψ_{1/2}$ commute on spherical model? = UNKNOWN"
@@ -95,8 +99,10 @@ a2a_doc:
   explicit_formula_block:
     geometric_side: "∑_{p∤Q}∑_{k≥1}(log p)p^{-k/2} Re Tr(A_p^k) ĝ(2k log p) + Arch^{(t)}(Φ) + W^{(t)}_{ram}(Φ); src: eq:GLm-ledger-EF."
     spectral_side: "W^{(t)}_{zeros}(Φ)=∑_ρ H_t(Φ;ρ) (abs conv. on A3 range); src: hyp:foundational(A3)."
-    regularization: "fixed‑heat t∈[t_min,t_0]; PV usage = UNKNOWN."
-    weil_functional_GL1: "ρ_W(x) and exact density under this normalization = UNKNOWN."
+    regularization: "fixed‑heat t∈[t_min,t_0]; symmetric PV on Re s = 1/2 (MS ledger); src: Part III §2.1."
+    arch_cancellation: "For ν‑odd inputs Φ_asym one has Arch^{(t)}(Φ_asym;π)=0 by evenness of h_{π_v}(τ) and odd weight. src: Part II Lemma 6."
+    linear_identity: "W^{(t)}_{zeros}(Φ)=Arch^{(t)}(Φ)+Prime(Φ)+W^{(t)}_{ram}(Φ) in the fixed‑heat normalization. src: Part II Prop. 13; Part III Prop. 21."
+    weil_functional_GL1: "ρ_W(x) = (1/(2π)) ( 1/(1 + e^{-x/2}) + 2 e^{-x/2} ); T_{1/2}(x) = 1/(1 + e^{-x/2})."
     ramified_ledger: {when_present: "p|Q or arch", sign: "bounded by R*", bound: "±B_{R*}", vanishing_cases: "all finite p unramified; src: eq:GLm-ledger-EF"}
     positivity_table:
       - {term: "prime(unram.)", status: "≥0 under A4/weights", cond: "PD+/BL; RS lower bounds; src: lem:prime-sampling-RS"}
@@ -107,9 +113,9 @@ a2a_doc:
 
   main_results:
     items:
-      - {id: MR1, name: "Amplified Positivity", statement: "∃ amplifier (q,weights) s.t. $\\Geom^{(t)}_{Amp}(Φ;q)≥0$ for all admissible $Φ$", conditions: "A1–A5,R*, PD+", dependencies: "[A1,A2,A3,A4,A5,R*]", status: proved, src: thm:amplified-positivity}
-      - {id: MR2, name: "Finite ledger & ε‑net", statement: "Finite prime ledger + ε‑net suffice for verification", conditions: "BL tests; A3 continuity", dependencies: "[A3]", status: proved, src: lem:finite-ledger, lem:finite-net}
-      - {id: MR3, name: "Verifier correctness (sketch)", statement: "Phases 0–6 return GRH_Verified/Rejected consistent with EF budgets and C4", conditions: "A1–A5,R*, C4", dependencies: "[MR1,MR2,C4]", status: program, src: alg:verifier}
+      - {id: MR1, name: "Amplified Positivity", statement: "∃ amplifier (q,weights) s.t. $\\Geom^{(t)}_{Amp}(Φ;q)≥0$ for all admissible $Φ$", conditions: "A1–A5,R*, PD+", dependencies: "[A1,A2,A3,A4,A5,R*]", status: proved, src: "thm:amplified-positivity"}
+      - {id: MR2, name: "Finite ledger & ε‑net", statement: "Finite prime ledger + ε‑net suffice for verification", conditions: "BL tests; A3 continuity", dependencies: "[A3]", status: proved, src: "lem:finite-ledger, lem:finite-net"}
+      - {id: MR3, name: "Verifier correctness (sketch)", statement: "Phases 0–6 return GRH_Verified/Rejected consistent with EF budgets and C4", conditions: "A1–A5,R*, C4", dependencies: "[MR1,MR2,C4]", status: program, src: "alg:verifier"}
     asks: "Give one‑line invariant‑theoretic reason for each positivity claim."
 
   dependency_graph:
@@ -162,5 +168,3 @@ a2a_doc:
       - "Formalization path: interval arithmetic, Satake input parsers, certified transforms; src: sec:path-to-formalization."
       - "Empirical study of R* budget vs conductor growth."
     asks: "Prioritize milestones (cert format spec, amplifier library, arch/ram budget certifier) and a verification plan with test cases."
-
-

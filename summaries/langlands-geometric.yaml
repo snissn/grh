@@ -34,13 +34,13 @@ a2a_doc:
   problem_and_claim:
     problem: "Give a quantitative, falsifiable GL–EF on stacks with explicit main/error separation, an operator half–shift improving positivity, and a ν–witness barrier linking geometric positivity to GRH-type inputs."
     core_claims:
-      - {id: C1, name: "Filtered GL–EF on stacks", status: proved, statement: "GL–EF identity with M_x, E_x≥0 and absolute convergence." , src: thm:GLEF}
-      - {id: C2, name: "Augmented EF budgets", status: proved, statement: "E_x(T) ≤ α_x B_bdry+β_x B_wild+γ_x B_ss+δ_x B_geom with absolute convergence.", src: thm:III-AEF}
-      - {id: C3, name: "Half–shift positivity", status: proved, statement: "ℋ improves Gram pairing (Loewner) and adds Δ≥0 to EF.", src: thm:III-halfshift}
-      - {id: C4, name: "No‑fake‑positivity", status: proved, statement: "Under ν–projector, odd energy carries no genuine main mass; witness is annihilated under GRH‑type inputs.", src: thm:II-projector,thm:II-witness}
-      - {id: C5, name: "GL₁ specialization", status: proved, statement: "GL–EF reduces to divisor sum minus bounded truncation errors.", src: prop:GL1}
-      - {id: C6, name: "Hodge/Betti form", status: proved, statement: "Betti/Hodge GL–EF with Hodge ledger and subadditivity.", src: thm:betti-GLEF,thm:hodge-subadd,def:hledger}
-      - {id: C7, name: "Equivalence", status: proved, statement: "Analytic fixed–heat suite ⇔ geometric statements under standard hypotheses.", src: thm:GLC}
+      - {id: C1, name: "Filtered GL–EF on stacks", status: proved, statement: "GL–EF identity with M_x, E_x≥0 and absolute convergence.", src: "thm:GLEF"}
+      - {id: C2, name: "Augmented EF budgets", status: proved, statement: "E_x(T) ≤ α_x B_bdry+β_x B_wild+γ_x B_ss+δ_x B_geom with absolute convergence.", src: "thm:III-AEF"}
+      - {id: C3, name: "Half–shift positivity", status: proved, statement: "ℋ improves Gram pairing (Loewner) and adds Δ≥0 to EF.", src: "thm:III-halfshift"}
+      - {id: C4, name: "No‑fake‑positivity", status: proved, statement: "Under ν–projector, odd energy carries no genuine main mass; witness is annihilated under GRH‑type inputs.", src: "thm:II-projector, thm:II-witness"}
+      - {id: C5, name: "GL₁ specialization", status: proved, statement: "GL–EF reduces to divisor sum minus bounded truncation errors.", src: "prop:GL1"}
+      - {id: C6, name: "Hodge/Betti form", status: proved, statement: "Betti/Hodge GL–EF with Hodge ledger and subadditivity.", src: "thm:betti-GLEF, thm:hodge-subadd, def:hledger"}
+      - {id: C7, name: "Equivalence", status: proved, statement: "Analytic fixed–heat suite ⇔ geometric statements under standard hypotheses.", src: "thm:GLC"}
     route_map:
       - {id: R1, name: "Stacky GL–EF", inputs: ["stack Lefschetz","cleanness","generation"], output: "C1", status: proved}
       - {id: R2, name: "Budgets from Parts I–III", inputs: ["A1(A1Norm)","A2(A2Dist)","A4(A4Pos)","R*"], output: "C2", status: imported}
@@ -50,7 +50,7 @@ a2a_doc:
   notation:
     symbols:
       X: "smooth projective curve over 𝔽_q"
-      |X|: "closed points of X"
+      "|X|": "closed points of X"
       F: "𝔽_q(X)"
       G: "reductive group (mainly GL_m)"
       Bun_G: "stack of G-bundles on X"
@@ -70,9 +70,9 @@ a2a_doc:
     asks: "List domains/codomains for each operator and hidden IDs like X=G/K on spherical side, and the precise spectral model."
   spaces_and_classes:
     classes:
-      - {name: "Admissible window (ℓ‑adic)", membership: "HN slices fixed; weights in [w_-,w_+]; properness/cleanness of p,q maps.", src: def:admissible}
-      - {name: "Admissible (Hodge)", membership: "MHM with analogous weight/depth bounds; Hodge ledger defined.", src: def:hledger}
-      - {name: "Slice frame 𝒯", membership: "finite family stable under window ops; Gram‑positive.", src: thm:I-sliceframe}
+      - {name: "Admissible window (ℓ‑adic)", membership: "HN slices fixed; weights in [w_-,w_+]; properness/cleanness of p,q maps.", src: "def:admissible"}
+      - {name: "Admissible (Hodge)", membership: "MHM with analogous weight/depth bounds; Hodge ledger defined.", src: "def:hledger"}
+      - {name: "Slice frame 𝒯", membership: "finite family stable under window ops; Gram‑positive.", src: "thm:I-sliceframe"}
     norms:
       - "Gram norm from slice frame; Loewner order for operators. src: thm:III-halfshift"
       - "Budgets 𝔅 subadditive/monotone under conv/trunc. src: def:ledger,prop:budget,prop:trunc"
@@ -91,21 +91,27 @@ a2a_doc:
     asks: "Clarify sharpness of H.Gen/H.Clean and portability to other G and windows."
   constructions_and_kernels:
     operators:
-      - {name: "ℋ(Φ)=^pτ^{≤0}(Φ*𝓗_ϖ)", property: "Δ≥0; Loewner improvement; budget contraction c∈(0,1].", src: def:halfshift,thm:III-halfshift}
-      - {name: "𝕋_ν", property: "idempotent; splits even/odd energy; odd pairs trivially with main terms.", src: thm:II-projector}
+      - {name: "ℋ(Φ)=^pτ^{≤0}(Φ*𝓗_ϖ)", property: "Δ≥0; Loewner improvement; budget contraction c∈(0,1].", src: "def:halfshift, thm:III-halfshift"}
+      - {name: "𝕋_ν", property: "idempotent; splits even/odd energy; odd pairs trivially with main terms.", src: "thm:II-projector"}
     factorization: "Local term expansions over Fix(𝔽rob;c) stratified by HN; generic vs boundary/wild split. src: def:ME"
     compatibility_checklist:
-      commute_pairwise: "Yes on bounded HN window; convolution and perverse truncation commute up to ledger‑absorbed errors.", src: sec:halfshift,thm:GLEF
-      weyl_invariance: "Hecke/spherical compatible by Satake.", src: sec:dictionary
-      bounded_on_H: "Yes via Loewner and Gram bounds.", src: thm:III-halfshift
-      unitary_equiv: "Model‑independence via Satake equivalence.", src: sec:dictionary
+      commute_pairwise: "Yes on bounded HN window; convolution and perverse truncation commute up to ledger‑absorbed errors."
+      commute_pairwise_src: "sec:halfshift, thm:GLEF"
+      weyl_invariance: "Hecke/spherical compatible by Satake."
+      weyl_invariance_src: "sec:dictionary"
+      bounded_on_H: "Yes via Loewner and Gram bounds."
+      bounded_on_H_src: "thm:III-halfshift"
+      unitary_equiv: "Model‑independence via Satake equivalence."
+      unitary_equiv_src: "sec:dictionary"
     asks: "State the functional calculus used to justify ℋ and where symbol/weight bounds enter the Loewner sandwich."
   explicit_formula_block:
     geometric_side: "Tr(𝔽rob|T_Φ)=∑_{x∈|X|}(M_x(Φ)−E_x(Φ)) with M_x generic strata and E_x boundary/wild/SS/geom. src: thm:GLEF,def:ME"
     spectral_side: "Trace on admissible category; ν‑projector splits even/odd; half–shift adds Δ≥0. src: thm:II-projector,thm:III-halfshift"
     regularization: "weights/purity; properness on window; truncations monotone; absolute convergence of ∑E_x. src: def:admissible,thm:III-AEF"
-    weil_functional_GL1: "ρ_W(x)=k_t(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x); 𝒬_GL1(Φ)=∫_0^∞ ρ_W(x)·ĝ_Φ(x) dx; dictionary constant = 1.", src: app:density,eq:PVWeil-main
-    rho_W_density: "ρ_W(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x) (imported from Parts I–II).", src: app:density
+    weil_functional_GL1: "ρ_W(x)=k_t(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x); 𝒬_GL1(Φ)=∫_0^∞ ρ_W(x)·ĝ_Φ(x) dx; dictionary constant = 1."
+    weil_functional_GL1_src: "app:density, eq:PVWeil-main"
+    rho_W_density: "ρ_W(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x) (imported from Parts I–II)."
+    rho_W_density_src: "app:density"
     ramified_ledger:
       - {term: "boundary", when_present: "HN boundary", sign: "E≥0", bound: "≤α_X(t)·B_bdry (A4 reserve)", vanishing_cases: "no boundary in window"}
       - {term: "wild", when_present: "ramification", sign: "E≥0", bound: "≤C_{R*}·e^{-β(m)·t}·B_wild (conductor exponent α(m,K))", vanishing_cases: "unramified"}
@@ -118,11 +124,11 @@ a2a_doc:
     asks: "Confirm which terms are ≥0 under each admissible class (ℓ‑adic vs Hodge)."
   main_results:
     items:
-      - {id: T1, name: "GL–EF on stacks", statement: "Filtered GL–EF with M/E split and conv.", conditions: "H.Gen,H.Clean", dependencies: ["P1:Stack‑Lefschetz","D1:Dictionary"], status: proved, src: thm:GLEF}
-      - {id: T2, name: "Augmented EF budgets", statement: "E_x bounds in terms of 𝔅 with absolute conv.", conditions: "A1,A2,A4,R*", dependencies: ["I:linearEF"], status: proved(imported), src: thm:III-AEF}
-      - {id: T3, name: "Half–shift Loewner", statement: "EF gain Δ≥0; ⟨·,·⟩ Loewner improvement; budget contraction.", conditions: "admissible window", dependencies: ["Hecke conv","perverse trunc"], status: proved, src: thm:III-halfshift,def:halfshift}
-      - {id: T4, name: "Witness barrier", statement: "Odd energy has no genuine main mass; GRH annihilates fake positivity.", conditions: "GRH‑type", dependencies: ["ν–projector"], status: conditional, src: thm:II-projector,thm:II-witness}
-      - {id: T5, name: "Hodge ledger subadditivity", statement: "B^H subadditive/monotone.", conditions: "MHM admissible", dependencies: ["Betti Satake"], status: proved, src: thm:hodge-subadd}
+      - {id: T1, name: "GL–EF on stacks", statement: "Filtered GL–EF with M/E split and conv.", conditions: "H.Gen,H.Clean", dependencies: ["P1:Stack‑Lefschetz","D1:Dictionary"], status: proved, src: "thm:GLEF"}
+      - {id: T2, name: "Augmented EF budgets", statement: "E_x bounds in terms of 𝔅 with absolute conv.", conditions: "A1,A2,A4,R*", dependencies: ["I:linearEF"], status: proved(imported), src: "thm:III-AEF"}
+      - {id: T3, name: "Half–shift Loewner", statement: "EF gain Δ≥0; ⟨·,·⟩ Loewner improvement; budget contraction.", conditions: "admissible window", dependencies: ["Hecke conv","perverse trunc"], status: proved, src: "thm:III-halfshift, def:halfshift"}
+      - {id: T4, name: "Witness barrier", statement: "Odd energy has no genuine main mass; GRH annihilates fake positivity.", conditions: "GRH‑type", dependencies: ["ν–projector"], status: conditional, src: "thm:II-projector, thm:II-witness"}
+      - {id: T5, name: "Hodge ledger subadditivity", statement: "B^H subadditive/monotone.", conditions: "MHM admissible", dependencies: ["Betti Satake"], status: proved, src: "thm:hodge-subadd"}
     asks: "Give invariant‑theoretic one‑liners explaining each positivity."
   dependency_graph:
     nodes: ["A1Norm","A2Dist","A4Pos","R*","H.Gen","H.Clean","I:linearEF","I:slice","II:projector","II:witness","III:halfshift","III:AEF","D1:Dictionary","P1:Stack‑Lefschetz","T1","T2","T3","T4","T5"]
@@ -192,6 +198,38 @@ a2a_doc:
       - {id: A2, formal_statement: "ε(N)=1/N; κ_X=1.", current_status: "imported", needed_for: "T2", candidates_for_proof: "Part I"}
       - {id: A4, formal_statement: "α_X(t)>0.", current_status: "imported", needed_for: "T2", candidates_for_proof: "Part I"}
       - {id: R*, formal_statement: "Ramified damping inequality with exponents β(m), α(m,K) and constant C_{R*}", current_status: "imported", needed_for: "T2", candidates_for_proof: "Part I"}
+    resolved_inputs:
+      A1:
+        normalization_lock:
+          dictionary_constant: 1
+          description: "Tamagawa/Satake (Godement–Jacquet) measures matched to Maaß–Selberg (PV), with GL–EF dictionary fixed to 1."
+        citations:
+          - "GL Part IV §4.2.1(3) – dictionary constant fixed to 1. :contentReference[oaicite:4]{index=4}"
+          - "Functoriality §3 ‘Normalization Dictionary’. :contentReference[oaicite:5]{index=5}"
+        status: "resolved"
+      A2:
+        epsilon_N: "1/N"
+        kappa_X: 1
+        description: "Constructive half‑shift + tight‑frame Loewner sandwich; ray-regularization error ε(N)=1/N and Loewner distortion κ_X=1."
+        citations:
+          - "Functoriality Lemma 4.1 & (4.4)–(4.5) and Remark 4.2 (ε(N), κ_X). :contentReference[oaicite:6]{index=6}"
+        status: "resolved"
+      A4:
+        alpha_X:
+          definition: "inf_{u≠0} ⟨u, P_t u⟩ / ⟨u, Γ_t u⟩ on the spherical slice"
+          guarantee: "α_X(t) > 0 on t∈[t_min, t_0] (prime-side positivity reserve propagated by Loewner sandwich)."
+          numeric_floor_note: "Reserve derives from Rankin–Selberg mass; usable floor from β(d_r) after heat normalization."
+        citations:
+          - "Functoriality Lemma 4.1 (Positivity reserve) & Remark 4.2. :contentReference[oaicite:7]{index=7}"
+        status: "resolved"
+      R*:
+        damping_bound: "|W_ram^{(t)}(Φ)| ≤ C_{R*}(m,K,t) (1+log Q_K(π))^{α(m,K)} Q_K(π)^{-β(m)} M_t(Φ)"
+        exponents:
+          alpha_mK: "4 m [K:Q]"
+          beta_m: "1/(4 m log 2)"
+        citations:
+          - "Functoriality §3 (R*) and (7.5)–(7.6) with explicit admissible exponents. :contentReference[oaicite:8]{index=8}"
+        status: "resolved"
     asks: "What is the minimum viable theorem if A4 is weakened or R* partially available?"
   limitations:
     list: ["Function‑field context; number‑field archimedean not treated", "Requires fixed HN window and purity/cleanness", "Exact half–shift requires minuscule coweights", "Dependence on imported constants from Parts I–III"]

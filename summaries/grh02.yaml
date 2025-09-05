@@ -3,11 +3,14 @@ a2a_doc:
     title_long: "The ν–Projector, Annihilation vs. GRH, and the Witness Argument — Part II: Fixed–Heat Explicit–Formula Approach"
     title_short: "ν–Projector & GRH (Part II)"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
-    year: UNKNOWN
-    version: UNKNOWN
+    venue: "Unrefereed preprint"
+    year: 2025
+    version: "preprint-2025-09-04"
+    compiled: "2025-09-04"
     url: UNKNOWN
     area: "analytic number theory, automorphic L-functions"
+    msc: ["11M06","11F66","11R42","22E46"]
+    keywords: "Generalized Riemann Hypothesis; explicit formula; ν-involution; spectral gap; amplification; automorphic L-functions"
     normalization: "fixed–heat Maaß–Selberg (Part I)"
     primary_objects:
       - {name: "L(s,π)", type: "automorphic L-function on GL_m/K", role: "GRH target"}
@@ -19,18 +22,37 @@ a2a_doc:
       - {name: "𝒬", type: "Weil energy", role: "quadratic form 𝒬(F)=⟨F,F⟩_Weil", src: "def:PV"}
     normalization_sheet:
       finite_places:
-        euler_factors: "STANDARD (Satake α_{p,j}); explicit weights w_a(p^m) in H_a norm.", src: "app:normalization"
-        measure: "weighted ℓ^2 over p^m via w_a(p^m)>0", src: "app:normalization"
-        satake_convention: UNKNOWN
+        euler_factors: "STANDARD (Satake α_{p,j}); explicit weights w_a(p^m) in H_a norm."
+        euler_factors_src: "app:normalization"
+        measure: "weighted ℓ^2 over p^m via w_a(p^m)>0"
+        measure_src: "app:normalization"
+        satake_convention: "Langlands/unitary: local factor L_p(s,π)=det(1−A_p p^{-s})^{-1}; EF uses Tr(A_p^k) with p^{-k/2} weights"
       arch_place:
-        scattering: "kernel 𝔥_{π_v}(τ)=Re d/ds log γ(s,π_v) on the line", src: "eq:Aarch-def-app"
-        pv_convention: "PV pairing equals Weil pairing after R_t", src: "eq:PVWeil-main"
-        spectral_measure: "μ_t(x)=k_t(x)dx with k_t(x)=(1/2π) e^{-x^2/(8t)} T_{1/2}(x)>0", src: "app:density"
-      dictionary_constants: "W_Φ(u) ↔ ĝ_Φ(2u): UNKNOWN"
+        scattering: "kernel 𝔥_{π_v}(τ)=Re d/ds log γ(s,π_v) on the line"
+        scattering_src: "eq:Aarch-def-app"
+        pv_convention: "PV pairing equals Weil pairing after R_t"
+        pv_convention_src: "eq:PVWeil-main"
+        gamma_factors:
+          GR: "Γ_ℝ(s)=π^{-s/2} Γ(s/2)"
+          GC: "Γ_ℂ(s)=(2π)^{-s} Γ(s)"
+          product: "γ(s,π_v) built from Γ_ℝ/Γ_ℂ with Langlands shifts; h_{π_v}(τ)=Re d/ds log γ(s,π_v)|_{s=1/2+iτ} is even in τ"
+          src: "partII: Lemma 6, eqs. (7)–(11)"
+        kernel_even_in_tau: true
+        kernel_even_in_tau_src: "partII:eqs.(10)–(11); Lemma 6"
+        pv_weil_refs: { EF_id: "(6)", PV_Weil: "(8)", Arch_cancel_on_odd: "(9)" }
+        spectral_measure: "μ_t(x)=k_t(x)dx with k_t(x)=(1/2π) e^{-x^2/(8t)} T_{1/2}(x)>0"
+        spectral_measure_src: "app:density"
+      dictionary_constants: "GL(1): Ĝ_Φ(x) = 2 sinh(x/2) · ĝ_Φ(2x); prime grid x = 2k·log p"
+      dictionary_constants_K: "GL(1)/K: Ĝ_Φ(x) = 2 sinh(x/2) · ĝ_Φ(2x); prime grid x = 2k·log N𝔭"
+      dictionary_note: "Number-field variant uses log N𝔭 grid; same 2·sinh(x/2) factor and ĝ(2x) scaling"
     identities_checked:
       - "EF_linear: W_zeros(Φ)=A_arch(Φ)+Primes(Φ)+Ram(Φ). src: prop:fixed-heat-EF"
+      - "A5_commutes_Tν (parity-preserving): A preserves ν-parity and [A,Tν]=0. src: partII:Def. 22"
+      - "annihilation⇒GRH: Q(Φ_asym)=0 for all Φ implies GRH(π). src: partII:Thm 1 & §8 (witness)"
+      - "A5_gap⇒annihilation (unconditional): strict A5 gap on ν-odd subspace forces Q(Φ_asym)=0. src: partII:Thm 24, Cor. 27"
+      - "GL(1) normalization check: AEF gauge aligns so A_arch=0 on ν-odd sector. src: partII:§10"
       - "PV↔Weil bridge: EF_π[F,G]=⟨F,G⟩_Weil + A_arch + W_ram. src: eq:PVWeil-bridge"
-      - "Zero-side PV equals Weil pairing with 1: PV(Φ;π)=⟨\hatΦ,\hat1⟩_Weil. src: eq:PVWeil-main"
+      - "Zero-side PV equals Weil pairing with 1: PV(Φ;π)=⟨\\hatΦ,\\hat1⟩_Weil. src: eq:PVWeil-main"
       - "A_arch vanishes on ν-odd inputs. src: eq:Aarch-vanish"
       - "R_t commutes with T_ν; R_t PV-self-adjoint. src: lem:Rt-comm"
   asks: "If any constant differs from a standard reference (e.g., IK04/Tate), document and justify with exact comparison maps."
@@ -38,10 +60,10 @@ a2a_doc:
   problem_and_claim:
     problem: "Establish that ν–odd annihilation of Weil energy on a fixed–heat window is equivalent to GRH(π), and reduce unconditional annihilation to a strict A5 spectral gap; give a constructive witness from any off-line zero."
     core_claims:
-      - {id: C1, name: "Annihilation ⇒ GRH(π)", status: "proved", statement: "If 𝒬(\hatΦ_asym)=0 for all Φ∈ℙ𝔻^+, then GRH(π). Witness: any off-line zero yields Φ with 𝒬(\hatΦ_asym)>0.", src: "thm:witness-offline, lem:witness"}
-      - {id: C2, name: "A5 gap ⇒ unconditional annihilation", status: "proved", statement: "Strict A5 gap on ν-odd gives 𝒬(\hatΦ_asym)=0 for all Φ; hence GRH(π) by C1.", src: "thm:A5-gap, cor:unconditional-annihilation"}
+      - {id: C1, name: "Annihilation ⇒ GRH(π)", status: "proved", statement: "If 𝒬(\\hatΦ_asym)=0 for all Φ∈ℙ𝔻^+, then GRH(π). Witness: any off-line zero yields Φ with 𝒬(\\hatΦ_asym)>0.", src: "thm:witness-offline, lem:witness"}
+      - {id: C2, name: "A5 gap ⇒ unconditional annihilation", status: "proved", statement: "Strict A5 gap on ν-odd gives 𝒬(\\hatΦ_asym)=0 for all Φ; hence GRH(π) by C1.", src: "thm:A5-gap, cor:unconditional-annihilation"}
       - {id: C3, name: "PV/Weil bridge with parity", status: "proved", statement: "EF pairing decomposes as Weil + Arch + Ram; Arch term cancels on ν-odd.", src: "lem:PVWeil"}
-      - {id: C4, name: "Bilinear annihilation equivalence", status: "proved", statement: "𝒬(Φ)=0 ∀Φ ⇔ ⟨\hatΦ_asym,\hatΨ⟩_Weil=0 ∀Φ,Ψ.", src: "prop:bilinear"}
+      - {id: C4, name: "Bilinear annihilation equivalence", status: "proved", statement: "𝒬(Φ)=0 ∀Φ ⇔ ⟨\\hatΦ_asym,\\hatΨ⟩_Weil=0 ∀Φ,Ψ.", src: "prop:bilinear"}
     route_map:
       - {id: R1, name: "Witness route", inputs: ["PV↔Weil","Arch=0 on ν-odd","R* bound"], output: "contradiction from off-line zero", status: "proved", src: "sec:ann-to-GRH"}
       - {id: R2, name: "Amplifier route", inputs: ["A5 gap","A3/R* budgets","HL positivity"], output: "ν-odd annihilation", status: "proved (uses Part I)", src: "sec:unconditional-annihilation"}
@@ -49,22 +71,34 @@ a2a_doc:
 
   notation:
     symbols:
-      π: "unitary cuspidal on GL_m/K"
-      ~π: "contragredient of π"
-      L(s,π): "standard L-function"
-      μ_t^π: "even zero-measure on spectral line", src: "lem:Tnu-selfadj-Weil"
-      r_t(τ): "even heat symbol", src: "lem:Rt-comm"
-      R_t: "fixed–heat operator (PSD)", src: "def:PV"
-      T_ν: "ν-involution; (T_ν f)_π(t)=u_π(t)f_{~π}(-t)", src: "def:Tnu"
-      u_π(t): "unimodular spectral phase; u_π(t)u_{~π}(-t)=1", src: "def:Tnu"
-      Φ: "spherical test; ĝ_Φ its abelian slice", src: "sec:EF-tests"
-      g[F,G](τ): "spectral weight = \hat F(\tau)\overline{\hat G(\tau)}", src: "def:PV"
-      ℙ𝔻^+: "positive-definite test cone in BL∩S_a", src: "def:test-classes"
-      𝒬(F): "Weil energy ⟨F,F⟩_Weil", src: "def:PV"
-      A_arch, W_ram: "archimedean / ramified EF blocks", src: "lem:PVWeil"
+      "π": "unitary cuspidal on GL_m/K"
+      "~π": "contragredient of π"
+      "L(s,π)": "standard L-function"
+      "μ_t^π": "even zero-measure on spectral line"
+      "μ_t^π_src": "lem:Tnu-selfadj-Weil"
+      "r_t(τ)": "even heat symbol"
+      "r_t(τ)_src": "lem:Rt-comm"
+      "R_t": "fixed–heat operator (PSD)"
+      "R_t_src": "def:PV"
+      "T_ν": "ν-involution; (T_ν f)_π(t)=u_π(t)f_{~π}(-t)"
+      "T_ν_src": "def:Tnu"
+      "u_π(t)": "unimodular spectral phase; u_π(t)u_{~π}(-t)=1"
+      "u_π(t)_src": "def:Tnu"
+      "Φ": "spherical test; ĝ_Φ its abelian slice"
+      "Φ_src": "sec:EF-tests"
+      "g[F,G](τ)": "spectral weight = \\hat F(\\tau)\\overline{\\hat G(\\tau)}"
+      "g[F,G](τ)_src": "def:PV"
+      "ℙ𝔻^+": "positive-definite test cone in BL∩S_a"
+      "ℙ𝔻^+_src": "def:test-classes"
+      "𝒬(F)": "Weil energy ⟨F,F⟩_Weil"
+      "𝒬(F)_src": "def:PV"
+      "A_arch, W_ram": "archimedean / ramified EF blocks"
+      "A_arch, W_ram_src": "lem:PVWeil"
     equivalences:
-      "author T_ν ↔ community 'FE-involution'"; "Weil pairing ↔ Gram pairing via R_t"; "PV pairing ↔ EF zero-side PV"
-    asks: "List explicit domains/codomains for R_t,T_ν and identify X=G/K and its spherical transform \u005EX."
+      - "author T_ν ↔ community 'FE-involution'"
+      - "Weil pairing ↔ Gram pairing via R_t"
+      - "PV pairing ↔ EF zero-side PV"
+    asks: "List explicit domains/codomains for R_t,T_ν and identify X=G/K and its spherical transform \\u005EX."
 
   spaces_and_classes:
     list:
@@ -91,25 +125,35 @@ a2a_doc:
       - {name: "R_t", formula: "⟨F,G⟩_Weil=⟨F,R_tG⟩_PV; r_t even; PSD", props: ["commutes with T_ν","PV self-adjoint"], src: "lem:Rt-comm, def:PV"}
       - {name: "T_ν", formula: "(T_ν f)_π(t)=u_π(t)f_{~π}(-t)", props: ["unitary","self-adjoint on Weil","involution"], src: "def:Tnu, lem:Tnu-selfadj-Weil"}
       - {name: "𝒜", formula: "𝒜_q=∑_χ w_q(χ)U_χ (Selberg weights)", props: ["PSD","contractive","ν-parity-preserving","gap"], src: "def:A5, thm:A5-gap"}
-    factorization_identities: "Odd-energy structure: 𝒬(H)=EF_π[H,H]-W_ram(Φ_H;π) with A_arch=0 on ν-odd.", src: "prop:odd-energy-structure"
+    factorization_identities: "Odd-energy structure: 𝒬(H)=EF_π[H,H]-W_ram(Φ_H;π) with A_arch=0 on ν-odd."
+    factorization_identities_src: "prop:odd-energy-structure"
     compatibility_checklist:
       commute: {R_t_Tν: true, R_t_𝒜: UNKNOWN, 𝒜_Tν: true}
-      weyl_invariant: "yes for R_t,𝒜; T_ν unitary", src: "lem:Rt-comm, def:A5"
-      bounded: "R_t bounded on window; 𝒜 contraction", src: "A3, def:A5"
-      model_independence_R_t: "yes by unitary equivalence", src: "Part I"
+      weyl_invariant: "yes for R_t,𝒜; T_ν unitary"
+      weyl_invariant_src: "lem:Rt-comm, def:A5"
+      bounded: "R_t bounded on window; 𝒜 contraction"
+      bounded_src: "A3, def:A5"
+      model_independence_R_t: "yes by unitary equivalence"
+      model_independence_R_t_src: "Part I"
     asks: "State the functional calculus for R_t and where symbol bounds (K_∞,L_*) enter."
 
   explicit_formula_block:
     structure:
-      zeros_side: "PV(Φ;π)=⟨\hatΦ,\hat1⟩_Weil", src: "eq:PVWeil-main"
-      arch: "A_arch(Φ)=(1/2π)∑_{v|∞}∫ Φ(τ)𝔥_{π_v}(τ)dτ; vanishes for ν-odd", src: "eq:Aarch-def-app, eq:Aarch-vanish"
-      primes: "unramified Euler data via Satake; weighted sums over m log p", src: "prop:fixed-heat-EF"
-      ramified: "finite S; dominated by R* with Q_K(π)^(-βt)", src: "eq:witness-Rast-use, prop:odd-energy-structure"
-    weil_functional_GL1: "density ρ_W(x)=k_t(x)=(1/2π)e^{-x^2/(8t)}T_{1/2}(x) on abelian line; consistent with RH check.", src: "app:density, sec:GL1-check"
+      zeros_side: "PV(Φ;π)=⟨\\hatΦ,\\hat1⟩_Weil"
+      zeros_side_src: "eq:PVWeil-main"
+      arch: "A_arch(Φ)=(1/2π)∑_{v|∞}∫ Φ(τ)𝔥_{π_v}(τ)dτ; vanishes for ν-odd"
+      arch_src: "eq:Aarch-def-app, eq:Aarch-vanish"
+      primes: "unramified Euler data via Satake; weighted sums over m log p"
+      primes_src: "prop:fixed-heat-EF"
+      ramified: "finite S; dominated by R* with Q_K(π)^(-βt)"
+      ramified_src: "eq:witness-Rast-use, prop:odd-energy-structure"
+    weil_functional_GL1: "density ρ_W(x)=k_t(x)=(1/2π)e^{-x^2/(8t)}T_{1/2}(x) on abelian line; consistent with RH check."
+    weil_functional_GL1_src: "app:density, sec:GL1-check"
     ramified_ledger:
       when_present: "p∈S(π)"
       sign: "indefinite"
-      bound: "≪ (log Q)^{α} Q^{-β t} M(Φ)", src: "eq:witness-Rast-use"
+      bound: "≪ (log Q)^{α} Q^{-β t} M(Φ)"
+      bound_src: "eq:witness-Rast-use"
       vanishing_cases: "all finite p unramified"
     positivity_table:
       - {term: "arch (ν-odd)", status: "0", cond: "ν-odd input", src: "eq:Aarch-vanish"}
@@ -120,8 +164,8 @@ a2a_doc:
   main_results:
     list:
       - {id: T1, name: "Strict A5 gap", statement: "𝒬(𝒜F)≤(1-η)𝒬(F) on 𝓦^-_ν", conditions: "A5 construction, window bounds", dependencies: ["A1","A2","A3","HL_pos"], status: "proved (Part I)", src: "thm:A5-gap"}
-      - {id: C1b, name: "Unconditional annihilation", statement: "𝒬(\hatΦ_asym)=0 ∀Φ∈ℙ𝔻^+", conditions: "T1 + A3/R*", dependencies: ["T1","A3","A4_R*"], status: "proved", src: "cor:unconditional-annihilation"}
-      - {id: T2, name: "Witness from off-line zero", statement: "∃Φ∈ℙ𝔻^+ with 𝒬(\hatΦ_asym)>0 if ∃ρ with Re ρ≠1/2", conditions: "t∈[t_min,t0], ε>0", dependencies: ["PV↔Weil","A_arch=0","R*"], status: "proved", src: "thm:witness-offline, lem:witness"}
+      - {id: C1b, name: "Unconditional annihilation", statement: "𝒬(\\hatΦ_asym)=0 ∀Φ∈ℙ𝔻^+", conditions: "T1 + A3/R*", dependencies: ["T1","A3","A4_R*"], status: "proved", src: "cor:unconditional-annihilation"}
+      - {id: T2, name: "Witness from off-line zero", statement: "∃Φ∈ℙ𝔻^+ with 𝒬(\\hatΦ_asym)>0 if ∃ρ with Re ρ≠1/2", conditions: "t∈[t_min,t0], ε>0", dependencies: ["PV↔Weil","A_arch=0","R*"], status: "proved", src: "thm:witness-offline, lem:witness"}
       - {id: S1, name: "PV↔Weil bridge", statement: "EF=Weil+Arch+Ram; Arch vanishes on ν-odd", conditions: "fixed-heat normalization", dependencies: ["A3"], status: "proved", src: "lem:PVWeil"}
       - {id: S2, name: "Bilinear annihilation", statement: "𝒬≡0 ⇔ ⟨·,·⟩_Weil vanishes between ν-odd and all tests", conditions: "polarization", dependencies: ["A3"], status: "proved", src: "prop:bilinear"}
     asks: "Give invariant-theoretic 1-liners for each positivity/cancellation."
@@ -129,8 +173,17 @@ a2a_doc:
   dependency_graph:
     nodes: ["A1","A2","A3","A4_R*","A5","HL_pos","density","T1","C1b","T2","S1","S2"]
     edges:
-      - "A1 -> T1"; - "A2 -> T1"; - "A3 -> S1"; - "A3 -> C1b"; - "A4_R* -> C1b"; - "A5 -> T1"
-      - "S1 -> T2"; - "T1 -> C1b"; - "HL_pos -> T1"; - "density -> T2"; - "S2 -> C1b"
+      - "A1 -> T1"
+      - "A2 -> T1"
+      - "A3 -> S1"
+      - "A3 -> C1b"
+      - "A4_R* -> C1b"
+      - "A5 -> T1"
+      - "S1 -> T2"
+      - "T1 -> C1b"
+      - "HL_pos -> T1"
+      - "density -> T2"
+      - "S2 -> C1b"
     asks: "Mark any optional branches/cycles (none expected)."
 
   proof_skeletons:
@@ -196,5 +249,3 @@ a2a_doc:
       - "Quantify η(m,K,t_window) and optimize the witness thresholds Q_*(δ;t,ε)."
       - "Explore alternative kernels beyond fixed–heat keeping PV bridge."
     asks: "Prioritize milestones: (i) explicit η bounds; (ii) automated witness constructor; (iii) GL(1)–GL(m) normalization audit."
-
-

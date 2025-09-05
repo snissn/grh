@@ -20,7 +20,7 @@ DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 
 # Phony targets
-.PHONY: all clean show show-json pack json yaml
+.PHONY: all clean show show-json pack json yaml lint
 
 # Default: build both YAML stream and JSON array
 all: $(COMBINED_JSON)
@@ -28,6 +28,9 @@ all: $(COMBINED_JSON)
 # Convenience targets
 yaml: $(COMBINED)
 json: $(COMBINED_JSON)
+
+lint:
+	@bash scripts/lint_yaml.sh
 
 $(COMBINED): $(SOURCES) scripts/combine_yaml.sh
 	@bash scripts/combine_yaml.sh "$(COMBINED)" $(SOURCES)

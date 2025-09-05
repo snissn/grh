@@ -4,8 +4,8 @@ a2a_doc:
     title_short: "Heisenberg Shadow"
     authors: ["Michael Seiler"]
     venue: "preprint"
-    year: UNKNOWN
-    version: UNKNOWN
+    year: "2025"
+    version: "preprint-2025-09-03"
     url: "orcid:0009-0009-5529-2008"
     area: "complex analysis, several complex variables, microlocal/CR, semiclassical"
     normalization: "Heisenberg contact form; unit circle calibration"
@@ -22,12 +22,18 @@ a2a_doc:
       - {name: "w_ρ", type: "weight", role: "c_n (det L_ρ)^{1/4}", src: "thm:Szego-universal"}
       - {name: "𝒲_{Ω,z0,n}", type: "coefficient functionals", role: "Cauchy/Laurent via host pairing", src: "def:host-III"}
     normalization_sheet:
-      finite_places: UNKNOWN
+      finite_places: "N/A (Part III — no finite-place ledger)"
       arch_place:
-        scattering_matrix: UNKNOWN
+        scattering_matrix: "N/A (Part III)"
         pv_convention: "∮ counterclockwise; (2πJ)^{-1}∮⋯dz; on S¹, dz/z = J dθ"
-        spectral_measure: UNKNOWN
-      dictionary_constants: UNKNOWN
+        spectral_measure: "dθ/2π on S¹ (with α_H = dθ)"
+      dictionary_constants:
+        circle_total_measure: "∮_{S¹} α_H = 2π"
+        alpha_C_identity: "dz/z = J α_H on |z|=1"
+        cauchy_prefactor: "(2πJ)^{-1}"
+        host_pairing_prefactor: "1/(2π)"
+        maslov_oscillator: "μ = 2 (1D harmonic oscillator)"
+        szego_weight: "w_ρ = c_n (det L_ρ)^{1/4} (c_n fixed by unit ball)"
     identities_checked:
       - "∮_{γ̃} dt = −∮_γ (x dy−y dx) = −2 Area(γ). src: lem:action-holonomy"
       - "ℋ[f;Γ] = ∫_{Γ} f(z) dz with ℋ via ω_H. src: Program A"
@@ -47,6 +53,7 @@ a2a_doc:
       - {id: C6, name: "i = J in the shadow", status: "proved", statement: "Algebraic i represents quarter-turn J after projection π.", src: "Anatomy/Demystify i"}
       - {id: C7, name: "Rigidity/initiality of host", status: "proved", statement: "Circle host is unique (up to norm.) and initial in HolCalc.", src: "thm:rigidity-III, thm:initial-object, cor:unique-host"}
       - {id: C8, name: "Zeta/Heisenberg link", status: "conjectured", statement: "ζ(s) properties reflect deeper Heisenberg structure.", src: "Conjecture on ζ"}
+    frontier_claims: ["C8 — Conjecture on ζ (frontier claim)"]
     route_map:
       - {id: R1, name: "Holonomy→Residues", inputs: ["(H_1,θ,J,π)", "ω_H", "Γ piecewise C¹", "f holomorphic"], output: "Residue identity + corner stability", status: "complete"}
       - {id: R2, name: "Heisenberg parametrix", inputs: ["∂Ω strictly pseudoconvex", "charts Φ_p", "Levi L_ρ"], output: "S_Ω ≍ U^* M_w S_{H_n} M_w U", status: "complete"}
@@ -108,11 +115,11 @@ a2a_doc:
     asks: ["State the exact functional calculus/symbol bounds used in the parametrix and where they enter."]
 
   explicit_formula_block:
-    geometric_side: UNKNOWN
-    spectral_side: UNKNOWN
-    regularizations: UNKNOWN
-    weil_functional: UNKNOWN
-    ramified_ledger: {when_present: UNKNOWN, sign: UNKNOWN, bound: UNKNOWN, vanishing_cases: UNKNOWN}
+    geometric_side: "N/A in Part III — EF geometry assembled in Part IV (Adelic Holonomy Identity)."
+    spectral_side: "N/A in Part III — zeros/trivial/gamma terms handled in Part IV; geometric ν-operator in Part V."
+    regularizations: "N/A in Part III (see damping/ledger treatment in later parts)."
+    weil_functional: "N/A in Part III; see the Weil explicit-formula normalization in Part IV."
+    ramified_ledger: {when_present: "N/A (Part III)", sign: "N/A", bound: "N/A", vanishing_cases: "N/A"}
     positivity_table: []
     asks: ["Not an EF paper, but if a ζ-link is intended, specify the EF specialization and test space."]
 
@@ -195,4 +202,3 @@ a2a_doc:
   projections:
     items: ["Extend host formalism to H_n and general CR manifolds.", "Globalize Szegő universality with explicit remainders.", "Derive BS/EBK for broader integrable systems via holonomy.", "Investigate ζ via Heisenberg models of test functions."]
     asks: ["Prioritize milestones and a verification plan (unit ball calibration → general domains → quantitative remainders)."]
-

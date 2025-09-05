@@ -3,10 +3,13 @@ a2a_doc:
     title_long: "Holonomy Universality Beyond the Disk: Riemann Maps, Domains, and Hardy/Smirnov Classes on a Single Heisenberg Slice"
     title_short: "Holonomy Universality Beyond the Disk"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
+    venue: "Preprint (CC BY 4.0)"
     year: 2025
-    version: "Part II; LaTeX draft with \\date{\\today}"
-    url: UNKNOWN
+    date: "2025-09-03"
+    msc_primary: "30E20"
+    msc_secondary: ["30C35","53C17"]
+    version: "Part II; preprint dated 2025-09-03"
+    url: "file:///mnt/data/Heisenberg-holonomy-II.pdf"
     area: "complex analysis, Heisenberg geometry, boundary integral methods"
     normalization: "Heisenberg slice H_1 ≅ S^1×ℝ with α_H=dθ; w=e^{Jθ}, J^2=-1"
     primary_objects:
@@ -151,4 +154,3 @@ a2a_doc:
   projections:
     items: ["Quantitative bounds for W in terms of quasisymmetry modulus.", "Automated quadrature on H_1 for domain functionals.", "Extensions to vector-valued kernels, higher connectivity with branch cuts.", "Links to noncommutative geometry/physics via A_g and holonomy."]
     asks: "Prioritize milestones and a verification plan (benchmarks: disk, half-plane, annulus, Koch-like quasicircle)."
-

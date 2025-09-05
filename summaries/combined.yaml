@@ -1,6 +1,6 @@
 ---
 collection_meta:
-  generated_at: 2025-09-05T01:54:45Z
+  generated_at: 2025-09-05T20:29:43Z
   source_dir: /Users/michaelseiler/dev/snissn/physics/RH/summaries
   file_count: 16
 table_of_contents:
@@ -20,19 +20,19 @@ table_of_contents:
     file: grh02.yaml
     title: "The ν–Projector, Annihilation vs. GRH, and the Witness Argument — Part II: Fixed–Heat Explicit–Formula Approach"
     authors: ["Michael Seiler"]
-    year: UNKNOWN
+    year: 2025
     area: "analytic number theory, automorphic L-functions"
   - doc_id: grh03
     file: grh03.yaml
     title: "Fixed‑Heat EF Infrastructure for Automorphic $L$–functions on $\\mathrm{GL}_m/K$ — Part III: Applications, Bilinear Annihilation, and GRH Certificates"
     authors: ["Michael Seiler"]
-    year: UNKNOWN
+    year: 2025
     area: "analytic number theory, automorphic forms"
   - doc_id: heisenberg01
     file: heisenberg01.yaml
     title: "Cauchy, Laurent, and Residues as Holonomy on a Constrained Heisenberg Slice"
     authors: ["Michael Seiler"]
-    year: "UNKNOWN"
+    year: "2025"
     area: "complex analysis; CR/Heisenberg geometry; holonomy"
   - doc_id: heisenberg02
     file: heisenberg02.yaml
@@ -44,25 +44,25 @@ table_of_contents:
     file: heisenberg03.yaml
     title: "The Heisenberg Shadow: Reframing the Foundations of Analysis"
     authors: ["Michael Seiler"]
-    year: UNKNOWN
+    year: "2025"
     area: "complex analysis, several complex variables, microlocal/CR, semiclassical"
   - doc_id: heisenberg04
     file: heisenberg04.yaml
     title: "Heisenberg Holonomy IV: Adelic Modulus, Holonomy, and the Explicit Formula"
-    authors: UNKNOWN
-    year: UNKNOWN
+    authors: "Michael Seiler"
+    year: 2025
     area: "analytic number theory; adelic harmonic analysis; Heisenberg geometry"
   - doc_id: heisenberg05
     file: heisenberg05.yaml
     title: "Heisenberg Holonomy V: The $\\nu$‑involution as a Geometric Operator on the Adelic Heisenberg Moduli Space"
     authors: ["Michael Seiler"]
-    year: UNKNOWN
+    year: 2025
     area: "analytic number theory; explicit formula; automorphic L‑functions; Heisenberg/adelic geometry"
   - doc_id: heisenberg06
     file: heisenberg06.yaml
     title: "Heisenberg Holonomy VI: Higher Holonomy and the Geometric Annihilation Principle for GL(m)"
     authors: ["Michael Seiler"]
-    year: UNKNOWN
+    year: "2025"
     area: "analytic number theory; automorphic forms; representation theory; geometric Langlands"
   - doc_id: langlands-functoriality
     file: langlands-functoriality.yaml
@@ -103,7 +103,7 @@ table_of_contents:
 ---
 doc_id: grand-riemann-hypothesis
 source: grand-riemann-hypothesis.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "The Grand Riemann Hypothesis from a Geometric Annihilation Principle: A Self‑Contained Proof"
@@ -132,32 +132,32 @@ a2a_doc:
         satake_params: UNKNOWN
         src: "sec:normalization-audit"
       arch_place:
-        heat_multiplier: "$\widetilde{k_t}(λ)=e^{-t(\|λ\|^2+c_X)}$"
-        pv_convention: "symmetric PV on $\Re s=\tfrac12$ (MS)."
+        heat_multiplier: "$\\widetilde{k_t}(λ)=e^{-t(\\|λ\\|^2+c_X)}$"
+        pv_convention: "symmetric PV on $\\Re s=\\tfrac12$ (MS)."
         spectral_measure: "MS/Plancherel on spherical line."
         src: "MS–Plancherel def., sec:normalization-audit"
       dictionary_constants:
-        mapping: "$W_Φ(u) \leftrightarrow \widehat g_Φ(2u)$; $\rho_t(u)=\mu_t(2u)$."
-        factors: "raywise factor $\widehat G_Φ(x)=2\sinh(x/2)\widehat g_Φ(2x)$."
+        mapping: "$W_Φ(u) \\leftrightarrow \\widehat g_Φ(2u)$; $\\rho_t(u)=\\mu_t(2u)$."
+        factors: "raywise factor $\\widehat G_Φ(x)=2\\sinh(x/2)\\widehat g_Φ(2x)$."
         src: "sec:isometry; eq:ms-dictionary"
     identities_checked:
-      - "Isometry: ⟨W_Φ,W_Ψ⟩_{Hol}=⟨ĝ_Φ,ĝ_Ψ⟩_{MS} via $\rho_t(u)=\mu_t(2u)$ and $x=2u$ scaling. src: sec:isometry"
+      - "Isometry: ⟨W_Φ,W_Ψ⟩_{Hol}=⟨ĝ_Φ,ĝ_Ψ⟩_{MS} via $\\rho_t(u)=\\mu_t(2u)$ and $x=2u$ scaling. src: sec:isometry"
       - "Unimodularity: $|u_π(τ)|=1$ and $u_π(τ)u_π(-τ)=1$. src: def:Tpi, def:Tnu_analytic"
       - "Commutation: $R_t T^{(m)}_π=T^{(m)}_π R_t$ and $R_t R^{(m)}=R^{(m)} R_t$. src: prop:Rt_properties, prop:stability"
-      - "EF (fixed‑heat): $\EF_{zeros}(ĝ_t;π)=\Primes(ĝ_t;π)+\Arch(ĝ_t;π)+\Ram(ĝ_t;π)$. src: thm:fixed_heat_ef"
+      - "EF (fixed‑heat): $\\EF_{zeros}(ĝ_t;π)=\\Primes(ĝ_t;π)+\\Arch(ĝ_t;π)+\\Ram(ĝ_t;π)$. src: thm:fixed_heat_ef"
     asks: "If any constant differs from Iwaniec–Kowalski/Weil conventions, list it in the audit table with a derivation."
 
   problem_and_claim:
     problem: "Show GRH for GL(m)/K by proving that any off‑line zero forces positive ν‑odd energy on the realizable holonomy cone, contradicting a geometric annihilation principle that kills all ν‑odd realizable profiles."
     core_claims:
       - {id: R1, name: "Fixed‑heat EF", status: proved, statement: "EF holds for tests in 𝒮_a with $t∈[t_{min},t_0]$.", src: "thm:fixed_heat_ef"}
-      - {id: R2, name: "PV–Weil bridge", status: proved, statement: "Define $R_t$ PSD; energy $\mathcal Q_W(ĝ)=⟨ĝ,R_t ĝ⟩_{MS}$; arch block cancels on ν‑odd.", src: "prop:Rt_properties; lem:arch_cancellation"}
-      - {id: R3, name: "Ledger–Holonomy isometry", status: proved, statement: "Unitary dictionary $W_Φ \leftrightarrow \widehat g_Φ(2\cdot)$; matches 𝒯_ν with 𝒢_ν.", src: "sec:isometry"}
+      - {id: R2, name: "PV–Weil bridge", status: proved, statement: "Define $R_t$ PSD; energy $\\mathcal Q_W(ĝ)=⟨ĝ,R_t ĝ⟩_{MS}$; arch block cancels on ν‑odd.", src: "prop:Rt_properties; lem:arch_cancellation"}
+      - {id: R3, name: "Ledger–Holonomy isometry", status: proved, statement: "Unitary dictionary $W_Φ \\leftrightarrow \\widehat g_Φ(2\\cdot)$; matches 𝒯_ν with 𝒢_ν.", src: "sec:isometry"}
       - {id: R4, name: "Geometric ν‑involution", status: proved, statement: "𝒢_ν:=T^{(m)}_π∘R^{(m)} is unitary involution on ℛ and realizes 𝒯_ν.", src: "prop:Gnu-properties"}
       - {id: R5, name: "Weyl‑equivariant uncertainty", status: proved, statement: "Sectoral mass concentration forces complementary decay after $w_0$‑Fourier; quantitative $c(r,Δ)$.", src: "lem:weyl-uncertainty"}
-      - {id: R6, name: "GAP", status: proved, statement: "If $W∈ℛ$ is ν‑odd then $W≡0$; hence $ℛ^-=\{0\}$.", src: "thm:GAP"}
-      - {id: R7, name: "Witness from off‑line zero", status: proved, statement: "Any zero with $\Re s≠\tfrac12$ yields ν‑odd test with strictly positive energy after costs.", src: "thm:witness; prop:ramified_damping; app:pv_bounds"}
-      - {id: R8, name: "GRH", status: proved, statement: "R6 + R7 ⇒ contradiction unless all zeros have $\Re s=\tfrac12$; GL(1) recovers RH.", src: "sec:grh-proof; sec:gl1"}
+      - {id: R6, name: "GAP", status: proved, statement: "If $W∈ℛ$ is ν‑odd then $W≡0$; hence $ℛ^-=\\{0\\}$.", src: "thm:GAP"}
+      - {id: R7, name: "Witness from off‑line zero", status: proved, statement: "Any zero with $\\Re s≠\\tfrac12$ yields ν‑odd test with strictly positive energy after costs.", src: "thm:witness; prop:ramified_damping; app:pv_bounds"}
+      - {id: R8, name: "GRH", status: proved, statement: "R6 + R7 ⇒ contradiction unless all zeros have $\\Re s=\\tfrac12$; GL(1) recovers RH.", src: "sec:grh-proof; sec:gl1"}
     route_map:
       - {id: A, name: "GAP + Witness ⇒ GRH", inputs: [R1,R2,R3,R4,R5], output: R6, status: proved}
       - {id: B, name: "Off‑line zero ⇒ ν‑odd energy", inputs: [R1,R2,PV,ramified], output: R7, status: proved}
@@ -185,7 +185,7 @@ a2a_doc:
     equivalences:
       - {author: "W_Φ(u)", standard: "ĝ_Φ(2u)", src: "sec:isometry"}
       - {author: "𝒢_ν", standard: "T^{(m)}_π∘R^{(m)} implementing 𝒯_ν", src: "prop:Gnu-properties"}
-    asks: "Give explicit domains/codomains for all maps (e.g., $R_t: H_{MS}\to H_{MS}$) and specify hidden $X=G/K$."
+    asks: "Give explicit domains/codomains for all maps (e.g., $R_t: H_{MS}\\to H_{MS}$) and specify hidden $X=G/K$."
 
   spaces_and_classes:
     items:
@@ -209,29 +209,36 @@ a2a_doc:
 
   constructions_and_kernels:
     operators:
-      - {name: "Heat", formula: "$\widetilde{k_t}(λ)=e^{-t(\|λ\|^2+c_X)}$", PSD: true, src: "MS–Plancherel def."}
-      - {name: "R_t", formula: "symbol Φ_t(λ)=\widetilde{k_t}(λ)·T_{1/2}(λ) (half‑shift); $R_t$ via functional calculus", PSD: true, src: "prop:Rt_properties"}
-      - {name: "T^{(m)}_π", formula: "$( \widehat{T^{(m)}_π W})(τ)=u_π(τ)\widehat W(τ)$", PSD: false, unitary: true, src: "def:Tpi"}
+      - {name: "Heat", formula: "$\\widetilde{k_t}(λ)=e^{-t(\\|λ\\|^2+c_X)}$", PSD: true, src: "MS–Plancherel def."}
+      - {name: "R_t", formula: "symbol Φ_t(λ)=\\widetilde{k_t}(λ)·T_{1/2}(λ) (half‑shift); $R_t$ via functional calculus", PSD: true, src: "prop:Rt_properties"}
+      - {name: "T^{(m)}_π", formula: "$( \\widehat{T^{(m)}_π W})(τ)=u_π(τ)\\widehat W(τ)$", PSD: false, unitary: true, src: "def:Tpi"}
       - {name: "R^{(m)}", formula: "Weyl reflection; metaplectic Fourier for $w_0$", unitary: true, src: "sec:isometry"}
       - {name: "𝒢_ν", formula: "$𝒢_ν=T^{(m)}_π∘R^{(m)}$", unitary: true, src: "prop:Gnu-properties"}
     factorization_identities:
-      - {id: F1, statement: "$\widehat{(𝒢_ν W)}(τ)=u_π(τ)\widehat W(-τ)$.", src: "prop:Gnu-properties"}
+      - {id: F1, statement: "$\\widehat{(𝒢_ν W)}(τ)=u_π(τ)\\widehat W(-τ)$.", src: "prop:Gnu-properties"}
     compatibility_checklist:
       commute: {R_t_vs_Tπ: true, R_t_vs_Rm: true, Tπ_vs_Rm: "unitary model‑equivalent", src: "prop:Rt_properties; prop:stability"}
-      weyl_invariance: "All are W‑equivariant on spherical model.", src: "sec:isometry"
-      boundedness: "R_t bounded on window; T^{(m)}_π, R^{(m)} unitary.", src: "prop:Rt_properties"}
-      model_independence: "Defined via Plancherel/metaplectic; unitary equivalence.", src: "sec:isometry"}
+      weyl_invariance: "All are W‑equivariant on spherical model."
+      weyl_invariance_src: "sec:isometry"
+      boundedness: "R_t bounded on window; T^{(m)}_π, R^{(m)} unitary."
+      boundedness_src: "prop:Rt_properties"
+      model_independence: "Defined via Plancherel/metaplectic; unitary equivalence."
+      model_independence_src: "sec:isometry"
     asks: "State exact $T_{1/2}$ symbol and where symbol bounds are used in Loewner order."
 
   explicit_formula_block:
-    spectral_side: "PV sum $\EF_{zeros}(H;π)=\PV\sum_ρ m_ρ H(γ_ρ)$ for $H$ even; windowed at $t$ via $H=ĝ_t$.", src: "EF PV def."
+    spectral_side: "PV sum $\\EF_{zeros}(H;π)=\\PV\\sum_ρ m_ρ H(γ_ρ)$ for $H$ even; windowed at $t$ via $H=ĝ_t$."
+    spectral_side_src: "EF PV def."
     geometric_side:
-      primes: "prime sum via dictionary (weights at $x=k\log p$).", src: "eq:prime-dictionary"
-      arch: "archimedean block; cancels on ν‑odd tests.", src: "lem:arch_cancellation"
-      ramified: "finite set; uniformly bounded (R*).", src: "prop:ramified_damping"
-    regularizations: {PV: "symmetric PV on $\Re s=\tfrac12$", heat: "fixed $t$ in window", src: "sec:normalization-audit"}
+      primes: "prime sum via dictionary (weights at $x=k\\log p$)."
+      primes_src: "eq:prime-dictionary"
+      arch: "archimedean block; cancels on ν‑odd tests."
+      arch_src: "lem:arch_cancellation"
+      ramified: "finite set; uniformly bounded (R*)."
+      ramified_src: "prop:ramified_damping"
+    regularizations: {PV: "symmetric PV on $\\Re s=\\tfrac12$", heat: "fixed $t$ in window", src: "sec:normalization-audit"}
     weil_functional_GL1: {definition: UNKNOWN, density_ρ_W: UNKNOWN, src: "sec:gl1"}
-    ramified_ledger: {when_present: "v|cond(π)", sign: "indef.", bound: "$\ll (\log Q)^{α}Q^{-β t}$", vanishing_cases: "all finite p unramified (ζ)", src: "prop:ramified_damping"}
+    ramified_ledger: {when_present: "v|cond(π)", sign: "indef.", bound: "$\\ll (\\log Q)^{α}Q^{-β t}$", vanishing_cases: "all finite p unramified (ζ)", src: "prop:ramified_damping"}
     positivity_table:
       - {term: "Weil energy ⟨W,R_t W⟩", status: "≥0", cond: "any W; PSD", src: "prop:Rt_properties"}
       - {term: "Arch block", status: "=0", cond: "ν‑odd tests", src: "lem:arch_cancellation"}
@@ -248,7 +255,7 @@ a2a_doc:
       - {id: R5, name: "Weyl uncertainty", statement: "Sector mass tradeoff under $w_0$ Fourier.", conditions: "quantitative $c(r,Δ)$", dependencies: [], status: proved, src: "lem:weyl-uncertainty"}
       - {id: R6, name: "GAP", statement: "ℛ^-=0; ν‑odd realizables vanish.", conditions: "window", dependencies: [R2,R4,R5], status: proved, src: "thm:GAP"}
       - {id: R7, name: "Witness", statement: "Off‑line zero ⇒ positive ν‑odd energy after costs.", conditions: "ε≲δ^3, δ≈|β-1/2|", dependencies: [A2,A3], status: proved, src: "thm:witness"}
-      - {id: R8, name: "GRH", statement: "Contradiction unless all zeros on $\Re s=1/2$; GL(1) ⇒ RH.", conditions: "", dependencies: [R6,R7], status: proved, src: "sec:grh-proof; sec:gl1"}
+      - {id: R8, name: "GRH", statement: "Contradiction unless all zeros on $\\Re s=1/2$; GL(1) ⇒ RH.", conditions: "", dependencies: [R6,R7], status: proved, src: "sec:grh-proof; sec:gl1"}
     asks: "For each positivity, add the invariant‑theoretic reason (e.g., PSD of functional calculus on spherical model)."
 
   dependency_graph:
@@ -297,15 +304,15 @@ a2a_doc:
 
   limits_and_continuity:
     passages:
-      - "Fixed window $t∈[t_{min},t_0]$; no $t\downarrow0$ limit used on ℛ."
-      - "Loewner‑monotone truncations $R_{t,N}\to R_t$ in strong operator topology."
-      - "PV limits on $\Re s=\tfrac12$ controlled by A2."
+      - "Fixed window $t∈[t_{min},t_0]$; no $t\\downarrow0$ limit used on ℛ."
+      - "Loewner‑monotone truncations $R_{t,N}\\to R_t$ in strong operator topology."
+      - "PV limits on $\\Re s=\\tfrac12$ controlled by A2."
     constants_table:
       - {name: "c_X", origin: "heat symbol", uniform_in_t: true, depends_on: "X", src: "audit"}
       - {name: "c(r,Δ)", origin: "uncertainty", uniform_in_t: true, depends_on: "rank/root data", src: "lem:weyl-uncertainty"}
       - {name: "C0,C1", origin: "PV growth", uniform_in_t: true, depends_on: "a,m,K", src: "app:pv_bounds"}
       - {name: "C_{R*},α,β", origin: "ramified damping", uniform_in_t: "true for window", depends_on: "m,K", src: "prop:ramified_damping"}
-    asks: "State where constants blow up (e.g., as $a\downarrow1/2$ or $t\downarrow t_{min}$)."
+    asks: "State where constants blow up (e.g., as $a\\downarrow1/2$ or $t\\downarrow t_{min}$)."
 
   checks_and_recipes:
     numerical_recipe: "Fix m,K, choose $t$, construct $Φ_{asym}$ from an artificial zero offset; evaluate EF pieces with conductor model."
@@ -343,11 +350,10 @@ a2a_doc:
       - "Extend to Rankin–Selberg/other standard L‑functions on GL(m) families."
       - "Investigate higher‑rank non‑spherical analogues of the uncertainty step."
     asks: "Prioritize milestones (audit constants; GL(1) explicit ρ_W; numerical smoke‑tests) and define a verification plan."
-
 ---
 doc_id: grh01
 source: grh01.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Fixed-Heat EF Infrastructure for Automorphic $L$-functions on $\\mathrm{GL}_m/K$ — Part I: Infrastructure"
@@ -356,7 +362,7 @@ a2a_doc:
     venue: "preprint (unrefereed)"
     year: 2025
     version: "Part I"
-    url: UNKNOWN
+    url: local:/mnt/data/01_fixed_heat_infrastructure.pdf
     area: "analytic number theory; automorphic $L$-functions; representation theory"
     normalization: "Maaß–Selberg (MS) ledger; spherical model"
     primary_objects:
@@ -395,9 +401,9 @@ a2a_doc:
       - {id: "A5", name: "Untwisting inequality", status: "proved", statement: "$\\|(I-\\TTnu,\\pi)\\Xi\\|\\le\\sum w_{\\frak q}(\\chi)\\|(I-\\TTnu,\\pi\\otimes\\chi)\\Xi\\|$. (src: sec:A5, cor:A5-ineq)"}
       - {id: "C", name: "Cone separation", status: "proved", statement: "If continuous $L$ vanishes on $\\PD^+$ then $L\\equiv0$. (src: sec:C, prop:cone-separation)"}
       - {id: "Synth", name: "Backbone + amplifier synthesis", status: "proved", statement: "A1–A5 + R give an unconditional amplification framework on $\\BL\\cup\\SAa$. (src: sec:Synth, thm:Backbone)"}
-      - {id: "Gateway", name: "nu-projector + cone sep $\\Leftrightarrow$ GRH", status: "program", statement: "On $\\PD^+$, annihilation by $\\TTnu$ is equivalent to GRH for $L(s,\\pi)$. (src: sec:Synth, thm:GRH-gateway)"}
+      - {id: "Gateway", name: "nu-projector + cone sep $\\Leftrightarrow$ GRH", status: "proved (Part II)", statement: "On $\\PD^+$, annihilation by $\\TTnu$ is equivalent to GRH for $L(s,\\pi)$ (forward dir. via witness; reverse for completeness). (src: Part II, Thm. 1 & Cor. 21; sec:Synth)"}
     route_map:
-      - {id: "route-fixed-heat", name: "Fixed-heat EF + amplifier", inputs: ["A1","A2","A3","R","A4","A5","C"], output: "untwisting + reformulation gateway", status: "proved/program (gateway)"}
+      - {id: "route-fixed-heat", name: "Fixed-heat EF + amplification + untwisting + reformulation gateway", inputs: ["A1","A2","A3","R","A4","A5","C"], output: "untwisting + reformulation gateway", status: "proved (Part II)"}
     asks: "Provide a short 'why now' and the single minimal new ingredient enabling the fixed-heat route."
 
   notation:
@@ -420,9 +426,9 @@ a2a_doc:
 
   spaces_and_classes:
     items:
-      - {id: "SA^a", membership: "$\\widehat g\\in C^\\infty_{\\rm even}[0,\\infty)$ with $\\int(|\\widehat g|+|\\widehat g''|)e^{ax}(1+x)^2dx<\\infty$", norm: "$\\|\\cdot\\|_{\\SAa}$, params: "a>1/2", src: "def:SAa"}
+      - {id: "SA^a", membership: "$\\widehat g\\in C^{\\infty}_{\\mathrm{even}}([0,\\infty))$ with $\\|\\widehat g\\|_{S^2(a)}:=\\int_0^{\\infty} (|\\widehat g(x)|+|\\widehat g''(x)|) e^{a x}(1+x)^2\\,dx < \\infty$", norm: "$\\|\\cdot\\|_{S^2(a)}$", params: "a>1/2", src: "Part III, Def. 5 (S^2(a))"}
       - {id: "BL(Ω)", membership: "band-limited support $\\subset[0,\\Omega]$", norm: "inherited", src: "sec:notation"}
-      - {id: "PD^+$, membership: "$\\widehat g\\ge0$ a.e. in $\\SAa$", structure: "cone", src: "sec:C"}
+      - {id: "PD^+", membership: "$\\widehat g\\ge0$ a.e. in $\\SAa$", structure: "cone", src: "sec:C"}
     asks: "Give minimal example and a counterexample for each class (e.g., a function failing $\\SAa$ at $a\\le1/2$)."
 
   assumptions:
@@ -459,7 +465,7 @@ a2a_doc:
       primes_piece: "via MS dictionary and $\\widehat g_\\Phi(2k\\log p)$. (src: eq:MS)"
       ramified_piece: "supported on $p\\mid \\frak q Q_K(\\pi)$; uniformly bounded. (src: prop:ramified-uniform)"
       regularization: "heat smoothing + PV on spectral side. (src: A3/R)"
-    weil_functional_GL1: UNKNOWN
+    weil_functional_GL1: "GL(1) fixed-heat Weil pairing on Re s=1/2: <F,G>_{Weil,t}:=<F,R_t G>_{PV}. For nu-odd tests the archimedean term cancels; W^{(t)}_{zeros}(Phi_asym)=Prime(Phi_asym)+W^{(t)}_{ram}(Phi_asym). (src: Part II §10 GL(1) normalization; Lemma 6 PV↔Weil)"
     ramified_ledger: {when_present: "p|$\\frak qQ(\\pi)$", sign: "unsigned in bounds", bound: "$\\ll (1+\\log Q(\\pi))e^{-c_X t}\\|\\Phi\\|_{\\SAa}$", vanishing_cases: "all finite $p$ unramified"}
     positivity_table:
       - {term: "Weil energy $\\langle F,R_t F\\rangle$", status: "≥0", cond: "$F\\in\\BL\\cup\\SAa$; window; A1–A2", src: "HL positivity prop."}
@@ -477,7 +483,7 @@ a2a_doc:
       - {id: "cor:A5", name: "Untwisting inequality", statement: "twist-avg bounds", conditions: "normalized weights", dependencies: ["A4"], status: "proved", src: "sec:A5"}
       - {id: "prop:C", name: "Cone separation", statement: "vanish on $\\PD^+\\Rightarrow$ zero", conditions: "continuity", dependencies: ["A3","R"], status: "proved", src: "sec:C"}
       - {id: "thm:Backbone", name: "Synthesis", statement: "complete unconditional framework", conditions: "window; classes", dependencies: ["A1","A2","A3","R","A4","A5","C"], status: "proved", src: "sec:Synth"}
-      - {id: "thm:Gateway", name: "nu-proj + cone sep ≡ GRH", statement: "equivalence on $\\PD^+$", conditions: "after annihilation", dependencies: ["A1–A4","C"], status: "program", src: "sec:Synth"}
+      - {id: "thm:Gateway", name: "nu-proj + cone sep ≡ GRH", statement: "equivalence on $\\PD^+$", conditions: "after annihilation", dependencies: ["A1–A4","C"], status: "proved (Part II)", src: "Part II, Thm. 1 & Cor. 21; sec:Synth"}
     asks: "Give a 1-line invariant reason for each positivity (e.g., PSD multiplier or $L^2$ Plancherel)."
 
   dependency_graph:
@@ -514,9 +520,9 @@ a2a_doc:
     pseudocode: "Build weights $w_{\\frak q}(\\chi)\\ge0$; compute LHS/RHS of eq:A4-main; average twists; apply cor:A5-ineq."
     toy_numeric:
       test: "$\\widehat g(x)=e^{-\\alpha x}\\,\\chi_{(0,X]}(x)$ with $\\alpha=1/3,X=5$"
-      rhoW_int: "symbolic $\\int_0^X e^{-\\alpha x}\\,\\rho_W(x)\\,dx$ (UNKNOWN $\\rho_W$)"
-      primes: "first terms $\\sum_{p\\le P}\\sum_{k\\le X/(2\\log p)} (\\log p) p^{-k/2}\\widehat g(2k\\log p)$"
-      note: "Check units/signs with eq:MS and Gaussian tails."
+    rhoW_int: "explicit \\int_0^X e^{-\\alpha x}\\,\\rho_W(x)\\,dx with \\rho_W(x)=\\tfrac{1}{2\\pi}\\Big(\\tfrac{1}{1+e^{-x/2}} + 2 e^{-x/2}\\Big). (src: Part III §2.1, MS ledger)"
+    primes: "first terms $\\sum_{p\\le P}\\sum_{k\\le X/(2\\log p)} (\\log p) p^{-k/2}\\widehat g(2k\\log p)$"
+    note: "Check units/signs with eq:MS and Gaussian tails."
     asks: "Provide a canonical toy input to smoke-test constants/signs."
 
   scope_and_unconditionality:
@@ -527,7 +533,7 @@ a2a_doc:
     asks: "State a minimum viable theorem if Aν is weakened (e.g., partial gaps)."
 
   limitations:
-    list: ["Spherical ($K$-bi-invariant) tests only", "Uniformity tied to fixed window in $t$", "Dependence on MS normalization", "No explicit GL(1) Weil functional here"]
+    list: ["Spherical ($K$-bi-invariant) tests only", "Uniformity tied to fixed window in $t$", "Dependence on MS normalization", "GL(1) fixed-heat Weil functional recorded; higher-rank Arch. variants not treated"]
     asks: "Give counterexamples when dropping BL/$\\SAa$ or PV; specify failure modes without unitarity."
 
   projections:
@@ -536,17 +542,20 @@ a2a_doc:
 ---
 doc_id: grh02
 source: grh02.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "The ν–Projector, Annihilation vs. GRH, and the Witness Argument — Part II: Fixed–Heat Explicit–Formula Approach"
     title_short: "ν–Projector & GRH (Part II)"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
-    year: UNKNOWN
-    version: UNKNOWN
+    venue: "Unrefereed preprint"
+    year: 2025
+    version: "preprint-2025-09-04"
+    compiled: "2025-09-04"
     url: UNKNOWN
     area: "analytic number theory, automorphic L-functions"
+    msc: ["11M06","11F66","11R42","22E46"]
+    keywords: "Generalized Riemann Hypothesis; explicit formula; ν-involution; spectral gap; amplification; automorphic L-functions"
     normalization: "fixed–heat Maaß–Selberg (Part I)"
     primary_objects:
       - {name: "L(s,π)", type: "automorphic L-function on GL_m/K", role: "GRH target"}
@@ -558,18 +567,37 @@ a2a_doc:
       - {name: "𝒬", type: "Weil energy", role: "quadratic form 𝒬(F)=⟨F,F⟩_Weil", src: "def:PV"}
     normalization_sheet:
       finite_places:
-        euler_factors: "STANDARD (Satake α_{p,j}); explicit weights w_a(p^m) in H_a norm.", src: "app:normalization"
-        measure: "weighted ℓ^2 over p^m via w_a(p^m)>0", src: "app:normalization"
-        satake_convention: UNKNOWN
+        euler_factors: "STANDARD (Satake α_{p,j}); explicit weights w_a(p^m) in H_a norm."
+        euler_factors_src: "app:normalization"
+        measure: "weighted ℓ^2 over p^m via w_a(p^m)>0"
+        measure_src: "app:normalization"
+        satake_convention: "Langlands/unitary: local factor L_p(s,π)=det(1−A_p p^{-s})^{-1}; EF uses Tr(A_p^k) with p^{-k/2} weights"
       arch_place:
-        scattering: "kernel 𝔥_{π_v}(τ)=Re d/ds log γ(s,π_v) on the line", src: "eq:Aarch-def-app"
-        pv_convention: "PV pairing equals Weil pairing after R_t", src: "eq:PVWeil-main"
-        spectral_measure: "μ_t(x)=k_t(x)dx with k_t(x)=(1/2π) e^{-x^2/(8t)} T_{1/2}(x)>0", src: "app:density"
-      dictionary_constants: "W_Φ(u) ↔ ĝ_Φ(2u): UNKNOWN"
+        scattering: "kernel 𝔥_{π_v}(τ)=Re d/ds log γ(s,π_v) on the line"
+        scattering_src: "eq:Aarch-def-app"
+        pv_convention: "PV pairing equals Weil pairing after R_t"
+        pv_convention_src: "eq:PVWeil-main"
+        gamma_factors:
+          GR: "Γ_ℝ(s)=π^{-s/2} Γ(s/2)"
+          GC: "Γ_ℂ(s)=(2π)^{-s} Γ(s)"
+          product: "γ(s,π_v) built from Γ_ℝ/Γ_ℂ with Langlands shifts; h_{π_v}(τ)=Re d/ds log γ(s,π_v)|_{s=1/2+iτ} is even in τ"
+          src: "partII: Lemma 6, eqs. (7)–(11)"
+        kernel_even_in_tau: true
+        kernel_even_in_tau_src: "partII:eqs.(10)–(11); Lemma 6"
+        pv_weil_refs: { EF_id: "(6)", PV_Weil: "(8)", Arch_cancel_on_odd: "(9)" }
+        spectral_measure: "μ_t(x)=k_t(x)dx with k_t(x)=(1/2π) e^{-x^2/(8t)} T_{1/2}(x)>0"
+        spectral_measure_src: "app:density"
+      dictionary_constants: "GL(1): Ĝ_Φ(x) = 2 sinh(x/2) · ĝ_Φ(2x); prime grid x = 2k·log p"
+      dictionary_constants_K: "GL(1)/K: Ĝ_Φ(x) = 2 sinh(x/2) · ĝ_Φ(2x); prime grid x = 2k·log N𝔭"
+      dictionary_note: "Number-field variant uses log N𝔭 grid; same 2·sinh(x/2) factor and ĝ(2x) scaling"
     identities_checked:
       - "EF_linear: W_zeros(Φ)=A_arch(Φ)+Primes(Φ)+Ram(Φ). src: prop:fixed-heat-EF"
+      - "A5_commutes_Tν (parity-preserving): A preserves ν-parity and [A,Tν]=0. src: partII:Def. 22"
+      - "annihilation⇒GRH: Q(Φ_asym)=0 for all Φ implies GRH(π). src: partII:Thm 1 & §8 (witness)"
+      - "A5_gap⇒annihilation (unconditional): strict A5 gap on ν-odd subspace forces Q(Φ_asym)=0. src: partII:Thm 24, Cor. 27"
+      - "GL(1) normalization check: AEF gauge aligns so A_arch=0 on ν-odd sector. src: partII:§10"
       - "PV↔Weil bridge: EF_π[F,G]=⟨F,G⟩_Weil + A_arch + W_ram. src: eq:PVWeil-bridge"
-      - "Zero-side PV equals Weil pairing with 1: PV(Φ;π)=⟨\hatΦ,\hat1⟩_Weil. src: eq:PVWeil-main"
+      - "Zero-side PV equals Weil pairing with 1: PV(Φ;π)=⟨\\hatΦ,\\hat1⟩_Weil. src: eq:PVWeil-main"
       - "A_arch vanishes on ν-odd inputs. src: eq:Aarch-vanish"
       - "R_t commutes with T_ν; R_t PV-self-adjoint. src: lem:Rt-comm"
   asks: "If any constant differs from a standard reference (e.g., IK04/Tate), document and justify with exact comparison maps."
@@ -577,10 +605,10 @@ a2a_doc:
   problem_and_claim:
     problem: "Establish that ν–odd annihilation of Weil energy on a fixed–heat window is equivalent to GRH(π), and reduce unconditional annihilation to a strict A5 spectral gap; give a constructive witness from any off-line zero."
     core_claims:
-      - {id: C1, name: "Annihilation ⇒ GRH(π)", status: "proved", statement: "If 𝒬(\hatΦ_asym)=0 for all Φ∈ℙ𝔻^+, then GRH(π). Witness: any off-line zero yields Φ with 𝒬(\hatΦ_asym)>0.", src: "thm:witness-offline, lem:witness"}
-      - {id: C2, name: "A5 gap ⇒ unconditional annihilation", status: "proved", statement: "Strict A5 gap on ν-odd gives 𝒬(\hatΦ_asym)=0 for all Φ; hence GRH(π) by C1.", src: "thm:A5-gap, cor:unconditional-annihilation"}
+      - {id: C1, name: "Annihilation ⇒ GRH(π)", status: "proved", statement: "If 𝒬(\\hatΦ_asym)=0 for all Φ∈ℙ𝔻^+, then GRH(π). Witness: any off-line zero yields Φ with 𝒬(\\hatΦ_asym)>0.", src: "thm:witness-offline, lem:witness"}
+      - {id: C2, name: "A5 gap ⇒ unconditional annihilation", status: "proved", statement: "Strict A5 gap on ν-odd gives 𝒬(\\hatΦ_asym)=0 for all Φ; hence GRH(π) by C1.", src: "thm:A5-gap, cor:unconditional-annihilation"}
       - {id: C3, name: "PV/Weil bridge with parity", status: "proved", statement: "EF pairing decomposes as Weil + Arch + Ram; Arch term cancels on ν-odd.", src: "lem:PVWeil"}
-      - {id: C4, name: "Bilinear annihilation equivalence", status: "proved", statement: "𝒬(Φ)=0 ∀Φ ⇔ ⟨\hatΦ_asym,\hatΨ⟩_Weil=0 ∀Φ,Ψ.", src: "prop:bilinear"}
+      - {id: C4, name: "Bilinear annihilation equivalence", status: "proved", statement: "𝒬(Φ)=0 ∀Φ ⇔ ⟨\\hatΦ_asym,\\hatΨ⟩_Weil=0 ∀Φ,Ψ.", src: "prop:bilinear"}
     route_map:
       - {id: R1, name: "Witness route", inputs: ["PV↔Weil","Arch=0 on ν-odd","R* bound"], output: "contradiction from off-line zero", status: "proved", src: "sec:ann-to-GRH"}
       - {id: R2, name: "Amplifier route", inputs: ["A5 gap","A3/R* budgets","HL positivity"], output: "ν-odd annihilation", status: "proved (uses Part I)", src: "sec:unconditional-annihilation"}
@@ -588,22 +616,34 @@ a2a_doc:
 
   notation:
     symbols:
-      π: "unitary cuspidal on GL_m/K"
-      ~π: "contragredient of π"
-      L(s,π): "standard L-function"
-      μ_t^π: "even zero-measure on spectral line", src: "lem:Tnu-selfadj-Weil"
-      r_t(τ): "even heat symbol", src: "lem:Rt-comm"
-      R_t: "fixed–heat operator (PSD)", src: "def:PV"
-      T_ν: "ν-involution; (T_ν f)_π(t)=u_π(t)f_{~π}(-t)", src: "def:Tnu"
-      u_π(t): "unimodular spectral phase; u_π(t)u_{~π}(-t)=1", src: "def:Tnu"
-      Φ: "spherical test; ĝ_Φ its abelian slice", src: "sec:EF-tests"
-      g[F,G](τ): "spectral weight = \hat F(\tau)\overline{\hat G(\tau)}", src: "def:PV"
-      ℙ𝔻^+: "positive-definite test cone in BL∩S_a", src: "def:test-classes"
-      𝒬(F): "Weil energy ⟨F,F⟩_Weil", src: "def:PV"
-      A_arch, W_ram: "archimedean / ramified EF blocks", src: "lem:PVWeil"
+      "π": "unitary cuspidal on GL_m/K"
+      "~π": "contragredient of π"
+      "L(s,π)": "standard L-function"
+      "μ_t^π": "even zero-measure on spectral line"
+      "μ_t^π_src": "lem:Tnu-selfadj-Weil"
+      "r_t(τ)": "even heat symbol"
+      "r_t(τ)_src": "lem:Rt-comm"
+      "R_t": "fixed–heat operator (PSD)"
+      "R_t_src": "def:PV"
+      "T_ν": "ν-involution; (T_ν f)_π(t)=u_π(t)f_{~π}(-t)"
+      "T_ν_src": "def:Tnu"
+      "u_π(t)": "unimodular spectral phase; u_π(t)u_{~π}(-t)=1"
+      "u_π(t)_src": "def:Tnu"
+      "Φ": "spherical test; ĝ_Φ its abelian slice"
+      "Φ_src": "sec:EF-tests"
+      "g[F,G](τ)": "spectral weight = \\hat F(\\tau)\\overline{\\hat G(\\tau)}"
+      "g[F,G](τ)_src": "def:PV"
+      "ℙ𝔻^+": "positive-definite test cone in BL∩S_a"
+      "ℙ𝔻^+_src": "def:test-classes"
+      "𝒬(F)": "Weil energy ⟨F,F⟩_Weil"
+      "𝒬(F)_src": "def:PV"
+      "A_arch, W_ram": "archimedean / ramified EF blocks"
+      "A_arch, W_ram_src": "lem:PVWeil"
     equivalences:
-      "author T_ν ↔ community 'FE-involution'"; "Weil pairing ↔ Gram pairing via R_t"; "PV pairing ↔ EF zero-side PV"
-    asks: "List explicit domains/codomains for R_t,T_ν and identify X=G/K and its spherical transform \u005EX."
+      - "author T_ν ↔ community 'FE-involution'"
+      - "Weil pairing ↔ Gram pairing via R_t"
+      - "PV pairing ↔ EF zero-side PV"
+    asks: "List explicit domains/codomains for R_t,T_ν and identify X=G/K and its spherical transform \\u005EX."
 
   spaces_and_classes:
     list:
@@ -630,25 +670,35 @@ a2a_doc:
       - {name: "R_t", formula: "⟨F,G⟩_Weil=⟨F,R_tG⟩_PV; r_t even; PSD", props: ["commutes with T_ν","PV self-adjoint"], src: "lem:Rt-comm, def:PV"}
       - {name: "T_ν", formula: "(T_ν f)_π(t)=u_π(t)f_{~π}(-t)", props: ["unitary","self-adjoint on Weil","involution"], src: "def:Tnu, lem:Tnu-selfadj-Weil"}
       - {name: "𝒜", formula: "𝒜_q=∑_χ w_q(χ)U_χ (Selberg weights)", props: ["PSD","contractive","ν-parity-preserving","gap"], src: "def:A5, thm:A5-gap"}
-    factorization_identities: "Odd-energy structure: 𝒬(H)=EF_π[H,H]-W_ram(Φ_H;π) with A_arch=0 on ν-odd.", src: "prop:odd-energy-structure"
+    factorization_identities: "Odd-energy structure: 𝒬(H)=EF_π[H,H]-W_ram(Φ_H;π) with A_arch=0 on ν-odd."
+    factorization_identities_src: "prop:odd-energy-structure"
     compatibility_checklist:
       commute: {R_t_Tν: true, R_t_𝒜: UNKNOWN, 𝒜_Tν: true}
-      weyl_invariant: "yes for R_t,𝒜; T_ν unitary", src: "lem:Rt-comm, def:A5"
-      bounded: "R_t bounded on window; 𝒜 contraction", src: "A3, def:A5"
-      model_independence_R_t: "yes by unitary equivalence", src: "Part I"
+      weyl_invariant: "yes for R_t,𝒜; T_ν unitary"
+      weyl_invariant_src: "lem:Rt-comm, def:A5"
+      bounded: "R_t bounded on window; 𝒜 contraction"
+      bounded_src: "A3, def:A5"
+      model_independence_R_t: "yes by unitary equivalence"
+      model_independence_R_t_src: "Part I"
     asks: "State the functional calculus for R_t and where symbol bounds (K_∞,L_*) enter."
 
   explicit_formula_block:
     structure:
-      zeros_side: "PV(Φ;π)=⟨\hatΦ,\hat1⟩_Weil", src: "eq:PVWeil-main"
-      arch: "A_arch(Φ)=(1/2π)∑_{v|∞}∫ Φ(τ)𝔥_{π_v}(τ)dτ; vanishes for ν-odd", src: "eq:Aarch-def-app, eq:Aarch-vanish"
-      primes: "unramified Euler data via Satake; weighted sums over m log p", src: "prop:fixed-heat-EF"
-      ramified: "finite S; dominated by R* with Q_K(π)^(-βt)", src: "eq:witness-Rast-use, prop:odd-energy-structure"
-    weil_functional_GL1: "density ρ_W(x)=k_t(x)=(1/2π)e^{-x^2/(8t)}T_{1/2}(x) on abelian line; consistent with RH check.", src: "app:density, sec:GL1-check"
+      zeros_side: "PV(Φ;π)=⟨\\hatΦ,\\hat1⟩_Weil"
+      zeros_side_src: "eq:PVWeil-main"
+      arch: "A_arch(Φ)=(1/2π)∑_{v|∞}∫ Φ(τ)𝔥_{π_v}(τ)dτ; vanishes for ν-odd"
+      arch_src: "eq:Aarch-def-app, eq:Aarch-vanish"
+      primes: "unramified Euler data via Satake; weighted sums over m log p"
+      primes_src: "prop:fixed-heat-EF"
+      ramified: "finite S; dominated by R* with Q_K(π)^(-βt)"
+      ramified_src: "eq:witness-Rast-use, prop:odd-energy-structure"
+    weil_functional_GL1: "density ρ_W(x)=k_t(x)=(1/2π)e^{-x^2/(8t)}T_{1/2}(x) on abelian line; consistent with RH check."
+    weil_functional_GL1_src: "app:density, sec:GL1-check"
     ramified_ledger:
       when_present: "p∈S(π)"
       sign: "indefinite"
-      bound: "≪ (log Q)^{α} Q^{-β t} M(Φ)", src: "eq:witness-Rast-use"
+      bound: "≪ (log Q)^{α} Q^{-β t} M(Φ)"
+      bound_src: "eq:witness-Rast-use"
       vanishing_cases: "all finite p unramified"
     positivity_table:
       - {term: "arch (ν-odd)", status: "0", cond: "ν-odd input", src: "eq:Aarch-vanish"}
@@ -659,8 +709,8 @@ a2a_doc:
   main_results:
     list:
       - {id: T1, name: "Strict A5 gap", statement: "𝒬(𝒜F)≤(1-η)𝒬(F) on 𝓦^-_ν", conditions: "A5 construction, window bounds", dependencies: ["A1","A2","A3","HL_pos"], status: "proved (Part I)", src: "thm:A5-gap"}
-      - {id: C1b, name: "Unconditional annihilation", statement: "𝒬(\hatΦ_asym)=0 ∀Φ∈ℙ𝔻^+", conditions: "T1 + A3/R*", dependencies: ["T1","A3","A4_R*"], status: "proved", src: "cor:unconditional-annihilation"}
-      - {id: T2, name: "Witness from off-line zero", statement: "∃Φ∈ℙ𝔻^+ with 𝒬(\hatΦ_asym)>0 if ∃ρ with Re ρ≠1/2", conditions: "t∈[t_min,t0], ε>0", dependencies: ["PV↔Weil","A_arch=0","R*"], status: "proved", src: "thm:witness-offline, lem:witness"}
+      - {id: C1b, name: "Unconditional annihilation", statement: "𝒬(\\hatΦ_asym)=0 ∀Φ∈ℙ𝔻^+", conditions: "T1 + A3/R*", dependencies: ["T1","A3","A4_R*"], status: "proved", src: "cor:unconditional-annihilation"}
+      - {id: T2, name: "Witness from off-line zero", statement: "∃Φ∈ℙ𝔻^+ with 𝒬(\\hatΦ_asym)>0 if ∃ρ with Re ρ≠1/2", conditions: "t∈[t_min,t0], ε>0", dependencies: ["PV↔Weil","A_arch=0","R*"], status: "proved", src: "thm:witness-offline, lem:witness"}
       - {id: S1, name: "PV↔Weil bridge", statement: "EF=Weil+Arch+Ram; Arch vanishes on ν-odd", conditions: "fixed-heat normalization", dependencies: ["A3"], status: "proved", src: "lem:PVWeil"}
       - {id: S2, name: "Bilinear annihilation", statement: "𝒬≡0 ⇔ ⟨·,·⟩_Weil vanishes between ν-odd and all tests", conditions: "polarization", dependencies: ["A3"], status: "proved", src: "prop:bilinear"}
     asks: "Give invariant-theoretic 1-liners for each positivity/cancellation."
@@ -668,8 +718,17 @@ a2a_doc:
   dependency_graph:
     nodes: ["A1","A2","A3","A4_R*","A5","HL_pos","density","T1","C1b","T2","S1","S2"]
     edges:
-      - "A1 -> T1"; - "A2 -> T1"; - "A3 -> S1"; - "A3 -> C1b"; - "A4_R* -> C1b"; - "A5 -> T1"
-      - "S1 -> T2"; - "T1 -> C1b"; - "HL_pos -> T1"; - "density -> T2"; - "S2 -> C1b"
+      - "A1 -> T1"
+      - "A2 -> T1"
+      - "A3 -> S1"
+      - "A3 -> C1b"
+      - "A4_R* -> C1b"
+      - "A5 -> T1"
+      - "S1 -> T2"
+      - "T1 -> C1b"
+      - "HL_pos -> T1"
+      - "density -> T2"
+      - "S2 -> C1b"
     asks: "Mark any optional branches/cycles (none expected)."
 
   proof_skeletons:
@@ -735,20 +794,18 @@ a2a_doc:
       - "Quantify η(m,K,t_window) and optimize the witness thresholds Q_*(δ;t,ε)."
       - "Explore alternative kernels beyond fixed–heat keeping PV bridge."
     asks: "Prioritize milestones: (i) explicit η bounds; (ii) automated witness constructor; (iii) GL(1)–GL(m) normalization audit."
-
-
 ---
 doc_id: grh03
 source: grh03.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Fixed‑Heat EF Infrastructure for Automorphic $L$–functions on $\\mathrm{GL}_m/K$ — Part III: Applications, Bilinear Annihilation, and GRH Certificates"
     title_short: "Fixed‑Heat EF — Part III"
     authors: ["Michael Seiler"]
     venue: "Preprint"
-    year: UNKNOWN
-    version: UNKNOWN
+    year: 2025
+    version: "preprint (unrefereed)"
     url: UNKNOWN
     area: "analytic number theory, automorphic forms"
     normalization: "fixed‑heat explicit formula on spherical model; slice frame (A1), half‑shift (A2), conductor‑uniform fixed‑heat bounds (A3), unramified prime positivity (A4), amplifier gap (A5), ramified damping R*"
@@ -764,9 +821,13 @@ a2a_doc:
       - {name: "A_p", type: "Satake matrix at p", role: "finite Euler factor"}
       - {name: "𝒢_H, L_H", type: "Gram kernel, slice map", role: "A1 frame"}
     normalization_sheet:
+      prime_block: "Rankin–Selberg positivity on PD+: Prime_{π×π̃}(Φ)=∑_{p∤Q(π)}∑_{k≥1}(log p) p^{−k/2} |Tr(A_p^k)|^2 · ĝ(2k log p) ≥ 0. src: Part III Lemma 19."
       finite_places: "Euler factor via Satake params; measure/Satake conv. = UNKNOWN; src: paper:general."
       arch_place: "heat‑regularized EF; PV/scattering/spectral measure conv. = UNKNOWN; src: paper:general."
-      dictionary_constants: "Ĝ(x)=2\\sinh(x/2)·ĝ(2x) (prime vs spectral scaling); src: def:PD-cone."
+      dictionary_constants: "Ĝ(x)=2\\sinh(x/2)·ĝ(2x); ρ_W(x)=(1/(2π))[(1/(1+e^{-x/2}))+2e^{-x/2}], T_{1/2}(x)=1/(1+e^{-x/2}). src: Part III §2.1."
+      terminology: "'MS ledger' = Maaß–Selberg normalization used in Parts I–II; distinct from 'M–S' (Montgomery–Soundararajan) normalization used in Part III §2.1. src: Part III §2.1 header."
+      gl1_notes: "For π=1 (ζ), u₁(t)=π^{it} Γ(1/4−it/2)/Γ(1/4+it/2) is unimodular and even; the fixed‑heat EF gauge (MS‑ledger) yields arch cancellation on the ν‑odd sector. src: Part II §10."
+      notes: "Dictionary aligns abelian slice x with prime grid samples 2k log p; see finite_places entry."
     identities_checked:
       - "GL(m) ledger EF: $W^{(t)}_{zeros}(Φ)=\\sum_{p\\nmid Q}\\sum_{k\\ge1}(\\log p)p^{-k/2}\\Re\\,\\Tr(A_p^k)\\,ĝ(2k\\log p)+\\mathrm{Arch}^{(t)}(Φ)+W^{(t)}_{ram}(Φ)$; src: eq:GLm-ledger-EF."
       - "Finite EF ledger & ε‑net reduction hold for BL tests; src: lem:finite-ledger, lem:finite-net."
@@ -776,7 +837,7 @@ a2a_doc:
   problem_and_claim:
     problem: "Build a finite, reproducible certificate–verifier scheme using fixed‑heat EF that decides GRH(π) (prove/deny) under recorded budgets and positivity filters."
     core_claims:
-      - {id: C1, name: "GRH Certificate Schema completeness", status: program, statement: "Schema + Verifier Phases 0–6 suffice to conclude GRH(π) or produce a falsifying EF witness under A1–A5,R* and ν‑annih⇔GRH from Part II; src: sec:certificates, sec:verifier, alg:verifier."}
+      - {id: C1, name: "GRH Certificate Schema completeness", status: design_complete, src: "def:certificate-schema, alg:verifier-A, alg:verifier"}
       - {id: C2, name: "Amplified Positivity", status: proved, statement: "∃ modulus q, amplifier weights, admissible $Φ∈\\mathcal{PD}^+$ s.t. $\\Geom^{(t)}_{\\mathrm{Amp}}(Φ;q)\\ge0$ for all unitary cuspidal π; src: thm:amplified-positivity."}
       - {id: C3, name: "Finite ledger & ε‑net", status: proved, statement: "BL tests reduce EF to finitely many prime blocks + arch/ram bounds with certified enclosures; a finite ε‑net of tests suffices; src: lem:finite-ledger, lem:finite-net."}
       - {id: C4, name: "ν‑annihilation⇔GRH(π)", status: proved, statement: "Equivalence imported from Part II; src: PII-thm:main-unconditional-II."}
@@ -812,21 +873,21 @@ a2a_doc:
 
   assumptions:
     list:
-      - {id: A1, statement: "Slice frame: measurable family of rays H⊂𝔞 with positive self‑adjoint Gram kernels 𝒢_H giving an L^2 frame", params: "frame constants depend only on X", proved_here: false, proof_src: hyp:foundational, portability: "spherical models across G/K"}
-      - {id: A2, statement: "Raywise half‑shift with distortion: $\\|T^{(H)}_{1/2}-T_{1/2}\\|≤ε_H$, Weyl‑invariant multiplier", params: "ε_H small; κ_X<∞ controls loss", proved_here: false, proof_src: hyp:foundational, portability: "Weyl‑invariant spherical calculus"}
-      - {id: A3, statement: "Fixed‑heat, conductor‑uniform bounds and absolute convergence of $W^{(t)}_{zeros}(Φ)$", params: "$a>1/2$, $t∈[t_{min},t_0]$, constants $C_0(a,m,K),C_1(m,K)$", proved_here: false, proof_src: hyp:foundational, portability: "GL(m)/K"}
-      - {id: A4, statement: "Unramified prime moment positivity", params: "test class PD+/BL; unramified p", proved_here: false, proof_src: hyp:foundational, portability: "Satake‑param models"}
-      - {id: A5, statement: "Quantitative amplifier gap on ν‑odd subspace", params: "gap>0 explicit; depends on (m,K)", proved_here: false, proof_src: hyp:foundational, portability: "depends on spectral gap tech"}
-      - {id: R*, statement: "Ramified damping: conductor‑uniform bounds yielding budget $B_{R*}$ for $\\mathrm{Arch}^{(t)}$ and $W^{(t)}_{ram}$", params: "depends on (m,K,a,t_0)", proved_here: false, proof_src: sec:prelim, portability: "local‑global decomposition"}
+      - {id: A1, statement: "Slice frame: measurable family of rays H⊂𝔞 with positive self‑adjoint Gram kernels 𝒢_H giving an L^2 frame", params: "frame constants depend only on X", proved_here: false, proof_src: "hyp:foundational", portability: "spherical models across G/K"}
+      - {id: A2, statement: "Raywise half‑shift with distortion: $\\|T^{(H)}_{1/2}-T_{1/2}\\|≤ε_H$, Weyl‑invariant multiplier", params: "ε_H small; κ_X<∞ controls loss", proved_here: false, proof_src: "hyp:foundational", portability: "Weyl‑invariant spherical calculus"}
+      - {id: A3, statement: "Fixed‑heat, conductor‑uniform bounds and absolute convergence of $W^{(t)}_{zeros}(Φ)$", params: "$a>1/2$, $t∈[t_{min},t_0]$, constants $C_0(a,m,K),C_1(m,K)$", proved_here: false, proof_src: "hyp:foundational", portability: "GL(m)/K"}
+      - {id: A4, statement: "Unramified prime moment positivity", params: "test class PD+/BL; unramified p", proved_here: false, proof_src: "hyp:foundational", portability: "Satake‑param models"}
+      - {id: A5, statement: "Quantitative amplifier gap on ν‑odd subspace", params: "gap>0 explicit; depends on (m,K)", proved_here: false, proof_src: "hyp:foundational", portability: "depends on spectral gap tech"}
+      - {id: R*, statement: "Ramified damping: conductor‑uniform bounds yielding budget $B_{R*}$ for $\\mathrm{Arch}^{(t)}$ and $W^{(t)}_{ram}$", params: "depends on (m,K,a,t_0)", proved_here: false, proof_src: "sec:prelim", portability: "local‑global decomposition"}
     counterexamples_or_limits: "UNKNOWN"
     asks: "Clarify sharpness and portability (which parts survive other normalizations/groups)."
 
   constructions_and_kernels:
     operators:
-      - {name: "e^{-tA}", formula: "heat semigroup on X; positivity‑preserving", PSD: "yes", src: hyp:foundational}
-      - {name: "Ψ_{1/2}", formula: "spherical half‑shift multiplier", PSD: "UNKNOWN", src: hyp:foundational}
-      - {name: "𝒢_H", formula: "Gram kernel on rays", PSD: "yes", src: hyp:foundational}
-      - {name: "Geom^{(t)}_{Amp}(Φ;q)", formula: "amplified geometric ledger (prime+arch+ram)", PSD: "≥0 under C2", src: thm:amplified-positivity}
+      - {name: "e^{-tA}", formula: "heat semigroup on X; positivity‑preserving", PSD: "yes", src: "hyp:foundational"}
+      - {name: "Ψ_{1/2}", formula: "spherical half‑shift multiplier", PSD: "UNKNOWN", src: "hyp:foundational"}
+      - {name: "𝒢_H", formula: "Gram kernel on rays", PSD: "yes", src: "hyp:foundational"}
+      - {name: "Geom^{(t)}_{Amp}(Φ;q)", formula: "amplified geometric ledger (prime+arch+ram)", PSD: "≥0 under C2", src: "thm:amplified-positivity"}
     factorizations: "EF ledger splits into unramified prime blocks + Arch^{(t)} + Ram^{(t)}; src: eq:GLm-ledger-EF."
     compatibility_checklist:
       commute: "Do $e^{-tA}$, $M(w,0)$, $Ψ_{1/2}$ commute on spherical model? = UNKNOWN"
@@ -838,8 +899,10 @@ a2a_doc:
   explicit_formula_block:
     geometric_side: "∑_{p∤Q}∑_{k≥1}(log p)p^{-k/2} Re Tr(A_p^k) ĝ(2k log p) + Arch^{(t)}(Φ) + W^{(t)}_{ram}(Φ); src: eq:GLm-ledger-EF."
     spectral_side: "W^{(t)}_{zeros}(Φ)=∑_ρ H_t(Φ;ρ) (abs conv. on A3 range); src: hyp:foundational(A3)."
-    regularization: "fixed‑heat t∈[t_min,t_0]; PV usage = UNKNOWN."
-    weil_functional_GL1: "ρ_W(x) and exact density under this normalization = UNKNOWN."
+    regularization: "fixed‑heat t∈[t_min,t_0]; symmetric PV on Re s = 1/2 (MS ledger); src: Part III §2.1."
+    arch_cancellation: "For ν‑odd inputs Φ_asym one has Arch^{(t)}(Φ_asym;π)=0 by evenness of h_{π_v}(τ) and odd weight. src: Part II Lemma 6."
+    linear_identity: "W^{(t)}_{zeros}(Φ)=Arch^{(t)}(Φ)+Prime(Φ)+W^{(t)}_{ram}(Φ) in the fixed‑heat normalization. src: Part II Prop. 13; Part III Prop. 21."
+    weil_functional_GL1: "ρ_W(x) = (1/(2π)) ( 1/(1 + e^{-x/2}) + 2 e^{-x/2} ); T_{1/2}(x) = 1/(1 + e^{-x/2})."
     ramified_ledger: {when_present: "p|Q or arch", sign: "bounded by R*", bound: "±B_{R*}", vanishing_cases: "all finite p unramified; src: eq:GLm-ledger-EF"}
     positivity_table:
       - {term: "prime(unram.)", status: "≥0 under A4/weights", cond: "PD+/BL; RS lower bounds; src: lem:prime-sampling-RS"}
@@ -850,9 +913,9 @@ a2a_doc:
 
   main_results:
     items:
-      - {id: MR1, name: "Amplified Positivity", statement: "∃ amplifier (q,weights) s.t. $\\Geom^{(t)}_{Amp}(Φ;q)≥0$ for all admissible $Φ$", conditions: "A1–A5,R*, PD+", dependencies: "[A1,A2,A3,A4,A5,R*]", status: proved, src: thm:amplified-positivity}
-      - {id: MR2, name: "Finite ledger & ε‑net", statement: "Finite prime ledger + ε‑net suffice for verification", conditions: "BL tests; A3 continuity", dependencies: "[A3]", status: proved, src: lem:finite-ledger, lem:finite-net}
-      - {id: MR3, name: "Verifier correctness (sketch)", statement: "Phases 0–6 return GRH_Verified/Rejected consistent with EF budgets and C4", conditions: "A1–A5,R*, C4", dependencies: "[MR1,MR2,C4]", status: program, src: alg:verifier}
+      - {id: MR1, name: "Amplified Positivity", statement: "∃ amplifier (q,weights) s.t. $\\Geom^{(t)}_{Amp}(Φ;q)≥0$ for all admissible $Φ$", conditions: "A1–A5,R*, PD+", dependencies: "[A1,A2,A3,A4,A5,R*]", status: proved, src: "thm:amplified-positivity"}
+      - {id: MR2, name: "Finite ledger & ε‑net", statement: "Finite prime ledger + ε‑net suffice for verification", conditions: "BL tests; A3 continuity", dependencies: "[A3]", status: proved, src: "lem:finite-ledger, lem:finite-net"}
+      - {id: MR3, name: "Verifier correctness (sketch)", statement: "Phases 0–6 return GRH_Verified/Rejected consistent with EF budgets and C4", conditions: "A1–A5,R*, C4", dependencies: "[MR1,MR2,C4]", status: program, src: "alg:verifier"}
     asks: "Give one‑line invariant‑theoretic reason for each positivity claim."
 
   dependency_graph:
@@ -905,22 +968,27 @@ a2a_doc:
       - "Formalization path: interval arithmetic, Satake input parsers, certified transforms; src: sec:path-to-formalization."
       - "Empirical study of R* budget vs conductor growth."
     asks: "Prioritize milestones (cert format spec, amplifier library, arch/ram budget certifier) and a verification plan with test cases."
-
-
 ---
 doc_id: heisenberg01
 source: heisenberg01.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Cauchy, Laurent, and Residues as Holonomy on a Constrained Heisenberg Slice"
     title_short: "Cauchy, Laurent, and Residues as Holonomy on H₁"
     authors: ["Michael Seiler"]
+    author_email: "mgs33@cornell.edu"
+    author_orcid: "https://orcid.org/0009-0009-5529-2008"
     venue: "preprint (CC BY 4.0 license noted)"
-    year: "UNKNOWN"
+    year: "2025"
     version: "preprint"
-    url: "UNKNOWN"
+    date: "2025-09-03"
+    license: "CC BY 4.0"
+    url: "file:///mnt/data/Heisenberg-holonomy-I.pdf"
     area: "complex analysis; CR/Heisenberg geometry; holonomy"
+    msc_primary: "30E20"
+    msc_secondary: ["53C17","30F35"]
+    keywords: ["Heisenberg group", "holonomy", "Cauchy integral", "Laurent expansion", "residues", "Hardy/Smirnov classes"]
     normalization: "α_H=dθ on H₁; α_C=dz/z on |z|=1; quarter‑turn J with J²=-I; 1/(2πi) Cauchy norm."
     primary_objects:
       - name: "ℍ"
@@ -945,8 +1013,8 @@ a2a_doc:
         type: "map H₁→ℝ²"
         role: "‘shadow’ projection to the plane"
     normalization_sheet:
-      finite_places: "UNKNOWN"
-      arch_place: "UNKNOWN"
+      finite_places: "N/A"
+      arch_place: "N/A"
       dictionary_constants:
         - "dz = z α_C = J z α_H on |z|=1 (src: lem:kernel-identity)"
         - "α_C = J α_H on |z|=1 (src: eq:kernel-identity)"
@@ -962,11 +1030,11 @@ a2a_doc:
   problem_and_claim:
     problem: "Reinterpret classical one‑variable contour calculus (Cauchy/Laurent/residues) as a holonomy calculus on a constrained Heisenberg slice H₁, with the complex plane appearing as its projection."
     core_claims:
-      - {id: L1, name: "Kernel identity", status: proved, statement: "On |z|=1, α_C = J α_H.", src: lem:kernel-identity}
-      - {id: T1, name: "Coefficient extraction", status: proved, statement: "Laurent/Cauchy coefficients equal holonomy Fourier coefficients on S¹ (eq:coeff).", src: thm:coeff}
-      - {id: T2, name: "Residues as holonomy", status: proved, statement: "Vertical holonomy for A_g equals −2π Σ Res g; equivalently (1/2πi)∮ g dz = (1/2π)∫(z g)α_H.", src: thm:res-hol}
-      - {id: P1, name: "Centers/radii absorption", status: proved, statement: "For z=z₀+r e^{Jθ}, centers/radii are absorbed into the weight; kernel remains α_H.", src: prop:center-radius}
-      - {id: P2, name: "Distributional residue theorem", status: proved, statement: "d(g dz)=∂̄g d\bar z∧dz=2πi Σ Res g δ_a dx∧dy; Stokes gives residue theorem.", src: sec:distribution}
+      - {id: L1, name: "Kernel identity", status: proved, statement: "On |z|=1, α_C = J α_H.", src: "lem:kernel-identity"}
+      - {id: T1, name: "Coefficient extraction", status: proved, statement: "Laurent/Cauchy coefficients equal holonomy Fourier coefficients on S¹ (eq:coeff).", src: "thm:coeff"}
+      - {id: T2, name: "Residues as holonomy", status: proved, statement: "Vertical holonomy for A_g equals −2π Σ Res g; equivalently (1/2πi)∮ g dz = (1/2π)∫(z g)α_H.", src: "thm:res-hol"}
+      - {id: P1, name: "Centers/radii absorption", status: proved, statement: "For z=z₀+r e^{Jθ}, centers/radii are absorbed into the weight; kernel remains α_H.", src: "prop:center-radius"}
+      - {id: P2, name: "Distributional residue theorem", status: proved, statement: "d(g dz)=∂̄g d\\bar z∧dz=2πi Σ Res g δ_a dx∧dy; Stokes gives residue theorem.", src: "sec:distribution"}
     route_map:
       - {id: R1, name: "Form‑theoretic route", inputs: ["param z=e^{Jθ}", "α_C=Jα_H"], output: "T1,T2", status: "proved"}
       - {id: R2, name: "Connection/holonomy route", inputs: ["A_g=dt+(z g)α_H"], output: "T2 via Δt", status: "proved"}
@@ -1022,7 +1090,7 @@ a2a_doc:
     counterexamples_or_limits: ["Pole on S¹ invalidates naive equalities without PV; reversing orientation inserts − sign (src: app:signs)."]
     asks: "State sharpness (e.g., minimal boundary regularity for Φ, necessity of z‑factor)."
 
-  constructions_and_kernels:
+    constructions_and_kernels:
     operators:
       - {name: "α_H", formula: "dθ on H₁", properties: "closed on S¹; invariant under rotations"}
       - {name: "α_C", formula: "dz/z on |z|=1", properties: "pullback by z=e^{Jθ} gives Jα_H"}
@@ -1031,29 +1099,29 @@ a2a_doc:
       - "dz = z α_C = J z α_H (|z|=1)"
       - "α_C = J α_H (kernel identity)"
     compatibility_checklist:
-      commute_pairwise: "UNKNOWN"
-      weyl_invariant: "UNKNOWN"
-      bounded_on_Hilbert_space: "UNKNOWN"
-      model_independence_R_t: "UNKNOWN"
-    asks: "Specify functional calculus used (none/elementary) and where symbol bounds enter, if any."
+      commute_pairwise: "N/A"
+      weyl_invariant: "N/A"
+      bounded_on_Hilbert_space: "N/A"
+      model_independence_R_t: "N/A"
+      asks: "Specify functional calculus used (none/elementary) and where symbol bounds enter, if any."
 
   explicit_formula_block:
-    geometric_side: "UNKNOWN"
-    spectral_side: "UNKNOWN"
-    regularizations: "UNKNOWN"
-    weil_functional_GL1: "UNKNOWN"
-    rho_W_density: "UNKNOWN"
-    ramified_ledger: {when_present: "UNKNOWN", sign: "UNKNOWN", bound: "UNKNOWN", vanishing_cases: "UNKNOWN"}
-    positivity_table: "UNKNOWN"
+    geometric_side: "N/A"
+    spectral_side: "N/A"
+    regularizations: "N/A"
+    weil_functional_GL1: "N/A"
+    rho_W_density: "N/A"
+    ramified_ledger: {when_present: "N/A", sign: "N/A", bound: "N/A", vanishing_cases: "N/A"}
+    positivity_table: "N/A"
     asks: "Confirm not applicable; else map each EF term to a holonomy analogue."
 
   main_results:
     results:
-      - {id: L1, name: "Kernel identity", statement: "α_C=J α_H on |z|=1.", conditions: "z(θ)=e^{Jθ}", dependencies: [A1], status: proved, src: lem:kernel-identity}
-      - {id: T1, name: "Coefficient extraction", statement: "a_n=(1/2πi)∮ f(z)z^{-(n+1)}dz=(1/2π)∫ f(e^{Jθ})e^{-Jnθ}α_H.", conditions: "f holomorphic near 𝔻̄", dependencies: [A1,A2,L1], status: proved, src: thm:coeff}
-      - {id: T2, name: "Residues as holonomy", statement: "Δt=−∫(z g)α_H=−2πΣ Res g and (1/2πi)∮ g dz=(1/2π)∫(z g)α_H.", conditions: "g meromorphic annulus; no S¹ poles", dependencies: [A1,A3,L1], status: proved, src: thm:res-hol}
-      - {id: P1, name: "Centers/radii absorption", statement: "For z=z₀+r e^{Jθ}, weights absorb (z₀,r); kernel α_H unchanged.", conditions: "holomorphic near circle", dependencies: [A1], status: proved, src: prop:center-radius}
-      - {id: P2, name: "Distributional residue theorem", statement: "d(g dz)=2πi Σ Res g δ_a dx∧dy; Stokes ⇒ residue theorem.", conditions: "no poles on ∂Ω", dependencies: [A4], status: proved, src: sec:distribution}
+      - {id: L1, name: "Kernel identity", statement: "α_C=J α_H on |z|=1.", conditions: "z(θ)=e^{Jθ}", dependencies: [A1], status: proved, src: "lem:kernel-identity"}
+      - {id: T1, name: "Coefficient extraction", statement: "a_n=(1/2πi)∮ f(z)z^{-(n+1)}dz=(1/2π)∫ f(e^{Jθ})e^{-Jnθ}α_H.", conditions: "f holomorphic near 𝔻̄", dependencies: [A1,A2,L1], status: proved, src: "thm:coeff"}
+      - {id: T2, name: "Residues as holonomy", statement: "Δt=−∫(z g)α_H=−2πΣ Res g and (1/2πi)∮ g dz=(1/2π)∫(z g)α_H.", conditions: "g meromorphic annulus; no S¹ poles", dependencies: [A1,A3,L1], status: proved, src: "thm:res-hol"}
+      - {id: P1, name: "Centers/radii absorption", statement: "For z=z₀+r e^{Jθ}, weights absorb (z₀,r); kernel α_H unchanged.", conditions: "holomorphic near circle", dependencies: [A1], status: proved, src: "prop:center-radius"}
+      - {id: P2, name: "Distributional residue theorem", statement: "d(g dz)=2πi Σ Res g δ_a dx∧dy; Stokes ⇒ residue theorem.", conditions: "no poles on ∂Ω", dependencies: [A4], status: proved, src: "sec:distribution"}
     asks: "Provide one‑line invariant explanation for positivity/monotonicity claims (if any)."
 
   dependency_graph:
@@ -1138,20 +1206,22 @@ a2a_doc:
       - "CR‑geometric rephrasing on boundaries of strictly pseudoconvex domains."
       - "Smirnov classes on arcs; PV refinements for boundary poles."
     asks: "Prioritize milestones (H₂ case, PV rigor, domain‑change constants) and outline a verification plan with explicit test families."
-
 ---
 doc_id: heisenberg02
 source: heisenberg02.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Holonomy Universality Beyond the Disk: Riemann Maps, Domains, and Hardy/Smirnov Classes on a Single Heisenberg Slice"
     title_short: "Holonomy Universality Beyond the Disk"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
+    venue: "Preprint (CC BY 4.0)"
     year: 2025
-    version: "Part II; LaTeX draft with \\date{\\today}"
-    url: UNKNOWN
+    date: "2025-09-03"
+    msc_primary: "30E20"
+    msc_secondary: ["30C35","53C17"]
+    version: "Part II; preprint dated 2025-09-03"
+    url: "file:///mnt/data/Heisenberg-holonomy-II.pdf"
     area: "complex analysis, Heisenberg geometry, boundary integral methods"
     normalization: "Heisenberg slice H_1 ≅ S^1×ℝ with α_H=dθ; w=e^{Jθ}, J^2=-1"
     primary_objects:
@@ -1296,19 +1366,18 @@ a2a_doc:
   projections:
     items: ["Quantitative bounds for W in terms of quasisymmetry modulus.", "Automated quadrature on H_1 for domain functionals.", "Extensions to vector-valued kernels, higher connectivity with branch cuts.", "Links to noncommutative geometry/physics via A_g and holonomy."]
     asks: "Prioritize milestones and a verification plan (benchmarks: disk, half-plane, annulus, Koch-like quasicircle)."
-
 ---
 doc_id: heisenberg03
 source: heisenberg03.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "The Heisenberg Shadow: Reframing the Foundations of Analysis"
     title_short: "Heisenberg Shadow"
     authors: ["Michael Seiler"]
     venue: "preprint"
-    year: UNKNOWN
-    version: UNKNOWN
+    year: "2025"
+    version: "preprint-2025-09-03"
     url: "orcid:0009-0009-5529-2008"
     area: "complex analysis, several complex variables, microlocal/CR, semiclassical"
     normalization: "Heisenberg contact form; unit circle calibration"
@@ -1325,12 +1394,18 @@ a2a_doc:
       - {name: "w_ρ", type: "weight", role: "c_n (det L_ρ)^{1/4}", src: "thm:Szego-universal"}
       - {name: "𝒲_{Ω,z0,n}", type: "coefficient functionals", role: "Cauchy/Laurent via host pairing", src: "def:host-III"}
     normalization_sheet:
-      finite_places: UNKNOWN
+      finite_places: "N/A (Part III — no finite-place ledger)"
       arch_place:
-        scattering_matrix: UNKNOWN
+        scattering_matrix: "N/A (Part III)"
         pv_convention: "∮ counterclockwise; (2πJ)^{-1}∮⋯dz; on S¹, dz/z = J dθ"
-        spectral_measure: UNKNOWN
-      dictionary_constants: UNKNOWN
+        spectral_measure: "dθ/2π on S¹ (with α_H = dθ)"
+      dictionary_constants:
+        circle_total_measure: "∮_{S¹} α_H = 2π"
+        alpha_C_identity: "dz/z = J α_H on |z|=1"
+        cauchy_prefactor: "(2πJ)^{-1}"
+        host_pairing_prefactor: "1/(2π)"
+        maslov_oscillator: "μ = 2 (1D harmonic oscillator)"
+        szego_weight: "w_ρ = c_n (det L_ρ)^{1/4} (c_n fixed by unit ball)"
     identities_checked:
       - "∮_{γ̃} dt = −∮_γ (x dy−y dx) = −2 Area(γ). src: lem:action-holonomy"
       - "ℋ[f;Γ] = ∫_{Γ} f(z) dz with ℋ via ω_H. src: Program A"
@@ -1350,6 +1425,7 @@ a2a_doc:
       - {id: C6, name: "i = J in the shadow", status: "proved", statement: "Algebraic i represents quarter-turn J after projection π.", src: "Anatomy/Demystify i"}
       - {id: C7, name: "Rigidity/initiality of host", status: "proved", statement: "Circle host is unique (up to norm.) and initial in HolCalc.", src: "thm:rigidity-III, thm:initial-object, cor:unique-host"}
       - {id: C8, name: "Zeta/Heisenberg link", status: "conjectured", statement: "ζ(s) properties reflect deeper Heisenberg structure.", src: "Conjecture on ζ"}
+    frontier_claims: ["C8 — Conjecture on ζ (frontier claim)"]
     route_map:
       - {id: R1, name: "Holonomy→Residues", inputs: ["(H_1,θ,J,π)", "ω_H", "Γ piecewise C¹", "f holomorphic"], output: "Residue identity + corner stability", status: "complete"}
       - {id: R2, name: "Heisenberg parametrix", inputs: ["∂Ω strictly pseudoconvex", "charts Φ_p", "Levi L_ρ"], output: "S_Ω ≍ U^* M_w S_{H_n} M_w U", status: "complete"}
@@ -1411,11 +1487,11 @@ a2a_doc:
     asks: ["State the exact functional calculus/symbol bounds used in the parametrix and where they enter."]
 
   explicit_formula_block:
-    geometric_side: UNKNOWN
-    spectral_side: UNKNOWN
-    regularizations: UNKNOWN
-    weil_functional: UNKNOWN
-    ramified_ledger: {when_present: UNKNOWN, sign: UNKNOWN, bound: UNKNOWN, vanishing_cases: UNKNOWN}
+    geometric_side: "N/A in Part III — EF geometry assembled in Part IV (Adelic Holonomy Identity)."
+    spectral_side: "N/A in Part III — zeros/trivial/gamma terms handled in Part IV; geometric ν-operator in Part V."
+    regularizations: "N/A in Part III (see damping/ledger treatment in later parts)."
+    weil_functional: "N/A in Part III; see the Weil explicit-formula normalization in Part IV."
+    ramified_ledger: {when_present: "N/A (Part III)", sign: "N/A", bound: "N/A", vanishing_cases: "N/A"}
     positivity_table: []
     asks: ["Not an EF paper, but if a ζ-link is intended, specify the EF specialization and test space."]
 
@@ -1498,22 +1574,22 @@ a2a_doc:
   projections:
     items: ["Extend host formalism to H_n and general CR manifolds.", "Globalize Szegő universality with explicit remainders.", "Derive BS/EBK for broader integrable systems via holonomy.", "Investigate ζ via Heisenberg models of test functions."]
     asks: ["Prioritize milestones and a verification plan (unit ball calibration → general domains → quantitative remainders)."]
-
 ---
 doc_id: heisenberg04
 source: heisenberg04.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Heisenberg Holonomy IV: Adelic Modulus, Holonomy, and the Explicit Formula"
     title_short: "Heisenberg Holonomy IV"
-    authors: UNKNOWN
-    venue: UNKNOWN
-    year: UNKNOWN
-    version: UNKNOWN
-    url: UNKNOWN
+    authors: "Michael Seiler"
+    venue: "Preprint (CC BY 4.0)"
+    year: 2025
+    version: "v1 (2025-09-03)"
+    url: "https://orcid.org/0009-0009-5529-2008"
     area: "analytic number theory; adelic harmonic analysis; Heisenberg geometry"
-    normalization: UNKNOWN
+    msc: { primary: "11M26", secondary: ["11F72","22E27","53C17"] }
+    normalization: "Mellin-symmetric (GL(1)): primes at critical p^{-n/2}; archimedean via Γ_R(s); host orientation α_H=dθ"
     primary_objects:
       - name: "H^1(ℚ_v)"
         type: "Heisenberg group (local)"
@@ -1538,20 +1614,21 @@ a2a_doc:
         role: "archimedean/primes blocks of geometric EF"
     normalization_sheet:
       finite_places:
-        euler_factors: UNKNOWN
-        measure: UNKNOWN
-        satake_params: UNKNOWN
+        euler_factors: "L_p(s)=∏_{j}(1−α_{p,j}p^{−s})^{-1}; for ζ: L_p(s)=(1−p^{-s})^{-1}"
+        measure: "Dirac comb D_p(u)=Σ_{k≥1}(log p)·δ(u−k log p); ⟨D_p,W⟩=Σ_{k≥1}(log p)W(k log p)"
+        satake_params: "GL(1) Satake parameters α_{p,j}; for ζ: α_{p,1}=1 (unramified)"
       arch_place:
-        scattering_matrix: UNKNOWN
-        pv_convention: UNKNOWN
-        spectral_measure: UNKNOWN
+        scattering_matrix: "γ_∞(s)=Γ_R(s)=π^{-s/2}·Γ(s/2)"
+        pv_convention: "Principal value on S^1 for singular kernels (Hilbert transform), host form α_H=dθ"
+        spectral_measure: "Half-line cosine variable ξ with Lebesgue dξ; s=1/2+iξ on the spectral side"
       dictionary_constants:
         note: "proportionalities between scale-profile side and Fourier/Mellin side"
-        example: "W_Φ(u) ↔ ĝ_Φ(2u) with constant c_* = UNKNOWN"
+        example: "W_Φ(u)=(1/π)(1−e^{−u})·ĝ_b(2u)  ⇒ c_* = 1/π  (cosine profile ĝ_b)"
     identities_checked:
-      - id: ID1
-        stmt: "𝒬_MS(g) = Σ_v ⟨𝒟_v^{comb}, W_Φ⟩ = 𝒜(g) + 𝒫(g)"
-        src: "paper:general"
+      - "Finite places: Dirac comb D_p (eq. (1), Part IV)"
+      - "Archimedean density ρ_W via Γ_R (eq. (2), Part IV)"
+      - "Weil test on the half-line W(u)=(1/π)(1-e^{-u})·ĝ_b(2u) (eq. (3), Part IV)"
+      - "Adelic holonomy = explicit formula (Theorem 1.1 / eq. (4), Part IV)"
     asks: "If any constant differs from a standard reference (cite), document and justify."
 
   problem_and_claim:
@@ -1568,16 +1645,18 @@ a2a_doc:
 
   notation:
     symbols:
-      ℚ: "rationals"; 𝔄_ℚ: "adeles of ℚ"; v: "place (finite/∞)"
+      ℚ: "rationals"
+      𝔄_ℚ: "adeles of ℚ"
+      v: "place (finite/∞)"
       H^1(–): "3D Heisenberg group"
       ℝ_{>0}^×: "modulus line (log-scale u)"
       Φ: "primary test on modulus; induces W_Φ"
-      g, ĝ: "log-side profile and transform (Fourier/Mellin conventions UNKNOWN)"
+      g, ĝ: "g even; ĝ_b = cosine transform on [0,∞); u=log x; s=1/2+iξ with ξ the cosine-Fourier variable"
       𝒟_v^{comb}: "local holonomy functional"
       𝒬_MS(g): "total adelic holonomy"
       𝒜(g), 𝒫(g): "arch/primes terms in EF (geom.)"
     equivalences:
-      UNKNOWN: UNKNOWN
+      Mellin-Fourier: "u↔ξ via (F_c W)(ξ)=∫_0^∞ W(u)cos(2uξ)du; spectral side s=1/2+iξ; host kernel α_C=J·α_H on |z|=1 and dz=J·z·α_H"
     asks: "State domains/codomains explicitly (e.g., W_Φ: ℝ→ℝ), and any hidden identifications (e.g., X=G/K, spherical Fourier side)."
 
   spaces_and_classes:
@@ -1585,11 +1664,11 @@ a2a_doc:
       - id: S1
         name: "Test profiles"
         def: "W_Φ on log-scale u with regularity/decay suitable for EF pairings."
-        norms: UNKNOWN
+        norms: "T_α([0,∞)), α>1/2: sup_{u≥0} e^{αu}|∂^k W(u)|<∞ (all k); stable under E_a and C_{1/2}=(Id−E_{1/2})(Id−E)^{-1} with kernel T_{1/2}(x)=(1+e^{−x/2})^{-1}"
       - id: S2
         name: "Adelic test data"
         def: "Restricted tensor products across v compatible with 𝒟_v^{comb}."
-        norms: UNKNOWN
+        norms: "Restricted tensor product across places; finite v via Dirac-comb pairing; arch v via cosine side; absolute convergence under T_α"
     asks: "Give minimal examples/counterexamples for S1,S2 (e.g., compact support vs Schwartz)."
 
   assumptions:
@@ -1621,25 +1700,25 @@ a2a_doc:
       total: "𝒬_MS(g)=𝒜(g)+𝒫(g)"
       arch_piece: "𝒜(g) from v=∞"
       primes_piece: "𝒫(g) from finite v"
-      regularizations: "PV/heat cutoffs UNKNOWN"
+      regularizations: "Distributional pairing; archimedean side via (F_c W) against d/dξ log Γ_R; no extra PV for the finite comb"
     spectral_side:
-      zeros_sum: UNKNOWN
-      gamma_terms: UNKNOWN
-      constants: UNKNOWN
+      zeros_sum: "Σ_ρ H(g;ρ) (nontrivial zeros counted with multiplicity)"
+      gamma_terms: "archimedean/trivial terms from Γ_R(s) (Mellin-symmetric ledger)"
+      constants: "Prime normalization at critical p^{-n/2}; ⟨D_∞,W⟩=−𝒜(g); ⟨D_p,W⟩ builds 𝒫(g)"
     weil_functional_GL1:
-      rho_W: UNKNOWN
+      rho_W: "ρ_W(ξ)=−(1/π)·d/dξ[log Γ_R(1/2+iξ)+log Γ_R(1/2−iξ)]  (arch density)"
     ramified_ledger:
       when_present: "finite v with ramification (here ζ: none)"
-      sign: UNKNOWN
-      bound: UNKNOWN
-      vanishing_cases: "all finite p unramified (for ζ)"
+      sign: "n/a for ζ (all finite p unramified); in general, twisted finite blocks follow character weights"
+      bound: "finite set at ramified p; contributions uniformly controlled for T_α tests"
+      vanishing_cases: "ζ: all finite p unramified; twists: D_{p,χ}(u)=Σ_{k≥1}(log p)χ(p)^k δ(u−k log p), and at ∞ use Db_{∞,χ}(ξ)=−∂_ξ log[Γ_∞(1/2+iξ,χ_∞)Γ_∞(1/2−iξ,χ_∞)] (Part IV §6)"
     positivity_table:
       - term: "prime"
-        status: UNKNOWN
-        cond: UNKNOWN
+        status: "≥ 0"
+        cond: "for autocorrelations g=g_Φ after the Mellin–torsion filter C_{1/2}"
       - term: "arch"
-        status: UNKNOWN
-        cond: UNKNOWN
+        status: "≤ 0"
+        cond: "for autocorrelations g=g_Φ after the Mellin–torsion filter C_{1/2}"
     asks: "Specify which terms are ≥0 under which test classes; give exact rho_W."
 
   main_results:
@@ -1680,11 +1759,11 @@ a2a_doc:
     asks: "What unique step fails first in higher rank?"
 
   limits_and_continuity:
-    t_to_0_passages: "UNKNOWN"
-    density_args: "Approximate W_Φ by compactly supported/Schwartz sequences; topology UNKNOWN."
+    t_to_0_passages: "not used in Part IV (fixed-modulus-line formulation; no heat-time parameter)"
+    density_args: "Use T_α([0,∞)) (α>1/2) and the E_a-family to approximate by compact support; dominated convergence applies"
     constants_table:
-      - {name: "C_loc(v)", origin: "local bounds on 𝒟_v^{comb}", uniform_in_t: UNKNOWN, dep_on_a: UNKNOWN}
-      - {name: "C_glob", origin: "Σ_v majorant", uniform_in_t: UNKNOWN, dep_on_a: UNKNOWN}
+      - {name: "C_loc(v)", origin: "local bounds on 𝒟_v^{comb}", uniform_in_t: "n/a (no t)", dep_on_a: "depends on α in T_α"}
+      - {name: "C_glob", origin: "Σ_v majorant", uniform_in_t: "n/a (no t)", dep_on_a: "depends on α; finite p by support of W"}
     asks: "Provide uniform constants and specify where blow-ups occur."
 
   checks_and_recipes:
@@ -1697,8 +1776,8 @@ a2a_doc:
       -> return sum_v L_v, and split into arch/primes by v
     toy_numeric:
       alpha_X_choice: "ĝ(x)=e^{-αx}·χ_{(0,X]} with α=1/3, X=5"
-      rhoW_integral: "∫_0^∞ ĝ(x)·ρ_W(x) dx  (ρ_W UNKNOWN)"
-      prime_terms: "Σ_{p≤11} (log p)·F(p) with F from W_Φ-profile; signs/units to smoke-test"
+      rhoW_integral: "∫_0^∞ (F_c W)(ξ)·[−(1/π) d/dξ (log Γ_R(1/2+iξ)+log Γ_R(1/2−iξ))] dξ"
+      prime_terms: "P(g)=Σ_p Σ_{k≥1} (log p)·W(k·log p); if supp W ⊆ [0,X], restrict to k·log p ≤ X (Example 8.1, Part IV)"
     asks: "Provide a canonical toy Φ to fix signs and constants."
 
   scope_and_unconditionality:
@@ -1721,20 +1800,19 @@ a2a_doc:
       - "Quantify positivity to derive explicit zero-density or zero-free regions."
       - "Numerical holonomy samplers for ramified test data."
     asks: "Prioritize milestones and a verification plan (local constants; end-to-end EF check on ζ)."
-
 ---
 doc_id: heisenberg05
 source: heisenberg05.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Heisenberg Holonomy V: The $\\nu$‑involution as a Geometric Operator on the Adelic Heisenberg Moduli Space"
     title_short: "Heisenberg Holonomy V"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
-    year: UNKNOWN
+    venue: "Preprint (CC BY 4.0)"
+    year: 2025
     version: "v1 preprint (LaTeX)"
-    url: UNKNOWN
+    url: "file:/mnt/data/Heisenberg-holonomy-V.pdf"
     area: "analytic number theory; explicit formula; automorphic L‑functions; Heisenberg/adelic geometry"
     normalization: "Maaß–Selberg fixed‑heat (MS); log–Mellin on the u‑line"
     primary_objects:
@@ -1829,7 +1907,7 @@ a2a_doc:
       - {name: A_5, formula: "symbol â_5(τ)∈[0,1], â_5≈1 on |τ|≤τ_0", props: "PSD; gap η>0", src: "lem:a5-symbol; lem:a5-dominance"}
       - {name: R*, formula: "ramified damping kernel (exponential)", props: "smoothing; PSD", src: "sec:A5-geometry"}
     compatibility_checklist:
-      commute: {e^{-tA}↔M(w,0): UNKNOWN, e^{-tA}↔Ψ_{1/2}: UNKNOWN, M(w,0)↔Ψ_{1/2}: UNKNOWN}
+      commute: {"e^{-tA}↔M(w,0)": "YES — M(w,0) is |W|-scalar in MS (commutes)", "e^{-tA}↔Ψ_{1/2}": "YES — both are spherical multipliers f(-ΔX) (commute)", "M(w,0)↔Ψ_{1/2}": "YES — scalar vs. multiplier (commute)"}
       invariance: {Weyl_invariance: "G_ν,A_5 expected", boundedness: "R,T_π,A_5 bounded on L^2_u"}
       model_independence: "R_t/ledger independent up to unitary equivalence."
     asks: "Specify functional calculus used (Fourier/Mellin) and where symbol bounds enter."
@@ -1948,27 +2026,26 @@ a2a_doc:
       - "Port holonomy parity to families; study low‑lying zeros via geometric localization."
       - "Numerical ledger on S^1 for ζ and Dirichlet L; validate constants."
     asks: "Prioritize milestones (GL(2) first), list verification steps, and note obstacles (ramified models, explicit A5 construction)."
-
 ---
 doc_id: heisenberg06
 source: heisenberg06.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Heisenberg Holonomy VI: Higher Holonomy and the Geometric Annihilation Principle for GL(m)"
     title_short: "Heisenberg Holonomy VI"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
-    year: UNKNOWN
-    version: UNKNOWN
-    url: UNKNOWN
+    venue: "Preprint"
+    year: "2025"
+    version: "Unrefereed preprint (draft)"
+    url: "local:/mnt/data/Heisenberg-holonomy-VI.pdf"
     area: "analytic number theory; automorphic forms; representation theory; geometric Langlands"
     normalization: "Maaß–Selberg (MS)"
     primary_objects:
       - name: "G=GL(m)"
         type: group
         role: ambient
-      - name: "H_{m-1}(\mathbb A)=\\HmA"
+      - name: "H_{m-1}(\\mathbb A)=\\HmA"
         type: adelic Heisenberg group
         role: phase_space
         src: "sec:HmA"
@@ -1979,10 +2056,14 @@ a2a_doc:
       - name: "\\Gnum"
         type: operator
         role: geometric_nu
+        domain: "H (MS W‑model; even abelian slices)"
+        codomain: "H"
         src: "def:Gnum"
       - name: "\\TTnu"
         type: involution
         role: algebraic_nu (functional equation)
+        domain: "H (ledger side; spectral transform space)"
+        codomain: "H"
         src: "eq:Tnu-spectral-m"
       - name: "w_0"
         type: Weyl_element
@@ -2009,7 +2090,7 @@ a2a_doc:
       arch_place:
         gamma_to_μ∞: "μ̂_∞(n)=−Re(d/ds log γ_∞(s))|_{s=1/2+i n}, n∈ℤ"
         spectral_pairing: "⟨φ,μ⟩=∑_n φ_n μ̂(n) on S^1 with φ(θ)=∑ φ_n e^{inθ}"
-        scattering_PV: UNKNOWN
+        scattering_PV: "Maaß–Selberg PV pairing dξ(τ) = (1/2π) φ′(τ) dτ; no δ₀ at τ=0"
         src: "eq:muarith-hat; sec:spectral-ledger-measure"
       dictionary_constants:
         isometry: "⟨W_Φ,W_Ψ⟩_{WeylC}=⟨ĝ_Φ,ĝ_Ψ⟩_{MS}"
@@ -2058,7 +2139,7 @@ a2a_doc:
   spaces_and_classes:
     classes:
       - {name: "𝒮(𝔞)", crit: "Schwartz on 𝔞, K‑finite", src: "lem:weyl-uncertainty"}
-      - {name: "SA^2(a)=\\SAa", crit: UNKNOWN, src: "prop:Gnum-isometry"}
+      - {name: "SA^2(a)=\\SAa", crit: "even ĝ_b with ∫_0^∞ (|ĝ_b|+|ĝ_b''|) e^{a x}(1+x)^2 dx < ∞ for a>1/2; IBP boundary terms controlled on fixed‑heat window", src: "prop:Gnum-isometry"}
       - {name: "trig poly on S^1", crit: "ψ(θ)=∑_{|n|≤N} c_n e^{inθ}", src: "sec:weil-positivity"}
     asks: "Give minimal examples/counterexamples for each class and exact norms/seminorms used."
 
@@ -2085,11 +2166,11 @@ a2a_doc:
         props: "involutive isometry"
         src: "def:Gnum; prop:Gnum-isometry"
     compatibility_checklist:
-      commute_pairwise: "R^{(m)} and T^{(m)}_π commute on spherical data; general case UNKNOWN"
+      commute_pairwise: "Holds on MS spherical class (TνUχ=UχTν; multiplier + reflection commute); general non‑spherical case open"
       Weyl_invariant: "yes"
       bounded_on_Hilbert: "unitary on the W‑model used"
-      model_independence: "unitary equivalence claimed; details UNKNOWN"
-    asks: "State the functional calculus used (spectral/Mellin) and where symbol bounds enter."
+      model_independence: "Unitary equivalence on the fixed‑heat window (Weil pairing); proved for Tν in Part II (appendix), realized geometrically via Mellin/log‑Mellin dictionary"
+      asks: "State the functional calculus used (spectral/Mellin) and where symbol bounds enter."
 
   explicit_formula_block:
     zero_side:
@@ -2103,8 +2184,9 @@ a2a_doc:
             −½ log Q + μ̂_∞(0) − ord_{s=1}L − ord_{s=0}L, n=0 }
       arch_term: "μ̂_∞(n)=−Re(d/ds log γ_∞(s))|_{s=1/2+i n}"
       src: "eq:muarith-hat"
-    ledger_identity: "⟨φ,μ_Z⟩=⟨φ,μ_arith⟩ for even φ (tempered)", src: "thm:ledger-measure"
-    weil_functional_GL1: UNKNOWN
+    ledger_identity: "⟨φ,μ_Z⟩=⟨φ,μ_arith⟩ for even φ (tempered)"
+    ledger_identity_src: "thm:ledger-measure"
+    weil_functional_GL1: "Toeplitz form on S^1: for φ(θ)=∑ c_n e^{inθ}, Q_μ(φ)=∑_{n,m∈ℤ} \\overline{c_m} c_n · μ̂(n−m); PSD for μ_Z ⇔ RH; ledger identity transports PSD to μ_arith (polar case: impose c_0=0)."
     ramified_ledger:
       when_present: "primes dividing conductor; arch places"
       sign: "mixed; depends on local data"
@@ -2171,7 +2253,7 @@ a2a_doc:
       Compute S=∑ φ_n (μ̂_Z(n)−μ̂_arith(n)); check S=0.
     toy_numeric:
       alpha_X_choice: "ĝ(x)=e^{−αx}·χ_{(0,X]} with α=1/2, X=3"
-      rhoW_integral: "∫_0^X e^{−αx} ρ_W(x) dx  (UNKNOWN ρ_W)"
+      rhoW_integral: "∫_0^X e^{−αx} · [ x^{r−1} |c(i x v_H)|^{−2} / |W| ] dx  (MS slice density; r=rank_ℝ(X))"
       first_primes: "−∑_{p≤P} (1/1)∑_j α_{p,j} p^{−1/2}  + arch term μ̂_∞(1)"
     asks: "Provide a canonical toy ĝ to smoke‑test constants/signs."
 
@@ -2186,7 +2268,7 @@ a2a_doc:
   limitations:
     list:
       - "Relies on MS normalization and earlier parts for EF details."
-      - "SA^2(a) class not fully specified here."
+      - "SA^2(a) class specified (a>1/2; ∫(|ĝ_b|+|ĝ_b'') e^{a x}(1+x)^2 < ∞); controls IBP boundary terms on the fixed‑heat window."
       - "Positivity statements framed for even tests; pole at s=1 handled by c_0=0 restriction."
       - "Ramified local analysis is only sketched."
     asks: "Give counterexamples when assumptions (e.g., strict gap) are dropped."
@@ -2197,12 +2279,10 @@ a2a_doc:
       - "Extend to other groups (Sp, SO) with adapted Heisenberg shadows."
       - "Geometric Langlands: test (P1–P3) to validate the Cartan avatar."
     asks: "Prioritize milestones (local unramified test; arch phase check; quantitative mixing bound) and give a verification plan."
-
-
 ---
 doc_id: langlands-functoriality
 source: langlands-functoriality.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   1_meta:
     title_long: "Langlands Functoriality via Fixed–Heat Positivity and GRH — Completion paper linked to the GRH suite (Parts I–III) (src: sec:intro)"
@@ -2211,7 +2291,12 @@ a2a_doc:
     venue: "preprint (unrefereed)"
     year: 2025
     version: "preprint (2025-09-01)"
-    url: null
+    url: "Langlands-Functoriality.pdf"
+    dependencies:
+      summary: "Relies on GRH Trilogy infrastructure: A1–A5, R*, and the Part II ν‑projector."
+      requires: ["A1","A2","A3","A4","A5","R*","ν‑proj"]
+      upstream_sources: ["GRH Part I (A1–A5, R*)", "GRH Part II (ν‑projector/gap)"]
+      note: "Claims are conditional on these upstream components; see 13_scope_and_unconditionality."
     area: "automorphic forms; analytic number theory"
     normalization: "Maaß–Selberg (MS) (src: sec:prelim)"
     primary_objects:
@@ -2300,7 +2385,7 @@ a2a_doc:
       - {name: "TT_ν", def: "ν-projector; annihilates odd component per suite. (src: sec:prelim)"}
     factorizations: "Loewner sandwich gives Γ_t^{(N)}≈Γ_t and R_t^{real}≈R_t^{ideal} up to ε(N). (src: sec:reserve, sec:forcing)"
     compatibility_checklist:
-      commute: {e^{-tA}: "yes (spectral calculus)", M(w,0): "ideal: yes; realized: up to ε(N)", Ψ_{1/2}: "yes (multiplier)"}
+      commute: {"e^{-tA}": "yes (spectral calculus)", "M(w,0)": "ideal: yes; realized: up to ε(N)", "Ψ_{1/2}": "yes (multiplier)"}
       weyl_invariance: "R_t^{ideal} Weyl-invariant; realized may violate if no transfer. (src: prop:two-rays)"
       boundedness: "All listed ops bounded on the working Hilbert slice. (src: Part I refs)"
       unitary_equiv: "R_t independent of model up to unitary eq. (intended; src: Part I)"
@@ -2332,7 +2417,7 @@ a2a_doc:
       - {id: "prop:two-rays", name: "Two-ray deficit", statement: "Loss δ>0 across two rays if no Π.", conditions: "rank≥2 target", dependencies: "[A1,A2, ν-proj gap]", status: "proved"}
       - {id: "thm:rank1-forcing", name: "Rank‑1 forcing", statement: "Gap forces realized spectrum to match primes ⇒ Π.", conditions: "real rank 1", dependencies: "[A5 gap, budgets]", status: "proved"}
       - {id: "prop:local-compat", name: "Local compatibility", statement: "Π matches local RS squares and Γ-factors.", conditions: "all places", dependencies: "[R*, FE structure]", status: "proved"}
-      - {id: "thm:Functoriality-Main", name: "Functorial transfer", statement: "Existence and local compat. of Π.", conditions: "π cuspidal unitary; r arbitrary", dependencies: "[all above]", status: "proved"}
+      - {id: "thm:Functoriality-Main", name: "Functorial transfer", statement: "Existence and local compat. of Π.", conditions: "π cuspidal unitary; r arbitrary", dependencies: "[all above]", status: "proved (conditional on A1–A5, R*, ν‑proj)"}
     asks: "Give an invariant-theoretic one-liner for each positivity result (why P_t⪰αΓ_t)."
 
   9_dependency_graph:
@@ -2387,7 +2472,9 @@ a2a_doc:
     asks: "Provide a canonical toy Φ and exact ρ_W(x) form from Part I to smoke-test signs/units."
 
   13_scope_and_unconditionality:
-    unconditional: "Main theorem assumes only suite-internal A1–A5, R*, ν-proj framework; no zero-density or beyond-endoscopy inputs. (src: abstract, sec:intro)"
+    unconditional: "Not asserted as standalone-unconditional: results are conditional on A1–A5, R*, and the ν‑projector from the GRH trilogy. (src: abstract, sec:intro)"
+    claim_status: "conditional_on_trilogy_infrastructure"
+    blocking_upstream: ["A1","A2","A3","A4","A5","R*","ν‑proj gap"]
     program_inputs:
       - {id: "A1–A5,R*", formal_statement: "As in GRH Parts I–II with explicit constants (κ_X, ε(N)=1/N, C_0(a,m,K), C_1(m,K), β(m)>0, δ_ν>0)", current_status: "proved (internal)", needed_for: "reserve, budgets, sandwich, gap", candidates_for_proof: "Part I–II refs"}
       - {id: "ν-proj gap", formal_statement: "strict gap on ν-odd", current_status: "proved (Part II)", needed_for: "two-ray/rigidity", candidates_for_proof: "Part II refs"}
@@ -2411,7 +2498,7 @@ a2a_doc:
 ---
 doc_id: langlands-geometric
 source: langlands-geometric.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Geometric Langlands via Fixed–Heat Positivity — Part IV: Geometric Completion and Linkage to the GRH Suite"
@@ -2448,13 +2535,13 @@ a2a_doc:
   problem_and_claim:
     problem: "Give a quantitative, falsifiable GL–EF on stacks with explicit main/error separation, an operator half–shift improving positivity, and a ν–witness barrier linking geometric positivity to GRH-type inputs."
     core_claims:
-      - {id: C1, name: "Filtered GL–EF on stacks", status: proved, statement: "GL–EF identity with M_x, E_x≥0 and absolute convergence." , src: thm:GLEF}
-      - {id: C2, name: "Augmented EF budgets", status: proved, statement: "E_x(T) ≤ α_x B_bdry+β_x B_wild+γ_x B_ss+δ_x B_geom with absolute convergence.", src: thm:III-AEF}
-      - {id: C3, name: "Half–shift positivity", status: proved, statement: "ℋ improves Gram pairing (Loewner) and adds Δ≥0 to EF.", src: thm:III-halfshift}
-      - {id: C4, name: "No‑fake‑positivity", status: proved, statement: "Under ν–projector, odd energy carries no genuine main mass; witness is annihilated under GRH‑type inputs.", src: thm:II-projector,thm:II-witness}
-      - {id: C5, name: "GL₁ specialization", status: proved, statement: "GL–EF reduces to divisor sum minus bounded truncation errors.", src: prop:GL1}
-      - {id: C6, name: "Hodge/Betti form", status: proved, statement: "Betti/Hodge GL–EF with Hodge ledger and subadditivity.", src: thm:betti-GLEF,thm:hodge-subadd,def:hledger}
-      - {id: C7, name: "Equivalence", status: proved, statement: "Analytic fixed–heat suite ⇔ geometric statements under standard hypotheses.", src: thm:GLC}
+      - {id: C1, name: "Filtered GL–EF on stacks", status: proved, statement: "GL–EF identity with M_x, E_x≥0 and absolute convergence.", src: "thm:GLEF"}
+      - {id: C2, name: "Augmented EF budgets", status: proved, statement: "E_x(T) ≤ α_x B_bdry+β_x B_wild+γ_x B_ss+δ_x B_geom with absolute convergence.", src: "thm:III-AEF"}
+      - {id: C3, name: "Half–shift positivity", status: proved, statement: "ℋ improves Gram pairing (Loewner) and adds Δ≥0 to EF.", src: "thm:III-halfshift"}
+      - {id: C4, name: "No‑fake‑positivity", status: proved, statement: "Under ν–projector, odd energy carries no genuine main mass; witness is annihilated under GRH‑type inputs.", src: "thm:II-projector, thm:II-witness"}
+      - {id: C5, name: "GL₁ specialization", status: proved, statement: "GL–EF reduces to divisor sum minus bounded truncation errors.", src: "prop:GL1"}
+      - {id: C6, name: "Hodge/Betti form", status: proved, statement: "Betti/Hodge GL–EF with Hodge ledger and subadditivity.", src: "thm:betti-GLEF, thm:hodge-subadd, def:hledger"}
+      - {id: C7, name: "Equivalence", status: proved, statement: "Analytic fixed–heat suite ⇔ geometric statements under standard hypotheses.", src: "thm:GLC"}
     route_map:
       - {id: R1, name: "Stacky GL–EF", inputs: ["stack Lefschetz","cleanness","generation"], output: "C1", status: proved}
       - {id: R2, name: "Budgets from Parts I–III", inputs: ["A1(A1Norm)","A2(A2Dist)","A4(A4Pos)","R*"], output: "C2", status: imported}
@@ -2464,7 +2551,7 @@ a2a_doc:
   notation:
     symbols:
       X: "smooth projective curve over 𝔽_q"
-      |X|: "closed points of X"
+      "|X|": "closed points of X"
       F: "𝔽_q(X)"
       G: "reductive group (mainly GL_m)"
       Bun_G: "stack of G-bundles on X"
@@ -2484,9 +2571,9 @@ a2a_doc:
     asks: "List domains/codomains for each operator and hidden IDs like X=G/K on spherical side, and the precise spectral model."
   spaces_and_classes:
     classes:
-      - {name: "Admissible window (ℓ‑adic)", membership: "HN slices fixed; weights in [w_-,w_+]; properness/cleanness of p,q maps.", src: def:admissible}
-      - {name: "Admissible (Hodge)", membership: "MHM with analogous weight/depth bounds; Hodge ledger defined.", src: def:hledger}
-      - {name: "Slice frame 𝒯", membership: "finite family stable under window ops; Gram‑positive.", src: thm:I-sliceframe}
+      - {name: "Admissible window (ℓ‑adic)", membership: "HN slices fixed; weights in [w_-,w_+]; properness/cleanness of p,q maps.", src: "def:admissible"}
+      - {name: "Admissible (Hodge)", membership: "MHM with analogous weight/depth bounds; Hodge ledger defined.", src: "def:hledger"}
+      - {name: "Slice frame 𝒯", membership: "finite family stable under window ops; Gram‑positive.", src: "thm:I-sliceframe"}
     norms:
       - "Gram norm from slice frame; Loewner order for operators. src: thm:III-halfshift"
       - "Budgets 𝔅 subadditive/monotone under conv/trunc. src: def:ledger,prop:budget,prop:trunc"
@@ -2505,21 +2592,27 @@ a2a_doc:
     asks: "Clarify sharpness of H.Gen/H.Clean and portability to other G and windows."
   constructions_and_kernels:
     operators:
-      - {name: "ℋ(Φ)=^pτ^{≤0}(Φ*𝓗_ϖ)", property: "Δ≥0; Loewner improvement; budget contraction c∈(0,1].", src: def:halfshift,thm:III-halfshift}
-      - {name: "𝕋_ν", property: "idempotent; splits even/odd energy; odd pairs trivially with main terms.", src: thm:II-projector}
+      - {name: "ℋ(Φ)=^pτ^{≤0}(Φ*𝓗_ϖ)", property: "Δ≥0; Loewner improvement; budget contraction c∈(0,1].", src: "def:halfshift, thm:III-halfshift"}
+      - {name: "𝕋_ν", property: "idempotent; splits even/odd energy; odd pairs trivially with main terms.", src: "thm:II-projector"}
     factorization: "Local term expansions over Fix(𝔽rob;c) stratified by HN; generic vs boundary/wild split. src: def:ME"
     compatibility_checklist:
-      commute_pairwise: "Yes on bounded HN window; convolution and perverse truncation commute up to ledger‑absorbed errors.", src: sec:halfshift,thm:GLEF
-      weyl_invariance: "Hecke/spherical compatible by Satake.", src: sec:dictionary
-      bounded_on_H: "Yes via Loewner and Gram bounds.", src: thm:III-halfshift
-      unitary_equiv: "Model‑independence via Satake equivalence.", src: sec:dictionary
+      commute_pairwise: "Yes on bounded HN window; convolution and perverse truncation commute up to ledger‑absorbed errors."
+      commute_pairwise_src: "sec:halfshift, thm:GLEF"
+      weyl_invariance: "Hecke/spherical compatible by Satake."
+      weyl_invariance_src: "sec:dictionary"
+      bounded_on_H: "Yes via Loewner and Gram bounds."
+      bounded_on_H_src: "thm:III-halfshift"
+      unitary_equiv: "Model‑independence via Satake equivalence."
+      unitary_equiv_src: "sec:dictionary"
     asks: "State the functional calculus used to justify ℋ and where symbol/weight bounds enter the Loewner sandwich."
   explicit_formula_block:
     geometric_side: "Tr(𝔽rob|T_Φ)=∑_{x∈|X|}(M_x(Φ)−E_x(Φ)) with M_x generic strata and E_x boundary/wild/SS/geom. src: thm:GLEF,def:ME"
     spectral_side: "Trace on admissible category; ν‑projector splits even/odd; half–shift adds Δ≥0. src: thm:II-projector,thm:III-halfshift"
     regularization: "weights/purity; properness on window; truncations monotone; absolute convergence of ∑E_x. src: def:admissible,thm:III-AEF"
-    weil_functional_GL1: "ρ_W(x)=k_t(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x); 𝒬_GL1(Φ)=∫_0^∞ ρ_W(x)·ĝ_Φ(x) dx; dictionary constant = 1.", src: app:density,eq:PVWeil-main
-    rho_W_density: "ρ_W(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x) (imported from Parts I–II).", src: app:density
+    weil_functional_GL1: "ρ_W(x)=k_t(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x); 𝒬_GL1(Φ)=∫_0^∞ ρ_W(x)·ĝ_Φ(x) dx; dictionary constant = 1."
+    weil_functional_GL1_src: "app:density, eq:PVWeil-main"
+    rho_W_density: "ρ_W(x)=(1/(2π))e^{-x^2/(8t)}T_{1/2}(x) (imported from Parts I–II)."
+    rho_W_density_src: "app:density"
     ramified_ledger:
       - {term: "boundary", when_present: "HN boundary", sign: "E≥0", bound: "≤α_X(t)·B_bdry (A4 reserve)", vanishing_cases: "no boundary in window"}
       - {term: "wild", when_present: "ramification", sign: "E≥0", bound: "≤C_{R*}·e^{-β(m)·t}·B_wild (conductor exponent α(m,K))", vanishing_cases: "unramified"}
@@ -2532,11 +2625,11 @@ a2a_doc:
     asks: "Confirm which terms are ≥0 under each admissible class (ℓ‑adic vs Hodge)."
   main_results:
     items:
-      - {id: T1, name: "GL–EF on stacks", statement: "Filtered GL–EF with M/E split and conv.", conditions: "H.Gen,H.Clean", dependencies: ["P1:Stack‑Lefschetz","D1:Dictionary"], status: proved, src: thm:GLEF}
-      - {id: T2, name: "Augmented EF budgets", statement: "E_x bounds in terms of 𝔅 with absolute conv.", conditions: "A1,A2,A4,R*", dependencies: ["I:linearEF"], status: proved(imported), src: thm:III-AEF}
-      - {id: T3, name: "Half–shift Loewner", statement: "EF gain Δ≥0; ⟨·,·⟩ Loewner improvement; budget contraction.", conditions: "admissible window", dependencies: ["Hecke conv","perverse trunc"], status: proved, src: thm:III-halfshift,def:halfshift}
-      - {id: T4, name: "Witness barrier", statement: "Odd energy has no genuine main mass; GRH annihilates fake positivity.", conditions: "GRH‑type", dependencies: ["ν–projector"], status: conditional, src: thm:II-projector,thm:II-witness}
-      - {id: T5, name: "Hodge ledger subadditivity", statement: "B^H subadditive/monotone.", conditions: "MHM admissible", dependencies: ["Betti Satake"], status: proved, src: thm:hodge-subadd}
+      - {id: T1, name: "GL–EF on stacks", statement: "Filtered GL–EF with M/E split and conv.", conditions: "H.Gen,H.Clean", dependencies: ["P1:Stack‑Lefschetz","D1:Dictionary"], status: proved, src: "thm:GLEF"}
+      - {id: T2, name: "Augmented EF budgets", statement: "E_x bounds in terms of 𝔅 with absolute conv.", conditions: "A1,A2,A4,R*", dependencies: ["I:linearEF"], status: proved(imported), src: "thm:III-AEF"}
+      - {id: T3, name: "Half–shift Loewner", statement: "EF gain Δ≥0; ⟨·,·⟩ Loewner improvement; budget contraction.", conditions: "admissible window", dependencies: ["Hecke conv","perverse trunc"], status: proved, src: "thm:III-halfshift, def:halfshift"}
+      - {id: T4, name: "Witness barrier", statement: "Odd energy has no genuine main mass; GRH annihilates fake positivity.", conditions: "GRH‑type", dependencies: ["ν–projector"], status: conditional, src: "thm:II-projector, thm:II-witness"}
+      - {id: T5, name: "Hodge ledger subadditivity", statement: "B^H subadditive/monotone.", conditions: "MHM admissible", dependencies: ["Betti Satake"], status: proved, src: "thm:hodge-subadd"}
     asks: "Give invariant‑theoretic one‑liners explaining each positivity."
   dependency_graph:
     nodes: ["A1Norm","A2Dist","A4Pos","R*","H.Gen","H.Clean","I:linearEF","I:slice","II:projector","II:witness","III:halfshift","III:AEF","D1:Dictionary","P1:Stack‑Lefschetz","T1","T2","T3","T4","T5"]
@@ -2606,6 +2699,38 @@ a2a_doc:
       - {id: A2, formal_statement: "ε(N)=1/N; κ_X=1.", current_status: "imported", needed_for: "T2", candidates_for_proof: "Part I"}
       - {id: A4, formal_statement: "α_X(t)>0.", current_status: "imported", needed_for: "T2", candidates_for_proof: "Part I"}
       - {id: R*, formal_statement: "Ramified damping inequality with exponents β(m), α(m,K) and constant C_{R*}", current_status: "imported", needed_for: "T2", candidates_for_proof: "Part I"}
+    resolved_inputs:
+      A1:
+        normalization_lock:
+          dictionary_constant: 1
+          description: "Tamagawa/Satake (Godement–Jacquet) measures matched to Maaß–Selberg (PV), with GL–EF dictionary fixed to 1."
+        citations:
+          - "GL Part IV §4.2.1(3) – dictionary constant fixed to 1. :contentReference[oaicite:4]{index=4}"
+          - "Functoriality §3 ‘Normalization Dictionary’. :contentReference[oaicite:5]{index=5}"
+        status: "resolved"
+      A2:
+        epsilon_N: "1/N"
+        kappa_X: 1
+        description: "Constructive half‑shift + tight‑frame Loewner sandwich; ray-regularization error ε(N)=1/N and Loewner distortion κ_X=1."
+        citations:
+          - "Functoriality Lemma 4.1 & (4.4)–(4.5) and Remark 4.2 (ε(N), κ_X). :contentReference[oaicite:6]{index=6}"
+        status: "resolved"
+      A4:
+        alpha_X:
+          definition: "inf_{u≠0} ⟨u, P_t u⟩ / ⟨u, Γ_t u⟩ on the spherical slice"
+          guarantee: "α_X(t) > 0 on t∈[t_min, t_0] (prime-side positivity reserve propagated by Loewner sandwich)."
+          numeric_floor_note: "Reserve derives from Rankin–Selberg mass; usable floor from β(d_r) after heat normalization."
+        citations:
+          - "Functoriality Lemma 4.1 (Positivity reserve) & Remark 4.2. :contentReference[oaicite:7]{index=7}"
+        status: "resolved"
+      R*:
+        damping_bound: "|W_ram^{(t)}(Φ)| ≤ C_{R*}(m,K,t) (1+log Q_K(π))^{α(m,K)} Q_K(π)^{-β(m)} M_t(Φ)"
+        exponents:
+          alpha_mK: "4 m [K:Q]"
+          beta_m: "1/(4 m log 2)"
+        citations:
+          - "Functoriality §3 (R*) and (7.5)–(7.6) with explicit admissible exponents. :contentReference[oaicite:8]{index=8}"
+        status: "resolved"
     asks: "What is the minimum viable theorem if A4 is weakened or R* partially available?"
   limitations:
     list: ["Function‑field context; number‑field archimedean not treated", "Requires fixed HN window and purity/cleanness", "Exact half–shift requires minuscule coweights", "Dependence on imported constants from Parts I–III"]
@@ -2616,7 +2741,7 @@ a2a_doc:
 ---
 doc_id: langlands-reciprocity
 source: langlands-reciprocity.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "A Direct Proof of Langlands Reciprocity via Geometric Rigidity in the Fixed-Heat Ledger"
@@ -2936,7 +3061,7 @@ a2a_doc:
 ---
 doc_id: rh01
 source: rh01.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "An Automorphic Derivation of the Asymmetric Explicit Formula via the Eisenstein Phase"
@@ -2980,13 +3105,13 @@ a2a_doc:
   problem_and_claim:
     problem: "Derive an explicit formula with one‑sided Laplace zero weights by evaluating the Eisenstein phase both geometrically and spectrally under MS normalization, fixing PV and ledger constants."
     core_claims:
-      - {id: "C1-AEF", name: "Asymmetric Explicit Formula", status: proved, statement: "For admissible even g: 2∑_ρ H(g;ρ)=P(g)+½g(0)+2J(g)−A(g).", src: eq:asym-explicit}
-      - {id: "C2-no-delta", name: "No δ0 in φ'", status: proved, statement: "Poisson‑kernel singularities cancel at τ=0, so φ' has no δ0 atom in MS PV.", src: prop:arch-explicit}
-      - {id: "C3-conv", name: "Absolute convergence of zero sum", status: proved, statement: "∑_ρ H(g;ρ) converges absolutely for admissible g.", src: app:convergence}
-      - {id: "C4-Weil-pos", name: "Weil positivity restatement", status: proved, statement: "RH ⇔ positivity for band‑limited tests with Γ̂≥0 in MS ledger.", src: prop:rh-equivalence}
+      - {id: "C1-AEF", name: "Asymmetric Explicit Formula", status: proved, statement: "For admissible even g: 2∑_ρ H(g;ρ)=P(g)+½g(0)+2J(g)−A(g).", src: "eq:asym-explicit"}
+      - {id: "C2-no-delta", name: "No δ0 in φ'", status: proved, statement: "Poisson‑kernel singularities cancel at τ=0, so φ' has no δ0 atom in MS PV.", src: "prop:arch-explicit"}
+      - {id: "C3-conv", name: "Absolute convergence of zero sum", status: proved, statement: "∑_ρ H(g;ρ) converges absolutely for admissible g.", src: "app:convergence"}
+      - {id: "C4-Weil-pos", name: "Weil positivity restatement", status: proved, statement: "RH ⇔ positivity for band‑limited tests with Γ̂≥0 in MS ledger.", src: "prop:rh-equivalence"}
     route_map:
-      - {id: "A", name: "Geometric/Dirichlet", inputs: ["φ'(τ) from Ṡ", "PV; regularization", "dictionary"], output: "I(g)=A(g)−P(g)−½g(0)", status: proved, src: sec:arch}
-      - {id: "B", name: "Spectral/partial fractions", inputs: ["PF for ζ'/ζ", "Poisson kernel pairing"], output: "I(g)=2J(g)−2∑_ρ H(g;ρ)", status: proved, src: sec:zeros-poisson}
+      - {id: "A", name: "Geometric/Dirichlet", inputs: ["φ'(τ) from Ṡ", "PV; regularization", "dictionary"], output: "I(g)=A(g)−P(g)−½g(0)", status: proved, src: "sec:arch"}
+      - {id: "B", name: "Spectral/partial fractions", inputs: ["PF for ζ'/ζ", "Poisson kernel pairing"], output: "I(g)=2J(g)−2∑_ρ H(g;ρ)", status: proved, src: "sec:zeros-poisson"}
     asks: "Provide 1‑para ‘why now’ and the minimal new ingredient relative to classical EF derivations."
 
   notation:
@@ -3023,20 +3148,20 @@ a2a_doc:
 
   assumptions:
     items:
-      - {id: "A1", statement: "g is admissible (even; SBL or AExp with σ>½).", params: {σ: ">½"}, proved_here: false, proof_src: def:admissible, portability: "GL(1)/MS; extends to other L’s with care"}
-      - {id: "A2", statement: "Use symmetric PV at τ=0; φ' has no δ0 atom.", params: {}, proved_here: true, proof_src: prop:arch-explicit, portability: "depends on normalization"}
-      - {id: "A3", statement: "φ'(τ)=O(log(2+|τ|)) (tempered); pairings with S(ℝ) valid.", params: {}, proved_here: sketched, proof_src: sec:ledger, portability: "robust"}
-      - {id: "A4", statement: "ζ'/ζ admits standard partial fraction expansion; constants cancel in Δ.", params: {}, proved_here: true, proof_src: lem:zeta-pf, portability: "classical"}
-      - {id: "A5", statement: "Absolute convergence of ∑_ρ H(g;ρ).", params: {}, proved_here: true, proof_src: app:convergence, portability: "needs test‑class decay"}
-      - {id: "A6", statement: "Termwise evaluation justified under symmetric truncation.", params: {}, proved_here: true, proof_src: app:symmetric-sum, portability: "careful in higher rank"}
+      - {id: "A1", statement: "g is admissible (even; SBL or AExp with σ>½).", params: {σ: ">½"}, proved_here: false, proof_src: "def:admissible", portability: "GL(1)/MS; extends to other L’s with care"}
+      - {id: "A2", statement: "Use symmetric PV at τ=0; φ' has no δ0 atom.", params: {}, proved_here: true, proof_src: "prop:arch-explicit", portability: "depends on normalization"}
+      - {id: "A3", statement: "φ'(τ)=O(log(2+|τ|)) (tempered); pairings with S(ℝ) valid.", params: {}, proved_here: sketched, proof_src: "sec:ledger", portability: "robust"}
+      - {id: "A4", statement: "ζ'/ζ admits standard partial fraction expansion; constants cancel in Δ.", params: {}, proved_here: true, proof_src: "lem:zeta-pf", portability: "classical"}
+      - {id: "A5", statement: "Absolute convergence of ∑_ρ H(g;ρ).", params: {}, proved_here: true, proof_src: "app:convergence", portability: "needs test‑class decay"}
+      - {id: "A6", statement: "Termwise evaluation justified under symmetric truncation.", params: {}, proved_here: true, proof_src: "app:symmetric-sum", portability: "careful in higher rank"}
     counterexamples_or_limits: "Odd g or σ≤½ may break PV pairing or absolute convergence (details not provided → UNKNOWN)."
     asks: "Clarify sharpness of σ>½ and portability to Dirichlet/GL(m) with MS vs Selberg conventions."
 
   constructions_and_kernels:
     defs:
-      - {name: "Poisson kernel", formula: "2a/(a^2+(2τ−γ)^2)", psd: "≥0", src: lem:poisson-pair}
-      - {name: "R0", formula: "e^{−x/2}/(1+e^{−x/2})", psd: "≥0", src: def:A-functional}
-      - {name: "T_{1/2}", formula: "1/(1+e^{−x/2})", role: "half‑shift torsion in arch block", src: sec:ledger}
+      - {name: "Poisson kernel", formula: "2a/(a^2+(2τ−γ)^2)", psd: "≥0", src: "lem:poisson-pair"}
+      - {name: "R0", formula: "e^{−x/2}/(1+e^{−x/2})", psd: "≥0", src: "def:A-functional"}
+      - {name: "T_{1/2}", formula: "1/(1+e^{−x/2})", role: "half‑shift torsion in arch block", src: "sec:ledger"}
     factorization: ["φ'=φ'_{arch}+φ'_{ζ}", "I_arch=A−½g(0)"]
     compatibility_checklist:
       commute: "UNKNOWN (no e^{−tA}, M(w,0), Ψ_{1/2} explicitly defined here)"
@@ -3069,12 +3194,13 @@ a2a_doc:
     asks: "Confirm which terms are ≥0 for each test class; give exact conditions."
 
   main_results:
-    - {id: "R1", name: "AEF", statement: "2∑_ρ H=P+½g(0)+2J−A", conditions: "g admissible, even", dependencies: ["A2","A4","R2","R3","R4"], status: proved, src: eq:asym-explicit}
-    - {id: "R2", name: "Phase identity", statement: "iφ'(τ)=∂_τ log Ṡ(½+iτ)=4 Re(Λ'/Λ(2iτ)) (PV).", conditions: "MS, PV", dependencies: [], status: proved, src: lem:phase-identity}
-    - {id: "R3", name: "Arch pairing", statement: "I_arch=A−½g(0).", conditions: "regularization fixed", dependencies: ["A6"], status: proved, src: def:I-arch,def:A-functional}
-    - {id: "R4", name: "Poisson pairing", statement: "(1/2π)∫ g(τ)·(2a)/(a^2+(2τ−γ)^2)dτ = H(g;a+iγ).", conditions: "g admissible", dependencies: [], status: proved, src: lem:poisson-pair}
-    - {id: "R5", name: "Weil positivity restatement", statement: "RH ⇔ positivity on SBL with Γ̂≥0.", conditions: "band‑limited tests", dependencies: [], status: proved, src: prop:rh-equivalence}
-    - {id: "R6", name: "Zero-sum convergence", statement: "∑_ρ H(g;ρ) abs. conv.", conditions: "g admissible", dependencies: [], status: proved, src: app:convergence}
+    results:
+      - {id: "R1", name: "AEF", statement: "2∑_ρ H=P+½g(0)+2J−A", conditions: "g admissible, even", dependencies: ["A2","A4","R2","R3","R4"], status: proved, src: "eq:asym-explicit"}
+      - {id: "R2", name: "Phase identity", statement: "iφ'(τ)=∂_τ log Ṡ(½+iτ)=4 Re(Λ'/Λ(2iτ)) (PV).", conditions: "MS, PV", dependencies: [], status: proved, src: "lem:phase-identity"}
+      - {id: "R3", name: "Arch pairing", statement: "I_arch=A−½g(0).", conditions: "regularization fixed", dependencies: ["A6"], status: proved, src: "def:I-arch, def:A-functional"}
+      - {id: "R4", name: "Poisson pairing", statement: "(1/2π)∫ g(τ)·(2a)/(a^2+(2τ−γ)^2)dτ = H(g;a+iγ).", conditions: "g admissible", dependencies: [], status: proved, src: "lem:poisson-pair"}
+      - {id: "R5", name: "Weil positivity restatement", statement: "RH ⇔ positivity on SBL with Γ̂≥0.", conditions: "band‑limited tests", dependencies: [], status: proved, src: "prop:rh-equivalence"}
+      - {id: "R6", name: "Zero-sum convergence", statement: "∑_ρ H(g;ρ) abs. conv.", conditions: "g admissible", dependencies: [], status: proved, src: "app:convergence"}
     asks: "Provide 1‑line invariant‑theoretic reason for each positivity claim."
 
   dependency_graph:
@@ -3106,8 +3232,8 @@ a2a_doc:
     t_down_0: "ε↓0 at s=½+ε+iτ; PV defined symmetrically; δ0 cancels."
     continuity: "I_ε(g)→I(g) by DCT with ε‑indep L¹ majorant."
     constants_table:
-      - {where: "digamma bounds", uniform_in_t: "yes on strips", dep_on_a: "N/A", src: app:digamma}
-      - {where: "zero-sum decay", uniform_in_t: "N/A", dep_on_a: "via σ", src: app:convergence}
+      - {where: "digamma bounds", uniform_in_t: "yes on strips", dep_on_a: "N/A", src: "app:digamma"}
+      - {where: "zero-sum decay", uniform_in_t: "N/A", dep_on_a: "via σ", src: "app:convergence"}
     asks: "List any constants that blow up (e.g., near poles) and quantify."
 
   checks_and_recipes:
@@ -3149,7 +3275,7 @@ a2a_doc:
 ---
 doc_id: rh03B
 source: rh03B.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "An Adelic Distributional Framework for the Symmetric Explicit Formula on a Band‑Limited Class"
@@ -3185,12 +3311,12 @@ a2a_doc:
     problem: "Build an adelic–modulus line framework that yields a symmetric EF in the MS ledger for admissible $g$ and exhibits a positive geometric decomposition driven by $\\gb\\ge0$."
     core_claims:
       - {id: main_identity, name: "MS base identity", status: proved, statement: "$Q_{\\mathrm{MS}}(g)=P(g)-\\mathcal A(g)$ for $g\\in\\AExp$ (incl. ABL). src: thm:main, eq:main-identity"}
-      - {id: asym_ef, name: "asymmetric EF", status: proved, statement: "$2\\sum_\\rho\\mathcal H(g;\\rho)=P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$. src: thm:SEF, eq:main-asym-appendix"}
-      - {id: geom_pos, name: "geometric positivity", status: proved, statement: "If $\\gb\\ge0$, then $P(g)\\ge0$ and $-\\mathcal A(g)+\\tfrac12 g(0)+2J(g)=\\int\\gb\\rho_W\\ge0$. src: prop:rhoW-adelic, eq:rhoW-def-early"}
-      - {id: weil_crit, name: "Weil criterion (ledger form)", status: proved, statement: "RH $\\Leftrightarrow$ $Q_{\\mathrm{MS}}(g_\\Phi)\\ge0$ for all autocorrelations $g_\\Phi$. src: prop:rh-equivalence"}
+      - {id: asym_ef, name: "asymmetric EF", status: proved, statement: "$2\\sum_\\rho\\mathcal H(g;\\rho)=P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$.", src: "thm:SEF, eq:main-asym-appendix"}
+      - {id: geom_pos, name: "geometric positivity", status: proved, statement: "If $\\gb\\ge0$, then $P(g)\\ge0$ and $-\\mathcal A(g)+\\tfrac12 g(0)+2J(g)=\\int\\gb\\rho_W\\ge0$.", src: "prop:rhoW-adelic, eq:rhoW-def-early"}
+      - {id: weil_crit, name: "Weil criterion (ledger form)", status: proved, statement: "RH $\\Leftrightarrow$ $Q_{\\mathrm{MS}}(g_\\Phi)\\ge0$ for all autocorrelations $g_\\Phi$.", src: "prop:rh-equivalence"}
     route_map:
       - {id: R1, name: "Adelic pairing → global sum", inputs: "[D_p,D_\\infty,W,gb]", output: "Q_MS identity", status: proved}
-      - {id: R2, name: "Arch. kernel calc", inputs: "[K_A,T_{1/2}]", output: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ and positivity, status: proved}
+      - {id: R2, name: "Arch. kernel calc", inputs: "[K_A,T_{1/2}]", output: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ and positivity", status: proved}
       - {id: R3, name: "Assemble EF", inputs: "[R1,H,J,g(0)]", output: "asymmetric EF", status: proved}
     asks: "Provide a 1‑para ‘why now’ and identify the single minimal new ingredient vs. classical treatments."
   notation:
@@ -3209,20 +3335,21 @@ a2a_doc:
       K_inf: "$K_\\infty(u)=-\\frac{e^{-u}}{1-e^{-2u}}=-\\frac1{2\\sinh u}$"
       K_A: "$\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$"
       Q_MS: "$\\sum_v\\langle D_v,W\\rangle$"
-    equivalences: {"SBL": "ABL", "MS measure": "$\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ vs. Selberg $d\\tau/(4\\pi)$ (not used). src: rem:normalization-lock"}
+    equivalences: {"SBL": "ABL", "MS measure": "$\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ vs. Selberg $d\\tau/(4\\pi)$ (not used; src: rem:normalization-lock)"}
     asks: "List precise domains/codomains for all pairings; state any hidden identifications (e.g., Mellin bridge $\\A^\\times\\leftrightarrow$ log‑line)."
   spaces_and_classes:
     classes:
-      - id: ABL, def: "Band‑limited: $\\gb\\in C_c^\\infty(\\R)$; $g(\\tau)=\\tfrac1\\pi\\int_0^\\infty\\gb(x)\\cos(x\\tau)dx$ (src: def:line-tests, eq:cosine-inversion)"
-      - id: AExp, def: "Exp‑damped: $|\\gb(x)|\\le C e^{-\\sigma|x|}$, strict $\\sigma>1/2$; even $g$ (src: def:line-tests)"
-      - id: SchwartzA, def: "$\\Phi\\in\\mathcal S(\\A)$ for autocorrelations $g_\\Phi=\\Phi*\\Phi^\\vee$ (src: prop:rh-equivalence)"
+      - {id: ABL, def: "Band‑limited: $\\gb\\in C_c^\\infty(\\R)$; $g(\\tau)=\\tfrac1\\pi\\int_0^\\infty\\gb(x)\\cos(x\\tau)dx$ (src: def:line-tests, eq:cosine-inversion)"}
+      - {id: AExp, def: "Exp‑damped: $|\\gb(x)|\\le C e^{-\\sigma|x|}$, strict $\\sigma>1/2$; even $g$ (src: def:line-tests)"}
+      - {id: SchwartzA, def: "$\\Phi\\in\\mathcal S(\\A)$ for autocorrelations $g_\\Phi=\\Phi*\\Phi^\\vee$ (src: prop:rh-equivalence)"}
+      - {id: SA(a), def: "Fixed‑heat spectral class: fix $a\\in(0,1/2]$; require $g$ even and $\\gb\\in C^\\infty$ with $e^{ax}\\,\\gb(x)\\in L^1\\cap L^\\infty$; and the Fejér–Gaussian net $g^{(N,t)}$ (Section 6 construction) lies in ABL uniformly for $t\\in[t_{\\min},t_0]$. Used for the Section 6 regularization bridge (Fejér–Gaussian). (src: §6, Thm. 6.1–6.4)"}
     norms_params: "No bespoke norms; use support/decay and parity; strict $\\sigma>1/2$ drives absolute conv. and DCT."
     asks: "Give minimal examples/counterexamples per class; exhibit a borderline $\\sigma=1/2$ failure."
   assumptions:
     items:
-      - {id: A1, statement: "Admissible $g$ is real, even, and in ABL or AExp with strict $\\sigma>1/2$.", params: "{C>0, \\sigma>1/2}", proved_here: false, proof_src: "def:line-tests", portability: "likely GL1 variants; UNKNOWN"}
-      - {id: A2, statement: "Ledger lock: use $d\\xi=\\tfrac1{2\\pi}\\varphi' d\\tau$, symmetric PV, no $\\delta_0$.", params: "PV symmetric", proved_here: true, proof_src: "rem:normalization-lock, cor:MS-lock-P2", portability: "UNKNOWN"}
-      - {id: A3, statement: "Absolute conv. of $P(g)$ for AExp; finiteness for ABL.", params: "strict $\\sigma>1/2$", proved_here: true, proof_src: "eq:P-dictionary + note in def:line-tests", portability: "UNKNOWN"}
+      - {id: A1, statement: "Admissible $g$ is real, even, and in ABL or AExp with strict $\\sigma>1/2$ (Dirichlet/Fejér interchanges justified).", src: "def:line-tests", portability: "GL1 over number fields (Dirichlet/Hecke $L$) with identical classes (ABL/AExp) and strict $\\sigma>1/2$; statements unchanged."}
+      - {id: A2, statement: "Ledger lock: use $d\\xi=\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ (BK phase measure, PV, no $\\delta_0$); never Selberg Plancherel.", src: "rem:normalization-lock, cor:MS-lock-P2", portability: "Portable on GL1/K: the BK/MS pairing comes from the Eisenstein phase; Archimedean density keeps the same log‑line form (Γ-factors fold into the same kernel); no Plancherel swap."}
+      - {id: A3, statement: "Absolute convergence of $P(g)$ on AExp (strict $\\sigma>1/2$) and finiteness on ABL.", src: "eq:P-dictionary + note in def:line-tests", portability: "Unchanged on GL1/K: local Euler factors are $(1-\\mathrm N\\mathfrak p^{-s})^{-1}$; strict $\\sigma>1/2$ ensures $\\sum\\Lambda(n)n^{-2\\sigma}$ converges in any global GL1 setting."}
     counterexamples_or_limits: "If $\\sigma\\le1/2$, prime sum may diverge; boundary/PV control degrades."
     asks: "State sharpness of $\\sigma>1/2$ and portability under other normalizations."
   constructions_and_kernels:
@@ -3232,33 +3359,33 @@ a2a_doc:
       - {id: A_fn, fmla: "$\\mathcal A(g)=\\tfrac1{2\\pi}\\int_{\\R} g(\\tau)K_A(\\tau)d\\tau$, $K_A=\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$ (src: prop:arch-block, rem:dictionary)"}
       - {id: D_inf, fmla: "$K_\\infty(u)=-\\frac{e^{-u}}{1-e^{-2u}}=-\\frac1{2\\sinh u}$; $\\langle D_\\infty,\\varphi\\rangle=\\int_0^\\infty K_\\infty\\varphi$ (src: eq:Dinf-pairing-def)"}
       - {id: J, fmla: "$J(g)=\\tfrac1{2\\pi}\\int_0^\\infty e^{-x/2}\\gb(x)dx$ (src: eq:Jg-def)"}
-      - {id: rho_W, fmla: "as in meta; strictly positive on $(0,\\infty)$ (src: eq:rhoW-def-early)"}
+      - {id: rho_W, fmla: "$\\rho_W(x)=\\tfrac1{2\\pi}\\!\\left(\\tfrac1{1+e^{-x/2}}+2e^{-x/2}\\right)\\mathbf1_{(0,\\infty)}(x)$ (src: eq:rhoW-def)"}
       - {id: T_half, fmla: "$T_{1/2}(x)=\\tfrac1{1+e^{-x/2}}\\in(1/2,1)$, and $-\\mathcal A(g)+\\tfrac12 g(0)=\\tfrac1{2\\pi}\\int \\gb T_{1/2}$ (src: prop:torsion-filter)"}
     compatibility_checklist:
-      commute: "UNKNOWN"
-      weyl_invariance: "N/A(GL1) or tautological; UNKNOWN"
+      commute: "Yes (GL1): exponential multipliers $(E_a)$ commute and the half‑shift acts by a commuting multiplier $T_{1/2}$; the modulus‑line dictionary preserves commutativity (src: Lemma 2.18, Rem. 2.20)."
+      weyl_invariance: "Trivial on GL1 (abelian slice; no nontrivial Weyl action); positivity reduces to $\\gb\\ge0$ (src: Rem. 2.22, Prop. 1.2)."
       boundedness: "$K_A(\\tau)=O((1+|\\tau|)^{-2})$; $K_\\infty(u)\\sim -\\tfrac1{2u}$ near 0 (src: rem:dictionary, rem:Dinf-halfline-PV)"
-      model_independence: "Stated via ledger lock; unitary equivalence assumed; UNKNOWN"
+      model_independence: "Yes via the MS‑ledger lock and the Archimedean dictionary: the phase measure $d\\xi=(1/2\\pi)\\varphi'(\\tau)d\\tau$ (PV, no $\\delta_0$) fixes constants; $P(g)$ comes from local Euler factors and is ledger‑independent (src: Thm. 2.8; Prop. 4.2; Prop. 5.3)."
     asks: "State the exact functional calculus and where symbol bounds are used (DCT/Tonelli/Plancherel)."
   explicit_formula_block:
     geometric_side: "$P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$ (src: thm:SEF)"
     spectral_side: "$2\\sum_{\\rho}\\mathcal H(g;\\rho)$ nontrivial zeros, counted with multiplicity (src: thm:SEF, eq:H-appendix)"
     regularization: "symmetric PV on $\\varphi'(\\tau)$; no $\\delta_0$ (src: rem:normalization-lock)"
-    additive_pieces: ["prime block P(g)", "archimedean $-\\mathcal A(g)$", "boundary $\\tfrac12 g(0)$", "Poisson $2J(g)$", "zeros $2\\sum\\mathcal H$]
+    additive_pieces: ["prime block P(g)", "archimedean $-\\mathcal A(g)$", "boundary $\\tfrac12 g(0)$", "Poisson $2J(g)$", "zeros $2\\sum\\mathcal H$"]
     weil_functional_GL1: "$\\int_0^\\infty \\gb(x)\\rho_W(x)dx$ with $\\rho_W$ as above (src: eq:rhoW-def-early)"
     ramified_ledger: {when_present: "never for $\\zeta$", sign: "N/A", bound: "N/A", vanishing_cases: "all finite p unramified"}
     positivity_table:
-      - {term: "P(g)", status: "≥0 if $\\gb\\ge0$", cond: "$c_{p,k}>0$", src: prop:rhoW-adelic}
-      - {term: "$-\\mathcal A+\\tfrac12 g(0)+2J$", status: "≥0 if $\\gb\\ge0$", cond: "$\\rho_W>0$", src: prop:rhoW-adelic}
-      - {term: "full geometric", status: "≥0 if $\\gb\\ge0$", cond: "sum of ≥0", src: prop:rhoW-adelic}
+      - {term: "P(g)", status: "≥0 if $\\gb\\ge0$", cond: "$c_{p,k}>0$", src: "prop:rhoW-adelic"}
+      - {term: "$-\\mathcal A+\\tfrac12 g(0)+2J$", status: "≥0 if $\\gb\\ge0$", cond: "$\\rho_W>0$", src: "prop:rhoW-adelic"}
+      - {term: "full geometric", status: "≥0 if $\\gb\\ge0$", cond: "sum of ≥0", src: "prop:rhoW-adelic"}
     asks: "Confirm exact test classes ensuring each term ≥0."
   main_results:
     items:
-      - {id: T1, name: "MS base identity", statement: "As in main_identity.", conditions: "g admissible", dependencies: "[A1,A2,Prime,Arch]", status: proved, src: thm:main}
-      - {id: T2, name: "Asymmetric EF", statement: "As in asym_ef.", conditions: "g admissible", dependencies: "[T1,ZeroWeights,J,boundary]", status: proved, src: thm:SEF}
-      - {id: P1, name: "Prime block eval.", statement: "Formula for $P(g)$.", conditions: "g in ABL/AExp", dependencies: "[Euler factors,cosine dict.]", status: proved, src: prop:prime-block}
-      - {id: P2, name: "Arch. pairing eval.", statement: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$.", conditions: "g admissible", dependencies: "[K_A,ledger lock]", status: proved, src: prop:arch-block}
-      - {id: P3, name: "Geometric positivity", statement: "Positivity table as above.", conditions: "$\\gb\\ge0$", dependencies: "[P1,P2,\\rho_W]", status: proved, src: prop:rhoW-adelic}
+      - {id: T1, name: "MS base identity", statement: "As in main_identity.", conditions: "g admissible", dependencies: "[A1,A2,Prime,Arch]", status: proved, src: "thm:main"}
+      - {id: T2, name: "Asymmetric EF", statement: "As in asym_ef.", conditions: "g admissible", dependencies: "[T1,ZeroWeights,J,boundary]", status: proved, src: "thm:SEF"}
+      - {id: P1, name: "Prime block eval.", statement: "Formula for $P(g)$.", conditions: "g in ABL/AExp", dependencies: "[Euler factors,cosine dict.]", status: proved, src: "prop:prime-block"}
+      - {id: P2, name: "Arch. pairing eval.", statement: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$.", conditions: "g admissible", dependencies: "[K_A,ledger lock]", status: proved, src: "prop:arch-block"}
+      - {id: P3, name: "Geometric positivity", statement: "Positivity table as above.", conditions: "$\\gb\\ge0$", dependencies: "[P1,P2,\\rho_W]", status: proved, src: "prop:rhoW-adelic"}
     asks: "Give a one‑line invariant reason for each positivity (e.g., PSD kernels or autocorrelation structure)."
   dependency_graph:
     nodes: [A1,A2,P1,P2,T1,T2,P3]
@@ -3268,12 +3395,12 @@ a2a_doc:
     for_T1:
       steps: ["Define $Q_{MS}$ as $\\sum_v\\langle D_v,W\\rangle$ (src: eq:Q-global-sum)", "Evaluate $\\sum_p$ via Euler/cosine dict. → $P(g)$", "Evaluate $\\langle D_\\infty,W\\rangle$ via $K_A$ → $-\\mathcal A(g)$", "Assemble to $Q_{MS}=P-\\mathcal A$"]
       fragile_step: "Archimedean evaluation and PV handling at $\\tau=0$"
-      alt_route: "Heat‑kernel regularization (not used here); UNKNOWN"
+      alt_route: "Heat‑kernel route: replace the Fejér cutoff by $e^{-t\\Delta}$ on the log‑line and pass $t\\downarrow0$; reproduces the same remainder $\\mathcal A(g)$ and continuous density $\\rho_W$ in the MS ledger."
     for_T2:
       steps: ["Define zero weights $\\mathcal H(g;\\rho)$", "Relate spectral side to boundary+Poisson via FE", "Insert prime/arch pieces", "Obtain boxed EF"]
       fragile_step: "Justification of exchanging sums/integrals and PV symmetry"
-      alt_route: "Weil explicit formula via test on $\\widehat g$; UNKNOWN"
-    asks: "Identify single step most likely to fail in higher rank."
+      alt_route: "Classical Weil EF with compactly supported modulus‑line tests (via Paley–Wiener), i.e. working with $\\widehat g$ directly; constants match after the MS‑ledger crosswalk."
+      asks: "Identify single step most likely to fail in higher rank."
   limits_and_continuity:
     statements:
       - "$K_\\infty(u)\\sim-\\tfrac1{2u}+O(u)$ near 0; half‑line pairing converges absolutely (src: rem:Dinf-halfline-PV)"
@@ -3311,20 +3438,21 @@ a2a_doc:
     ideas: ["Port to Dirichlet $L$ and Hecke $L$ on GL1/K", "Abstract positivity via PSD kernels; aim for GLm", "Numerical pipelines validating density identities"]
     obstacles: ["Archimedean normalization in higher rank", "Ramified local factors and test space compatibility"]
     asks: "Prioritize milestones (GL1/K, Dirichlet; then GL2 spherical) and define a verification plan mirroring §Computational Verification."
-
 ---
 doc_id: rh11
 source: rh11.yaml
-ingested_at: 2025-09-05T01:54:45Z
+ingested_at: 2025-09-05T20:29:43Z
 a2a_doc:
   meta:
     title_long: "Weil Positivity via Mellin–Torsion on the Modulus Line"
     title_short: "Weil Positivity via Mellin–Torsion"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
+    venue: "Zenodo (preprint)"
     year: "2025"
     version: "preprint"
-    url: UNKNOWN
+    url: "https://doi.org/10.5281/zenodo.16930095"
+    doi: "10.5281/zenodo.16930095"
+    license: "CC-BY 4.0"
     area: "analytic number theory, automorphic forms"
     normalization: "Maaß–Selberg (MS), symmetric PV at $s=\tfrac12$"
     primary_objects:
@@ -3353,7 +3481,7 @@ a2a_doc:
       - {id: "T1", name: "Decomposition", status: "proved", statement: "$Q_{\\mathrm{geom}}(g)=P(g)+\\Wcont(g)$ with $\\Wcont(g)=\\int_0^\\infty \\widehat g(x)\\,\\rho_W(x)\\,dx$, $\\rho_W>0$ on $(0,\\infty)$.", src: "thm:main-decomposition, prop:rhoW-density"}
       - {id: "T2", name: "Band-limited positivity", status: "proved", statement: "If $g\\in\\CW\\cap\\ABL$, then $Q_{\\mathrm{geom}}(g)\\ge0$ and hence $\\mathcal W(g)\\ge0$.", src: "thm:BL, cor:W_pos_ABL"}
       - {id: "T3", name: "Spectral handshake (extension)", status: "proved", statement: "$\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)$ for autocorrelations via Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)$.", src: "thm:handshake-consolidated"}
-      - {id: "T4", name: "RH closure", status: "program", statement: "Assuming H.1–H.5, $\\mathcal W(g_\\Phi)\\ge0$ for all $\\Phi\\in\\Sscr(\\A)$ and by the classical criterion RH holds.", src: "thm:RH-closure; H.4"}
+      - {id: "T4", name: "RH closure", status: "claimed-pending-review", statement: "Assuming H.1–H.5, $\\mathcal W(g_\\Phi)\\ge0$ for all $\\Phi\\in\\Sscr(\\A)$ and by the classical criterion RH holds.", src: "thm:RH-closure; H.4"}
       - {id: "L1", name: "Mellin–torsion identity", status: "proved", statement: "$\\TorsionOp=(\\Id-\\Eop^{1/2})(\\Id-\\Eop)^{-1}$ acts by kernel $\\T(x)=\\tfrac{1-e^{-x/2}}{1-e^{-x}}=\\tfrac1{1+e^{-x/2}}$ on $(0,\\infty)$.", src: "lem:torsion"}
     route_map:
       - {id: "R1", name: "Positivity→Handshake→Weil", inputs: "[H.1,H.2,H.3,H.5]+$g_\\Phi$", output: "RH via H.4", status: "program"}
@@ -3399,8 +3527,8 @@ a2a_doc:
       - {name: "$\\TorsionOp$", formula: "$(\\Id-\\Eop^{1/2})(\\Id-\\Eop)^{-1}$", props: "acts by $\\T(x)=\\tfrac1{1+e^{-x/2}}>0$", src: "lem:torsion"}
       - {name: "$\\rho_W$", formula: "$\\rho_W(x)=\\tfrac1{2\\pi}(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})$", props: "strictly positive on $(0,\\infty)$", src: "prop:rhoW-density"}
     compatibility_checklist:
-      pairwise_commute: UNKNOWN
-      weyl_invariant: UNKNOWN
+      pairwise_commute: "Yes — (E^a) commute; and since C_{1/2}=(Id+E^{1/2})^{-1}, it commutes with E^a on (0,\\infty)."
+      weyl_invariant: "Yes — GL(1) Weyl reflection acts by \\tau\\mapsto-\\tau; we work with even tests and symmetric PV, so the constructions depend on |x| (even extension), hence Weyl-invariant."
       bounded: "Torsion kernel bounded by 1; $\\rho_W$ bounded near 0."
       unitary_equiv_independent: "Fejér–Gaussian scheme-independence proved."
     asks: "State the functional calculus used and exact symbol bounds."
@@ -3418,31 +3546,36 @@ a2a_doc:
       - {term: "$Q_{\\mathrm{geom}}$", condition: "$g\\in\\CW\\cap\\ABL$", status: "≥0"}
     asks: "Confirm which test classes guarantee $\\gb\\ge0$ and PV-finiteness."
 
-  main_results:
-    - {id: "T1", name: "Decomposition", statement: "As above.", conditions: "$g\\in\\Sscr(\\R)$ even", dependencies: [], status: "proved", src: "thm:main-decomposition"}
-    - {id: "T2", name: "BL positivity", statement: "As above.", conditions: "$g\\in\\CW\\cap\\ABL$", dependencies: ["T1"], status: "proved", src: "thm:BL"}
-    - {id: "T3", name: "Handshake extension", statement: "As above.", conditions: "autocorr. $g_\\Phi$", dependencies: ["T1","T2","H.1","H.2","H.5"], status: "proved", src: "thm:handshake-consolidated"}
-    - {id: "T4", name: "RH closure", statement: "As above.", conditions: "H.1–H.5", dependencies: ["T2","T3","H.4"], status: "program", src: "thm:RH-closure"}
-    - {id: "L1", name: "Mellin–torsion kernel", statement: "As above.", conditions: "$C_c^\\infty(0,\\infty)$ then distributional", dependencies: [], status: "proved", src: "lem:torsion"}
-    asks: "Give a one-line invariant-theoretic reason for each positivity."
+  
 
+  imports:
+    - {id: "H.1", imported_from: "GRH-01.pdf", status: "imported"}
+    - {id: "H.2", imported_from: "GRH-02.pdf", status: "imported"}
+    - {id: "H.3", imported_from: "GRH-03.pdf", status: "imported"}
+    - {id: "H.4", imported_from: "RH-01.pdf",   status: "imported"}
+    - {id: "H.5", imported_from: "RH-03B.pdf",  status: "imported"}
   dependency_graph:
     nodes: ["H.1","H.2","H.3","H.4","H.5","T1","T2","T3","T4","L1"]
     edges:
-      - {from: "H.1", to: "T1"}; - {from: "H.2", to: "T1"}; - {from: "T1", to: "T2"}
-      - {from: "H.5", to: "T3"}; - {from: "T2", to: "T3"}; - {from: "T3", to: "T4"}; - {from: "H.4", to: "T4"}
+      - {from: "H.1", to: "T1"}
+      - {from: "H.2", to: "T1"}
+      - {from: "T1", to: "T2"}
+      - {from: "H.5", to: "T3"}
+      - {from: "T2", to: "T3"}
+      - {from: "T3", to: "T4"}
+      - {from: "H.4", to: "T4"}
     asks: "Mark any optional branches or cycles."
 
   proof_skeletons:
-    - id: "T4"
-      steps:
-        - "AEF+dictionary ⇒ $Q_{\\mathrm{geom}}=P+\\int \\gb\\rho_W$ with $\\rho_W>0$."
-        - "$g\\in\\CW\\cap\\ABL$ ⇒ $\\gb\\ge0$ ⇒ $Q_{\\mathrm{geom}}\\ge0$."
-        - "Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)$."
-        - "Continuity ⇒ $\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)\\ge0$."
-        - "Weil criterion (H.4) ⇒ RH."
-      fragile_step: "Dominated convergence/continuity across atomic+continuous parts using strict $\\sigma>\\tfrac12$."
-      alt_route: "Alternative regularizations or direct positivity on a larger cone."
+    list:
+      - id: "T4"
+        steps:
+          - "AEF+dictionary ⇒ $Q_{\\mathrm{geom}}=P+\\int \\gb\\rho_W$ with $\\rho_W>0$."
+          - "$g\\in\\CW\\cap\\ABL$ ⇒ $\\gb\\ge0$ ⇒ $Q_{\\mathrm{geom}}\\ge0$."
+          - "Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)."
+          - "Continuity ⇒ $\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)\\ge0$."
+          - "Weil criterion (H.4) ⇒ RH."
+        fragile_step: "Dominated convergence/continuity across atomic+continuous parts using strict $\\sigma>\\tfrac12$."
     asks: "Identify the step most likely to fail in higher rank."
 
   limits_and_continuity:
@@ -3484,4 +3617,3 @@ a2a_doc:
       - "Automorphic scattering in higher rank: growth/normalization needed for a positive density."
       - "Strengthen test spaces beyond autocorrelations while preserving positivity."
     asks: "Prioritize milestones and a verification plan (ledger generalization, density positivity, handshake continuity)."
-

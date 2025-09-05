@@ -33,12 +33,12 @@ a2a_doc:
     problem: "Build an adelic–modulus line framework that yields a symmetric EF in the MS ledger for admissible $g$ and exhibits a positive geometric decomposition driven by $\\gb\\ge0$."
     core_claims:
       - {id: main_identity, name: "MS base identity", status: proved, statement: "$Q_{\\mathrm{MS}}(g)=P(g)-\\mathcal A(g)$ for $g\\in\\AExp$ (incl. ABL). src: thm:main, eq:main-identity"}
-      - {id: asym_ef, name: "asymmetric EF", status: proved, statement: "$2\\sum_\\rho\\mathcal H(g;\\rho)=P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$. src: thm:SEF, eq:main-asym-appendix"}
-      - {id: geom_pos, name: "geometric positivity", status: proved, statement: "If $\\gb\\ge0$, then $P(g)\\ge0$ and $-\\mathcal A(g)+\\tfrac12 g(0)+2J(g)=\\int\\gb\\rho_W\\ge0$. src: prop:rhoW-adelic, eq:rhoW-def-early"}
-      - {id: weil_crit, name: "Weil criterion (ledger form)", status: proved, statement: "RH $\\Leftrightarrow$ $Q_{\\mathrm{MS}}(g_\\Phi)\\ge0$ for all autocorrelations $g_\\Phi$. src: prop:rh-equivalence"}
+      - {id: asym_ef, name: "asymmetric EF", status: proved, statement: "$2\\sum_\\rho\\mathcal H(g;\\rho)=P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$.", src: "thm:SEF, eq:main-asym-appendix"}
+      - {id: geom_pos, name: "geometric positivity", status: proved, statement: "If $\\gb\\ge0$, then $P(g)\\ge0$ and $-\\mathcal A(g)+\\tfrac12 g(0)+2J(g)=\\int\\gb\\rho_W\\ge0$.", src: "prop:rhoW-adelic, eq:rhoW-def-early"}
+      - {id: weil_crit, name: "Weil criterion (ledger form)", status: proved, statement: "RH $\\Leftrightarrow$ $Q_{\\mathrm{MS}}(g_\\Phi)\\ge0$ for all autocorrelations $g_\\Phi$.", src: "prop:rh-equivalence"}
     route_map:
       - {id: R1, name: "Adelic pairing → global sum", inputs: "[D_p,D_\\infty,W,gb]", output: "Q_MS identity", status: proved}
-      - {id: R2, name: "Arch. kernel calc", inputs: "[K_A,T_{1/2}]", output: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ and positivity, status: proved}
+      - {id: R2, name: "Arch. kernel calc", inputs: "[K_A,T_{1/2}]", output: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ and positivity", status: proved}
       - {id: R3, name: "Assemble EF", inputs: "[R1,H,J,g(0)]", output: "asymmetric EF", status: proved}
     asks: "Provide a 1‑para ‘why now’ and identify the single minimal new ingredient vs. classical treatments."
   notation:
@@ -57,20 +57,21 @@ a2a_doc:
       K_inf: "$K_\\infty(u)=-\\frac{e^{-u}}{1-e^{-2u}}=-\\frac1{2\\sinh u}$"
       K_A: "$\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$"
       Q_MS: "$\\sum_v\\langle D_v,W\\rangle$"
-    equivalences: {"SBL": "ABL", "MS measure": "$\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ vs. Selberg $d\\tau/(4\\pi)$ (not used). src: rem:normalization-lock"}
+    equivalences: {"SBL": "ABL", "MS measure": "$\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ vs. Selberg $d\\tau/(4\\pi)$ (not used; src: rem:normalization-lock)"}
     asks: "List precise domains/codomains for all pairings; state any hidden identifications (e.g., Mellin bridge $\\A^\\times\\leftrightarrow$ log‑line)."
   spaces_and_classes:
     classes:
-      - id: ABL, def: "Band‑limited: $\\gb\\in C_c^\\infty(\\R)$; $g(\\tau)=\\tfrac1\\pi\\int_0^\\infty\\gb(x)\\cos(x\\tau)dx$ (src: def:line-tests, eq:cosine-inversion)"
-      - id: AExp, def: "Exp‑damped: $|\\gb(x)|\\le C e^{-\\sigma|x|}$, strict $\\sigma>1/2$; even $g$ (src: def:line-tests)"
-      - id: SchwartzA, def: "$\\Phi\\in\\mathcal S(\\A)$ for autocorrelations $g_\\Phi=\\Phi*\\Phi^\\vee$ (src: prop:rh-equivalence)"
+      - {id: ABL, def: "Band‑limited: $\\gb\\in C_c^\\infty(\\R)$; $g(\\tau)=\\tfrac1\\pi\\int_0^\\infty\\gb(x)\\cos(x\\tau)dx$ (src: def:line-tests, eq:cosine-inversion)"}
+      - {id: AExp, def: "Exp‑damped: $|\\gb(x)|\\le C e^{-\\sigma|x|}$, strict $\\sigma>1/2$; even $g$ (src: def:line-tests)"}
+      - {id: SchwartzA, def: "$\\Phi\\in\\mathcal S(\\A)$ for autocorrelations $g_\\Phi=\\Phi*\\Phi^\\vee$ (src: prop:rh-equivalence)"}
+      - {id: SA(a), def: "Fixed‑heat spectral class: fix $a\\in(0,1/2]$; require $g$ even and $\\gb\\in C^\\infty$ with $e^{ax}\\,\\gb(x)\\in L^1\\cap L^\\infty$; and the Fejér–Gaussian net $g^{(N,t)}$ (Section 6 construction) lies in ABL uniformly for $t\\in[t_{\\min},t_0]$. Used for the Section 6 regularization bridge (Fejér–Gaussian). (src: §6, Thm. 6.1–6.4)"}
     norms_params: "No bespoke norms; use support/decay and parity; strict $\\sigma>1/2$ drives absolute conv. and DCT."
     asks: "Give minimal examples/counterexamples per class; exhibit a borderline $\\sigma=1/2$ failure."
   assumptions:
     items:
-      - {id: A1, statement: "Admissible $g$ is real, even, and in ABL or AExp with strict $\\sigma>1/2$.", params: "{C>0, \\sigma>1/2}", proved_here: false, proof_src: "def:line-tests", portability: "likely GL1 variants; UNKNOWN"}
-      - {id: A2, statement: "Ledger lock: use $d\\xi=\\tfrac1{2\\pi}\\varphi' d\\tau$, symmetric PV, no $\\delta_0$.", params: "PV symmetric", proved_here: true, proof_src: "rem:normalization-lock, cor:MS-lock-P2", portability: "UNKNOWN"}
-      - {id: A3, statement: "Absolute conv. of $P(g)$ for AExp; finiteness for ABL.", params: "strict $\\sigma>1/2$", proved_here: true, proof_src: "eq:P-dictionary + note in def:line-tests", portability: "UNKNOWN"}
+      - {id: A1, statement: "Admissible $g$ is real, even, and in ABL or AExp with strict $\\sigma>1/2$ (Dirichlet/Fejér interchanges justified).", src: "def:line-tests", portability: "GL1 over number fields (Dirichlet/Hecke $L$) with identical classes (ABL/AExp) and strict $\\sigma>1/2$; statements unchanged."}
+      - {id: A2, statement: "Ledger lock: use $d\\xi=\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ (BK phase measure, PV, no $\\delta_0$); never Selberg Plancherel.", src: "rem:normalization-lock, cor:MS-lock-P2", portability: "Portable on GL1/K: the BK/MS pairing comes from the Eisenstein phase; Archimedean density keeps the same log‑line form (Γ-factors fold into the same kernel); no Plancherel swap."}
+      - {id: A3, statement: "Absolute convergence of $P(g)$ on AExp (strict $\\sigma>1/2$) and finiteness on ABL.", src: "eq:P-dictionary + note in def:line-tests", portability: "Unchanged on GL1/K: local Euler factors are $(1-\\mathrm N\\mathfrak p^{-s})^{-1}$; strict $\\sigma>1/2$ ensures $\\sum\\Lambda(n)n^{-2\\sigma}$ converges in any global GL1 setting."}
     counterexamples_or_limits: "If $\\sigma\\le1/2$, prime sum may diverge; boundary/PV control degrades."
     asks: "State sharpness of $\\sigma>1/2$ and portability under other normalizations."
   constructions_and_kernels:
@@ -80,33 +81,33 @@ a2a_doc:
       - {id: A_fn, fmla: "$\\mathcal A(g)=\\tfrac1{2\\pi}\\int_{\\R} g(\\tau)K_A(\\tau)d\\tau$, $K_A=\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$ (src: prop:arch-block, rem:dictionary)"}
       - {id: D_inf, fmla: "$K_\\infty(u)=-\\frac{e^{-u}}{1-e^{-2u}}=-\\frac1{2\\sinh u}$; $\\langle D_\\infty,\\varphi\\rangle=\\int_0^\\infty K_\\infty\\varphi$ (src: eq:Dinf-pairing-def)"}
       - {id: J, fmla: "$J(g)=\\tfrac1{2\\pi}\\int_0^\\infty e^{-x/2}\\gb(x)dx$ (src: eq:Jg-def)"}
-      - {id: rho_W, fmla: "as in meta; strictly positive on $(0,\\infty)$ (src: eq:rhoW-def-early)"}
+      - {id: rho_W, fmla: "$\\rho_W(x)=\\tfrac1{2\\pi}\\!\\left(\\tfrac1{1+e^{-x/2}}+2e^{-x/2}\\right)\\mathbf1_{(0,\\infty)}(x)$ (src: eq:rhoW-def)"}
       - {id: T_half, fmla: "$T_{1/2}(x)=\\tfrac1{1+e^{-x/2}}\\in(1/2,1)$, and $-\\mathcal A(g)+\\tfrac12 g(0)=\\tfrac1{2\\pi}\\int \\gb T_{1/2}$ (src: prop:torsion-filter)"}
     compatibility_checklist:
-      commute: "UNKNOWN"
-      weyl_invariance: "N/A(GL1) or tautological; UNKNOWN"
+      commute: "Yes (GL1): exponential multipliers $(E_a)$ commute and the half‑shift acts by a commuting multiplier $T_{1/2}$; the modulus‑line dictionary preserves commutativity (src: Lemma 2.18, Rem. 2.20)."
+      weyl_invariance: "Trivial on GL1 (abelian slice; no nontrivial Weyl action); positivity reduces to $\\gb\\ge0$ (src: Rem. 2.22, Prop. 1.2)."
       boundedness: "$K_A(\\tau)=O((1+|\\tau|)^{-2})$; $K_\\infty(u)\\sim -\\tfrac1{2u}$ near 0 (src: rem:dictionary, rem:Dinf-halfline-PV)"
-      model_independence: "Stated via ledger lock; unitary equivalence assumed; UNKNOWN"
+      model_independence: "Yes via the MS‑ledger lock and the Archimedean dictionary: the phase measure $d\\xi=(1/2\\pi)\\varphi'(\\tau)d\\tau$ (PV, no $\\delta_0$) fixes constants; $P(g)$ comes from local Euler factors and is ledger‑independent (src: Thm. 2.8; Prop. 4.2; Prop. 5.3)."
     asks: "State the exact functional calculus and where symbol bounds are used (DCT/Tonelli/Plancherel)."
   explicit_formula_block:
     geometric_side: "$P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$ (src: thm:SEF)"
     spectral_side: "$2\\sum_{\\rho}\\mathcal H(g;\\rho)$ nontrivial zeros, counted with multiplicity (src: thm:SEF, eq:H-appendix)"
     regularization: "symmetric PV on $\\varphi'(\\tau)$; no $\\delta_0$ (src: rem:normalization-lock)"
-    additive_pieces: ["prime block P(g)", "archimedean $-\\mathcal A(g)$", "boundary $\\tfrac12 g(0)$", "Poisson $2J(g)$", "zeros $2\\sum\\mathcal H$]
+    additive_pieces: ["prime block P(g)", "archimedean $-\\mathcal A(g)$", "boundary $\\tfrac12 g(0)$", "Poisson $2J(g)$", "zeros $2\\sum\\mathcal H$"]
     weil_functional_GL1: "$\\int_0^\\infty \\gb(x)\\rho_W(x)dx$ with $\\rho_W$ as above (src: eq:rhoW-def-early)"
     ramified_ledger: {when_present: "never for $\\zeta$", sign: "N/A", bound: "N/A", vanishing_cases: "all finite p unramified"}
     positivity_table:
-      - {term: "P(g)", status: "≥0 if $\\gb\\ge0$", cond: "$c_{p,k}>0$", src: prop:rhoW-adelic}
-      - {term: "$-\\mathcal A+\\tfrac12 g(0)+2J$", status: "≥0 if $\\gb\\ge0$", cond: "$\\rho_W>0$", src: prop:rhoW-adelic}
-      - {term: "full geometric", status: "≥0 if $\\gb\\ge0$", cond: "sum of ≥0", src: prop:rhoW-adelic}
+      - {term: "P(g)", status: "≥0 if $\\gb\\ge0$", cond: "$c_{p,k}>0$", src: "prop:rhoW-adelic"}
+      - {term: "$-\\mathcal A+\\tfrac12 g(0)+2J$", status: "≥0 if $\\gb\\ge0$", cond: "$\\rho_W>0$", src: "prop:rhoW-adelic"}
+      - {term: "full geometric", status: "≥0 if $\\gb\\ge0$", cond: "sum of ≥0", src: "prop:rhoW-adelic"}
     asks: "Confirm exact test classes ensuring each term ≥0."
   main_results:
     items:
-      - {id: T1, name: "MS base identity", statement: "As in main_identity.", conditions: "g admissible", dependencies: "[A1,A2,Prime,Arch]", status: proved, src: thm:main}
-      - {id: T2, name: "Asymmetric EF", statement: "As in asym_ef.", conditions: "g admissible", dependencies: "[T1,ZeroWeights,J,boundary]", status: proved, src: thm:SEF}
-      - {id: P1, name: "Prime block eval.", statement: "Formula for $P(g)$.", conditions: "g in ABL/AExp", dependencies: "[Euler factors,cosine dict.]", status: proved, src: prop:prime-block}
-      - {id: P2, name: "Arch. pairing eval.", statement: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$.", conditions: "g admissible", dependencies: "[K_A,ledger lock]", status: proved, src: prop:arch-block}
-      - {id: P3, name: "Geometric positivity", statement: "Positivity table as above.", conditions: "$\\gb\\ge0$", dependencies: "[P1,P2,\\rho_W]", status: proved, src: prop:rhoW-adelic}
+      - {id: T1, name: "MS base identity", statement: "As in main_identity.", conditions: "g admissible", dependencies: "[A1,A2,Prime,Arch]", status: proved, src: "thm:main"}
+      - {id: T2, name: "Asymmetric EF", statement: "As in asym_ef.", conditions: "g admissible", dependencies: "[T1,ZeroWeights,J,boundary]", status: proved, src: "thm:SEF"}
+      - {id: P1, name: "Prime block eval.", statement: "Formula for $P(g)$.", conditions: "g in ABL/AExp", dependencies: "[Euler factors,cosine dict.]", status: proved, src: "prop:prime-block"}
+      - {id: P2, name: "Arch. pairing eval.", statement: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$.", conditions: "g admissible", dependencies: "[K_A,ledger lock]", status: proved, src: "prop:arch-block"}
+      - {id: P3, name: "Geometric positivity", statement: "Positivity table as above.", conditions: "$\\gb\\ge0$", dependencies: "[P1,P2,\\rho_W]", status: proved, src: "prop:rhoW-adelic"}
     asks: "Give a one‑line invariant reason for each positivity (e.g., PSD kernels or autocorrelation structure)."
   dependency_graph:
     nodes: [A1,A2,P1,P2,T1,T2,P3]
@@ -116,12 +117,12 @@ a2a_doc:
     for_T1:
       steps: ["Define $Q_{MS}$ as $\\sum_v\\langle D_v,W\\rangle$ (src: eq:Q-global-sum)", "Evaluate $\\sum_p$ via Euler/cosine dict. → $P(g)$", "Evaluate $\\langle D_\\infty,W\\rangle$ via $K_A$ → $-\\mathcal A(g)$", "Assemble to $Q_{MS}=P-\\mathcal A$"]
       fragile_step: "Archimedean evaluation and PV handling at $\\tau=0$"
-      alt_route: "Heat‑kernel regularization (not used here); UNKNOWN"
+      alt_route: "Heat‑kernel route: replace the Fejér cutoff by $e^{-t\\Delta}$ on the log‑line and pass $t\\downarrow0$; reproduces the same remainder $\\mathcal A(g)$ and continuous density $\\rho_W$ in the MS ledger."
     for_T2:
       steps: ["Define zero weights $\\mathcal H(g;\\rho)$", "Relate spectral side to boundary+Poisson via FE", "Insert prime/arch pieces", "Obtain boxed EF"]
       fragile_step: "Justification of exchanging sums/integrals and PV symmetry"
-      alt_route: "Weil explicit formula via test on $\\widehat g$; UNKNOWN"
-    asks: "Identify single step most likely to fail in higher rank."
+      alt_route: "Classical Weil EF with compactly supported modulus‑line tests (via Paley–Wiener), i.e. working with $\\widehat g$ directly; constants match after the MS‑ledger crosswalk."
+      asks: "Identify single step most likely to fail in higher rank."
   limits_and_continuity:
     statements:
       - "$K_\\infty(u)\\sim-\\tfrac1{2u}+O(u)$ near 0; half‑line pairing converges absolutely (src: rem:Dinf-halfline-PV)"
@@ -159,4 +160,3 @@ a2a_doc:
     ideas: ["Port to Dirichlet $L$ and Hecke $L$ on GL1/K", "Abstract positivity via PSD kernels; aim for GLm", "Numerical pipelines validating density identities"]
     obstacles: ["Archimedean normalization in higher rank", "Ramified local factors and test space compatibility"]
     asks: "Prioritize milestones (GL1/K, Dirichlet; then GL2 spherical) and define a verification plan mirroring §Computational Verification."
-

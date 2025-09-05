@@ -41,13 +41,13 @@ a2a_doc:
   problem_and_claim:
     problem: "Derive an explicit formula with one‑sided Laplace zero weights by evaluating the Eisenstein phase both geometrically and spectrally under MS normalization, fixing PV and ledger constants."
     core_claims:
-      - {id: "C1-AEF", name: "Asymmetric Explicit Formula", status: proved, statement: "For admissible even g: 2∑_ρ H(g;ρ)=P(g)+½g(0)+2J(g)−A(g).", src: eq:asym-explicit}
-      - {id: "C2-no-delta", name: "No δ0 in φ'", status: proved, statement: "Poisson‑kernel singularities cancel at τ=0, so φ' has no δ0 atom in MS PV.", src: prop:arch-explicit}
-      - {id: "C3-conv", name: "Absolute convergence of zero sum", status: proved, statement: "∑_ρ H(g;ρ) converges absolutely for admissible g.", src: app:convergence}
-      - {id: "C4-Weil-pos", name: "Weil positivity restatement", status: proved, statement: "RH ⇔ positivity for band‑limited tests with Γ̂≥0 in MS ledger.", src: prop:rh-equivalence}
+      - {id: "C1-AEF", name: "Asymmetric Explicit Formula", status: proved, statement: "For admissible even g: 2∑_ρ H(g;ρ)=P(g)+½g(0)+2J(g)−A(g).", src: "eq:asym-explicit"}
+      - {id: "C2-no-delta", name: "No δ0 in φ'", status: proved, statement: "Poisson‑kernel singularities cancel at τ=0, so φ' has no δ0 atom in MS PV.", src: "prop:arch-explicit"}
+      - {id: "C3-conv", name: "Absolute convergence of zero sum", status: proved, statement: "∑_ρ H(g;ρ) converges absolutely for admissible g.", src: "app:convergence"}
+      - {id: "C4-Weil-pos", name: "Weil positivity restatement", status: proved, statement: "RH ⇔ positivity for band‑limited tests with Γ̂≥0 in MS ledger.", src: "prop:rh-equivalence"}
     route_map:
-      - {id: "A", name: "Geometric/Dirichlet", inputs: ["φ'(τ) from Ṡ", "PV; regularization", "dictionary"], output: "I(g)=A(g)−P(g)−½g(0)", status: proved, src: sec:arch}
-      - {id: "B", name: "Spectral/partial fractions", inputs: ["PF for ζ'/ζ", "Poisson kernel pairing"], output: "I(g)=2J(g)−2∑_ρ H(g;ρ)", status: proved, src: sec:zeros-poisson}
+      - {id: "A", name: "Geometric/Dirichlet", inputs: ["φ'(τ) from Ṡ", "PV; regularization", "dictionary"], output: "I(g)=A(g)−P(g)−½g(0)", status: proved, src: "sec:arch"}
+      - {id: "B", name: "Spectral/partial fractions", inputs: ["PF for ζ'/ζ", "Poisson kernel pairing"], output: "I(g)=2J(g)−2∑_ρ H(g;ρ)", status: proved, src: "sec:zeros-poisson"}
     asks: "Provide 1‑para ‘why now’ and the minimal new ingredient relative to classical EF derivations."
 
   notation:
@@ -84,20 +84,20 @@ a2a_doc:
 
   assumptions:
     items:
-      - {id: "A1", statement: "g is admissible (even; SBL or AExp with σ>½).", params: {σ: ">½"}, proved_here: false, proof_src: def:admissible, portability: "GL(1)/MS; extends to other L’s with care"}
-      - {id: "A2", statement: "Use symmetric PV at τ=0; φ' has no δ0 atom.", params: {}, proved_here: true, proof_src: prop:arch-explicit, portability: "depends on normalization"}
-      - {id: "A3", statement: "φ'(τ)=O(log(2+|τ|)) (tempered); pairings with S(ℝ) valid.", params: {}, proved_here: sketched, proof_src: sec:ledger, portability: "robust"}
-      - {id: "A4", statement: "ζ'/ζ admits standard partial fraction expansion; constants cancel in Δ.", params: {}, proved_here: true, proof_src: lem:zeta-pf, portability: "classical"}
-      - {id: "A5", statement: "Absolute convergence of ∑_ρ H(g;ρ).", params: {}, proved_here: true, proof_src: app:convergence, portability: "needs test‑class decay"}
-      - {id: "A6", statement: "Termwise evaluation justified under symmetric truncation.", params: {}, proved_here: true, proof_src: app:symmetric-sum, portability: "careful in higher rank"}
+      - {id: "A1", statement: "g is admissible (even; SBL or AExp with σ>½).", params: {σ: ">½"}, proved_here: false, proof_src: "def:admissible", portability: "GL(1)/MS; extends to other L’s with care"}
+      - {id: "A2", statement: "Use symmetric PV at τ=0; φ' has no δ0 atom.", params: {}, proved_here: true, proof_src: "prop:arch-explicit", portability: "depends on normalization"}
+      - {id: "A3", statement: "φ'(τ)=O(log(2+|τ|)) (tempered); pairings with S(ℝ) valid.", params: {}, proved_here: sketched, proof_src: "sec:ledger", portability: "robust"}
+      - {id: "A4", statement: "ζ'/ζ admits standard partial fraction expansion; constants cancel in Δ.", params: {}, proved_here: true, proof_src: "lem:zeta-pf", portability: "classical"}
+      - {id: "A5", statement: "Absolute convergence of ∑_ρ H(g;ρ).", params: {}, proved_here: true, proof_src: "app:convergence", portability: "needs test‑class decay"}
+      - {id: "A6", statement: "Termwise evaluation justified under symmetric truncation.", params: {}, proved_here: true, proof_src: "app:symmetric-sum", portability: "careful in higher rank"}
     counterexamples_or_limits: "Odd g or σ≤½ may break PV pairing or absolute convergence (details not provided → UNKNOWN)."
     asks: "Clarify sharpness of σ>½ and portability to Dirichlet/GL(m) with MS vs Selberg conventions."
 
   constructions_and_kernels:
     defs:
-      - {name: "Poisson kernel", formula: "2a/(a^2+(2τ−γ)^2)", psd: "≥0", src: lem:poisson-pair}
-      - {name: "R0", formula: "e^{−x/2}/(1+e^{−x/2})", psd: "≥0", src: def:A-functional}
-      - {name: "T_{1/2}", formula: "1/(1+e^{−x/2})", role: "half‑shift torsion in arch block", src: sec:ledger}
+      - {name: "Poisson kernel", formula: "2a/(a^2+(2τ−γ)^2)", psd: "≥0", src: "lem:poisson-pair"}
+      - {name: "R0", formula: "e^{−x/2}/(1+e^{−x/2})", psd: "≥0", src: "def:A-functional"}
+      - {name: "T_{1/2}", formula: "1/(1+e^{−x/2})", role: "half‑shift torsion in arch block", src: "sec:ledger"}
     factorization: ["φ'=φ'_{arch}+φ'_{ζ}", "I_arch=A−½g(0)"]
     compatibility_checklist:
       commute: "UNKNOWN (no e^{−tA}, M(w,0), Ψ_{1/2} explicitly defined here)"
@@ -130,12 +130,13 @@ a2a_doc:
     asks: "Confirm which terms are ≥0 for each test class; give exact conditions."
 
   main_results:
-    - {id: "R1", name: "AEF", statement: "2∑_ρ H=P+½g(0)+2J−A", conditions: "g admissible, even", dependencies: ["A2","A4","R2","R3","R4"], status: proved, src: eq:asym-explicit}
-    - {id: "R2", name: "Phase identity", statement: "iφ'(τ)=∂_τ log Ṡ(½+iτ)=4 Re(Λ'/Λ(2iτ)) (PV).", conditions: "MS, PV", dependencies: [], status: proved, src: lem:phase-identity}
-    - {id: "R3", name: "Arch pairing", statement: "I_arch=A−½g(0).", conditions: "regularization fixed", dependencies: ["A6"], status: proved, src: def:I-arch,def:A-functional}
-    - {id: "R4", name: "Poisson pairing", statement: "(1/2π)∫ g(τ)·(2a)/(a^2+(2τ−γ)^2)dτ = H(g;a+iγ).", conditions: "g admissible", dependencies: [], status: proved, src: lem:poisson-pair}
-    - {id: "R5", name: "Weil positivity restatement", statement: "RH ⇔ positivity on SBL with Γ̂≥0.", conditions: "band‑limited tests", dependencies: [], status: proved, src: prop:rh-equivalence}
-    - {id: "R6", name: "Zero-sum convergence", statement: "∑_ρ H(g;ρ) abs. conv.", conditions: "g admissible", dependencies: [], status: proved, src: app:convergence}
+    results:
+      - {id: "R1", name: "AEF", statement: "2∑_ρ H=P+½g(0)+2J−A", conditions: "g admissible, even", dependencies: ["A2","A4","R2","R3","R4"], status: proved, src: "eq:asym-explicit"}
+      - {id: "R2", name: "Phase identity", statement: "iφ'(τ)=∂_τ log Ṡ(½+iτ)=4 Re(Λ'/Λ(2iτ)) (PV).", conditions: "MS, PV", dependencies: [], status: proved, src: "lem:phase-identity"}
+      - {id: "R3", name: "Arch pairing", statement: "I_arch=A−½g(0).", conditions: "regularization fixed", dependencies: ["A6"], status: proved, src: "def:I-arch, def:A-functional"}
+      - {id: "R4", name: "Poisson pairing", statement: "(1/2π)∫ g(τ)·(2a)/(a^2+(2τ−γ)^2)dτ = H(g;a+iγ).", conditions: "g admissible", dependencies: [], status: proved, src: "lem:poisson-pair"}
+      - {id: "R5", name: "Weil positivity restatement", statement: "RH ⇔ positivity on SBL with Γ̂≥0.", conditions: "band‑limited tests", dependencies: [], status: proved, src: "prop:rh-equivalence"}
+      - {id: "R6", name: "Zero-sum convergence", statement: "∑_ρ H(g;ρ) abs. conv.", conditions: "g admissible", dependencies: [], status: proved, src: "app:convergence"}
     asks: "Provide 1‑line invariant‑theoretic reason for each positivity claim."
 
   dependency_graph:
@@ -167,8 +168,8 @@ a2a_doc:
     t_down_0: "ε↓0 at s=½+ε+iτ; PV defined symmetrically; δ0 cancels."
     continuity: "I_ε(g)→I(g) by DCT with ε‑indep L¹ majorant."
     constants_table:
-      - {where: "digamma bounds", uniform_in_t: "yes on strips", dep_on_a: "N/A", src: app:digamma}
-      - {where: "zero-sum decay", uniform_in_t: "N/A", dep_on_a: "via σ", src: app:convergence}
+      - {where: "digamma bounds", uniform_in_t: "yes on strips", dep_on_a: "N/A", src: "app:digamma"}
+      - {where: "zero-sum decay", uniform_in_t: "N/A", dep_on_a: "via σ", src: "app:convergence"}
     asks: "List any constants that blow up (e.g., near poles) and quantify."
 
   checks_and_recipes:

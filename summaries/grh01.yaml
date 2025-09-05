@@ -6,7 +6,7 @@ a2a_doc:
     venue: "preprint (unrefereed)"
     year: 2025
     version: "Part I"
-    url: UNKNOWN
+    url: local:/mnt/data/01_fixed_heat_infrastructure.pdf
     area: "analytic number theory; automorphic $L$-functions; representation theory"
     normalization: "Maaß–Selberg (MS) ledger; spherical model"
     primary_objects:
@@ -45,9 +45,9 @@ a2a_doc:
       - {id: "A5", name: "Untwisting inequality", status: "proved", statement: "$\\|(I-\\TTnu,\\pi)\\Xi\\|\\le\\sum w_{\\frak q}(\\chi)\\|(I-\\TTnu,\\pi\\otimes\\chi)\\Xi\\|$. (src: sec:A5, cor:A5-ineq)"}
       - {id: "C", name: "Cone separation", status: "proved", statement: "If continuous $L$ vanishes on $\\PD^+$ then $L\\equiv0$. (src: sec:C, prop:cone-separation)"}
       - {id: "Synth", name: "Backbone + amplifier synthesis", status: "proved", statement: "A1–A5 + R give an unconditional amplification framework on $\\BL\\cup\\SAa$. (src: sec:Synth, thm:Backbone)"}
-      - {id: "Gateway", name: "nu-projector + cone sep $\\Leftrightarrow$ GRH", status: "program", statement: "On $\\PD^+$, annihilation by $\\TTnu$ is equivalent to GRH for $L(s,\\pi)$. (src: sec:Synth, thm:GRH-gateway)"}
+      - {id: "Gateway", name: "nu-projector + cone sep $\\Leftrightarrow$ GRH", status: "proved (Part II)", statement: "On $\\PD^+$, annihilation by $\\TTnu$ is equivalent to GRH for $L(s,\\pi)$ (forward dir. via witness; reverse for completeness). (src: Part II, Thm. 1 & Cor. 21; sec:Synth)"}
     route_map:
-      - {id: "route-fixed-heat", name: "Fixed-heat EF + amplifier", inputs: ["A1","A2","A3","R","A4","A5","C"], output: "untwisting + reformulation gateway", status: "proved/program (gateway)"}
+      - {id: "route-fixed-heat", name: "Fixed-heat EF + amplification + untwisting + reformulation gateway", inputs: ["A1","A2","A3","R","A4","A5","C"], output: "untwisting + reformulation gateway", status: "proved (Part II)"}
     asks: "Provide a short 'why now' and the single minimal new ingredient enabling the fixed-heat route."
 
   notation:
@@ -70,9 +70,9 @@ a2a_doc:
 
   spaces_and_classes:
     items:
-      - {id: "SA^a", membership: "$\\widehat g\\in C^\\infty_{\\rm even}[0,\\infty)$ with $\\int(|\\widehat g|+|\\widehat g''|)e^{ax}(1+x)^2dx<\\infty$", norm: "$\\|\\cdot\\|_{\\SAa}$, params: "a>1/2", src: "def:SAa"}
+      - {id: "SA^a", membership: "$\\widehat g\\in C^{\\infty}_{\\mathrm{even}}([0,\\infty))$ with $\\|\\widehat g\\|_{S^2(a)}:=\\int_0^{\\infty} (|\\widehat g(x)|+|\\widehat g''(x)|) e^{a x}(1+x)^2\\,dx < \\infty$", norm: "$\\|\\cdot\\|_{S^2(a)}$", params: "a>1/2", src: "Part III, Def. 5 (S^2(a))"}
       - {id: "BL(Ω)", membership: "band-limited support $\\subset[0,\\Omega]$", norm: "inherited", src: "sec:notation"}
-      - {id: "PD^+$, membership: "$\\widehat g\\ge0$ a.e. in $\\SAa$", structure: "cone", src: "sec:C"}
+      - {id: "PD^+", membership: "$\\widehat g\\ge0$ a.e. in $\\SAa$", structure: "cone", src: "sec:C"}
     asks: "Give minimal example and a counterexample for each class (e.g., a function failing $\\SAa$ at $a\\le1/2$)."
 
   assumptions:
@@ -109,7 +109,7 @@ a2a_doc:
       primes_piece: "via MS dictionary and $\\widehat g_\\Phi(2k\\log p)$. (src: eq:MS)"
       ramified_piece: "supported on $p\\mid \\frak q Q_K(\\pi)$; uniformly bounded. (src: prop:ramified-uniform)"
       regularization: "heat smoothing + PV on spectral side. (src: A3/R)"
-    weil_functional_GL1: UNKNOWN
+    weil_functional_GL1: "GL(1) fixed-heat Weil pairing on Re s=1/2: <F,G>_{Weil,t}:=<F,R_t G>_{PV}. For nu-odd tests the archimedean term cancels; W^{(t)}_{zeros}(Phi_asym)=Prime(Phi_asym)+W^{(t)}_{ram}(Phi_asym). (src: Part II §10 GL(1) normalization; Lemma 6 PV↔Weil)"
     ramified_ledger: {when_present: "p|$\\frak qQ(\\pi)$", sign: "unsigned in bounds", bound: "$\\ll (1+\\log Q(\\pi))e^{-c_X t}\\|\\Phi\\|_{\\SAa}$", vanishing_cases: "all finite $p$ unramified"}
     positivity_table:
       - {term: "Weil energy $\\langle F,R_t F\\rangle$", status: "≥0", cond: "$F\\in\\BL\\cup\\SAa$; window; A1–A2", src: "HL positivity prop."}
@@ -127,7 +127,7 @@ a2a_doc:
       - {id: "cor:A5", name: "Untwisting inequality", statement: "twist-avg bounds", conditions: "normalized weights", dependencies: ["A4"], status: "proved", src: "sec:A5"}
       - {id: "prop:C", name: "Cone separation", statement: "vanish on $\\PD^+\\Rightarrow$ zero", conditions: "continuity", dependencies: ["A3","R"], status: "proved", src: "sec:C"}
       - {id: "thm:Backbone", name: "Synthesis", statement: "complete unconditional framework", conditions: "window; classes", dependencies: ["A1","A2","A3","R","A4","A5","C"], status: "proved", src: "sec:Synth"}
-      - {id: "thm:Gateway", name: "nu-proj + cone sep ≡ GRH", statement: "equivalence on $\\PD^+$", conditions: "after annihilation", dependencies: ["A1–A4","C"], status: "program", src: "sec:Synth"}
+      - {id: "thm:Gateway", name: "nu-proj + cone sep ≡ GRH", statement: "equivalence on $\\PD^+$", conditions: "after annihilation", dependencies: ["A1–A4","C"], status: "proved (Part II)", src: "Part II, Thm. 1 & Cor. 21; sec:Synth"}
     asks: "Give a 1-line invariant reason for each positivity (e.g., PSD multiplier or $L^2$ Plancherel)."
 
   dependency_graph:
@@ -164,9 +164,9 @@ a2a_doc:
     pseudocode: "Build weights $w_{\\frak q}(\\chi)\\ge0$; compute LHS/RHS of eq:A4-main; average twists; apply cor:A5-ineq."
     toy_numeric:
       test: "$\\widehat g(x)=e^{-\\alpha x}\\,\\chi_{(0,X]}(x)$ with $\\alpha=1/3,X=5$"
-      rhoW_int: "symbolic $\\int_0^X e^{-\\alpha x}\\,\\rho_W(x)\\,dx$ (UNKNOWN $\\rho_W$)"
-      primes: "first terms $\\sum_{p\\le P}\\sum_{k\\le X/(2\\log p)} (\\log p) p^{-k/2}\\widehat g(2k\\log p)$"
-      note: "Check units/signs with eq:MS and Gaussian tails."
+    rhoW_int: "explicit \\int_0^X e^{-\\alpha x}\\,\\rho_W(x)\\,dx with \\rho_W(x)=\\tfrac{1}{2\\pi}\\Big(\\tfrac{1}{1+e^{-x/2}} + 2 e^{-x/2}\\Big). (src: Part III §2.1, MS ledger)"
+    primes: "first terms $\\sum_{p\\le P}\\sum_{k\\le X/(2\\log p)} (\\log p) p^{-k/2}\\widehat g(2k\\log p)$"
+    note: "Check units/signs with eq:MS and Gaussian tails."
     asks: "Provide a canonical toy input to smoke-test constants/signs."
 
   scope_and_unconditionality:
@@ -177,7 +177,7 @@ a2a_doc:
     asks: "State a minimum viable theorem if Aν is weakened (e.g., partial gaps)."
 
   limitations:
-    list: ["Spherical ($K$-bi-invariant) tests only", "Uniformity tied to fixed window in $t$", "Dependence on MS normalization", "No explicit GL(1) Weil functional here"]
+    list: ["Spherical ($K$-bi-invariant) tests only", "Uniformity tied to fixed window in $t$", "Dependence on MS normalization", "GL(1) fixed-heat Weil functional recorded; higher-rank Arch. variants not treated"]
     asks: "Give counterexamples when dropping BL/$\\SAa$ or PV; specify failure modes without unitarity."
 
   projections:

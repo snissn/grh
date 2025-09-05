@@ -3,10 +3,10 @@ a2a_doc:
     title_long: "Heisenberg Holonomy V: The $\\nu$‑involution as a Geometric Operator on the Adelic Heisenberg Moduli Space"
     title_short: "Heisenberg Holonomy V"
     authors: ["Michael Seiler"]
-    venue: UNKNOWN
-    year: UNKNOWN
+    venue: "Preprint (CC BY 4.0)"
+    year: 2025
     version: "v1 preprint (LaTeX)"
-    url: UNKNOWN
+    url: "file:/mnt/data/Heisenberg-holonomy-V.pdf"
     area: "analytic number theory; explicit formula; automorphic L‑functions; Heisenberg/adelic geometry"
     normalization: "Maaß–Selberg fixed‑heat (MS); log–Mellin on the u‑line"
     primary_objects:
@@ -101,7 +101,7 @@ a2a_doc:
       - {name: A_5, formula: "symbol â_5(τ)∈[0,1], â_5≈1 on |τ|≤τ_0", props: "PSD; gap η>0", src: "lem:a5-symbol; lem:a5-dominance"}
       - {name: R*, formula: "ramified damping kernel (exponential)", props: "smoothing; PSD", src: "sec:A5-geometry"}
     compatibility_checklist:
-      commute: {e^{-tA}↔M(w,0): UNKNOWN, e^{-tA}↔Ψ_{1/2}: UNKNOWN, M(w,0)↔Ψ_{1/2}: UNKNOWN}
+      commute: {"e^{-tA}↔M(w,0)": "YES — M(w,0) is |W|-scalar in MS (commutes)", "e^{-tA}↔Ψ_{1/2}": "YES — both are spherical multipliers f(-ΔX) (commute)", "M(w,0)↔Ψ_{1/2}": "YES — scalar vs. multiplier (commute)"}
       invariance: {Weyl_invariance: "G_ν,A_5 expected", boundedness: "R,T_π,A_5 bounded on L^2_u"}
       model_independence: "R_t/ledger independent up to unitary equivalence."
     asks: "Specify functional calculus used (Fourier/Mellin) and where symbol bounds enter."
@@ -220,4 +220,3 @@ a2a_doc:
       - "Port holonomy parity to families; study low‑lying zeros via geometric localization."
       - "Numerical ledger on S^1 for ζ and Dirichlet L; validate constants."
     asks: "Prioritize milestones (GL(2) first), list verification steps, and note obstacles (ramified models, explicit A5 construction)."
-

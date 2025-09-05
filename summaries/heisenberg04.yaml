@@ -2,13 +2,14 @@ a2a_doc:
   meta:
     title_long: "Heisenberg Holonomy IV: Adelic Modulus, Holonomy, and the Explicit Formula"
     title_short: "Heisenberg Holonomy IV"
-    authors: UNKNOWN
-    venue: UNKNOWN
-    year: UNKNOWN
-    version: UNKNOWN
-    url: UNKNOWN
+    authors: "Michael Seiler"
+    venue: "Preprint (CC BY 4.0)"
+    year: 2025
+    version: "v1 (2025-09-03)"
+    url: "https://orcid.org/0009-0009-5529-2008"
     area: "analytic number theory; adelic harmonic analysis; Heisenberg geometry"
-    normalization: UNKNOWN
+    msc: { primary: "11M26", secondary: ["11F72","22E27","53C17"] }
+    normalization: "Mellin-symmetric (GL(1)): primes at critical p^{-n/2}; archimedean via Γ_R(s); host orientation α_H=dθ"
     primary_objects:
       - name: "H^1(ℚ_v)"
         type: "Heisenberg group (local)"
@@ -33,20 +34,21 @@ a2a_doc:
         role: "archimedean/primes blocks of geometric EF"
     normalization_sheet:
       finite_places:
-        euler_factors: UNKNOWN
-        measure: UNKNOWN
-        satake_params: UNKNOWN
+        euler_factors: "L_p(s)=∏_{j}(1−α_{p,j}p^{−s})^{-1}; for ζ: L_p(s)=(1−p^{-s})^{-1}"
+        measure: "Dirac comb D_p(u)=Σ_{k≥1}(log p)·δ(u−k log p); ⟨D_p,W⟩=Σ_{k≥1}(log p)W(k log p)"
+        satake_params: "GL(1) Satake parameters α_{p,j}; for ζ: α_{p,1}=1 (unramified)"
       arch_place:
-        scattering_matrix: UNKNOWN
-        pv_convention: UNKNOWN
-        spectral_measure: UNKNOWN
+        scattering_matrix: "γ_∞(s)=Γ_R(s)=π^{-s/2}·Γ(s/2)"
+        pv_convention: "Principal value on S^1 for singular kernels (Hilbert transform), host form α_H=dθ"
+        spectral_measure: "Half-line cosine variable ξ with Lebesgue dξ; s=1/2+iξ on the spectral side"
       dictionary_constants:
         note: "proportionalities between scale-profile side and Fourier/Mellin side"
-        example: "W_Φ(u) ↔ ĝ_Φ(2u) with constant c_* = UNKNOWN"
+        example: "W_Φ(u)=(1/π)(1−e^{−u})·ĝ_b(2u)  ⇒ c_* = 1/π  (cosine profile ĝ_b)"
     identities_checked:
-      - id: ID1
-        stmt: "𝒬_MS(g) = Σ_v ⟨𝒟_v^{comb}, W_Φ⟩ = 𝒜(g) + 𝒫(g)"
-        src: "paper:general"
+      - "Finite places: Dirac comb D_p (eq. (1), Part IV)"
+      - "Archimedean density ρ_W via Γ_R (eq. (2), Part IV)"
+      - "Weil test on the half-line W(u)=(1/π)(1-e^{-u})·ĝ_b(2u) (eq. (3), Part IV)"
+      - "Adelic holonomy = explicit formula (Theorem 1.1 / eq. (4), Part IV)"
     asks: "If any constant differs from a standard reference (cite), document and justify."
 
   problem_and_claim:
@@ -63,16 +65,18 @@ a2a_doc:
 
   notation:
     symbols:
-      ℚ: "rationals"; 𝔄_ℚ: "adeles of ℚ"; v: "place (finite/∞)"
+      ℚ: "rationals"
+      𝔄_ℚ: "adeles of ℚ"
+      v: "place (finite/∞)"
       H^1(–): "3D Heisenberg group"
       ℝ_{>0}^×: "modulus line (log-scale u)"
       Φ: "primary test on modulus; induces W_Φ"
-      g, ĝ: "log-side profile and transform (Fourier/Mellin conventions UNKNOWN)"
+      g, ĝ: "g even; ĝ_b = cosine transform on [0,∞); u=log x; s=1/2+iξ with ξ the cosine-Fourier variable"
       𝒟_v^{comb}: "local holonomy functional"
       𝒬_MS(g): "total adelic holonomy"
       𝒜(g), 𝒫(g): "arch/primes terms in EF (geom.)"
     equivalences:
-      UNKNOWN: UNKNOWN
+      Mellin-Fourier: "u↔ξ via (F_c W)(ξ)=∫_0^∞ W(u)cos(2uξ)du; spectral side s=1/2+iξ; host kernel α_C=J·α_H on |z|=1 and dz=J·z·α_H"
     asks: "State domains/codomains explicitly (e.g., W_Φ: ℝ→ℝ), and any hidden identifications (e.g., X=G/K, spherical Fourier side)."
 
   spaces_and_classes:
@@ -80,11 +84,11 @@ a2a_doc:
       - id: S1
         name: "Test profiles"
         def: "W_Φ on log-scale u with regularity/decay suitable for EF pairings."
-        norms: UNKNOWN
+        norms: "T_α([0,∞)), α>1/2: sup_{u≥0} e^{αu}|∂^k W(u)|<∞ (all k); stable under E_a and C_{1/2}=(Id−E_{1/2})(Id−E)^{-1} with kernel T_{1/2}(x)=(1+e^{−x/2})^{-1}"
       - id: S2
         name: "Adelic test data"
         def: "Restricted tensor products across v compatible with 𝒟_v^{comb}."
-        norms: UNKNOWN
+        norms: "Restricted tensor product across places; finite v via Dirac-comb pairing; arch v via cosine side; absolute convergence under T_α"
     asks: "Give minimal examples/counterexamples for S1,S2 (e.g., compact support vs Schwartz)."
 
   assumptions:
@@ -116,25 +120,25 @@ a2a_doc:
       total: "𝒬_MS(g)=𝒜(g)+𝒫(g)"
       arch_piece: "𝒜(g) from v=∞"
       primes_piece: "𝒫(g) from finite v"
-      regularizations: "PV/heat cutoffs UNKNOWN"
+      regularizations: "Distributional pairing; archimedean side via (F_c W) against d/dξ log Γ_R; no extra PV for the finite comb"
     spectral_side:
-      zeros_sum: UNKNOWN
-      gamma_terms: UNKNOWN
-      constants: UNKNOWN
+      zeros_sum: "Σ_ρ H(g;ρ) (nontrivial zeros counted with multiplicity)"
+      gamma_terms: "archimedean/trivial terms from Γ_R(s) (Mellin-symmetric ledger)"
+      constants: "Prime normalization at critical p^{-n/2}; ⟨D_∞,W⟩=−𝒜(g); ⟨D_p,W⟩ builds 𝒫(g)"
     weil_functional_GL1:
-      rho_W: UNKNOWN
+      rho_W: "ρ_W(ξ)=−(1/π)·d/dξ[log Γ_R(1/2+iξ)+log Γ_R(1/2−iξ)]  (arch density)"
     ramified_ledger:
       when_present: "finite v with ramification (here ζ: none)"
-      sign: UNKNOWN
-      bound: UNKNOWN
-      vanishing_cases: "all finite p unramified (for ζ)"
+      sign: "n/a for ζ (all finite p unramified); in general, twisted finite blocks follow character weights"
+      bound: "finite set at ramified p; contributions uniformly controlled for T_α tests"
+      vanishing_cases: "ζ: all finite p unramified; twists: D_{p,χ}(u)=Σ_{k≥1}(log p)χ(p)^k δ(u−k log p), and at ∞ use Db_{∞,χ}(ξ)=−∂_ξ log[Γ_∞(1/2+iξ,χ_∞)Γ_∞(1/2−iξ,χ_∞)] (Part IV §6)"
     positivity_table:
       - term: "prime"
-        status: UNKNOWN
-        cond: UNKNOWN
+        status: "≥ 0"
+        cond: "for autocorrelations g=g_Φ after the Mellin–torsion filter C_{1/2}"
       - term: "arch"
-        status: UNKNOWN
-        cond: UNKNOWN
+        status: "≤ 0"
+        cond: "for autocorrelations g=g_Φ after the Mellin–torsion filter C_{1/2}"
     asks: "Specify which terms are ≥0 under which test classes; give exact rho_W."
 
   main_results:
@@ -175,11 +179,11 @@ a2a_doc:
     asks: "What unique step fails first in higher rank?"
 
   limits_and_continuity:
-    t_to_0_passages: "UNKNOWN"
-    density_args: "Approximate W_Φ by compactly supported/Schwartz sequences; topology UNKNOWN."
+    t_to_0_passages: "not used in Part IV (fixed-modulus-line formulation; no heat-time parameter)"
+    density_args: "Use T_α([0,∞)) (α>1/2) and the E_a-family to approximate by compact support; dominated convergence applies"
     constants_table:
-      - {name: "C_loc(v)", origin: "local bounds on 𝒟_v^{comb}", uniform_in_t: UNKNOWN, dep_on_a: UNKNOWN}
-      - {name: "C_glob", origin: "Σ_v majorant", uniform_in_t: UNKNOWN, dep_on_a: UNKNOWN}
+      - {name: "C_loc(v)", origin: "local bounds on 𝒟_v^{comb}", uniform_in_t: "n/a (no t)", dep_on_a: "depends on α in T_α"}
+      - {name: "C_glob", origin: "Σ_v majorant", uniform_in_t: "n/a (no t)", dep_on_a: "depends on α; finite p by support of W"}
     asks: "Provide uniform constants and specify where blow-ups occur."
 
   checks_and_recipes:
@@ -192,8 +196,8 @@ a2a_doc:
       -> return sum_v L_v, and split into arch/primes by v
     toy_numeric:
       alpha_X_choice: "ĝ(x)=e^{-αx}·χ_{(0,X]} with α=1/3, X=5"
-      rhoW_integral: "∫_0^∞ ĝ(x)·ρ_W(x) dx  (ρ_W UNKNOWN)"
-      prime_terms: "Σ_{p≤11} (log p)·F(p) with F from W_Φ-profile; signs/units to smoke-test"
+      rhoW_integral: "∫_0^∞ (F_c W)(ξ)·[−(1/π) d/dξ (log Γ_R(1/2+iξ)+log Γ_R(1/2−iξ))] dξ"
+      prime_terms: "P(g)=Σ_p Σ_{k≥1} (log p)·W(k·log p); if supp W ⊆ [0,X], restrict to k·log p ≤ X (Example 8.1, Part IV)"
     asks: "Provide a canonical toy Φ to fix signs and constants."
 
   scope_and_unconditionality:
@@ -216,4 +220,3 @@ a2a_doc:
       - "Quantify positivity to derive explicit zero-density or zero-free regions."
       - "Numerical holonomy samplers for ramified test data."
     asks: "Prioritize milestones and a verification plan (local constants; end-to-end EF check on ζ)."
-
