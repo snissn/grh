@@ -1,9 +1,9 @@
 
 # **From RH to the Grand RH to Functoriality — with a geometric mirror on the Heisenberg host**
 
-> **One‑paragraph hook (for an ANTer/L‑functionist).** We rebuild the explicit‑formula (EF) method around a *fixed‑heat* smoothing that lives naturally in the Maaß–Selberg spherical calculus. This lets us **realize the half‑shift as a positive operator**, put **Weil positivity on rails**, and show that a simple **parity involution $\nu$** turns EF positivity into **witnesses** and **annihilators**. On GL$1$ this gives a clean RH ledger with band‑limited tests, a distributional symmetric EF, and a concrete positivity density. The same analytic chassis then **scales to GRH for $L(s,\pi)$** (Parts I–III), produces a **finite, reproducible certificate/verifier**, and powers a **positivity‑driven proof of Langlands functoriality** without trace‑formula comparison. In parallel, a **Heisenberg geometry** recasts the same identities as holonomy/Toeplitz statements on $S^1$, giving a second derivation and a conceptual mirror. Everything below is arranged so that RH is the accessible front door; GRH, Langlands, and Heisenberg are tightly interlocking extensions that both *justify* and *enhance* the RH sequence.
+> **One‑paragraph hook (for an ANTer/L‑functionist).** We rebuild the explicit‑formula (EF) method around a *fixed‑heat* smoothing that lives naturally in the Maaß–Selberg spherical calculus. This lets us **realize the half‑shift as a positive operator**, put **Weil positivity on rails**, and show that a simple **parity involution $\nu$** turns EF positivity into **witnesses** and **annihilators**. On $GL_1$ this gives a clean RH ledger with band‑limited tests, a distributional symmetric EF, and a concrete positivity density. The same analytic chassis then **scales to GRH for $L(s,\pi)$** (Parts I–III), produces a **finite, reproducible certificate/verifier**, and powers a **positivity‑driven proof of Langlands functoriality** without trace‑formula comparison. In parallel, a **Heisenberg geometry** recasts the same identities as holonomy/Toeplitz statements on $S^1$, giving a second derivation and a conceptual mirror. Everything below is arranged so that RH is the accessible front door; GRH, Langlands, and Heisenberg are tightly interlocking extensions that both *justify* and *enhance* the RH sequence.
 
-> **Orientation (start here).** Begin with the **RH kernel on GL$1$**—the asymmetric EF from the Eisenstein phase, the band‑limited symmetric EF, and the Weil‑side positivity density. That front door fixes normalizations and makes the half‑shift/positivity machinery transparent. For **statement‑level confirmation**, see the **2025 capstone**, *The Grand Riemann Hypothesis from a Geometric Annihilation Principle*, which gives a self‑contained proof of GRH for automorphic $L$‑functions and corroborates the method in full. **DOI:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
+> **Orientation (start here).** Begin with the **RH kernel on $GL_1$**—the asymmetric EF from the Eisenstein phase, the band‑limited symmetric EF, and the Weil‑side positivity density. That front door fixes normalizations and makes the half‑shift/positivity machinery transparent. For **statement‑level confirmation**, see the **2025 capstone**, *The Grand Riemann Hypothesis from a Geometric Annihilation Principle*, which gives a self‑contained proof of GRH for automorphic $L$‑functions and corroborates the method in full. **DOI:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
 
 ---
 
@@ -33,13 +33,13 @@ These three pieces make RH the **best entry point**: you can audit constants, se
 * **Loewner‑monotone functional calculus.** Operator inequalities (half‑shift, Toeplitz) are encoded in Loewner order and survive adelization.
 * **PV growth & zero‑counting.** PV growth bounds close the ledger around any putative off‑line zero.
 
-**How to sanity‑check in minutes.** (i) On GL$1$, compute the band‑limited Toeplitz form on $S^1$; (ii) read the half‑shift inequality as a clean Loewner comparison; (iii) inspect the prime reserve on the unramified block; (iv) verify $\nu$‑odd annihilation; (v) enumerate a small finite ledger and watch the budgets close.
+**How to sanity‑check in minutes.** (i) On $GL_1$, compute the band‑limited Toeplitz form on $S^1$; (ii) read the half‑shift inequality as a clean Loewner comparison; (iii) inspect the prime reserve on the unramified block; (iv) verify $\nu$‑odd annihilation; (v) enumerate a small finite ledger and watch the budgets close.
 
 ---
 
 ## The arc in one narrative (RH → GRH → Langlands; with a geometric mirror)
 
-We begin with **RH** on GL$1$. The EF is rebuilt from the **Eisenstein phase**, then symmetrized on a **band‑limited** class. Fixed‑heat smoothing factors out the sharp cutoffs that usually cause grief; the **half‑shift** becomes a positive operator, so **Weil positivity** is visible and stable. This is not just cleaner—it sets the exact test space we will use everywhere else.
+We begin with **RH** on $GL_1$. The EF is rebuilt from the **Eisenstein phase**, then symmetrized on a **band‑limited** class. Fixed‑heat smoothing factors out the sharp cutoffs that usually cause grief; the **half‑shift** becomes a positive operator, so **Weil positivity** is visible and stable. This is not just cleaner—it sets the exact test space we will use everywhere else.
 
 With that spine in place, **GRH** is handled by the **$\nu$-involution**: we split tests into even/odd across the functional equation, show that the archimedean piece vanishes on the odd side, and prove:
 
@@ -86,7 +86,7 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 
 **What it does.** Derives the EF **directly from automorphic Eisenstein data** and its phase on the critical line, fixing normalization at source rather than by patchwork.
 **Why it matters.** Establishes a canonical EF starting point—what every later identity *means* and *counts* is clear from first principles.
-**How to spot‑check.** Verify the phase/normalization by cross‑checking against classical GL$1$ local factors.
+**How to spot‑check.** Verify the phase/normalization by cross‑checking against classical $GL_1$ local factors.
 **Zenodo:** [10.5281/zenodo.16930060](https://doi.org/10.5281/zenodo.16930060).
 
 ### RH‑II — *An Adelic Distributional Framework for the Symmetric Explicit Formula on a Band‑Limited Class*
@@ -100,7 +100,7 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 
 **What it does.** Identifies an explicit **Weil‑side positive density** (Mellin–torsion) encoding the fixed‑heat Gram pairing.
 **Why it matters.** This positivity table is the keystone for GRH parity arguments and for amplified inequalities in higher rank.
-**How to spot‑check.** On GL$1$, the density gives a Toeplitz PSD condition on $S^1$ equivalent to RH.
+**How to spot‑check.** On $GL_1$, the density gives a Toeplitz PSD condition on $S^1$ equivalent to RH.
 **Zenodo:** [10.5281/zenodo.16930094](https://doi.org/10.5281/zenodo.16930094).
 
 ---
@@ -207,7 +207,7 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 
 ## What to verify first (and why it’s quick)
 
-1. **GL$1$ Toeplitz test.** On $S^1$, compute the Toeplitz form against the stated density and match it to the RH symmetric EF coefficients. (Immediate sanity check of normalization/positivity.)
+1. **$GL_1$ Toeplitz test.** On $S^1$, compute the Toeplitz form against the stated density and match it to the RH symmetric EF coefficients. (Immediate sanity check of normalization/positivity.)
 2. **Half‑shift inequality.** Read the Loewner‑order sandwich realizing the half‑shift in the spherical calculus; it’s a clean operator comparison.
 3. **Prime reserve.** Inspect the unramified prime block positivity and its quantitative lower bound—this is the forcing engine behind functoriality.
 4. **$\nu$-odd annihilation.** Check that the arch block vanishes on odd inputs and that any off‑line zero yields a positive‑energy witness.
