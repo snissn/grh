@@ -1,0 +1,169 @@
+a2a_doc:
+  meta:
+    title_long: "Weil Positivity via Mellin–Torsion on the Modulus Line"
+    title_short: "Weil Positivity via Mellin–Torsion"
+    authors: ["Michael Seiler"]
+    venue: UNKNOWN
+    year: "2025"
+    version: "preprint"
+    url: UNKNOWN
+    area: "analytic number theory, automorphic forms"
+    normalization: "Maaß–Selberg (MS), symmetric PV at $s=\tfrac12$"
+    primary_objects:
+      - {name: "ζ(s)", type: "L-function", role: "target of RH", src: "paper:general"}
+      - {name: "Explicit formula (AEF)", type: "identity", role: "prime–zero bridge", src: "sec:AEF"}
+      - {name: "$Q_{\\mathrm{geom}}$", type: "functional", role: "geometric side", src: "def:local_functionals"}
+      - {name: "$\\mathcal W(g)$", type: "quadratic form", role: "zero side (Weil)", src: "H.4, sec:closure-RH"}
+      - {name: "$\\CW$", type: "cone", role: "Weil cone (tests)", src: "def:WeilCone"}
+      - {name: "$\\ABL$", type: "class", role: "band-limited tests", src: "def:ABL"}
+      - {name: "$\\AExp$", type: "class", role: "exp-damped tests", src: "def:AExp"}
+      - {name: "$\\TorsionOp$", type: "operator", role: "Mellin–torsion half-shift", src: "lem:torsion"}
+      - {name: "$\\rho_W(x)$", type: "density", role: "arch+boundary aggregator", src: "prop:rhoW-density"}
+    normalization_sheet:
+      finite_places: "Euler factors for ζ; atomic measure $D_P=\\sum_{p,k\\ge1}(\\log p)(1-p^{-k})\\,\\delta_{2k\\log p}$; Satake trivial."
+      arch_place: "Scattering $\\widetilde S(s)=\\Lambda(2s-1)/\\Lambda(2s)$; PV symmetric at $s=\\tfrac12$; spectral measure $d\\nu=\\rho_W(x)\\,dx$."
+      dictionary_constants: "$\\calA(g)=\\int_0^\\infty W(u)\\frac{e^{-u}}{1-e^{-2u}}\\,du$, with $W(u)=\\tfrac1\\pi(1-e^{-u})\\,\\widehat g(2u)$."
+    identities_checked:
+      - "$Q_{\\mathrm{geom}}(g)=P(g)-\\calA(g)+\\tfrac12 g(0)+2J(g)$; $J(g)=\\tfrac1\\pi\\int_0^\\infty e^{-x}\\,\\widehat g(2x)\\,dx$. src: def:local_functionals"
+      - "$Q_{\\mathrm{geom}}(g)=P(g)+\\int_0^\\infty \\widehat g(x)\\,\\rho_W(x)\\,dx$. src: thm:main-decomposition, prop:rhoW-density"
+      - "$\\mathcal W(g)=Q_{\\mathrm{geom}}(g)$ on $\\ABL$, extended to autocorrelations by regularization. src: thm:AEF, thm:handshake-consolidated"
+    asks: "If any constant differs from a standard reference (cite), document and justify."
+
+  problem_and_claim:
+    problem: "Prove Weil-positivity for autocorrelations via an MS-normalized explicit formula whose continuous block is a positive $\\rho_W$-weighted integral, and close RH via the classical Weil criterion under hypotheses H.1–H.5."
+    core_claims:
+      - {id: "T1", name: "Decomposition", status: "proved", statement: "$Q_{\\mathrm{geom}}(g)=P(g)+\\Wcont(g)$ with $\\Wcont(g)=\\int_0^\\infty \\widehat g(x)\\,\\rho_W(x)\\,dx$, $\\rho_W>0$ on $(0,\\infty)$.", src: "thm:main-decomposition, prop:rhoW-density"}
+      - {id: "T2", name: "Band-limited positivity", status: "proved", statement: "If $g\\in\\CW\\cap\\ABL$, then $Q_{\\mathrm{geom}}(g)\\ge0$ and hence $\\mathcal W(g)\\ge0$.", src: "thm:BL, cor:W_pos_ABL"}
+      - {id: "T3", name: "Spectral handshake (extension)", status: "proved", statement: "$\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)$ for autocorrelations via Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)$.", src: "thm:handshake-consolidated"}
+      - {id: "T4", name: "RH closure", status: "program", statement: "Assuming H.1–H.5, $\\mathcal W(g_\\Phi)\\ge0$ for all $\\Phi\\in\\Sscr(\\A)$ and by the classical criterion RH holds.", src: "thm:RH-closure; H.4"}
+      - {id: "L1", name: "Mellin–torsion identity", status: "proved", statement: "$\\TorsionOp=(\\Id-\\Eop^{1/2})(\\Id-\\Eop)^{-1}$ acts by kernel $\\T(x)=\\tfrac{1-e^{-x/2}}{1-e^{-x}}=\\tfrac1{1+e^{-x/2}}$ on $(0,\\infty)$.", src: "lem:torsion"}
+    route_map:
+      - {id: "R1", name: "Positivity→Handshake→Weil", inputs: "[H.1,H.2,H.3,H.5]+$g_\\Phi$", output: "RH via H.4", status: "program"}
+    asks: "Provide a one-paragraph ‘why now’ and the minimal new ingredient (the $\\rho_W$–torsion decomposition) enabling the closure."
+
+  notation:
+    symbols:
+      "g, \\widehat g=\\gb": "even test and its cosine/Fourier transform on $\\R$"
+      "g_\\Phi": "autocorrelation $\\Phi*\\widetilde\\Phi$, $\\Phi\\in\\Sscr(\\A)$"
+      "P, \\calA, J": "prime, archimedean, boundary functionals"
+      "Q_{\\mathrm{geom}}": "geometric functional"
+      "\\mathcal W(g)": "zero-side quadratic form"
+      "\\CW, \\ABL, \\AExp": "Weil cone, band-limited, exp-damped classes"
+      "\\Eop^a": "exponential semigroup $(\\Eop^a\\phi)(x)=e^{-ax}\\phi(x)$"
+      "\\TorsionOp, \\T(x)": "Mellin–torsion operator and kernel"
+      "\\rho_W(x)": "geometric density"
+    equivalences:
+      - {"author: $\\gb$": "community: cosine transform $\\int g(\\tau)\\cos(x\\tau)d\\tau$"}
+      - {"author: $\\CW$": "community: finite even positive measures under Fourier (Bochner)"}
+    asks: "State explicit domains/codomains for each transform and any hidden $X=G/K$ identifications."
+
+  spaces_and_classes:
+    spaces:
+      - {name: "Weil cone $\\CW$", criteria: "even, positive-definite; $g=\\widehat{\\mu_g}$ for finite even nonneg. Borel measure", norms: "tempered", src: "def:WeilCone"}
+      - {name: "Band-limited $\\ABL$", criteria: "even $g$ with $\\gb\\in C_c^\\infty(\\R)$", norms: "Schwartz topology", src: "def:ABL"}
+      - {name: "Exp-damped $\\AExp$", criteria: "even $g\\in C^\\infty$, $g/(1+|\\tau|)^2\\in L^1$, $|\\gb(x)|\\le C e^{-\\sigma|x|}$ with strict $\\sigma>\\tfrac12$", norms: "weighted $L^1$ via $d\\nu$", src: "def:AExp"}
+      - {name: "Autocorr. subcone", criteria: "$g_\\Phi$ for $\\Phi\\in\\Sscr(\\A)$; lies in $\\Sscr(\\R)\\cap\\AExp$", norms: "Schwartz", src: "H.5, lem:strip-strict"}
+    asks: "Give minimal examples and counterexamples per class (e.g., $\\gb\\ge0$ but not compactly supported)."
+
+  assumptions:
+    list:
+      - {id: "H.1", statement: "AEF on $\\ABL$ in MS with symmetric PV", params: "ABL tests", proved_here: false, proof_src: "Paper I", portability: "GL(1) MS"}
+      - {id: "H.2", statement: "Archimedean dictionary on modulus line: $\\calA(g)=\\int_0^\\infty W(u)\\frac{e^{-u}}{1-e^{-2u}}du$", params: "Schwartz", proved_here: false, proof_src: "Paper II Prop. 5.3", portability: "ledger-specific"}
+      - {id: "H.3", statement: "Scattering growth: $\\varphi'(\\tau)=O(\\log(2+|\\tau|))$", params: "all $\\tau$", proved_here: false, proof_src: "classical", portability: "standard GL(1)"}
+      - {id: "H.4", statement: "Classical Weil criterion: $\\mathcal W(g_\\Phi)\\ge0\\ \\forall\\Phi\\iff$ RH", params: "Weil test space", proved_here: false, proof_src: "IK Chap.5", portability: "classical"}
+      - {id: "H.5", statement: "Autocorr. properties: $g_\\Phi\\in\\Sscr(\\R)\\cap\\AExp$ with strict $\\sigma>\\tfrac12$", params: "$\\Phi\\in\\Sscr(\\A)$", proved_here: true, proof_src: "lem:strip-strict", portability: "GL(1)"}
+    counterexamples_or_limits: "Strict $\\sigma>\\tfrac12$ needed for dominated convergence of prime block."
+    asks: "Clarify sharpness of $\\sigma>\\tfrac12$ and portability to other ledgers."
+
+  constructions_and_kernels:
+    operators:
+      - {name: "$\\Eop^a$", formula: "$(\\Eop^a\\phi)(x)=e^{-ax}\\phi(x)$, $a\\ge0$", props: "semigroup on $(0,\\infty)$", src: "sec:torsion"}
+      - {name: "$\\TorsionOp$", formula: "$(\\Id-\\Eop^{1/2})(\\Id-\\Eop)^{-1}$", props: "acts by $\\T(x)=\\tfrac1{1+e^{-x/2}}>0$", src: "lem:torsion"}
+      - {name: "$\\rho_W$", formula: "$\\rho_W(x)=\\tfrac1{2\\pi}(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})$", props: "strictly positive on $(0,\\infty)$", src: "prop:rhoW-density"}
+    compatibility_checklist:
+      pairwise_commute: UNKNOWN
+      weyl_invariant: UNKNOWN
+      bounded: "Torsion kernel bounded by 1; $\\rho_W$ bounded near 0."
+      unitary_equiv_independent: "Fejér–Gaussian scheme-independence proved."
+    asks: "State the functional calculus used and exact symbol bounds."
+
+  explicit_formula_block:
+    geometric_side: "$Q_{\\mathrm{geom}}(g)=P(g)-\\calA(g)+\\tfrac12 g(0)+2J(g)=P(g)+\\int_0^\\infty \\gb(x)\\rho_W(x)dx$."
+    spectral_side: "$\\mathcal W(g)=Q_{\\mathrm{geom}}(g)$ on $\\ABL$; extended to $g_\\Phi$ by regularization/continuity."
+    regularizations: "Fejér–Gaussian: first $N\\to\\infty$, then $t\\downarrow0$; PV symmetric at $s=\\tfrac12$."
+    weil_functional_GL1: "$\\mathcal W(g)=2\\sum_{\\rho}\\mathcal H(g;\\rho)$ in MS ledger."
+    rho_W_density: "$\\tfrac1{2\\pi}(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})$."
+    ramified_ledger: {when_present: "GL(1)/$\\Q$", sign: "atomic prime block nonneg. on $\\CW$", bound: "dominated by $\\zeta(2\\sigma)$ tail for $\\sigma>\\tfrac12$", vanishing_cases: "all finite $p$ unramified"}
+    positivity_table:
+      - {term: "P(g)", condition: "$\\gb\\ge0$ (i.e., $g\\in\\CW$)", status: "≥0"}
+      - {term: "$\\Wcont(g)$", condition: "$\\gb\\ge0$ and $\\rho_W>0$", status: "≥0"}
+      - {term: "$Q_{\\mathrm{geom}}$", condition: "$g\\in\\CW\\cap\\ABL$", status: "≥0"}
+    asks: "Confirm which test classes guarantee $\\gb\\ge0$ and PV-finiteness."
+
+  main_results:
+    - {id: "T1", name: "Decomposition", statement: "As above.", conditions: "$g\\in\\Sscr(\\R)$ even", dependencies: [], status: "proved", src: "thm:main-decomposition"}
+    - {id: "T2", name: "BL positivity", statement: "As above.", conditions: "$g\\in\\CW\\cap\\ABL$", dependencies: ["T1"], status: "proved", src: "thm:BL"}
+    - {id: "T3", name: "Handshake extension", statement: "As above.", conditions: "autocorr. $g_\\Phi$", dependencies: ["T1","T2","H.1","H.2","H.5"], status: "proved", src: "thm:handshake-consolidated"}
+    - {id: "T4", name: "RH closure", statement: "As above.", conditions: "H.1–H.5", dependencies: ["T2","T3","H.4"], status: "program", src: "thm:RH-closure"}
+    - {id: "L1", name: "Mellin–torsion kernel", statement: "As above.", conditions: "$C_c^\\infty(0,\\infty)$ then distributional", dependencies: [], status: "proved", src: "lem:torsion"}
+    asks: "Give a one-line invariant-theoretic reason for each positivity."
+
+  dependency_graph:
+    nodes: ["H.1","H.2","H.3","H.4","H.5","T1","T2","T3","T4","L1"]
+    edges:
+      - {from: "H.1", to: "T1"}; - {from: "H.2", to: "T1"}; - {from: "T1", to: "T2"}
+      - {from: "H.5", to: "T3"}; - {from: "T2", to: "T3"}; - {from: "T3", to: "T4"}; - {from: "H.4", to: "T4"}
+    asks: "Mark any optional branches or cycles."
+
+  proof_skeletons:
+    - id: "T4"
+      steps:
+        - "AEF+dictionary ⇒ $Q_{\\mathrm{geom}}=P+\\int \\gb\\rho_W$ with $\\rho_W>0$."
+        - "$g\\in\\CW\\cap\\ABL$ ⇒ $\\gb\\ge0$ ⇒ $Q_{\\mathrm{geom}}\\ge0$."
+        - "Fejér–Gaussian $g^{(N,t)}\\to g_\\Phi$ in $\\Sscr$ and $L^1(d\\nu)$."
+        - "Continuity ⇒ $\\mathcal W(g_\\Phi)=Q_{\\mathrm{geom}}(g_\\Phi)\\ge0$."
+        - "Weil criterion (H.4) ⇒ RH."
+      fragile_step: "Dominated convergence/continuity across atomic+continuous parts using strict $\\sigma>\\tfrac12$."
+      alt_route: "Alternative regularizations or direct positivity on a larger cone."
+    asks: "Identify the step most likely to fail in higher rank."
+
+  limits_and_continuity:
+    t_to_0_passages: "Iterated limit $N\\to\\infty$ then $t\\downarrow0$ for Fejér–Gaussian scheme in $\\Sscr$ and $L^1(d\\nu)$."
+    constants_table: "Bounds use $\\sup_x \\T(x)<1$, strict $\\sigma>\\tfrac12$ for $\\sum \\Lambda(n)n^{-2\\sigma}$, and $\\int e^{-\\sigma x}\\T(x)dx<\\infty$."
+    asks: "Provide uniform constants and note where they blow up as $\\sigma\\downarrow\\tfrac12$."
+
+  checks_and_recipes:
+    numerical_recipe: "Sample band-limited $\\gb\\ge0$, compute $P(g)$ (finite sum) and $\\int \\gb\\rho_W$; verify $Q_{\\mathrm{geom}}\\ge0$."
+    symbolic_recipe: "Verify $-\\calA+\\tfrac12 g(0)+2J=\\int \\gb\\rho_W$ using torsion kernel identity and the archimedean dictionary."
+    pseudocode: |
+      1) Build $g^{(N,t)}$ (Fejér plateau * Gaussian). 2) Compute $\\gb$.
+      3) Evaluate $P(g)$ from primes up to cutoff and $\\int \\gb\\rho_W$.
+      4) Check $\\mathcal W(g)=Q_{\\mathrm{geom}}(g)$ stability under $(N,t)$.
+    toy_numeric: "Take $\\widehat g(x)=e^{-\\alpha x}\\,\\chi_{(0,X]}(x)$. Then $\\Wcont=\\tfrac1{2\\pi}\\int_0^X e^{-\\alpha x}(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})dx$. Prime block: $P=\\tfrac1\\pi\\sum_p\\sum_{1\\le k\\le X/(2\\log p)}(\\log p)(1-p^{-k})e^{-\\alpha(2k\\log p)}$."
+    asks: "Provide a canonical toy input to smoke‑test signs/constants."
+
+  scope_and_unconditionality:
+    unconditional: "T1 (decomposition), torsion identity, $\\rho_W>0$, BL-positivity on $\\CW\\cap\\ABL$."
+    programmatic: "RH closure requires H.1–H.5."
+    program_inputs:
+      - {id: "H.1", formal_statement: "AEF on $\\ABL$ (MS, PV)", current_status: "assumed (Paper I)", needed_for: "T1,T3", candidates_for_proof: "Paper I"}
+      - {id: "H.2", formal_statement: "Arch. dictionary on modulus line", current_status: "assumed (Paper II)", needed_for: "T1", candidates_for_proof: "Paper II"}
+      - {id: "H.3", formal_statement: "Scattering growth bound", current_status: "classical", needed_for: "regularity", candidates_for_proof: "standard"}
+      - {id: "H.4", formal_statement: "Weil criterion", current_status: "classical", needed_for: "T4", candidates_for_proof: "IK"}
+      - {id: "H.5", formal_statement: "Autocorr. strict strip", current_status: "proved here", needed_for: "T3", candidates_for_proof: "lem:strip-strict"}
+    asks: "Offer a minimum viable theorem if some inputs are weakened."
+
+  limitations:
+    list:
+      - "GL(1)/ζ only; normalization fixed to MS; PV at $s=\\tfrac12$ essential."
+      - "Strict $\\sigma>\\tfrac12$ required for prime block control."
+      - "Positivity shown first on $\\CW\\cap\\ABL$; extension uses a specific regularization."
+    asks: "Provide counterexamples when dropping strictness or PV."
+
+  projections:
+    ideas:
+      - "Port to Dirichlet and general GL($m$) $L$-functions; identify archimedean analogs of $\\rho_W$ and torsion."
+      - "Automorphic scattering in higher rank: growth/normalization needed for a positive density."
+      - "Strengthen test spaces beyond autocorrelations while preserving positivity."
+    asks: "Prioritize milestones and a verification plan (ledger generalization, density positivity, handshake continuity)."
+

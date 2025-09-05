@@ -1,0 +1,166 @@
+a2a_doc:
+  meta:
+    title_long: "Fixed‑Heat EF Infrastructure for Automorphic $L$–functions on $\\mathrm{GL}_m/K$ — Part III: Applications, Bilinear Annihilation, and GRH Certificates"
+    title_short: "Fixed‑Heat EF — Part III"
+    authors: ["Michael Seiler"]
+    venue: "Preprint"
+    year: UNKNOWN
+    version: UNKNOWN
+    url: UNKNOWN
+    area: "analytic number theory, automorphic forms"
+    normalization: "fixed‑heat explicit formula on spherical model; slice frame (A1), half‑shift (A2), conductor‑uniform fixed‑heat bounds (A3), unramified prime positivity (A4), amplifier gap (A5), ramified damping R*"
+    primary_objects:
+      - {name: "L(s,π)", type: "automorphic L‑function on GL(m)/K", role: "target"}
+      - {name: "π", type: "unitary cuspidal rep.", role: "input datum"}
+      - {name: "X=G/K", type: "symmetric space", role: "spherical model"}
+      - {name: "Φ", type: "test fn (PD+, BL, SA(a))", role: "EF probe"}
+      - {name: "ĝ, Ĝ", type: "spectral transforms", role: "EF dictionary"}
+      - {name: "W^{(t)}_{zeros}(Φ)", type: "smoothed zero sum", role: "spectral side"}
+      - {name: "Arch^{(t)}(Φ)", type: "archimedean block", role: "geometric side"}
+      - {name: "W^{(t)}_{ram}(Φ)", type: "ramified block", role: "geometric side"}
+      - {name: "A_p", type: "Satake matrix at p", role: "finite Euler factor"}
+      - {name: "𝒢_H, L_H", type: "Gram kernel, slice map", role: "A1 frame"}
+    normalization_sheet:
+      finite_places: "Euler factor via Satake params; measure/Satake conv. = UNKNOWN; src: paper:general."
+      arch_place: "heat‑regularized EF; PV/scattering/spectral measure conv. = UNKNOWN; src: paper:general."
+      dictionary_constants: "Ĝ(x)=2\\sinh(x/2)·ĝ(2x) (prime vs spectral scaling); src: def:PD-cone."
+    identities_checked:
+      - "GL(m) ledger EF: $W^{(t)}_{zeros}(Φ)=\\sum_{p\\nmid Q}\\sum_{k\\ge1}(\\log p)p^{-k/2}\\Re\\,\\Tr(A_p^k)\\,ĝ(2k\\log p)+\\mathrm{Arch}^{(t)}(Φ)+W^{(t)}_{ram}(Φ)$; src: eq:GLm-ledger-EF."
+      - "Finite EF ledger & ε‑net reduction hold for BL tests; src: lem:finite-ledger, lem:finite-net."
+      - "Amplified positivity filter well‑posed under A1–A5,R*; src: thm:amplified-positivity, alg:verifier."
+    asks: "If any constant/normalization departs from a standard ref (Weil, IK, MS), document the factor and its propagation."
+
+  problem_and_claim:
+    problem: "Build a finite, reproducible certificate–verifier scheme using fixed‑heat EF that decides GRH(π) (prove/deny) under recorded budgets and positivity filters."
+    core_claims:
+      - {id: C1, name: "GRH Certificate Schema completeness", status: program, statement: "Schema + Verifier Phases 0–6 suffice to conclude GRH(π) or produce a falsifying EF witness under A1–A5,R* and ν‑annih⇔GRH from Part II; src: sec:certificates, sec:verifier, alg:verifier."}
+      - {id: C2, name: "Amplified Positivity", status: proved, statement: "∃ modulus q, amplifier weights, admissible $Φ∈\\mathcal{PD}^+$ s.t. $\\Geom^{(t)}_{\\mathrm{Amp}}(Φ;q)\\ge0$ for all unitary cuspidal π; src: thm:amplified-positivity."}
+      - {id: C3, name: "Finite ledger & ε‑net", status: proved, statement: "BL tests reduce EF to finitely many prime blocks + arch/ram bounds with certified enclosures; a finite ε‑net of tests suffices; src: lem:finite-ledger, lem:finite-net."}
+      - {id: C4, name: "ν‑annihilation⇔GRH(π)", status: proved, statement: "Equivalence imported from Part II; src: PII-thm:main-unconditional-II."}
+    route_map:
+      - {id: R1, name: "Certificate Verifier Phases 0–6", inputs: "A1–A5,R*, certificate data", output: "GRH_Verified/Rejected", status: program}
+      - {id: R2, name: "RS lower‑bound prime sampling", inputs: "A4, BL support, weights", output: "prime block LB", status: proved}
+      - {id: R3, name: "Zero‑free region check (GL(3))", inputs: "certificate + budgets", output: "rigorous ZFR or contradiction", status: program}
+    asks: "Provide a one‑paragraph ‘why now?’ and identify the single minimal new ingredient vs prior EF programs."
+
+  notation:
+    symbols:
+      G: "reductive group over K; src: paper:general"
+      K: "number field; src: paper:general"
+      X: "G/K (spherical model); src: rmk:convention-slice"
+      A_p: "Satake at p; src: paper:general"
+      Φ: "test fn (PD+,BL,SA(a)); src: def:PD-cone, def:SA-weight"
+      ĝ,Ĝ: "transforms on spectral/radial side; src: def:PD-cone"
+      W^{(t)}_{zeros}, Arch^{(t)}, W^{(t)}_{ram}: "EF blocks; src: eq:GLm-ledger-EF"
+      𝒢_H,L_H: "Gram kernel, slice operator; src: hyp:foundational (A1)"
+      Ψ_{1/2}: "half‑shift; src: hyp:foundational (A2)"
+      𝕋_ν: "ν‑odd subspace/annihilator; src: paper:general"
+    equivalences:
+      - "Ĝ(x)=2\\sinh(x/2)·ĝ(2x) (dictionary); src: def:PD-cone"
+    asks: "List domains/codomains for each operator and hidden IDs (e.g., $X=G/K$, $\\widehat X$)."
+
+  spaces_and_classes:
+    classes:
+      - {name: "PD+", desc: "positive‑definite even tests; exact membership criteria = UNKNOWN; src: def:PD-cone"}
+      - {name: "BL", desc: "band‑limited tests, supp(ĝ)⊂(0,X]; src: lem:finite-ledger"}
+      - {name: "SA(a)", desc: "spectral class with weight/controls $M_t^+(Φ)$; details in Part I; src: def:SA-weight, PI-eq:heat-weight-bis"}
+    norms: "Fixed‑heat seminorms via $M_t^+(Φ)$; exact formula referenced to Part I; src: hyp:foundational (A3)."
+    asks: "Provide minimal concrete examples and non‑examples for PD+, BL, SA(a)."
+
+  assumptions:
+    list:
+      - {id: A1, statement: "Slice frame: measurable family of rays H⊂𝔞 with positive self‑adjoint Gram kernels 𝒢_H giving an L^2 frame", params: "frame constants depend only on X", proved_here: false, proof_src: hyp:foundational, portability: "spherical models across G/K"}
+      - {id: A2, statement: "Raywise half‑shift with distortion: $\\|T^{(H)}_{1/2}-T_{1/2}\\|≤ε_H$, Weyl‑invariant multiplier", params: "ε_H small; κ_X<∞ controls loss", proved_here: false, proof_src: hyp:foundational, portability: "Weyl‑invariant spherical calculus"}
+      - {id: A3, statement: "Fixed‑heat, conductor‑uniform bounds and absolute convergence of $W^{(t)}_{zeros}(Φ)$", params: "$a>1/2$, $t∈[t_{min},t_0]$, constants $C_0(a,m,K),C_1(m,K)$", proved_here: false, proof_src: hyp:foundational, portability: "GL(m)/K"}
+      - {id: A4, statement: "Unramified prime moment positivity", params: "test class PD+/BL; unramified p", proved_here: false, proof_src: hyp:foundational, portability: "Satake‑param models"}
+      - {id: A5, statement: "Quantitative amplifier gap on ν‑odd subspace", params: "gap>0 explicit; depends on (m,K)", proved_here: false, proof_src: hyp:foundational, portability: "depends on spectral gap tech"}
+      - {id: R*, statement: "Ramified damping: conductor‑uniform bounds yielding budget $B_{R*}$ for $\\mathrm{Arch}^{(t)}$ and $W^{(t)}_{ram}$", params: "depends on (m,K,a,t_0)", proved_here: false, proof_src: sec:prelim, portability: "local‑global decomposition"}
+    counterexamples_or_limits: "UNKNOWN"
+    asks: "Clarify sharpness and portability (which parts survive other normalizations/groups)."
+
+  constructions_and_kernels:
+    operators:
+      - {name: "e^{-tA}", formula: "heat semigroup on X; positivity‑preserving", PSD: "yes", src: hyp:foundational}
+      - {name: "Ψ_{1/2}", formula: "spherical half‑shift multiplier", PSD: "UNKNOWN", src: hyp:foundational}
+      - {name: "𝒢_H", formula: "Gram kernel on rays", PSD: "yes", src: hyp:foundational}
+      - {name: "Geom^{(t)}_{Amp}(Φ;q)", formula: "amplified geometric ledger (prime+arch+ram)", PSD: "≥0 under C2", src: thm:amplified-positivity}
+    factorizations: "EF ledger splits into unramified prime blocks + Arch^{(t)} + Ram^{(t)}; src: eq:GLm-ledger-EF."
+    compatibility_checklist:
+      commute: "Do $e^{-tA}$, $M(w,0)$, $Ψ_{1/2}$ commute on spherical model? = UNKNOWN"
+      invariance: "Weyl‑invariance for all three? = asserted; src: hyp:foundational"
+      boundedness: "bounded on the working Hilbert space? = asserted by A1–A3"
+      model_independence: "R_t independent up to unitary eq.? = UNKNOWN"
+    asks: "State exact functional calculus and symbol bounds where used."
+
+  explicit_formula_block:
+    geometric_side: "∑_{p∤Q}∑_{k≥1}(log p)p^{-k/2} Re Tr(A_p^k) ĝ(2k log p) + Arch^{(t)}(Φ) + W^{(t)}_{ram}(Φ); src: eq:GLm-ledger-EF."
+    spectral_side: "W^{(t)}_{zeros}(Φ)=∑_ρ H_t(Φ;ρ) (abs conv. on A3 range); src: hyp:foundational(A3)."
+    regularization: "fixed‑heat t∈[t_min,t_0]; PV usage = UNKNOWN."
+    weil_functional_GL1: "ρ_W(x) and exact density under this normalization = UNKNOWN."
+    ramified_ledger: {when_present: "p|Q or arch", sign: "bounded by R*", bound: "±B_{R*}", vanishing_cases: "all finite p unramified; src: eq:GLm-ledger-EF"}
+    positivity_table:
+      - {term: "prime(unram.)", status: "≥0 under A4/weights", cond: "PD+/BL; RS lower bounds; src: lem:prime-sampling-RS"}
+      - {term: "arch", status: "controlled", cond: "R* budget; src: alg:verifier"}
+      - {term: "ram", status: "controlled", cond: "R* budget; src: alg:verifier"}
+      - {term: "amplified sum", status: "≥0", cond: "C2; src: thm:amplified-positivity"}
+    asks: "Confirm which terms are ≥0 under which test classes (PD+, BL, SA(a))."
+
+  main_results:
+    items:
+      - {id: MR1, name: "Amplified Positivity", statement: "∃ amplifier (q,weights) s.t. $\\Geom^{(t)}_{Amp}(Φ;q)≥0$ for all admissible $Φ$", conditions: "A1–A5,R*, PD+", dependencies: "[A1,A2,A3,A4,A5,R*]", status: proved, src: thm:amplified-positivity}
+      - {id: MR2, name: "Finite ledger & ε‑net", statement: "Finite prime ledger + ε‑net suffice for verification", conditions: "BL tests; A3 continuity", dependencies: "[A3]", status: proved, src: lem:finite-ledger, lem:finite-net}
+      - {id: MR3, name: "Verifier correctness (sketch)", statement: "Phases 0–6 return GRH_Verified/Rejected consistent with EF budgets and C4", conditions: "A1–A5,R*, C4", dependencies: "[MR1,MR2,C4]", status: program, src: alg:verifier}
+    asks: "Give one‑line invariant‑theoretic reason for each positivity claim."
+
+  dependency_graph:
+    nodes: ["A1","A2","A3","A4","A5","R*","C4","MR1","MR2","MR3"]
+    edges: ["A1->MR1","A2->MR1","A3->MR1","A4->MR1","A5->MR1","R*->MR1","A3->MR2","MR1->MR3","MR2->MR3","C4->MR3"]
+    asks: "Mark optional branches/cycles, if any."
+
+  proof_skeletons:
+    MR1:
+      steps: ["Build slice model via A1","Apply Ψ_{1/2} (A2) and fixed‑heat EF (A3)","Use A4 to sign the unramified prime block (possibly via RS LB)","Control arch & ram via R*","Insert amplifier (A5) to force nonnegativity"]
+      fragile_step: "uniform control of A3/R* with amplifier weights"
+      alt_route: "Direct large sieve/Rankin–Selberg variant; src: subsec:amplification-strategy"
+    MR3:
+      steps: ["Check certificate format/interval data","Verify A3 budgets, R* bounds (Phases 0–3)","Run amplified positivity filter (Phase 4)","Check A5 gap & ν‑odd annihilation (Phase 5)","Invoke C4 to conclude GRH(π) or produce contradiction (Phase 6)"]
+      fragile_step: "ν‑annihilation test linking to C4 (Part II)"
+      alt_route: "Zero‑free region modus tollens; src: sec:zero-free"
+    asks: "Identify the unique step most likely to fail in higher rank m with large conductors."
+
+  limits_and_continuity:
+    statements: "All $t\\downarrow0$ passages confined to $t∈[t_{min},t_0]$ with A3‑uniform bounds via $M_t^+(Φ)$; EF ledgers continuous under BL support truncation; src: hyp:foundational(A3), lem:finite-ledger."
+    constants_table: "List $C_0,C_1,κ_X,B_{R*}}$ and dependence on $(a,m,K,t_0)$; uniformity in t asserted on [t_min,t_0]; exact blow‑ups = UNKNOWN."
+    asks: "Provide explicit dependence and where constants blow up."
+
+  checks_and_recipes:
+    numerical_recipe: "Construct interval enclosures for prime/arch/ram blocks; choose BL cutoff X and amplifier weights; propagate certified bounds; src: alg:verifier."
+    symbolic_recipe: "Use eq:GLm-ledger-EF with Ĝ–ĝ dictionary to transform spectral weight to prime side; apply RS LB when in RS mode; src: eq:prime-sampling-RS."
+    pseudocode: "Algorithms ‘GRH Certificate Verifier — Phases 0–3’ and ‘Phases 4–6’; src: alg:verifier-A, alg:verifier."
+    toy_numeric: "Take $ĝ(x)=e^{-αx}\\chi_{(0,X]}$, α=1/3, X=5. Then $\\int ĝ·ρ_W$ symbolically via dictionary, first prime terms: $\\sum_{p≤e^{X/2}}(\\log p)p^{-1/2}ĝ(2\\log p)$ and $k=2$ term with factor $p^{-1}$; check signs and units."
+    asks: "Provide a canonical toy input (α,X) and a small certified ledger excerpt."
+
+  scope_and_unconditionality:
+    unconditional: "A1–A5,R* infrastructure (Part I); RS/prime LB lemmas; ε‑net/finite ledger; src: hyp:foundational, lem:finite-ledger, lem:finite-net."
+    programmatic: "Verifier end‑to‑end GRH decision; zero‑free case study; src: sec:verifier, sec:zero-free."
+    program_inputs:
+      - {id: A1, formal_statement: "slice frame with 𝒢_H", current_status: "imported", needed_for: "all", candidates_for_proof: "harmonic analysis on G/K"}
+      - {id: A5, formal_statement: "quantitative amplifier gap", current_status: "imported", needed_for: "MR1,MR3", candidates_for_proof: "spectral gap/large sieve"}
+      - {id: R*, formal_statement: "ramified/arch budgets", current_status: "imported", needed_for: "all", candidates_for_proof: "local analysis"}
+    asks: "State the ‘minimum viable theorem’ if A5 is weakened (e.g., qualitative gap)."
+
+  limitations:
+    list:
+      - "Exact normalization at infinity and PV conventions not fully specified here."
+      - "Amplifier constants/gap size not quantified in Part III text."
+      - "Certificate format requires interval arithmetic infrastructure."
+    asks: "Give counterexamples when PD+/BL conditions are violated; quantify amplifier failure modes."
+
+  projections:
+    items:
+      - "Portability to GL(m) with varying m and to other L‑functions (Rankin–Selberg, symmetric powers); src: sec:functorial."
+      - "Formalization path: interval arithmetic, Satake input parsers, certified transforms; src: sec:path-to-formalization."
+      - "Empirical study of R* budget vs conductor growth."
+    asks: "Prioritize milestones (cert format spec, amplifier library, arch/ram budget certifier) and a verification plan with test cases."
+
+

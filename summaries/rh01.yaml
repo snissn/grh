@@ -1,0 +1,209 @@
+a2a_doc:
+  meta:
+    title_long: "An Automorphic Derivation of the Asymmetric Explicit Formula via the Eisenstein Phase"
+    title_short: "Automorphic AEF via Eisenstein Phase"
+    authors: ["Michael Seiler"]
+    venue: "Preprint (Zenodo)"
+    year: 2025
+    version: "2025-08-23"
+    url: UNKNOWN
+    area: "analytic number theory, automorphic forms"
+    normalization: "Maaß–Selberg (MS)"
+    primary_objects:
+      - {name: "Λ(s)", type: "completed zeta", role: "scattering factor; Λ(s)=π^{-s/2}Γ(s/2)ζ(s) used at 2s"}
+      - {name: "ζ(s)", type: "Dirichlet series", role: "zeros/poles drive spectral terms"}
+      - {name: "Eisenstein phase Ṡ(s)", type: "scattering matrix", role: "Ṡ(s)=Λ(2s-1)/Λ(2s)"}
+      - {name: "g(τ)", type: "test fn (even)", role: "spectral weight"}
+      - {name: "ĝ(x)", type: "cosine transform", role: "geometric weight"}
+      - {name: "I(g)", type: "functional", role: "⟨(1/2π)φ'(τ)dτ, g⟩"}
+      - {name: "A(g), J(g), P(g)", type: "functionals", role: "arch, pole, primes blocks"}
+    normalization_sheet:
+      finite_places:
+        euler_factors: "appear via (1−p^{-k}) weights in P(g); ζ(2s)=∏_p(1−p^{-2s})^{-1}"
+        measure: "sum over primes with log p weights; k≥1"
+        satake_params: "GL(1) trivial; not used explicitly"
+      arch_place:
+        scattering: "Ṡ(s)=Λ(2s−1)/Λ(2s) (MS)"
+        pv: "symmetric PV at τ=0; no δ0 atom in φ'(τ)"
+        spectral_measure: "dξ(τ)=(1/2π)φ'(τ)dτ"
+      dictionary_constants:
+        Gb: "Γ̂(x):=2sinh(x/2)·ĝ(2x) (x>0)"
+        W: "W(u)=(1/π)(1−e^{−u})·ĝ(2u) (u≥0)"
+        g0: "g(0)=(1/π)∫_0^∞ ĝ(x)dx=2∫_0^∞ W(u)/(1−e^{−u})du"
+    identities_checked:
+      - "Cosine inversion: g(τ)=(1/π)∫_0^∞ ĝ(x)cos(xτ)dx, src: eq:cosine-inversion"
+      - "Bochner density dμ_g=(1/2π)ĝ(|x|)dx, src: eq:bochner-density"
+      - "I_arch=A(g)−½g(0), src: def:I-arch, def:A-functional"
+      - "Arch–trivial bridge I_arch+I_Triv=J(g), src: sec:ledger"
+      - "AEF: 2∑_ρ H(g;ρ)=P(g)+½g(0)+2J(g)−A(g), src: eq:asym-explicit"
+    asks: "If any constant differs from a standard reference (e.g., Iwaniec–Kowalski/DLMF), document and justify with exact equations."
+
+  problem_and_claim:
+    problem: "Derive an explicit formula with one‑sided Laplace zero weights by evaluating the Eisenstein phase both geometrically and spectrally under MS normalization, fixing PV and ledger constants."
+    core_claims:
+      - {id: "C1-AEF", name: "Asymmetric Explicit Formula", status: proved, statement: "For admissible even g: 2∑_ρ H(g;ρ)=P(g)+½g(0)+2J(g)−A(g).", src: eq:asym-explicit}
+      - {id: "C2-no-delta", name: "No δ0 in φ'", status: proved, statement: "Poisson‑kernel singularities cancel at τ=0, so φ' has no δ0 atom in MS PV.", src: prop:arch-explicit}
+      - {id: "C3-conv", name: "Absolute convergence of zero sum", status: proved, statement: "∑_ρ H(g;ρ) converges absolutely for admissible g.", src: app:convergence}
+      - {id: "C4-Weil-pos", name: "Weil positivity restatement", status: proved, statement: "RH ⇔ positivity for band‑limited tests with Γ̂≥0 in MS ledger.", src: prop:rh-equivalence}
+    route_map:
+      - {id: "A", name: "Geometric/Dirichlet", inputs: ["φ'(τ) from Ṡ", "PV; regularization", "dictionary"], output: "I(g)=A(g)−P(g)−½g(0)", status: proved, src: sec:arch}
+      - {id: "B", name: "Spectral/partial fractions", inputs: ["PF for ζ'/ζ", "Poisson kernel pairing"], output: "I(g)=2J(g)−2∑_ρ H(g;ρ)", status: proved, src: sec:zeros-poisson}
+    asks: "Provide 1‑para ‘why now’ and the minimal new ingredient relative to classical EF derivations."
+
+  notation:
+    symbols:
+      G: "Ṡ(s)=Λ(2s−1)/Λ(2s) (scattering)"
+      phi_prime: "φ'(τ)=PV·4Re(Λ'/Λ(2iτ))"
+      g: "even test fn on ℝ"
+      ghat: "ĝ(x)=∫_ℝ g(τ)cos(xτ)dτ"
+      Gb: "Γ̂(x)=2sinh(x/2)·ĝ(2x), x>0"
+      W: "W(u)=(1/π)(1−e^{−u})·ĝ(2u), u≥0"
+      I: "I(g)=(1/2π)PV∫ g(τ)φ'(τ)dτ"
+      A: "A(g)=(1/2π)∫_0^∞ ĝ(x) R0(x)dx, R0=e^{−x/2}/(1+e^{−x/2})"
+      J: "J(g)=(1/2π)∫_0^∞ e^{−x/2} ĝ(x)dx"
+      P: "P(g)=(1/π)∑_{p,k≥1}(log p)(1−p^{-k})ĝ(2k log p)"
+      H: "H(g;ρ)=(1/2π)∫_0^∞ e^{−βx/2}ĝ(x)cos(γx/2)dx"
+      rhoW: "ρ_W(x)=(1/2π)(1/(1+e^{−x/2})+2e^{−x/2})"
+    equivalences:
+      community: {"φ": "arg Ṡ", "ψ": "digamma Γ'/Γ", "PV": "symmetric principal value"}
+    asks: "Confirm domains/codomains for all maps and hidden identifications (e.g., X=G/K, ℝ̂ spherical line)."
+
+  spaces_and_classes:
+    classes:
+      - name: "SBL"
+        crit: "g even, ĝ∈C_c^∞(ℝ) (band‑limited); cosine inversion holds."
+        src: def:test-class
+      - name: "AExp"
+        crit: "g even; |g(τ)|≲(1+|τ|)^{-2}; |ĝ(x)|≲e^{−σ|x|} for some σ>½."
+        src: def:test-class-exp
+      - name: "Admissible"
+        crit: "g∈SBL or g∈AExp with σ>½."
+        src: def:admissible
+    norms: "Support radius X for SBL; decay exponent σ for AExp; explicit Banach/Sobolev norms not fixed (UNKNOWN)."
+    asks: "Provide minimal examples and counterexamples (non‑even g, σ≤½) for each class."
+
+  assumptions:
+    items:
+      - {id: "A1", statement: "g is admissible (even; SBL or AExp with σ>½).", params: {σ: ">½"}, proved_here: false, proof_src: def:admissible, portability: "GL(1)/MS; extends to other L’s with care"}
+      - {id: "A2", statement: "Use symmetric PV at τ=0; φ' has no δ0 atom.", params: {}, proved_here: true, proof_src: prop:arch-explicit, portability: "depends on normalization"}
+      - {id: "A3", statement: "φ'(τ)=O(log(2+|τ|)) (tempered); pairings with S(ℝ) valid.", params: {}, proved_here: sketched, proof_src: sec:ledger, portability: "robust"}
+      - {id: "A4", statement: "ζ'/ζ admits standard partial fraction expansion; constants cancel in Δ.", params: {}, proved_here: true, proof_src: lem:zeta-pf, portability: "classical"}
+      - {id: "A5", statement: "Absolute convergence of ∑_ρ H(g;ρ).", params: {}, proved_here: true, proof_src: app:convergence, portability: "needs test‑class decay"}
+      - {id: "A6", statement: "Termwise evaluation justified under symmetric truncation.", params: {}, proved_here: true, proof_src: app:symmetric-sum, portability: "careful in higher rank"}
+    counterexamples_or_limits: "Odd g or σ≤½ may break PV pairing or absolute convergence (details not provided → UNKNOWN)."
+    asks: "Clarify sharpness of σ>½ and portability to Dirichlet/GL(m) with MS vs Selberg conventions."
+
+  constructions_and_kernels:
+    defs:
+      - {name: "Poisson kernel", formula: "2a/(a^2+(2τ−γ)^2)", psd: "≥0", src: lem:poisson-pair}
+      - {name: "R0", formula: "e^{−x/2}/(1+e^{−x/2})", psd: "≥0", src: def:A-functional}
+      - {name: "T_{1/2}", formula: "1/(1+e^{−x/2})", role: "half‑shift torsion in arch block", src: sec:ledger}
+    factorization: ["φ'=φ'_{arch}+φ'_{ζ}", "I_arch=A−½g(0)"]
+    compatibility_checklist:
+      commute: "UNKNOWN (no e^{−tA}, M(w,0), Ψ_{1/2} explicitly defined here)"
+      weyl_invariance: "Holds for spherical line choices; MS ledger used."
+      boundedness: "I_arch,J,A bounded on admissible classes; details: bounds via DLMF asymptotics."
+      model_independence: "R_t/Ψ models not used; I(g) unitary‑model independent in MS."
+    asks: "State functional calculus used and where symbol bounds for ψ enter."
+
+  explicit_formula_block:
+    geometric_side:
+      P: "P(g)=(1/π)∑_{p,k≥1}(log p)(1−p^{−k})ĝ(2k log p)"
+      arch: "−A(g)+½g(0)= (1/2π)∫_0^∞ ĝ(x)·T_{1/2}(x)dx"
+      pole: "J(g)=(1/2π)∫_0^∞ e^{−x/2}ĝ(x)dx"
+    spectral_side:
+      I: "I(g)=(1/2π)PV∫ g(τ)φ'(τ)dτ"
+      zeros: "H(g;ρ)=(1/2π)∫_0^∞ e^{−βx/2}ĝ(x)cos(γx/2)dx"
+    density_GL1:
+      rho_W: "ρ_W(x)=(1/2π)(1/(1+e^{−x/2})+2e^{−x/2})"
+      weil_fn: "∫_0^∞ ĝ(x)ρ_W(x)dx = −A(g)+½g(0)+2J(g)"
+    ramified_ledger:
+      when_present: "arch, pole, primes, zeros"
+      sign: {A: "−A enters with minus", J: "+2J", P: "+", zeros: "on LHS"}
+      bound: "all blocks finite for admissible g"
+      vanishing_cases: "all finite p unramified"
+    positivity_table:
+      - {term: "P(g)", pos: "indef", cond: "ĝ≥0 gives ≥0"}
+      - {term: "−A(g)+½g(0)", pos: "≥0", cond: "ĝ≥0"}
+      - {term: "2J(g)", pos: "≥0", cond: "ĝ≥0"}
+      - {term: "∑ H(g;ρ)", pos: "≥0 ⇔ RH for band‑limited Γ̂≥0 tests", cond: "SBL; Γ̂≥0"}
+    asks: "Confirm which terms are ≥0 for each test class; give exact conditions."
+
+  main_results:
+    - {id: "R1", name: "AEF", statement: "2∑_ρ H=P+½g(0)+2J−A", conditions: "g admissible, even", dependencies: ["A2","A4","R2","R3","R4"], status: proved, src: eq:asym-explicit}
+    - {id: "R2", name: "Phase identity", statement: "iφ'(τ)=∂_τ log Ṡ(½+iτ)=4 Re(Λ'/Λ(2iτ)) (PV).", conditions: "MS, PV", dependencies: [], status: proved, src: lem:phase-identity}
+    - {id: "R3", name: "Arch pairing", statement: "I_arch=A−½g(0).", conditions: "regularization fixed", dependencies: ["A6"], status: proved, src: def:I-arch,def:A-functional}
+    - {id: "R4", name: "Poisson pairing", statement: "(1/2π)∫ g(τ)·(2a)/(a^2+(2τ−γ)^2)dτ = H(g;a+iγ).", conditions: "g admissible", dependencies: [], status: proved, src: lem:poisson-pair}
+    - {id: "R5", name: "Weil positivity restatement", statement: "RH ⇔ positivity on SBL with Γ̂≥0.", conditions: "band‑limited tests", dependencies: [], status: proved, src: prop:rh-equivalence}
+    - {id: "R6", name: "Zero-sum convergence", statement: "∑_ρ H(g;ρ) abs. conv.", conditions: "g admissible", dependencies: [], status: proved, src: app:convergence}
+    asks: "Provide 1‑line invariant‑theoretic reason for each positivity claim."
+
+  dependency_graph:
+    nodes: ["A1","A2","A3","A4","A5","A6","R1","R2","R3","R4","R5","R6"]
+    edges:
+      - "A2 -> R2"
+      - "A6 -> R3"
+      - "A4 -> R4"
+      - "R2 -> R1"
+      - "R3 -> R1"
+      - "R4 -> R1"
+      - "A5 -> R1"
+      - "A1 -> R1"
+    asks: "Mark any optional branches or cycles (none apparent)."
+
+  proof_skeletons:
+    R1:
+      steps:
+        - "Input: I(g) via Route A (A−P−½g(0)) and Route B (2J−2∑H)."
+        - "Compute φ' from Ṡ; fix symmetric PV; show no δ0."
+        - "Evaluate arch block: I_arch=A−½g(0)."
+        - "Use PF for ζ'/ζ; pair Poisson kernel → H(g;ρ), J(g)."
+        - "Equate Route A and B; rearrange → AEF."
+      fragile_step: "Justifying PV limit and boundary cancellation at τ=0 (prop:arch-explicit)."
+      alt_route: "Theta/Poisson summation consistency check (app:consistency)."
+    asks: "Identify the unique step that likely fails in higher rank (e.g., arch cancellation)."
+
+  limits_and_continuity:
+    t_down_0: "ε↓0 at s=½+ε+iτ; PV defined symmetrically; δ0 cancels."
+    continuity: "I_ε(g)→I(g) by DCT with ε‑indep L¹ majorant."
+    constants_table:
+      - {where: "digamma bounds", uniform_in_t: "yes on strips", dep_on_a: "N/A", src: app:digamma}
+      - {where: "zero-sum decay", uniform_in_t: "N/A", dep_on_a: "via σ", src: app:convergence}
+    asks: "List any constants that blow up (e.g., near poles) and quantify."
+
+  checks_and_recipes:
+    numerical_recipe: "Choose admissible g; compute ĝ; evaluate blocks via one‑dim integrals; compare both sides of AEF."
+    symbolic_recipe: "Verify cosine inversion and g(0) identity; expand ζ'/ζ via PF; cancel constants in Δ(τ); apply Poisson kernel identity."
+    pseudocode: |
+      input g
+      compute ĝ(x)
+      A = (1/2π)∫_0^∞ ĝ(x)R0(x)dx; J=(1/2π)∫_0^∞ e^{−x/2}ĝ(x)dx
+      P = (1/π)∑_{p,k≥1}(log p)(1−p^{−k})ĝ(2k log p)
+      LHS = 2∑_ρ H(g;ρ); RHS = P+½g(0)+2J−A; compare
+    toy_numeric:
+      ghat: "ĝ(x)=e^{−αx}·χ_{(0,X]}(x) with α=1, X=4"
+      rhoW_integral: "∫_0^X e^{−x}·(1/2π)(1/(1+e^{−x/2})+2e^{−x/2})dx (symbolic; units check)"
+      first_primes: "p=2,3: terms (1/π)∑_{k≥1}(log p)(1−p^{−k})e^{−2k log p}·χ_{2k log p≤X}"
+    asks: "Provide a canonical toy input to smoke‑test signs/constants."
+
+  scope_and_unconditionality:
+    unconditional: ["AEF identity for admissible even g in MS", "No δ0 in φ'", "PF‑based spectral evaluation", "Convergence of ∑H"]
+    program_inputs:
+      - {id: "PI1", formal_statement: "Weil positivity → RH under SBL Γ̂≥0", current_status: "classical equivalence", needed_for: "positivity corollary", candidates_for_proof: "Weil/Guinand"}
+      - {id: "PI2", formal_statement: "Extend ledger to general L(s,χ) with conductor", current_status: "program", needed_for: "portability", candidates_for_proof: "standard local factors"}
+    asks: "What is the minimum viable theorem if σ threshold or evenness is weakened?"
+
+  limitations:
+    items:
+      - "MS normalization fixed; constants differ under Selberg conventions."
+      - "Even g required; odd parts pair to 0 or break symmetry."
+      - "GL(1) ζ only; conductor/ramification not treated."
+      - "Bandwidth/decay conditions (SBL/AExp σ>½) essential for termwise ops."
+    asks: "Give counterexamples when PV is not symmetric or σ≤½."
+
+  projections:
+    items:
+      - "Extend to Dirichlet L(s,χ) with conductors: add local Γ-factors, modify ρ_W."
+      - "Port ledger to GL(m): replace Ṡ by spherical intertwiner; track arch blocks."
+      - "Automate symbolic verification pipeline (PF+Poisson+ledger)."
+    asks: "Prioritize milestones and a verification plan (unit tests on toy ĝ, ledger cross‑checks, arch bridge)."

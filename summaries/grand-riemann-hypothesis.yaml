@@ -1,0 +1,240 @@
+a2a_doc:
+  meta:
+    title_long: "The Grand Riemann Hypothesis from a Geometric Annihilation Principle: A Self‑Contained Proof"
+    title_short: "GRH via Geometric Annihilation Principle"
+    authors: ["Michael Seiler"]
+    venue: UNKNOWN
+    year: UNKNOWN
+    version: UNKNOWN
+    url: UNKNOWN
+    area: "analytic number theory, automorphic forms, spectral theory"
+    normalization: "Maaß–Selberg (MS) fixed‑heat"
+    primary_objects:
+      - {name: "L(s,π)", type: "completed L‑function on GL(m)/K", role: "target of EF/zeros", src: "paper:general"}
+      - {name: "H_MS", type: "Hilbert space", role: "MS ledger of spherical tests", src: "sec:isometry"}
+      - {name: "H_Hol", type: "Hilbert space", role: "holonomy side L^2(𝔠_Weyl, ρ_t du)", src: "sec:isometry"}
+      - {name: "R_t", type: "operator (PSD)", role: "fixed‑heat energy/regularizer", src: "prop:Rt_properties"}
+      - {name: "T^{(m)}_π", type: "unitary multiplier", role: "archimedean twist (FE phase)", src: "def:Tpi"}
+      - {name: "R^{(m)}", type: "Weyl reflection", role: "long‑Weyl involution (metaplectic Fourier)", src: "sec:isometry"}
+      - {name: "𝒢_ν", type: "unitary involution", role: "geometric ν‑involution = T^{(m)}_π∘R^{(m)}", src: "prop:Gnu-properties"}
+      - {name: "𝒯_ν", type: "unitary involution", role: "analytic ν: (𝒯_ν f)(τ)=u_π(τ)f(-τ)", src: "def:Tnu_analytic"}
+      - {name: "ℛ", type: "cone/closure", role: "realizable holonomy profiles", src: "sec:isometry"}
+    normalization_sheet:
+      finite_places:
+        euler_factors: "standard Satake form for GL(m) (suppressed); prime dictionary eq. (prime‑dictionary)." 
+        measure: UNKNOWN
+        satake_params: UNKNOWN
+        src: "sec:normalization-audit"
+      arch_place:
+        heat_multiplier: "$\widetilde{k_t}(λ)=e^{-t(\|λ\|^2+c_X)}$"
+        pv_convention: "symmetric PV on $\Re s=\tfrac12$ (MS)."
+        spectral_measure: "MS/Plancherel on spherical line."
+        src: "MS–Plancherel def., sec:normalization-audit"
+      dictionary_constants:
+        mapping: "$W_Φ(u) \leftrightarrow \widehat g_Φ(2u)$; $\rho_t(u)=\mu_t(2u)$."
+        factors: "raywise factor $\widehat G_Φ(x)=2\sinh(x/2)\widehat g_Φ(2x)$."
+        src: "sec:isometry; eq:ms-dictionary"
+    identities_checked:
+      - "Isometry: ⟨W_Φ,W_Ψ⟩_{Hol}=⟨ĝ_Φ,ĝ_Ψ⟩_{MS} via $\rho_t(u)=\mu_t(2u)$ and $x=2u$ scaling. src: sec:isometry"
+      - "Unimodularity: $|u_π(τ)|=1$ and $u_π(τ)u_π(-τ)=1$. src: def:Tpi, def:Tnu_analytic"
+      - "Commutation: $R_t T^{(m)}_π=T^{(m)}_π R_t$ and $R_t R^{(m)}=R^{(m)} R_t$. src: prop:Rt_properties, prop:stability"
+      - "EF (fixed‑heat): $\EF_{zeros}(ĝ_t;π)=\Primes(ĝ_t;π)+\Arch(ĝ_t;π)+\Ram(ĝ_t;π)$. src: thm:fixed_heat_ef"
+    asks: "If any constant differs from Iwaniec–Kowalski/Weil conventions, list it in the audit table with a derivation."
+
+  problem_and_claim:
+    problem: "Show GRH for GL(m)/K by proving that any off‑line zero forces positive ν‑odd energy on the realizable holonomy cone, contradicting a geometric annihilation principle that kills all ν‑odd realizable profiles."
+    core_claims:
+      - {id: R1, name: "Fixed‑heat EF", status: proved, statement: "EF holds for tests in 𝒮_a with $t∈[t_{min},t_0]$.", src: "thm:fixed_heat_ef"}
+      - {id: R2, name: "PV–Weil bridge", status: proved, statement: "Define $R_t$ PSD; energy $\mathcal Q_W(ĝ)=⟨ĝ,R_t ĝ⟩_{MS}$; arch block cancels on ν‑odd.", src: "prop:Rt_properties; lem:arch_cancellation"}
+      - {id: R3, name: "Ledger–Holonomy isometry", status: proved, statement: "Unitary dictionary $W_Φ \leftrightarrow \widehat g_Φ(2\cdot)$; matches 𝒯_ν with 𝒢_ν.", src: "sec:isometry"}
+      - {id: R4, name: "Geometric ν‑involution", status: proved, statement: "𝒢_ν:=T^{(m)}_π∘R^{(m)} is unitary involution on ℛ and realizes 𝒯_ν.", src: "prop:Gnu-properties"}
+      - {id: R5, name: "Weyl‑equivariant uncertainty", status: proved, statement: "Sectoral mass concentration forces complementary decay after $w_0$‑Fourier; quantitative $c(r,Δ)$.", src: "lem:weyl-uncertainty"}
+      - {id: R6, name: "GAP", status: proved, statement: "If $W∈ℛ$ is ν‑odd then $W≡0$; hence $ℛ^-=\{0\}$.", src: "thm:GAP"}
+      - {id: R7, name: "Witness from off‑line zero", status: proved, statement: "Any zero with $\Re s≠\tfrac12$ yields ν‑odd test with strictly positive energy after costs.", src: "thm:witness; prop:ramified_damping; app:pv_bounds"}
+      - {id: R8, name: "GRH", status: proved, statement: "R6 + R7 ⇒ contradiction unless all zeros have $\Re s=\tfrac12$; GL(1) recovers RH.", src: "sec:grh-proof; sec:gl1"}
+    route_map:
+      - {id: A, name: "GAP + Witness ⇒ GRH", inputs: [R1,R2,R3,R4,R5], output: R6, status: proved}
+      - {id: B, name: "Off‑line zero ⇒ ν‑odd energy", inputs: [R1,R2,PV,ramified], output: R7, status: proved}
+      - {id: C, name: "Contradiction", inputs: [R6,R7], output: R8, status: proved}
+    asks: "Provide a short ‘why now’ and identify the single minimal new ingredient vs. prior EF‑based approaches."
+
+  notation:
+    symbols:
+      K: {meaning: "number field", src: "paper:general"}
+      m: {meaning: "degree in GL(m)", src: "paper:general"}
+      π: {meaning: "unitary cuspidal rep. of GL(m)/K", src: "paper:general"}
+      Λ(s,π): {meaning: "completed L‑function", src: "paper:general"}
+      Q_K(π): {meaning: "analytic conductor", src: "app:pv_bounds"}
+      𝔞*,: {meaning: "real Cartan for spherical transform", src: "MS–Plancherel def."}
+      W,w_0: {meaning: "Weyl group / long element", src: "sec:isometry"}
+      μ_t,ρ_t: {meaning: "MS weight / holonomy weight with ρ_t(u)=μ_t(2u)", src: "sec:isometry"}
+      R_t: {meaning: "fixed‑heat operator; PSD", src: "prop:Rt_properties"}
+      u_π(τ): {meaning: "arch. phase from Γ‑factors", src: "def:Tpi"}
+      T^{(m)}_π: {meaning: "unitary multiplier by u_π", src: "def:Tpi"}
+      R^{(m)}: {meaning: "Weyl reflection (metaplectic Fourier)", src: "sec:isometry"}
+      𝒢_ν,𝒯_ν: {meaning: "geometric/analytic ν‑involutions", src: "prop:Gnu-properties; def:Tnu_analytic"}
+      𝒮_a, BL(Ω), PD^+: {meaning: "test classes (smooth/BL/positive)", src: "def:Test Spaces"}
+      ℛ: {meaning: "realizable holonomy closure of {W_Φ: Φ∈PD^+}", src: "sec:isometry"}
+      EF_terms: {meaning: "EF_zeros, Primes, Arch, Ram", src: "thm:fixed_heat_ef"}
+    equivalences:
+      - {author: "W_Φ(u)", standard: "ĝ_Φ(2u)", src: "sec:isometry"}
+      - {author: "𝒢_ν", standard: "T^{(m)}_π∘R^{(m)} implementing 𝒯_ν", src: "prop:Gnu-properties"}
+    asks: "Give explicit domains/codomains for all maps (e.g., $R_t: H_{MS}\to H_{MS}$) and specify hidden $X=G/K$."
+
+  spaces_and_classes:
+    items:
+      - {name: "𝒮_a", membership: "even $ĝ∈C^∞(ℝ)$ with ∫_0^∞(|ĝ|+|ĝ''|)e^{ax}(1+x)^2dx<∞, a>1/2", src: "def:Test Spaces"}
+      - {name: "BL(Ω)", membership: "ĝ∈𝒮_a with supp ĝ⊂[-Ω,Ω]", src: "def:Test Spaces"}
+      - {name: "PD^+", membership: "ĝ∈𝒮_a with ĝ(x)≥0 ∀x", src: "def:Test Spaces"}
+      - {name: "H_MS", norm: "⟨ĝ_Φ,ĝ_Ψ⟩=∫_0^∞ Ĝ_Φ(x)ȳĜ_Ψ(x) μ_t(x) dx", src: "sec:isometry"}
+      - {name: "H_Hol", norm: "L^2(𝔠_Weyl, ρ_t(u)du)", src: "sec:isometry"}
+      - {name: "ℛ", membership: "closure of {W_Φ: Φ∈PD^+} in fixed‑heat norm", src: "sec:isometry"}
+    asks: "Provide a minimal element and a counterexample for each class (e.g., Gaussian vs. sign‑changing test)."
+
+  assumptions:
+    list:
+      - {id: A1, statement: "Fixed‑heat window $t∈[t_{min},t_0]$ with $t_0>0$.", params: {t_min: "≥0", t_0: ">0"}, proved_here: true, proof_src: "thm:fixed_heat_ef; prop:Rt_properties", portability: "other normalizations with heat"}
+      - {id: A2, statement: "Conductor‑uniform PV growth for Λ'/Λ on 𝒮_a.", params: {a: ">1/2", C0: "C0(a,m,K)", C1: "C1(m,K)"}, proved_here: true, proof_src: "lem:pv_growth_bound", portability: "GL(m) standard L"}
+      - {id: A3, statement: "Ramified damping bound on Ram(ĝ_t;π).", params: {α: "α(m,K)≥0", β: "β(m)>0"}, proved_here: true, proof_src: "prop:ramified_damping", portability: "depends on local bounds"}
+      - {id: A4, statement: "π unitary cuspidal; standard Γ‑factors.", params: {}, proved_here: assumed, proof_src: "paper:general", portability: "GL(m)/K"}
+      - {id: A5, statement: "MS/Plancherel and dictionary $x=2u$ fixed.", params: {}, proved_here: true, proof_src: "sec:isometry; audit", portability: "requires consistent scaling"}
+    counterexamples_or_limits: "Dropping A1 (no heat) risks PV divergence and loss of coercivity; weakening A3 breaks witness dominance."
+    asks: "State sharpness of β(m) and whether A2 is uniform in families."
+
+  constructions_and_kernels:
+    operators:
+      - {name: "Heat", formula: "$\widetilde{k_t}(λ)=e^{-t(\|λ\|^2+c_X)}$", PSD: true, src: "MS–Plancherel def."}
+      - {name: "R_t", formula: "symbol Φ_t(λ)=\widetilde{k_t}(λ)·T_{1/2}(λ) (half‑shift); $R_t$ via functional calculus", PSD: true, src: "prop:Rt_properties"}
+      - {name: "T^{(m)}_π", formula: "$( \widehat{T^{(m)}_π W})(τ)=u_π(τ)\widehat W(τ)$", PSD: false, unitary: true, src: "def:Tpi"}
+      - {name: "R^{(m)}", formula: "Weyl reflection; metaplectic Fourier for $w_0$", unitary: true, src: "sec:isometry"}
+      - {name: "𝒢_ν", formula: "$𝒢_ν=T^{(m)}_π∘R^{(m)}$", unitary: true, src: "prop:Gnu-properties"}
+    factorization_identities:
+      - {id: F1, statement: "$\widehat{(𝒢_ν W)}(τ)=u_π(τ)\widehat W(-τ)$.", src: "prop:Gnu-properties"}
+    compatibility_checklist:
+      commute: {R_t_vs_Tπ: true, R_t_vs_Rm: true, Tπ_vs_Rm: "unitary model‑equivalent", src: "prop:Rt_properties; prop:stability"}
+      weyl_invariance: "All are W‑equivariant on spherical model.", src: "sec:isometry"
+      boundedness: "R_t bounded on window; T^{(m)}_π, R^{(m)} unitary.", src: "prop:Rt_properties"}
+      model_independence: "Defined via Plancherel/metaplectic; unitary equivalence.", src: "sec:isometry"}
+    asks: "State exact $T_{1/2}$ symbol and where symbol bounds are used in Loewner order."
+
+  explicit_formula_block:
+    spectral_side: "PV sum $\EF_{zeros}(H;π)=\PV\sum_ρ m_ρ H(γ_ρ)$ for $H$ even; windowed at $t$ via $H=ĝ_t$.", src: "EF PV def."
+    geometric_side:
+      primes: "prime sum via dictionary (weights at $x=k\log p$).", src: "eq:prime-dictionary"
+      arch: "archimedean block; cancels on ν‑odd tests.", src: "lem:arch_cancellation"
+      ramified: "finite set; uniformly bounded (R*).", src: "prop:ramified_damping"
+    regularizations: {PV: "symmetric PV on $\Re s=\tfrac12$", heat: "fixed $t$ in window", src: "sec:normalization-audit"}
+    weil_functional_GL1: {definition: UNKNOWN, density_ρ_W: UNKNOWN, src: "sec:gl1"}
+    ramified_ledger: {when_present: "v|cond(π)", sign: "indef.", bound: "$\ll (\log Q)^{α}Q^{-β t}$", vanishing_cases: "all finite p unramified (ζ)", src: "prop:ramified_damping"}
+    positivity_table:
+      - {term: "Weil energy ⟨W,R_t W⟩", status: "≥0", cond: "any W; PSD", src: "prop:Rt_properties"}
+      - {term: "Arch block", status: "=0", cond: "ν‑odd tests", src: "lem:arch_cancellation"}
+      - {term: "Prime block", status: "indef.", cond: "general tests", src: "thm:fixed_heat_ef"}
+      - {term: "Ramified", status: "bounded (sign free)", cond: "windowed", src: "prop:ramified_damping"}
+    asks: "Confirm which classes (PD^+, BL) ensure nonnegativity of each EF piece."
+
+  main_results:
+    results:
+      - {id: R1, name: "Fixed‑heat EF", statement: "EF holds on 𝒮_a in window.", conditions: "a>1/2, t∈[t_min,t_0]", dependencies: [A1,A2], status: proved, src: "thm:fixed_heat_ef"}
+      - {id: R2, name: "R_t PSD/commutation", statement: "$R_t$ PSD, bounded; commutes with 𝒯_ν and T^{(m)}_π.", conditions: "window", dependencies: [A1], status: proved, src: "prop:Rt_properties"}
+      - {id: R3, name: "Ledger–Holonomy isometry", statement: "Unitary dictionary and ν‑compatibility.", conditions: "MS normalization", dependencies: [A5], status: proved, src: "sec:isometry"}
+      - {id: R4, name: "Geometric ν", statement: "$𝒢_ν=T^{(m)}_π∘R^{(m)}$, involutive isometry.", conditions: "", dependencies: [R2,R3], status: proved, src: "prop:Gnu-properties"}
+      - {id: R5, name: "Weyl uncertainty", statement: "Sector mass tradeoff under $w_0$ Fourier.", conditions: "quantitative $c(r,Δ)$", dependencies: [], status: proved, src: "lem:weyl-uncertainty"}
+      - {id: R6, name: "GAP", statement: "ℛ^-=0; ν‑odd realizables vanish.", conditions: "window", dependencies: [R2,R4,R5], status: proved, src: "thm:GAP"}
+      - {id: R7, name: "Witness", statement: "Off‑line zero ⇒ positive ν‑odd energy after costs.", conditions: "ε≲δ^3, δ≈|β-1/2|", dependencies: [A2,A3], status: proved, src: "thm:witness"}
+      - {id: R8, name: "GRH", statement: "Contradiction unless all zeros on $\Re s=1/2$; GL(1) ⇒ RH.", conditions: "", dependencies: [R6,R7], status: proved, src: "sec:grh-proof; sec:gl1"}
+    asks: "For each positivity, add the invariant‑theoretic reason (e.g., PSD of functional calculus on spherical model)."
+
+  dependency_graph:
+    nodes: [A1,A2,A3,A5,R1,R2,R3,R4,R5,R6,R7,R8]
+    edges:
+      - "A1 -> R1"
+      - "A2 -> R1"
+      - "A1 -> R2"
+      - "A5 -> R3"
+      - "R2 -> R4"
+      - "R3 -> R4"
+      - "R5 -> R6"
+      - "R2 -> R6"
+      - "R4 -> R6"
+      - "A2 -> R7"
+      - "A3 -> R7"
+      - "R6 -> R8"
+      - "R7 -> R8"
+    asks: "Mark optional branches/cycles if any (e.g., alternative to Weyl uncertainty)."
+
+  proof_skeletons:
+    R6:
+      steps:
+        - "Inputs: R2 (PSD/commute), R4 (ν realization), R5 (uncertainty)."
+        - "Assume $W∈ℛ$ ν‑odd; sector concentration ⇒ Fourier spread."
+        - "Use parity and coercive energy to force decay/incompatibility."
+        - "Conclude $W=0$."
+      fragile_step: "Quantitative sectoral uncertainty uniform in window."
+      alt_route: "Direct geometric mixing estimate on holonomy without Fourier."
+    R7:
+      steps:
+        - "Pick off‑line zero at $β≠1/2$; build asymmetric test $Φ_{asym}$."
+        - "Evaluate EF; isolate zero term as main positive contribution."
+        - "Bound prime/arch/ramified costs using A2–A3 in window."
+        - "Optimize ε,δ to get strict positivity."
+      fragile_step: "Uniform ramified damping exponent β(m)."
+      alt_route: "Amplify via band‑limited truncations BL(Ω)."
+    R8:
+      steps:
+        - "Assume off‑line zero; apply R7 ⇒ ν‑odd positive energy."
+        - "But R6 ⇒ all ν‑odd realizable energies vanish."
+        - "Contradiction ⇒ all zeros on critical line."
+      fragile_step: "Closure and realizability of witness in ℛ."
+      alt_route: "Approximate by PD^+ convolutions to enter ℛ."
+    asks: "Identify the step most likely to fail in other groups (e.g., non‑spherical settings)."
+
+  limits_and_continuity:
+    passages:
+      - "Fixed window $t∈[t_{min},t_0]$; no $t\downarrow0$ limit used on ℛ."
+      - "Loewner‑monotone truncations $R_{t,N}\to R_t$ in strong operator topology."
+      - "PV limits on $\Re s=\tfrac12$ controlled by A2."
+    constants_table:
+      - {name: "c_X", origin: "heat symbol", uniform_in_t: true, depends_on: "X", src: "audit"}
+      - {name: "c(r,Δ)", origin: "uncertainty", uniform_in_t: true, depends_on: "rank/root data", src: "lem:weyl-uncertainty"}
+      - {name: "C0,C1", origin: "PV growth", uniform_in_t: true, depends_on: "a,m,K", src: "app:pv_bounds"}
+      - {name: "C_{R*},α,β", origin: "ramified damping", uniform_in_t: "true for window", depends_on: "m,K", src: "prop:ramified_damping"}
+    asks: "State where constants blow up (e.g., as $a\downarrow1/2$ or $t\downarrow t_{min}$)."
+
+  checks_and_recipes:
+    numerical_recipe: "Fix m,K, choose $t$, construct $Φ_{asym}$ from an artificial zero offset; evaluate EF pieces with conductor model."
+    symbolic_recipe: "Verify $⟨W_Φ,W_Ψ⟩_{Hol}=⟨ĝ_Φ,ĝ_Ψ⟩_{MS}$ by substituting $x=2u$ and weights; check $R_t$ commutation by symbols."
+    pseudocode: |
+      input (m,K,π,t,ĝ); compute u_π(τ); define Tπ, R^{(m)}, 𝒢_ν;
+      build R_t via symbol; map ĝ↦W via x=2u; compute Q_t(W)=⟨W,R_tW⟩;
+      evaluate EF(ĝ_t): zeros (PV), primes (dictionary), arch, ram; test GAP/Witness.
+    toy_numeric:
+      alpha_X: {α: "1/2", X: "3"}
+      test: "ĝ(x)=e^{-α x}·χ_{(0,X]}"
+      rhoW_integral: "∫_0^X e^{-α x} ρ_W(x) dx  (ρ_W UNKNOWN in this normalization)."
+      prime_terms: "∑_{p≤e^X} ∑_{1≤k≤X/ln p} (coeff_{p^k})·ĝ(2k ln p) using eq. (prime‑dictionary)."
+      signs_units_smoke: "Check arch block vanishes for ν‑odd symmetrization; confirm PSD of Q_t."
+    asks: "Provide a canonical toy input and explicit ρ_W(x) for GL(1) under the MS dictionary."
+
+  scope_and_unconditionality:
+    unconditional: ["R1–R7 within the paper’s framework (windowed, MS normalization)."]
+    programmatic: []
+    program_inputs:
+      - {id: A2, formal_statement: "PV growth uniform in conductor", current_status: "proved here", needed_for: "R1,R7", candidates_for_proof: "zero‑density + Stirling bounds"}
+      - {id: A3, formal_statement: "ramified damping", current_status: "proved here", needed_for: "R7", candidates_for_proof: "local–global bounds"}
+    asks: "If A2/A3 can be weakened, state a minimum viable theorem still yielding GRH."
+
+  limitations:
+    items:
+      - "Relies on MS spherical normalization and fixed‑heat window."
+      - "Holonomy construction is spherical/Heisenberg‑model dependent."
+      - "Witness requires conductor‑uniform bounds and realizability in ℛ."
+    asks: "Give counterexamples when positivity fails outside PD^+/BL or without heat smoothing."
+
+  projections:
+    ideas:
+      - "Port to other normalizations (Selberg/Arthur) with an audit map."
+      - "Extend to Rankin–Selberg/other standard L‑functions on GL(m) families."
+      - "Investigate higher‑rank non‑spherical analogues of the uncertainty step."
+    asks: "Prioritize milestones (audit constants; GL(1) explicit ρ_W; numerical smoke‑tests) and define a verification plan."
+

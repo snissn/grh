@@ -1,0 +1,162 @@
+a2a_doc:
+  meta:
+    title_long: "An Adelic Distributional Framework for the Symmetric Explicit Formula on a Band‑Limited Class"
+    title_short: "Adelic EF on BL class"
+    authors: ["Michael Seiler"]
+    venue: "Preprint"
+    year: 2025
+    version: "2025-08-23"
+    url: "doi:10.5281/zenodo.16930093"
+    area: "analytic number theory, explicit formulas, distribution theory"
+    normalization: "Maaß–Selberg (MS) spectral–shift; symmetric PV; no δ₀ at 0 (src: rem:normalization-lock)"
+    primary_objects:
+      - {id: zeta, type: "L-function(GL1/Q)", role: "target of EF"}
+      - {id: g, type: "test fn on ℝ (real, even)", role: "admissible input (ABL or AExp) (src: def:line-tests)"}
+      - {id: gb, type: "cosine profile", role: "frequency-side of g; $\\gb(x)=\\int g(\\tau)\\cos(x\\tau)\\,d\\tau$ (src: def:line-tests)"}
+      - {id: W, type: "Weil modulus-line test", role: "$W(u)=\\tfrac1\\pi(1-e^{-u})\\,\\gb(2u)$ (src: eq:W-def)"}
+      - {id: D_p, type: "local distribution @ finite p", role: "prime block contribution (src: eq:P-dictionary)"}
+      - {id: D_inf, type: "archimedean distribution", role: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ (src: prop:arch-block, eq:A-arch)"}
+      - {id: rho_W, type: "Weil density on $(0,\\infty)$", role: "$\\rho_W(x)=\\tfrac1{2\\pi}(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})\\,\\mathbf1_{(0,\\infty)}$ (src: eq:rhoW-def-early)"}
+      - {id: K_A, type: "arch. kernel on $\\tau$", role: "$K_A(\\tau)=\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$ (src: rem:dictionary)"}
+      - {id: T_half, type: "torsion filter", role: "$T_{1/2}(x)=\\tfrac1{1+e^{-x/2}}$ (src: prop:torsion-filter)"}
+      - {id: H, type: "zero weight", role: "$\\mathcal H(g;\\rho)=\\tfrac1{2\\pi}\\!\\int_0^\\infty e^{-\\beta x/2}\\gb(x)\\cos(\\gamma x/2)dx$ (src: eq:H-appendix)"}
+    normalization_sheet:
+      finite_places: "GL1 Euler $(1-p^{-s})^{-1}$; prime block $\\langle D_p,W\\rangle$ summed as in (src: eq:P-dictionary); Satake N/A(GL1)"
+      arch_place: "spectral measure $d\\xi(\\tau)=\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$, symmetric PV, no $\\delta_0$ (src: rem:normalization-lock)"
+      dictionary_constants: "$W(u)=\\tfrac1\\pi(1-e^{-u})\\gb(2u)$; $J(g)=\\tfrac1{2\\pi}\\int_0^\\infty e^{-x/2}\\gb(x)dx$ (src: eq:W-def, eq:Jg-def)"
+    identities_checked:
+      - "$Q_{\\mathrm{MS}}(g)=\\sum_v\\langle D_v,W\\rangle=P(g)-\\mathcal A(g)$ (src: §Computational Verification)"
+      - "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ (src: prop:arch-block)"
+      - "$-\\mathcal A(g)+\\tfrac12 g(0)+2J(g)=\\int_0^\\infty\\gb(x)\\rho_W(x)dx$ (src: rem:A-forms-positivity)"
+    asks: "If any constant/normalization differs from Weil/Selberg, list the delta and justify with a cross‑reference."
+  problem_and_claim:
+    problem: "Build an adelic–modulus line framework that yields a symmetric EF in the MS ledger for admissible $g$ and exhibits a positive geometric decomposition driven by $\\gb\\ge0$."
+    core_claims:
+      - {id: main_identity, name: "MS base identity", status: proved, statement: "$Q_{\\mathrm{MS}}(g)=P(g)-\\mathcal A(g)$ for $g\\in\\AExp$ (incl. ABL). src: thm:main, eq:main-identity"}
+      - {id: asym_ef, name: "asymmetric EF", status: proved, statement: "$2\\sum_\\rho\\mathcal H(g;\\rho)=P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$. src: thm:SEF, eq:main-asym-appendix"}
+      - {id: geom_pos, name: "geometric positivity", status: proved, statement: "If $\\gb\\ge0$, then $P(g)\\ge0$ and $-\\mathcal A(g)+\\tfrac12 g(0)+2J(g)=\\int\\gb\\rho_W\\ge0$. src: prop:rhoW-adelic, eq:rhoW-def-early"}
+      - {id: weil_crit, name: "Weil criterion (ledger form)", status: proved, statement: "RH $\\Leftrightarrow$ $Q_{\\mathrm{MS}}(g_\\Phi)\\ge0$ for all autocorrelations $g_\\Phi$. src: prop:rh-equivalence"}
+    route_map:
+      - {id: R1, name: "Adelic pairing → global sum", inputs: "[D_p,D_\\infty,W,gb]", output: "Q_MS identity", status: proved}
+      - {id: R2, name: "Arch. kernel calc", inputs: "[K_A,T_{1/2}]", output: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$ and positivity, status: proved}
+      - {id: R3, name: "Assemble EF", inputs: "[R1,H,J,g(0)]", output: "asymmetric EF", status: proved}
+    asks: "Provide a 1‑para ‘why now’ and identify the single minimal new ingredient vs. classical treatments."
+  notation:
+    symbols:
+      G: "GL(1)/Q"
+      A: "adeles"
+      g: "even test fn on ℝ"
+      gb: "cosine profile of g"
+      W: "Weil test on $u\\ge0$"
+      P: "prime block"
+      A_fn: "$\\mathcal A(g)=\\tfrac1{2\\pi}\\int g(\\tau)K_A(\\tau)d\\tau$"
+      J: "Poisson block $J(g)$
+      "
+      H: "zero weights"
+      rho_W: "Weil density"
+      K_inf: "$K_\\infty(u)=-\\frac{e^{-u}}{1-e^{-2u}}=-\\frac1{2\\sinh u}$"
+      K_A: "$\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$"
+      Q_MS: "$\\sum_v\\langle D_v,W\\rangle$"
+    equivalences: {"SBL": "ABL", "MS measure": "$\\tfrac1{2\\pi}\\varphi'(\\tau)d\\tau$ vs. Selberg $d\\tau/(4\\pi)$ (not used). src: rem:normalization-lock"}
+    asks: "List precise domains/codomains for all pairings; state any hidden identifications (e.g., Mellin bridge $\\A^\\times\\leftrightarrow$ log‑line)."
+  spaces_and_classes:
+    classes:
+      - id: ABL, def: "Band‑limited: $\\gb\\in C_c^\\infty(\\R)$; $g(\\tau)=\\tfrac1\\pi\\int_0^\\infty\\gb(x)\\cos(x\\tau)dx$ (src: def:line-tests, eq:cosine-inversion)"
+      - id: AExp, def: "Exp‑damped: $|\\gb(x)|\\le C e^{-\\sigma|x|}$, strict $\\sigma>1/2$; even $g$ (src: def:line-tests)"
+      - id: SchwartzA, def: "$\\Phi\\in\\mathcal S(\\A)$ for autocorrelations $g_\\Phi=\\Phi*\\Phi^\\vee$ (src: prop:rh-equivalence)"
+    norms_params: "No bespoke norms; use support/decay and parity; strict $\\sigma>1/2$ drives absolute conv. and DCT."
+    asks: "Give minimal examples/counterexamples per class; exhibit a borderline $\\sigma=1/2$ failure."
+  assumptions:
+    items:
+      - {id: A1, statement: "Admissible $g$ is real, even, and in ABL or AExp with strict $\\sigma>1/2$.", params: "{C>0, \\sigma>1/2}", proved_here: false, proof_src: "def:line-tests", portability: "likely GL1 variants; UNKNOWN"}
+      - {id: A2, statement: "Ledger lock: use $d\\xi=\\tfrac1{2\\pi}\\varphi' d\\tau$, symmetric PV, no $\\delta_0$.", params: "PV symmetric", proved_here: true, proof_src: "rem:normalization-lock, cor:MS-lock-P2", portability: "UNKNOWN"}
+      - {id: A3, statement: "Absolute conv. of $P(g)$ for AExp; finiteness for ABL.", params: "strict $\\sigma>1/2$", proved_here: true, proof_src: "eq:P-dictionary + note in def:line-tests", portability: "UNKNOWN"}
+    counterexamples_or_limits: "If $\\sigma\\le1/2$, prime sum may diverge; boundary/PV control degrades."
+    asks: "State sharpness of $\\sigma>1/2$ and portability under other normalizations."
+  constructions_and_kernels:
+    defs:
+      - {id: W, fmla: "$W(u)=\\tfrac1\\pi(1-e^{-u})\\,\\gb(2u)$, $u\\ge0$ (src: eq:W-def)"}
+      - {id: P, fmla: "$P(g)=\\tfrac1\\pi\\sum_p\\sum_{k\\ge1}(\\log p)(1-p^{-k})\\,\\gb(2k\\log p)$ (src: eq:P-dictionary)"}
+      - {id: A_fn, fmla: "$\\mathcal A(g)=\\tfrac1{2\\pi}\\int_{\\R} g(\\tau)K_A(\\tau)d\\tau$, $K_A=\\Re\\{\\psi(i\\tau)-\\psi(\\tfrac12+i\\tau)\\}$ (src: prop:arch-block, rem:dictionary)"}
+      - {id: D_inf, fmla: "$K_\\infty(u)=-\\frac{e^{-u}}{1-e^{-2u}}=-\\frac1{2\\sinh u}$; $\\langle D_\\infty,\\varphi\\rangle=\\int_0^\\infty K_\\infty\\varphi$ (src: eq:Dinf-pairing-def)"}
+      - {id: J, fmla: "$J(g)=\\tfrac1{2\\pi}\\int_0^\\infty e^{-x/2}\\gb(x)dx$ (src: eq:Jg-def)"}
+      - {id: rho_W, fmla: "as in meta; strictly positive on $(0,\\infty)$ (src: eq:rhoW-def-early)"}
+      - {id: T_half, fmla: "$T_{1/2}(x)=\\tfrac1{1+e^{-x/2}}\\in(1/2,1)$, and $-\\mathcal A(g)+\\tfrac12 g(0)=\\tfrac1{2\\pi}\\int \\gb T_{1/2}$ (src: prop:torsion-filter)"}
+    compatibility_checklist:
+      commute: "UNKNOWN"
+      weyl_invariance: "N/A(GL1) or tautological; UNKNOWN"
+      boundedness: "$K_A(\\tau)=O((1+|\\tau|)^{-2})$; $K_\\infty(u)\\sim -\\tfrac1{2u}$ near 0 (src: rem:dictionary, rem:Dinf-halfline-PV)"
+      model_independence: "Stated via ledger lock; unitary equivalence assumed; UNKNOWN"
+    asks: "State the exact functional calculus and where symbol bounds are used (DCT/Tonelli/Plancherel)."
+  explicit_formula_block:
+    geometric_side: "$P(g)+\\tfrac12 g(0)+2J(g)-\\mathcal A(g)$ (src: thm:SEF)"
+    spectral_side: "$2\\sum_{\\rho}\\mathcal H(g;\\rho)$ nontrivial zeros, counted with multiplicity (src: thm:SEF, eq:H-appendix)"
+    regularization: "symmetric PV on $\\varphi'(\\tau)$; no $\\delta_0$ (src: rem:normalization-lock)"
+    additive_pieces: ["prime block P(g)", "archimedean $-\\mathcal A(g)$", "boundary $\\tfrac12 g(0)$", "Poisson $2J(g)$", "zeros $2\\sum\\mathcal H$]
+    weil_functional_GL1: "$\\int_0^\\infty \\gb(x)\\rho_W(x)dx$ with $\\rho_W$ as above (src: eq:rhoW-def-early)"
+    ramified_ledger: {when_present: "never for $\\zeta$", sign: "N/A", bound: "N/A", vanishing_cases: "all finite p unramified"}
+    positivity_table:
+      - {term: "P(g)", status: "≥0 if $\\gb\\ge0$", cond: "$c_{p,k}>0$", src: prop:rhoW-adelic}
+      - {term: "$-\\mathcal A+\\tfrac12 g(0)+2J$", status: "≥0 if $\\gb\\ge0$", cond: "$\\rho_W>0$", src: prop:rhoW-adelic}
+      - {term: "full geometric", status: "≥0 if $\\gb\\ge0$", cond: "sum of ≥0", src: prop:rhoW-adelic}
+    asks: "Confirm exact test classes ensuring each term ≥0."
+  main_results:
+    items:
+      - {id: T1, name: "MS base identity", statement: "As in main_identity.", conditions: "g admissible", dependencies: "[A1,A2,Prime,Arch]", status: proved, src: thm:main}
+      - {id: T2, name: "Asymmetric EF", statement: "As in asym_ef.", conditions: "g admissible", dependencies: "[T1,ZeroWeights,J,boundary]", status: proved, src: thm:SEF}
+      - {id: P1, name: "Prime block eval.", statement: "Formula for $P(g)$.", conditions: "g in ABL/AExp", dependencies: "[Euler factors,cosine dict.]", status: proved, src: prop:prime-block}
+      - {id: P2, name: "Arch. pairing eval.", statement: "$\\langle D_\\infty,W\\rangle=-\\mathcal A(g)$.", conditions: "g admissible", dependencies: "[K_A,ledger lock]", status: proved, src: prop:arch-block}
+      - {id: P3, name: "Geometric positivity", statement: "Positivity table as above.", conditions: "$\\gb\\ge0$", dependencies: "[P1,P2,\\rho_W]", status: proved, src: prop:rhoW-adelic}
+    asks: "Give a one‑line invariant reason for each positivity (e.g., PSD kernels or autocorrelation structure)."
+  dependency_graph:
+    nodes: [A1,A2,P1,P2,T1,T2,P3]
+    edges: ["A1->P1","A1->P2","A2->P2","P1->T1","P2->T1","T1->T2","P1->P3","P2->P3"]
+    asks: "Mark optional branches/cycles if any (e.g., alternative archimedean derivations)."
+  proof_skeletons:
+    for_T1:
+      steps: ["Define $Q_{MS}$ as $\\sum_v\\langle D_v,W\\rangle$ (src: eq:Q-global-sum)", "Evaluate $\\sum_p$ via Euler/cosine dict. → $P(g)$", "Evaluate $\\langle D_\\infty,W\\rangle$ via $K_A$ → $-\\mathcal A(g)$", "Assemble to $Q_{MS}=P-\\mathcal A$"]
+      fragile_step: "Archimedean evaluation and PV handling at $\\tau=0$"
+      alt_route: "Heat‑kernel regularization (not used here); UNKNOWN"
+    for_T2:
+      steps: ["Define zero weights $\\mathcal H(g;\\rho)$", "Relate spectral side to boundary+Poisson via FE", "Insert prime/arch pieces", "Obtain boxed EF"]
+      fragile_step: "Justification of exchanging sums/integrals and PV symmetry"
+      alt_route: "Weil explicit formula via test on $\\widehat g$; UNKNOWN"
+    asks: "Identify single step most likely to fail in higher rank."
+  limits_and_continuity:
+    statements:
+      - "$K_\\infty(u)\\sim-\\tfrac1{2u}+O(u)$ near 0; half‑line pairing converges absolutely (src: rem:Dinf-halfline-PV)"
+      - "$K_A(\\tau)=\\tfrac1{8\\tau^2}+O(\\tau^{-4})$ as $|\\tau|\\to\\infty$; $K_A\\in L^1_{\\mathrm{loc}}$ (src: rem:dictionary)"
+      - "Strict $\\sigma>1/2$ gives absolute prime convergence and $L^1$ majorants for DCT/Tonelli (src: def:line-tests)"
+    constants_table:
+      - {where: "prime block", uniform_in_t: "N/A", depends_on: "\\sigma, C", note: "needs strict $\\sigma>1/2$"}
+      - {where: "arch piece", uniform_in_t: "N/A", depends_on: "bounds on $K_A$", note: "$O((1+|\\tau|)^{-2})$"}
+    asks: "State any places constants blow up (e.g., $\\sigma\\downarrow1/2$)."
+  checks_and_recipes:
+    numerical_recipe: "Choose $\\gb$ compactly supported or $e^{-\\alpha x}\\chi_{(0,X]}$; evaluate $P(g)$ over $p^k\\le e^{X/2}$; compute $\\int\\gb\\rho_W$; compare $Q_{MS}$ sides."
+    symbolic_recipe: "Verify $-\\mathcal A+\\tfrac12 g(0)+2J=\\int\\gb\\rho_W$ by inserting defs of $T_{1/2}$ and $J$ (src: prop:torsion-filter, eq:Jg-def, eq:rhoW-def-early)."
+    pseudocode: |
+      input g_b(x)
+      compute P := (1/π) * sum_p sum_{k>=1} (log p)(1-p^{-k}) g_b(2k log p) with cutoff
+      compute J := (1/2π) ∫_0^∞ e^{-x/2} g_b(x) dx; A := (1/2π) ∫ g(τ) K_A(τ) dτ
+      check 2∑_ρ H(g;ρ) == P + 1/2 g(0) + 2J - A
+    toy_numeric:
+      input: "$\\gb(x)=e^{-\\alpha x}\\chi_{(0,X]}(x)$ with $(\\alpha,X)=(1,4)$"
+      rhoW_int: "$\\int_0^X e^{-x}\\,\\tfrac1{2\\pi}\\!(\\tfrac1{1+e^{-x/2}}+2e^{-x/2})dx$"
+      first_primes: "$(1/\\pi)\\sum_{p\\le e^{X/2}}(\\log p)(1-p^{-1})p^{-2\\alpha}\\;+$ terms with $k\\ge2$ where $2k\\log p\\le X$"
+    asks: "Provide a canonical toy $\\gb$ used in the paper’s notebooks to smoke‑test signs and units."
+  scope_and_unconditionality:
+    unconditional: ["Prime block eval (P1)", "Arch eval (P2)", "MS base identity (T1)", "Geometric positivity given $\\gb\\ge0$ (P3)"]
+    RH_link: "Weil criterion equivalence for autocorrelations (prop:rh-equivalence)."
+    program_inputs:
+      - {id: A1, formal_statement: "admissible test class with strict $\\sigma>1/2$", current_status: "assumed", needed_for: "absolute conv., DCT", candidates_for_proof: "sharpness analysis"}
+      - {id: A2, formal_statement: "ledger lock PV/spectral measure", current_status: "proved here", needed_for: "arch pairing", candidates_for_proof: "alt derivations"}
+      - {id: A3, formal_statement: "pos. kernels imply geom. ≥0 when $\\gb\\ge0$", current_status: "proved", needed_for: "positivity table", candidates_for_proof: "extend to GLm"}
+    asks: "What is the ‘minimum viable theorem’ if $\\sigma$ is weakened or $\\gb$ only in BV?"
+  limitations:
+    list: ["Restricted to GL1(ℚ); higher rank not treated", "Admits only even $g$ in ABL/AExp", "Relies on MS ledger normalization choices", "No treatment of ramified finite places (not present for $\\zeta$)"]
+    asks: "Give counterexamples when dropping evenness or strict $\\sigma>1/2$."
+  projections:
+    ideas: ["Port to Dirichlet $L$ and Hecke $L$ on GL1/K", "Abstract positivity via PSD kernels; aim for GLm", "Numerical pipelines validating density identities"]
+    obstacles: ["Archimedean normalization in higher rank", "Ramified local factors and test space compatibility"]
+    asks: "Prioritize milestones (GL1/K, Dirichlet; then GL2 spherical) and define a verification plan mirroring §Computational Verification."
+

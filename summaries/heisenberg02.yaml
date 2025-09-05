@@ -1,0 +1,154 @@
+a2a_doc:
+  meta:
+    title_long: "Holonomy Universality Beyond the Disk: Riemann Maps, Domains, and Hardy/Smirnov Classes on a Single Heisenberg Slice"
+    title_short: "Holonomy Universality Beyond the Disk"
+    authors: ["Michael Seiler"]
+    venue: UNKNOWN
+    year: 2025
+    version: "Part II; LaTeX draft with \\date{\\today}"
+    url: UNKNOWN
+    area: "complex analysis, Heisenberg geometry, boundary integral methods"
+    normalization: "Heisenberg slice H_1 ≅ S^1×ℝ with α_H=dθ; w=e^{Jθ}, J^2=-1"
+    primary_objects:
+      - {name: "H_1", type: "slice/manifold", role: "host for all holonomy integrals"}
+      - {name: "Ω", type: "planar domain (Jordan/quasicircle; unions)", role: "target domain"}
+      - {name: "Φ", type: "Riemann map Δ→Ω (boundary-extendable)", role: "pullback to H_1"}
+      - {name: "α_H", type: "1-form on H_1", role: "fixed kernel dθ"}
+      - {name: "W_{Ω,z0,n}(w)", type: "conformal weight", role: "transfers Cauchy/Laurent/residue to H_1"}
+      - {name: "A_{Ω,g}", type: "connection 1-form", role: "encodes residues as vertical holonomy"}
+      - {name: "H^p(Ω), E^p(Ω)", type: "Hardy/Smirnov spaces", role: "function classes carried to H_1"}
+    normalization_sheet:
+      finite_places: "N/A (one complex variable)."
+      arch_place: "Orientation: θ↑ counterclockwise; dz=Φ'(w)Jw α_H on |w|=1; PV used at singularities."
+      dictionary_constants: "Choice Φ(0)=z0 identifies harmonic measure ω_{z0}; no extra constants. src: remark 'Harmonic measure'."
+    identities_checked:
+      - {id: "ID1", text: "α_C:=dz/z = J dθ on S^1 (Paper I kernel identity).", src: "paper:general"}
+      - {id: "ID2", text: "W_{Ω,z0,n}(w)= w Φ'(w)/ (Φ(w)-z0)^{n+1}.", src: "lem:pullback-cauchy"}
+      - {id: "ID3", text: "f^{(n)}(z0)/n! = (1/2π)∫_0^{2π} (f∘Φ)(e^{Jθ}) W_{Ω,z0,n}(e^{Jθ}) α_H.", src: "thm:evaluation"}
+      - {id: "ID4", text: "(1/2πJ)∮_{∂Ω} g(z)dz = Σ_{a∈Ω} Res g(a) = (1/2π)∫ (wΦ'(w) g(Φ(w))) α_H.", src: "thm:res-omega"}
+      - {id: "ID5", text: "Functoriality: W_{Ω′,z0′,n} = W_{Ω,z0,n}·(Ψ′∘Φ)·((Φ−z0)/(Ψ∘Φ−z0′))^{n+1}.", src: "thm:multiplicativity"}
+    asks: "If any constant differs from Pommerenke/Garnett–Marshall conventions, document it and justify."
+  problem_and_claim:
+    problem: "Show that Cauchy/Laurent/residue functionals and Hardy/Smirnov theory on planar domains are realized on a single Heisenberg slice H_1 via a universal kernel α_H and domain-specific conformal weights."
+    core_claims:
+      - {id: "C1", name: "Derivative/evaluation via H_1", status: "proved", statement: "For n≥0, f^{(n)}(z0)/n! equals the H_1 integral with weight W_{Ω,z0,n}. src: thm:evaluation"}
+      - {id: "C2", name: "Residue/holonomy", status: "proved", statement: "Vertical holonomy of A_{Ω,g} equals −2π Σ Res g, i.e., (1/2πJ)∮ g dz = Σ Res g.", src: "thm:res-omega"}
+      - {id: "C3", name: "Distributional extension", status: "proved", statement: "If ∂Ω is a quasicircle, W_{Ω,z0,n}∈H^{-1/2}(S^1); the integral pairing with f∘Φ∈L^2 holds distributionally.", src: "thm:quasicircle"}
+      - {id: "C4", name: "Multiply connected domains", status: "proved", statement: "Contour functionals over finite unions of C^{1,α} Jordan curves decompose as oriented sums of H_1 integrals with weights W_j.", src: "Theorem 'Representation on a Single Heisenberg Slice…'"}
+      - {id: "C5", name: "Functoriality", status: "proved", statement: "Weights transform multiplicatively under boundary composition Ψ∘Φ as above.", src: "thm:multiplicativity"}
+    route_map:
+      - {id: "R1", name: "Conformal pullback", inputs: "Cauchy formula on ∂Ω; Φ with boundary extension", output: "ID2–ID4 identities on H_1", status: "complete"}
+      - {id: "R2", name: "Connection/holonomy view", inputs: "A_{Ω,g}=dt+(wΦ′g∘Φ)α_H", output: "Residues as vertical holonomy", status: "complete"}
+    asks: "Provide a short 'why now' and the single minimal new ingredient beyond Paper I."
+  notation:
+    symbols:
+      Ω: "bounded simply connected Jordan domain; also finite unions. src: sections Preliminaries/Annuli."
+      Φ: "Riemann map Δ→Ω; boundary C^{1,α}/rectifiable/quasisymmetric extension. src: prelim/remarks."
+      w: "e^{Jθ}∈S^1; θ∈[0,2π). src: prelim."
+      α_H: "dθ. src: prelim."
+      J: "imaginary unit; J^2=-1; dz=Φ′(w)Jw α_H. src: prelim."
+      z0: "interior basepoint. src: lem:pullback-cauchy."
+      W_{Ω,z0,n}: "w Φ′(w)/(Φ(w)−z0)^{n+1}. src: lem:pullback-cauchy."
+      Res: "residue at isolated poles. src: thm:res-omega."
+      A_{Ω,g}: "dt+(wΦ′(w)g(Φ(w)))α_H; also A_g=dt+(1/J)g(z)dz on ∂Ω. src: thm:res-omega."
+      H^p(Ω), E^p(Ω): "Hardy/Smirnov spaces via pullback; norms on S^1. src: sec:hardy, prop:h2."
+    equivalences:
+      Δ: "unit disk; S^1=∂Δ."
+      α_C: "dz/z equals J α_H on S^1 (disk case; Paper I)."
+    asks: "State explicit domains/codomains of Φ, and any hidden identifications X=G/K used implicitly."
+  spaces_and_classes:
+    items:
+      - {name: "H^p(Ω)", membership: "f holomorphic in Ω with f∘Φ ∈ H^p(Δ)", norm: "∥f∥_{H^p(Ω)}=(1/2π∫|f∘Φ|^p dθ)^{1/p}", src: "sec:hardy"}
+      - {name: "E^p(Ω)", membership: "Smirnov class via n.t. boundary values on rectifiable ∂Ω", norm: "L^p on ∂Ω; equals θ-integral via Φ", src: "sec:hardy/remark"}
+      - {name: "L^2(S^1)", membership: "boundary traces f∘Φ", norm: "(1/2π)∫|·|^2 dθ", src: "prop:h2"}
+    asks: "Give minimal examples/counterexamples for H^p vs E^p on corners/quasicircles."
+  assumptions:
+    list:
+      - {id: "A1", statement: "Φ:Δ→Ω conformal, extends homeomorphically to ∂Δ for Jordan ∂Ω; Φ′≠0 on S^1 if ∂Ω∈C^{1,α}.", params: "{α∈(0,1]}", proved_here: false, proof_src: "Pommerenke", portability: "planar Jordan domains"}
+      - {id: "A2", statement: "dz=Φ′(w)Jw α_H on |w|=1; θ orientation positive.", params: "w=e^{Jθ}", proved_here: true, proof_src: "prelim", portability: "any boundary-extendable Φ"}
+      - {id: "A3", statement: "g meromorphic near \\overline{Ω}, no poles on ∂Ω.", params: "finite poles", proved_here: used, proof_src: "thm:res-omega", portability: "residue theorem context"}
+      - {id: "A4", statement: "For quasicircle ∂Ω, weights act as distributions of order ≤1; pairing with L^2 boundary values.", params: "n≥0", proved_here: claimed, proof_src: "thm:quasicircle", portability: "quasisymmetric boundaries"}
+    counterexamples_or_limits: "If z0∈∂Ω or corners present, kernels develop nonintegrable singularities; use PV/distribution. src: remarks."
+    asks: "Clarify sharpness of order(H^{-1/2}) and portability to rectifiable but non-quasicircle boundaries."
+  constructions_and_kernels:
+    operators:
+      - {name: "Cauchy/Laurent kernel", formula: "K_n(z;z0)=(z−z0)^{−(n+1)}", psd: "N/A"}
+      - {name: "Weight", formula: "W_{Ω,z0,n}(w)=w Φ′(w)/(Φ(w)−z0)^{n+1}", factorization: "multiplies α_H", src: "lem:pullback-cauchy"}
+      - {name: "Connection A_{Ω,g}", formula: "dt+(wΦ′(w)g(Φ(w)))α_H = dt+(1/J)g(z)dz|_{∂Ω}", property: "vertical holonomy=−2π Σ Res g", src: "thm:res-omega"}
+    compatibility_checklist:
+      commute_on_spherical_model: "N/A"
+      weyl_invariance: "invariance under S^1 reparameterization; weights rescale, functional invariant. src: remark 'Reparameterizations'"
+      boundedness: "For H^2, f∘Φ∈L^2 and weights W_{Ω,z0,0}∈L^2_{loc} (distribution on quasicircles)."
+      model_independence: "Intrinsic form A_g uses only g and dz on ∂Ω; independent of Φ."
+    asks: "State functional calculus used (if any) and exact symbol bounds on W near corners."
+  explicit_formula_block:
+    geometric_side: "(1/2πJ)∮_{∂Ω} g(z)dz, or for K_n, (1/2πJ)∮ f(z)K_n(z;z0)dz."
+    spectral_side: "Σ_{a∈Ω} Res g(a) (residue theorem)."
+    pulled_back_to_H1: "(1/2π)∫_0^{2π} (g∘Φ)(e^{Jθ})·(e^{Jθ}Φ′(e^{Jθ})) α_H."
+    regularizations: "PV/distributional pairing on rough ∂Ω; oriented sums for multiply connected."
+    weil_functional_GL1: "N/A"
+    ramified_ledger: {when_present: "inner boundaries/corners", sign: "inner components negative orientation", bound: "weight growth via Φ′", vanishing_cases: "N/A"}
+    positivity_table:
+      - {term: "Cauchy (n=0)", status: "sign-indefinite", cond: "depends on f, z0"}
+      - {term: "Residue sum", status: "exact", cond: "no poles on ∂Ω"}
+    asks: "Confirm ≥0 statements (if any) for special test classes (e.g., |f|^2)."
+  main_results:
+    results:
+      - {id: "lem:pullback-cauchy", name: "Pulled-back Cauchy kernel", statement: "(1/2πJ)∮ f(z)/(z−z0)^{n+1} dz = (1/2π)∫ (f∘Φ) W α_H.", conditions: "f holomorphic near \\overline{Ω}, n≥0", dependencies: ["A1","A2"], status: "proved", src: "lem:pullback-cauchy"}
+      - {id: "thm:evaluation", name: "Evaluation/derivatives via H_1", statement: "f^{(n)}(z0)/n! equals H_1 integral with W.", conditions: "as above", dependencies: ["lem:pullback-cauchy"], status: "proved", src: "thm:evaluation"}
+      - {id: "prop:h2", name: "Boundary Fourier/holonomy picture", statement: "H^2 norm and point evaluation via θ-integrals.", conditions: "f∈H^2(Ω)", dependencies: ["thm:evaluation"], status: "proved", src: "prop:h2"}
+      - {id: "thm:res-omega", name: "Residue/holonomy on domains", statement: "(1/2πJ)∮ g dz = Σ Res g = (1/2π)∫ (wΦ′ g∘Φ) α_H.", conditions: "g meromorphic; no ∂Ω poles", dependencies: ["A3","A2"], status: "proved", src: "thm:res-omega"}
+      - {id: "thm:quasicircle", name: "Distributional host on quasicircles", statement: "W∈H^{−1/2}(S^1); pairing with L^2 boundary values.", conditions: "∂Ω quasicircle", dependencies: ["A1"], status: "proved", src: "thm:quasicircle"}
+      - {id: "thm:union", name: "Single-slice for finite unions", statement: "Contour functionals decompose into oriented H_1 integrals with weights W_j.", conditions: "∂Ω finite union C^{1,α} Jordan curves", dependencies: ["thm:evaluation"], status: "proved", src: "Theorem 'Representation on a Single Heisenberg Slice…'"}
+      - {id: "thm:multiplicativity", name: "Functoriality under boundary composition", statement: "Weight cocycle under Ψ∘Φ as in ID5.", conditions: "C^{1,α} boundary extensions", dependencies: ["thm:evaluation"], status: "proved", src: "thm:multiplicativity"}
+    asks: "Give an invariant-theoretic one-liner for why W transforms multiplicatively."
+  dependency_graph:
+    nodes: ["A1","A2","A3","lem:pullback-cauchy","thm:evaluation","prop:h2","thm:res-omega","thm:quasicircle","thm:union","thm:multiplicativity"]
+    edges: ["A1->lem:pullback-cauchy","A2->lem:pullback-cauchy","lem:pullback-cauchy->thm:evaluation","thm:evaluation->prop:h2","A2->thm:res-omega","A3->thm:res-omega","A1->thm:quasicircle","thm:evaluation->thm:union","thm:evaluation->thm:multiplicativity"]
+    asks: "Mark any optional branches (e.g., alternate proofs via harmonic measure)."
+  proof_skeletons:
+    items:
+      - id: "thm:evaluation"
+        steps: ["Start Cauchy formula on ∂Ω.", "Substitute z=Φ(w), dz=Φ′(w)Jw α_H.", "Factor W=w Φ′/(Φ−z0)^{n+1}.", "Integrate over θ∈[0,2π).", "Use boundary regularity to justify limits."]
+        fragile_step: "Justifying boundary substitution/limits for rough ∂Ω."
+        alt_route: "Approximate ∂Ω by smooth curves; use Carathéodory convergence."
+      - id: "thm:res-omega"
+        steps: ["Residue theorem on ∂Ω.", "Pull back via Φ to S^1.", "Identify A_{Ω,g}; compute vertical holonomy.", "Conclude equality to Σ Res g."]
+        fragile_step: "Excluding/handling poles approaching ∂Ω."
+        alt_route: "Indentation arcs; PV limit."
+      - id: "thm:quasicircle"
+        steps: ["Use quasisymmetric boundary map.", "Place W in H^{−1/2}(S^1) via Φ′ bounds.", "Pair with L^2 boundary values (nontangential).", "Pass to distributional integral."]
+        fragile_step: "Sharp control of Φ′ near corners/quasisymmetric distortion."
+        alt_route: "Smirnov class E^2 embedding and duality."
+    asks: "Identify the unique step likely to fail in higher rank or nonplanar analogues."
+  limits_and_continuity:
+    statements:
+      - {id: "L1", text: "PV limits at boundary singularities (z0→∂Ω); distributional pairing on quasicircles.", norms: "H^{-1/2} vs L^2"}
+      - {id: "L2", text: "Annuli: inner boundary has negative orientation; take ρ↗1 limits if needed.", norms: "L^p on S^1"}
+    constants_table:
+      - {name: "corner exponent", arises: "Φ′(e^{iθ})~dist^{β−1}", uniform_in_t: "N/A", depends_on: "interior angle β"}
+    asks: "List any constants that blow up with modulus of quasisymmetry."
+  checks_and_recipes:
+    numerical_recipe: "For given Φ and z0, implement θ-grid quadrature of (1/2π)∫ (f∘Φ)(e^{Jθ}) W(e^{Jθ}) dθ."
+    symbolic_recipe: "Start from Cauchy identity, substitute z=Φ(w), reduce to weight W; check functoriality by chain rule."
+    pseudocode: |
+      input Φ,z0,n,f
+      for θ in linspace(0,2π): w=exp(Jθ); W = w*Φ'(w)/(Φ(w)-z0)^(n+1); acc += f(Φ(w))*W
+      return acc/(2π)
+    toy_numeric: "Example (half-plane via Cayley): Φ(w)=(1+w)/(1−w), z0=1, n=0. Then Φ′(w)=2/(1−w)^2; form W and symbolically expand W near w→1 to smoke-test signs/units."
+    asks: "Provide a canonical Φ and z0 for regression tests (e.g., disk, half-plane, annulus)."
+  scope_and_unconditionality:
+    unconditional: ["C1–C2 for C^{1,α} boundaries; annulus/multiply connected via oriented sums.", "H^2 identities (prop:h2)."]
+    programmatic: ["Distributional refinements on rough boundaries; quantitative Φ′ control; extensions hinted to noncommutative geometry."]
+    program_inputs:
+      - {id: "PI1", formal_statement: "Carathéodory boundary extension for Jordan ∂Ω.", current_status: "standard", needed_for: "change-of-variables on ∂Ω", candidates_for_proof: "Pommerenke"}
+      - {id: "PI2", formal_statement: "Nontangential boundary values for H^p/E^p under quasisymmetric maps.", current_status: "standard", needed_for: "distributional pairing", candidates_for_proof: "Garnett–Marshall"}
+      - {id: "PI3", formal_statement: "Φ′ boundary regularity on C^{1,α}.", current_status: "standard", needed_for: "L^p estimates of W", candidates_for_proof: "Pommerenke"}
+    asks: "What is the minimum viable theorem if only rectifiable ∂Ω is assumed?"
+  limitations:
+    items: ["Requires boundary-extendable Φ; rough ∂Ω handled only distributionally.", "No poles of g on ∂Ω.", "Corner singularities require PV.", "Weights depend on basepoint z0; z0∈∂Ω needs limiting care."]
+    asks: "Provide counterexamples when Φ fails to extend or when interior angles →0."
+  projections:
+    items: ["Quantitative bounds for W in terms of quasisymmetry modulus.", "Automated quadrature on H_1 for domain functionals.", "Extensions to vector-valued kernels, higher connectivity with branch cuts.", "Links to noncommutative geometry/physics via A_g and holonomy."]
+    asks: "Prioritize milestones and a verification plan (benchmarks: disk, half-plane, annulus, Koch-like quasicircle)."
+

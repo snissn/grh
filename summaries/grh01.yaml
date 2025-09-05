@@ -1,0 +1,185 @@
+a2a_doc:
+  meta:
+    title_long: "Fixed-Heat EF Infrastructure for Automorphic $L$-functions on $\\mathrm{GL}_m/K$ — Part I: Infrastructure"
+    title_short: "Fixed-Heat EF Infrastructure (Part I)"
+    authors: ["Michael Seiler"]
+    venue: "preprint (unrefereed)"
+    year: 2025
+    version: "Part I"
+    url: UNKNOWN
+    area: "analytic number theory; automorphic $L$-functions; representation theory"
+    normalization: "Maaß–Selberg (MS) ledger; spherical model"
+    primary_objects:
+      - {id: "X=G/K", type: "symmetric space (noncompact)", role: "spherical model/Plancherel"}
+      - {id: "W", type: "Weyl group", role: "ray symmetries"}
+      - {id: "$\\fa^*$", type: "Cartan dual", role: "spectral parameter"}
+      - {id: "$M(w,\\lambda)$", type: "intertwiner (Langlands norm.)", role: "Gram kernel"}
+      - {id: "$-\\Delta_X$", type: "spherical Laplacian", role: "heat/functional calculus"}
+      - {id: "$\\TTnu$", type: "operator", role: "nu-antisymmetric projector (Part II/III)"}
+    normalization_sheet:
+      finite_places:
+        euler: "$L_p(s,\\pi)=\\prod_{j=1}^m (1-\\alpha_{p,j}(\\pi)p^{-s})^{-1}$; primes weighted by $\\log p$ in EF. (src: sec:R, subsec:EF-linear)"
+        measure: "prime sum over $p, k\\ge1$; absolute bound via $|\\mathrm{Tr}(A_p^k)|\\le m$. (src: MS–dictionary block)"
+        satake: "Satake $A_p$ with eigenvalues $\\alpha_{p,j}$; only trivial $\\ell^1$ bound used. (src: MS–dictionary)"
+      arch_place:
+        scattering: "pairing against $d\\xi(\\tau)=\\tfrac{1}{2\\pi}\\,\\varphi'(\\tau)\\,d\\tau$; Langlands-norm $M(w,\\lambda)$. (src: app:constants-ledger, sec:A1)"
+        pv: "symmetric PV on $\\Re s=\\tfrac12$. (src: app:constants-ledger)"
+        spectral_measure: "$d\\delta_H(x)=\\frac{x^{r-1}}{|W|}|c(\\ii x v_H)|^{-2}dx$ on rays. (src: thm:A1)"
+      dictionary_constants: "$(1-p^{-k})\\,\\widehat g_\\Phi(2k\\log p)=p^{-k/2}\\,\\widehat G_\\Phi(k\\log p)$. (src: eq:ms-dictionary/eq:MS)"
+    identities_checked:
+      - "Frame identity $\\langle\\Phi,\\Psi\\rangle=\\int_H\\langle L_H\\Phi,\\,\\cG_H L_H\\Psi\\rangle\\,d\\sigma(H)$. (src: eq:A1-frame)"
+      - "Spherical heat: $\\widetilde{k_t}(\\lambda)=e^{-t(\\|\\lambda\\|^2+c_X)}$. (src: eq:sph-heat)"
+      - "Same-weight factorization $\\widehat g_{\\Phi,t}=\\widehat{k_t}\\,\\widehat g_\\Phi$. (src: eq:factorization)"
+      - "Gaussian bound $0\\le\\widehat{k_t}(x)\\le A_0 e^{-c_X t}e^{-B_0 t x^2}$. (src: eq:kt-gauss)"
+      - "Amplifier identity with nonneg. local weights. (src: eq:A4-main)"
+    asks: "If any constant deviates from a standard source, cite it and justify. Clarify $c_X=\\|\\rho_X\\|^2$ cross-normalization."
+
+  problem_and_claim:
+    problem: "Build a conductor-uniform, positivity-preserving fixed-heat explicit formula (EF) framework on $\\mathrm{GL}_m/K$ that supports amplification/untwisting and a nu-projector + cone separation reformulation of GRH."
+    core_claims:
+      - {id: "A1", name: "MS-ledger slice frame", status: "proved", statement: "Raywise slice frame with constant Gram kernel $\\cG_H$; frame identity. (src: sec:A1, thm:A1, eq:A1-frame)"}
+      - {id: "A2", name: "Constructive half-shift", status: "proved", statement: "Smooth spherical multiplier $\\Psi_N=f_N(-\\Delta_X)$ realizes $T_{1/2}$ on rays with $\\|T^{(H)}_{1/2,N}-T_{1/2}\\|\\le1/N$. (src: sec:A2, thm:A2-constructive-main)"}
+      - {id: "A3", name: "PV growth bound", status: "proved", statement: "$\\| (\\Lambda'/\\Lambda)(\\tfrac12+it,\\pi)\\|_{(\\SAa)^*}\\ll C_0+C_1\\log(Q_K(\\pi)(1+|t|))$. (src: sec:A3, lem:A3-growth)"}
+      - {id: "R", name: "Same-weight factorization & damping", status: "proved", statement: "Heat smoothing gives $\\widehat g_{\\Phi,t}=\\widehat{k_t}\\widehat g_\\Phi$ and uniform ramified tail bounds. (src: sec:R, thm:R-factor, prop:ramified-uniform)"}
+      - {id: "A4", name: "Second-moment amplifier", status: "proved", statement: "Twist-average identity with nonnegative local weights, ramified error controlled. (src: sec:A4, prop:A4, eq:A4-main)"}
+      - {id: "A5", name: "Untwisting inequality", status: "proved", statement: "$\\|(I-\\TTnu,\\pi)\\Xi\\|\\le\\sum w_{\\frak q}(\\chi)\\|(I-\\TTnu,\\pi\\otimes\\chi)\\Xi\\|$. (src: sec:A5, cor:A5-ineq)"}
+      - {id: "C", name: "Cone separation", status: "proved", statement: "If continuous $L$ vanishes on $\\PD^+$ then $L\\equiv0$. (src: sec:C, prop:cone-separation)"}
+      - {id: "Synth", name: "Backbone + amplifier synthesis", status: "proved", statement: "A1–A5 + R give an unconditional amplification framework on $\\BL\\cup\\SAa$. (src: sec:Synth, thm:Backbone)"}
+      - {id: "Gateway", name: "nu-projector + cone sep $\\Leftrightarrow$ GRH", status: "program", statement: "On $\\PD^+$, annihilation by $\\TTnu$ is equivalent to GRH for $L(s,\\pi)$. (src: sec:Synth, thm:GRH-gateway)"}
+    route_map:
+      - {id: "route-fixed-heat", name: "Fixed-heat EF + amplifier", inputs: ["A1","A2","A3","R","A4","A5","C"], output: "untwisting + reformulation gateway", status: "proved/program (gateway)"}
+    asks: "Provide a short 'why now' and the single minimal new ingredient enabling the fixed-heat route."
+
+  notation:
+    symbols:
+      X: "symmetric space $G/K$"
+      W: "Weyl group"
+      a*: "Cartan dual (real)"
+      L_H: "slice map to $L^2(\\R_+,\\delta_H)$"
+      c(λ): "Harish–Chandra $c$-function"
+      𝒢_H: "Gram kernel $\\sum_{w\\in W}\\|M(w,\\ii x v_H)\\|^2$"
+      k_t: "heat kernel on $X$"
+      T_{1/2}: "half-shift $(1+e^{-x/2})^{-1}$ (raywise)"
+      R_t: "realized energy operator via $\\Psi_N$"
+      SA^a: "spectral class $a>1/2$ with norm"
+      BL: "band-limited slices (compact support)"
+      PD^+: "nonnegative slices in $\\SAa$"
+    equivalences:
+      - "MS ledger (transform-side ABL) ↔ classical Weil (CW) dictionary via eq:ms-dictionary. (src: sec:notation)"
+    asks: "List domains/codomains for all operators; note hidden IDs like $X=G/K$, $\\widehat X$ spherical side."
+
+  spaces_and_classes:
+    items:
+      - {id: "SA^a", membership: "$\\widehat g\\in C^\\infty_{\\rm even}[0,\\infty)$ with $\\int(|\\widehat g|+|\\widehat g''|)e^{ax}(1+x)^2dx<\\infty$", norm: "$\\|\\cdot\\|_{\\SAa}$, params: "a>1/2", src: "def:SAa"}
+      - {id: "BL(Ω)", membership: "band-limited support $\\subset[0,\\Omega]$", norm: "inherited", src: "sec:notation"}
+      - {id: "PD^+$, membership: "$\\widehat g\\ge0$ a.e. in $\\SAa$", structure: "cone", src: "sec:C"}
+    asks: "Give minimal example and a counterexample for each class (e.g., a function failing $\\SAa$ at $a\\le1/2$)."
+
+  assumptions:
+    list:
+      - {id: "X", statement: "Work on connected noncompact $X=G/K$; spherical model", params: "rank r≥1", proved_here: true, proof_src: "paper:general", portability: "other Riemannian $X$ with spherical theory"}
+      - {id: "window", statement: "Fixed-heat window $t\\in[\\tmin,\\tzero]$", params: "$0<\\tmin\\le\\tzero$", proved_here: true, proof_src: "A3/R bounds", portability: "constants blow up as $t\\downarrow0$"}
+      - {id: "pi", statement: "$\\pi$ unitary cuspidal on $\\GL_m/K$ with conductor $Q_K(\\pi)$", params: "m,K", proved_here: false, proof_src: "standard", portability: "all $m,K$"}
+      - {id: "PV", statement: "MS spectral-shift measure with symmetric PV", params: "—", proved_here: true, proof_src: "app:constants-ledger", portability: "MS-needed"}
+      - {id: "zeros", statement: "Zero counting $N_\\pi(T)\\ll_{m,K} T\\log(Q(\\pi)(1+T))$", params: "—", proved_here: true, proof_src: "lem:zero-counting in A3", portability: "standard GL(m) input"}
+      - {id: "RS≥0", statement: "Rankin–Selberg nonnegativity used in A4", params: "—", proved_here: true, proof_src: "sec:A4", portability: "GL(m)"}
+    counterexamples_or_limits: ["$a\\le1/2$ breaks $\\SAa$ bounds; $t\\to0$ loses uniform Gaussian factor; dropping unitarity can void positivity."]
+    asks: "State sharpness of $a>1/2$ and uniformity ranges in $m,[K:\\Q]$; portability to other normalizations."
+
+  constructions_and_kernels:
+    defs:
+      - {id: "Gram", def: "$\\cG_H(x)=\\sum_{w\\in W}\\|M(w,\\ii x v_H)\\|^2$", prop: "Weyl-inv., $\\ge0$", src: "sec:A1"}
+      - {id: "heat", def: "$\\widetilde{k_t}(\\lambda)=e^{-t(\\|\\lambda\\|^2+c_X)}$", prop: "PSD", src: "eq:sph-heat"}
+      - {id: "halfshift", def: "$T_{1/2}(x)=(1+e^{-x/2})^{-1}$", prop: "0<\\cdot<1$", src: "sec:A2"}
+      - {id: "Ψ_N", def: "radial multiplier $\\Psi_N=f_N(-\\Delta_X)$ realizing $T_{1/2}$ raywise", prop: "smooth, PSD", src: "thm:A2-constructive-main"}
+      - {id: "factor", def: "$\\widehat g_{\\Phi,t}=\\widehat{k_t}\\,\\widehat g_\\Phi$", prop: "$\\widehat{k_t}\\ge0$; Gaussian bound", src: "thm:R-factor, eq:kt-gauss"}
+      - {id: "R_t", def: "realized energy operator with symbol $\\Psi_N(\\lambda)$", prop: "commutes with spherical conv.", src: "sec:A2/A1"}
+    compatibility_checklist:
+      commute: "Yes: $e^{-tA}$, $\\Psi_N$, Gram/slice maps commute within spherical calculus. (src: sec:A1–A2)"
+      Weyl_invariant: "All are $W$-invariant. (src: sec:A1–A2)"
+      bounded: "$0<\\Psi_N<1$; heat bounded on window. (src: A2/R)"
+      model_independence: "Raywise definitions unitarily equivalent. (src: sec:A1)"
+    asks: "State exact functional calculus domain and where symbol bounds enter Loewner limits."
+
+  explicit_formula_block:
+    structure:
+      zeros_side: "$\\EF_{\\mathrm{zeros}}(\\Phi)$ on $\\Re s=\\tfrac12$ with MS–PV. (src: sec:R, eq:EF-linear)"
+      geometric_side: "$\\Arch(\\Phi)+\\Primes(\\Phi)+\\Ram(\\Phi)$ with heat insertion. (src: eq:EF-linear)"
+      arch_piece: "$\\Arch(\\Phi)=\\int\\widehat\\Phi(\\xi) a_t(\\xi)d\\xi$; $a_t$ depends on heat. (src: eq:arch-linear)"
+      primes_piece: "via MS dictionary and $\\widehat g_\\Phi(2k\\log p)$. (src: eq:MS)"
+      ramified_piece: "supported on $p\\mid \\frak q Q_K(\\pi)$; uniformly bounded. (src: prop:ramified-uniform)"
+      regularization: "heat smoothing + PV on spectral side. (src: A3/R)"
+    weil_functional_GL1: UNKNOWN
+    ramified_ledger: {when_present: "p|$\\frak qQ(\\pi)$", sign: "unsigned in bounds", bound: "$\\ll (1+\\log Q(\\pi))e^{-c_X t}\\|\\Phi\\|_{\\SAa}$", vanishing_cases: "all finite $p$ unramified"}
+    positivity_table:
+      - {term: "Weil energy $\\langle F,R_t F\\rangle$", status: "≥0", cond: "$F\\in\\BL\\cup\\SAa$; window; A1–A2", src: "HL positivity prop."}
+      - {term: "Amplifier local weights", status: "≥0", cond: "choice of $w_{\\frak q}(\\chi)$", src: "prop:A4"}
+      - {term: "Cone functional on $\\PD^+$", status: "≥0", cond: "definition", src: "sec:C"}
+    asks: "Confirm which EF terms are ≥0 under BL versus $\\SAa$."
+
+  main_results:
+    list:
+      - {id: "thm:A1", name: "MS slice frame", statement: "frame+Gram", conditions: "$\\Phi,\\Psi\\in \\BL\\cup\\SAa$", dependencies: [], status: "proved", src: "sec:A1"}
+      - {id: "thm:A2", name: "Constructive half-shift", statement: "$\\Psi_N\\to T_{1/2}$ raywise", conditions: "spherical", dependencies: ["A1"], status: "proved", src: "sec:A2"}
+      - {id: "lem:A3", name: "PV growth", statement: "conductor-uniform bound", conditions: "$a>1/2$", dependencies: [], status: "proved", src: "sec:A3"}
+      - {id: "thm:R", name: "Same-weight factorization", statement: "$\\widehat g_{\\Phi,t}=\\widehat{k_t}\\widehat g_\\Phi$", conditions: "window", dependencies: [], status: "proved", src: "sec:R"}
+      - {id: "prop:A4", name: "Amplifier identity", statement: "nonneg. weights; ramified error", conditions: "$\\Re s>1$ then cont.", dependencies: [], status: "proved", src: "sec:A4"}
+      - {id: "cor:A5", name: "Untwisting inequality", statement: "twist-avg bounds", conditions: "normalized weights", dependencies: ["A4"], status: "proved", src: "sec:A5"}
+      - {id: "prop:C", name: "Cone separation", statement: "vanish on $\\PD^+\\Rightarrow$ zero", conditions: "continuity", dependencies: ["A3","R"], status: "proved", src: "sec:C"}
+      - {id: "thm:Backbone", name: "Synthesis", statement: "complete unconditional framework", conditions: "window; classes", dependencies: ["A1","A2","A3","R","A4","A5","C"], status: "proved", src: "sec:Synth"}
+      - {id: "thm:Gateway", name: "nu-proj + cone sep ≡ GRH", statement: "equivalence on $\\PD^+$", conditions: "after annihilation", dependencies: ["A1–A4","C"], status: "program", src: "sec:Synth"}
+    asks: "Give a 1-line invariant reason for each positivity (e.g., PSD multiplier or $L^2$ Plancherel)."
+
+  dependency_graph:
+    nodes: ["A1","A2","A3","R","A4","A5","C","Backbone","Gateway"]
+    edges: ["A1->A2","A1->Backbone","A2->Backbone","A3->Backbone","R->Backbone","A4->A5","A5->Backbone","C->Gateway","Backbone->Gateway"]
+    asks: "Mark optional branches/cycles; note where Part II/III plug in ($\\TTnu$ construction)."
+
+  proof_skeletons:
+    items:
+      - id: "Backbone"
+        steps: ["A1 slice frame ⇒ raywise model", "A2 $\\Psi_N$ Loewner ↓ $T_{1/2}$", "R: factorization + Gaussian majorants", "A3: PV growth controls spectral", "A4–A5: amplifier + untwisting; C: separation"]
+        fragile_step: "Loewner limit $\\Psi_N\\downarrow T_{1/2}$ uniformly on rays"
+        alt_route: "Direct spectral calculus via Helffer–Sjöst rand to realize $T_{1/2}$"
+      - id: "Gateway"
+        steps: ["Define $\\TTnu$ (Part II)", "Show annihilation on $\\PD^+$", "Use cone separation to force zero functional", "Translate via EF to zero locus", "Conclude GRH equivalence"]
+        fragile_step: "Construction/properties of $\\TTnu$"
+        alt_route: "Alternative annihilators via second moments"
+    asks: "Identify the single step most likely to fail in higher rank (e.g., raywise approximation uniformity)."
+
+  limits_and_continuity:
+    t_passages:
+      - {limit: "window uniformity", note: "constants $A_0,B_0$ uniform on $[\\tmin,\\tzero]$", src: "lem:gauss"}
+      - {limit: "Loewner $N\\to\\infty$", note: "$\\Psi_N(A)\\downarrow f(A)$ strongly", src: "prop:Loewner-fc"}
+      - {limit: "density", note: "BL dense in $\\SAa$", src: "sec:C density lemma"}
+    constants_table:
+      - {name: "C1(m,K)", origin: "A3 PV growth", uniformity: "in $t$", dep: "$m,[K:\\Q]$", src: "lem:A3-growth"}
+      - {name: "c_X", origin: "$\\|\\rho_X\\|^2$", uniformity: "geom.", dep: "X", src: "sec:R"}
+      - {name: "A0,B0", origin: "Gaussian", uniformity: "window", dep: "X,\\tmin,\\tzero", src: "lem:gauss"}
+    asks: "Provide exact places where constants blow up (e.g., $t\\downarrow0$, $a\\downarrow1/2$)."
+
+  checks_and_recipes:
+    numerical_recipe: "Choose BL test; compute EF pieces using eq:MS and Gaussian majorant; verify sign/size numerically."
+    symbolic_recipe: "Verify $\\widehat g_{\\Phi,t}=\\widehat{k_t}\\widehat g_\\Phi$ via spherical/Abel/cosine transforms."
+    pseudocode: "Build weights $w_{\\frak q}(\\chi)\\ge0$; compute LHS/RHS of eq:A4-main; average twists; apply cor:A5-ineq."
+    toy_numeric:
+      test: "$\\widehat g(x)=e^{-\\alpha x}\\,\\chi_{(0,X]}(x)$ with $\\alpha=1/3,X=5$"
+      rhoW_int: "symbolic $\\int_0^X e^{-\\alpha x}\\,\\rho_W(x)\\,dx$ (UNKNOWN $\\rho_W$)"
+      primes: "first terms $\\sum_{p\\le P}\\sum_{k\\le X/(2\\log p)} (\\log p) p^{-k/2}\\widehat g(2k\\log p)$"
+      note: "Check units/signs with eq:MS and Gaussian tails."
+    asks: "Provide a canonical toy input to smoke-test constants/signs."
+
+  scope_and_unconditionality:
+    unconditional: ["A1–A5 constructions/bounds", "R* ramified damping", "Cone separation on $\\SAa$"]
+    program_inputs:
+      - {id: "Aν", formal_statement: "Existence/properties of $\\TTnu$; annihilation on $\\PD^+$", current_status: "proved in Parts II–III", needed_for: "Gateway", candidates_for_proof: "spectral gap/annihilation"}
+      - {id: "A0", formal_statement: "zero counting bound $N_\\pi(T)$", current_status: "standard", needed_for: "A3", candidates_for_proof: "Rankin–Selberg"}
+    asks: "State a minimum viable theorem if Aν is weakened (e.g., partial gaps)."
+
+  limitations:
+    list: ["Spherical ($K$-bi-invariant) tests only", "Uniformity tied to fixed window in $t$", "Dependence on MS normalization", "No explicit GL(1) Weil functional here"]
+    asks: "Give counterexamples when dropping BL/$\\SAa$ or PV; specify failure modes without unitarity."
+
+  projections:
+    items: ["Port to other groups via spherical models", "Extend to non-spherical data with matrix coefficients", "Optimize constants in A3/R*", "Numerical verifier for cone separation"]
+    asks: "Prioritize milestones (Aν construction; quantitative cone separation) and a verification plan with benchmarks."

@@ -1,0 +1,223 @@
+a2a_doc:
+  meta:
+    title_long: "Heisenberg Holonomy V: The $\\nu$‑involution as a Geometric Operator on the Adelic Heisenberg Moduli Space"
+    title_short: "Heisenberg Holonomy V"
+    authors: ["Michael Seiler"]
+    venue: UNKNOWN
+    year: UNKNOWN
+    version: "v1 preprint (LaTeX)"
+    url: UNKNOWN
+    area: "analytic number theory; explicit formula; automorphic L‑functions; Heisenberg/adelic geometry"
+    normalization: "Maaß–Selberg fixed‑heat (MS); log–Mellin on the u‑line"
+    primary_objects:
+      - name: "H_1(A)"
+        type: "adelic Heisenberg group/manifold"
+        role: "host geometry with global modulus flow"
+        src: "sec:adelic-ledger"
+      - name: "M(H_1(A))"
+        type: "moduli space"
+        role: "holonomy profiles W(u) on the modulus flow"
+        src: "sec:adelic-ledger"
+      - name: "T_ν"
+        type: "algebraic involution"
+        role: "functional‑equation action on spectral tests"
+        src: "eq:Tnu-spectral"
+      - name: "G_ν"
+        type: "geometric operator"
+        role: "realizes T_ν on holonomy profiles"
+        src: "thm:Gnu-realization"
+      - name: "A_5"
+        type: "positive amplifier"
+        role: "spectral localization with gap"
+        src: "sec:A5-geometry; lem:a5-symbol"
+      - name: "R*"
+        type: "damping mechanism"
+        role: "geometric smoothing of ramified/irregular parts"
+        src: "sec:A5-geometry"
+    normalization_sheet:
+      finite_places: "Euler factors L_p(s) via Satake {α_{p,j}}; unramified degree m_p=m; standard local measures."
+      arch_place: "Completed Γ_ℝ, Γ_ℂ factors; functional‑equation phase ε_π; PV conventions standard."
+      dictionary_constants: "Log–Mellin on u=log x with (F_u W)(τ)=Ẇ(τ); W_f↔f(1/2+iτ)."
+    identities_checked:
+      - "W_{T_ν f}=G_ν(W_f) with G_ν= T_π∘R on u‑line; src: thm:Gnu-realization; lem:log-mellin; lem:upi-multiplier."
+      - "Hol[φ]=∑_v⟨W_v,φ⟩ equals Weil explicit‑formula ledger; src: eq:ledger-pairing; thm:adelic-ledger."
+      - "A_5 dominates low‑frequency projector Π_{≤δ} up to ε(P); src: lem:a5-dominance."
+    asks: "If any constant differs from Iwaniec–Kowalski/Weil conventions, specify and justify with a table (finite/arch)."
+
+  problem_and_claim:
+    problem: "Realize the functional‑equation $\\nu$‑involution and explicit formula as geometric holonomy on the adelic Heisenberg host, and explain the trilogy’s annihilation principle geometrically."
+    core_claims:
+      - {id: C1, name: "Geometric realization of T_ν", status: proved, statement: "G_ν acts on profiles so that W_{T_ν f}=G_ν(W_f) (G_ν=T_π∘R).", src: "thm:Gnu-realization; eq:Tnu-spectral; lem:log-mellin"}
+      - {id: C2, name: "Geometric Annihilation", status: proved, statement: "The $\\nu$‑odd (chiral) holonomy subspace is annihilated under A1–A5+R*, forbidding nontrivial chiral states.", src: "thm:geometric-annihilation"}
+      - {id: C3, name: "Holonomy explicit formula", status: proved, statement: "Hol[φ] yields classical Weil EF with zero/discrete spectra and conductor/arch terms.", src: "thm:adelic-ledger; eq:explicit-formula"}
+    route_map:
+      - {id: R1, name: "Log–Mellin ledger", inputs: "MS fixed‑heat ledger; log–Mellin; parity", output: "G_ν=T_π∘R; C1", status: proved}
+      - {id: R2, name: "A5+R* geometry", inputs: "A_5 gap; damping; parity split", output: "chiral energy→0; C2", status: proved}
+      - {id: R3, name: "Adelic ledger⇒EF", inputs: "local weights W_v on S^1; pairing Hol[φ]", output: "Weil EF; C3", status: proved}
+    asks: "Provide a concise 'why now' and the single minimal new ingredient over Parts I–IV."
+
+  notation:
+    symbols:
+      H_1(A): "adelic Heisenberg group; host"
+      M(H_1(A)): "moduli of holonomy profiles"
+      u: "log modulus coordinate; u∈ℝ"
+      Ẇ(τ): "u‑Fourier transform"
+      R: "(RW)(u)=W(−u) reflection"
+      T_π: "unitary multiplier (symbol u_π(τ))"
+      u_π(τ): "ε_π ∏_{v|∞,j} Γ_v(1/2+μ_{j,v}+iτ)/Γ_v(1/2+μ_{j,v}−iτ)"
+      A_5≡A_q: "amplifier with symbol â_5(τ)"
+      Hol[φ]: "total holonomy pairing on S^1"
+    equivalences:
+      T_ν: "spectral s↦1−s with phase; standard FE action"
+      G_ν: "geometric avatar of T_ν on profiles"
+      SA^2(a): "specialized analytic class for tests (trilogy)"
+    asks: "List domains/codomains for R,T_π,A_5,G_ν and any hidden identifications (e.g., X=G/K, spherical side)."
+
+  spaces_and_classes:
+    classes:
+      - name: "SA^2(a)"
+        def: "Specialized analytic test class used on MS ledger; stable under R and T_π."
+        norms: "u‑Sobolev/heat‑weighted L^2; exact seminorms per trilogy."
+        src: "sec:adelic-ledger (A1–A5 mention)"
+      - name: "Profiles W"
+        def: "L^2(ℝ_u) holonomy profiles with fixed‑heat regularity."
+        norms: "L^2_u with heat/seminorms."
+    asks: "Give minimal example and counterexample for each class (failure of parity/decay)."
+
+  assumptions:
+    list:
+      - {id: A1, statement: "Fixed‑heat functional infrastructure (MS ledger) well‑posed on profiles.", params: "t∈(0,t_0], a>0", proved_here: false, proof_src: "trilogy:general", portability: "expected GL(m)"}
+      - {id: A2, statement: "Positivity of Weil energy functional on admissible tests.", params: "depends on a and heat scale", proved_here: false, proof_src: "trilogy:general", portability: "sensitive to normalization"}
+      - {id: A5, statement: "Amplifier with strict spectral gap η>0 and localization window τ_0≈(log P)^{-1}.", params: "prime cutoff P, weights", proved_here: summarized, proof_src: "sec:A5-geometry; lem:a5-symbol", portability: "GL(m) blueprint provided"}
+      - {id: R*, statement: "Ramified damping with exponential suppression.", params: "scale linked to conductor Q", proved_here: summarized, proof_src: "sec:A5-geometry", portability: "depends on local data"}
+    counterexamples_or_limits: "Weakening A5 gap or removing R* breaks annihilation of chiral energy."
+    asks: "State sharpness of η(P) and explicit dependence on P,a."
+
+  constructions_and_kernels:
+    operators:
+      - {name: R, formula: "(RW)(u)=W(−u)", props: "unitary; parity splitter", src: "paper:general"}
+      - {name: T_π, formula: "Ẇ↦u_π(τ)Ẇ", props: "unitary Fourier multiplier", src: "lem:upi-multiplier; def:upi-normalization"}
+      - {name: G_ν, formula: "G_ν=T_π∘R on profiles", props: "involution; Weyl‑invariant", src: "thm:Gnu-realization"}
+      - {name: A_5, formula: "symbol â_5(τ)∈[0,1], â_5≈1 on |τ|≤τ_0", props: "PSD; gap η>0", src: "lem:a5-symbol; lem:a5-dominance"}
+      - {name: R*, formula: "ramified damping kernel (exponential)", props: "smoothing; PSD", src: "sec:A5-geometry"}
+    compatibility_checklist:
+      commute: {e^{-tA}↔M(w,0): UNKNOWN, e^{-tA}↔Ψ_{1/2}: UNKNOWN, M(w,0)↔Ψ_{1/2}: UNKNOWN}
+      invariance: {Weyl_invariance: "G_ν,A_5 expected", boundedness: "R,T_π,A_5 bounded on L^2_u"}
+      model_independence: "R_t/ledger independent up to unitary equivalence."
+    asks: "Specify functional calculus used (Fourier/Mellin) and where symbol bounds enter."
+
+  explicit_formula_block:
+    geometric_side: "Hol[φ]=(1/2π)∫_0^{2π} φ(θ) W_global(θ) dθ=∑_v (1/2π)∫ φ W_v dθ."
+    spectral_side: "∑_ρ ẑφ_*(ρ) − ẑφ_*(1)ord_{s=1}L − ẑφ_*(0)ord_{s=0}L + C[φ]."
+    regularization: "Paley–Wiener φ; cosine Fourier on critical line; PV for poles."
+    weil_GL1:
+      rho_W: "Weil density on circle S^1 induced by local weights."
+      dictionary: "φ(θ)↔ẑφ_*(1/2+i n) via even Fourier."
+    ramified_ledger:
+      when_present: "p|Q or arch∞"
+      sign: "depends on local data; bounded by conductor/gamma growth"
+      bound: "controlled by damping R*"
+      vanishing_cases: "all finite p unramified"
+    positivity_table:
+      - {term: "prime/unramified", status: "≥0 under SA^2(a) A1–A2", condition: "amplified low‑freq window"}
+      - {term: "ramified", status: "suppressed", condition: "R* applied"}
+      - {term: "spectral zeros", status: "signed via multiplicities", condition: "parity via G_ν"}
+    src: "sec:adelic-ledger; thm:adelic-ledger; eq:ledger-pairing; eq:explicit-formula"
+    asks: "State exact W_v for unramified p (Satake) and arch∞ mean term."
+
+  main_results:
+    items:
+      - {id: T1, name: "G_ν realizes T_ν", statement: "W_{T_ν f}=G_ν(W_f) with G_ν=T_π∘R.", conditions: "tests in SA^2(a).", dependencies: ["L1","L2"], status: proved, src: "thm:Gnu-realization"}
+      - {id: T2, name: "Geometric Annihilation", statement: "No nontrivial $\\nu$‑odd holonomy states.", conditions: "A1–A5,R*.", dependencies: ["A2","A5","R*"], status: proved, src: "thm:geometric-annihilation"}
+      - {id: T3, name: "Adelic ledger ⇒ EF", statement: "Hol[φ] equals Weil EF.", conditions: "L in Selberg/automorphic class.", dependencies: ["D1"], status: proved, src: "thm:adelic-ledger"}
+      - {id: L1, name: "Unitary u_π multiplier", statement: "|u_π|=1; smooth symbol; T_π unitary.", conditions: "arch data normalized.", dependencies: [], status: proved, src: "lem:upi-multiplier; def:upi-normalization"}
+      - {id: L2, name: "Log–Mellin dictionary", statement: "Ẇ=f(1/2+iτ); T_ν on f ↔ T_π∘R on W.", conditions: "Mellin/FFT on u.", dependencies: [], status: proved, src: "lem:log-mellin"}
+      - {id: L3, name: "A5 localization", statement: "⟨A_5 W,W⟩≥⟨Π_{≤δ}W,W⟩−ε∥W∥².", conditions: "δ≈(log P)^{-1}.", dependencies: [], status: proved, src: "lem:a5-dominance"}
+    asks: "Give an invariant‑theoretic one‑liner for each positivity (e.g., Bochner/Plancherel)."
+
+  dependency_graph:
+    nodes: ["A1","A2","A5","R*","L1","L2","L3","T1","T2","T3"]
+    edges:
+      - "A1 -> T3"
+      - "L1 -> T1"
+      - "L2 -> T1"
+      - "A2 -> T2"
+      - "A5 -> T2"
+      - "R* -> T2"
+      - "T1 -> parity-split"
+      - "T3 -> applications"
+    asks: "Mark optional branches/cycles (e.g., where R* could be weakened)."
+
+  proof_skeletons:
+    T1:
+      steps:
+        - "Input: f∈SA^2(a); define W_f via inverse log–Mellin."
+        - "Transform: T_ν on f ⇒ multiply by u_π and reflect τ↦−τ."
+        - "Inequality: unitary T_π; R isometry."
+        - "Limit: none (algebraic)."
+        - "Conclusion: W_{T_ν f}=T_π(R W_f)=G_ν(W_f)."
+      fragile_step: "Normalization of u_π (branch/log)."
+      alt_route: "Stationary phase on kernel level."
+    T2:
+      steps:
+        - "Input: parity split via G_ν (W=±G_ν W)."
+        - "Apply A_5: localization + spectral gap reduce odd energy."
+        - "Apply R*: suppress ramified/irregular contributions."
+        - "Use A2: nonnegativity of energy ⇒ odd component zero."
+        - "Conclusion: chiral subspace trivial."
+      fragile_step: "Quantitative gap vs damping balance."
+      alt_route: "Direct convexity/Bochner positivity."
+    T3:
+      steps:
+        - "Input: local weights W_v on S^1."
+        - "Pair: Hol[φ]=∑_v⟨W_v,φ⟩."
+        - "Transform: Mellin/Cauchy residues → zeros/poles."
+        - "Assemble: prime/arch/zero terms with PV."
+        - "Conclusion: Weil EF."
+      fragile_step: "Interchange of sum/integral and PV limits."
+      alt_route: "Guinand–Weil distributional identity."
+    asks: "Identify the unique higher‑rank failure mode."
+
+  limits_and_continuity:
+    t_down_0: "Fixed‑heat regularization (MS) with uniform bounds on SA^2(a) seminorms; exact constants not tabulated here."
+    constants_table:
+      - {name: "η(P)", source: "A5 gap", uniform_in_t: "N/A", dep: "P"}
+      - {name: "ε(P)", source: "A5 symbol error", uniform_in_t: "yes", dep: "P"}
+      - {name: "arch mean term", source: "Γ‑factors", uniform_in_t: "yes", dep: "μ_k"}
+    asks: "Give where constants blow up (P→∞, conductor Q→∞)."
+
+  checks_and_recipes:
+    numerical_recipe: "Approximate â_5(τ) by a compactly supported low‑pass; verify ⟨A_5W,W⟩≈∥Π_{≤δ}W∥²."
+    symbolic_recipe: "From Ẇ=f(1/2+iτ), compute Ẇ_{T_ν f}=u_π(τ)Ẇ(−τ); take inverse FFT to get G_ν W."
+    pseudocode: "Build W_v; Hol[φ]=∑_v⟨W_v,φ⟩; map via residues to zeros/poles; add conductor/arch terms."
+    toy_numeric:
+      alpha: 0.5
+      X: 10
+      lines:
+        - "∫_0^∞ ĝ(x)ρ_W(x)dx with ĝ(x)=e^{−αx}χ_{(0,X]}= F(α,X) (symbolic)."
+        - "Prime terms: ∑_{p^n≤e^X} (log p) φ(n log p) (α_{p,j}^n+α_{p,j}^{−n})/p^{n/2}."
+        - "Zero terms: ∑_ρ ĝ_*(ρ) with ĝ_*(s)=∫_0^X e^{−αx}cos((s−1/2)x)dx."
+    asks: "Provide a canonical (φ, ĝ) pair used in the paper to smoke‑test constants/signs."
+
+  scope_and_unconditionality:
+    unconditional: ["T1 realization", "T3 EF from ledger", "A5 localization lemmas as stated"]
+    programmatic: ["Global A1–A5 framework; quantitative R*; full GL(m) extension"]
+    program_inputs:
+      - {id: PI1, formal_statement: "A5 gap η(P)>0 uniform on SA^2(a).", current_status: "asserted from trilogy", needed_for: "T2", candidates_for_proof: "large sieve/Beurling–Selberg"}
+      - {id: PI2, formal_statement: "R* exponential damping at ramified places.", current_status: "asserted", needed_for: "T2,T3", candidates_for_proof: "local harmonic analysis"}
+    asks: "State a minimum viable theorem if A5 is weakened (e.g., logarithmic gap)."
+
+  limitations:
+    list:
+      - "Normalization depends on MS fixed‑heat ledger."
+      - "Explicit local weights W_v only sketched; formulas omitted."
+      - "Results stated for Selberg/automorphic class; general Selberg‑class subtleties at ramified p."
+    asks: "Give counterexamples when A5 or R* is dropped."
+
+  projections:
+    items:
+      - "Blueprint to GL(m): carry G_ν via u_π of π; extend A5 localization to higher rank."
+      - "Port holonomy parity to families; study low‑lying zeros via geometric localization."
+      - "Numerical ledger on S^1 for ζ and Dirichlet L; validate constants."
+    asks: "Prioritize milestones (GL(2) first), list verification steps, and note obstacles (ramified models, explicit A5 construction)."
+

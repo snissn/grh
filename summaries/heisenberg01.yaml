@@ -1,0 +1,228 @@
+a2a_doc:
+  meta:
+    title_long: "Cauchy, Laurent, and Residues as Holonomy on a Constrained Heisenberg Slice"
+    title_short: "Cauchy, Laurent, and Residues as Holonomy on H₁"
+    authors: ["Michael Seiler"]
+    venue: "preprint (CC BY 4.0 license noted)"
+    year: "UNKNOWN"
+    version: "preprint"
+    url: "UNKNOWN"
+    area: "complex analysis; CR/Heisenberg geometry; holonomy"
+    normalization: "α_H=dθ on H₁; α_C=dz/z on |z|=1; quarter‑turn J with J²=-I; 1/(2πi) Cauchy norm."
+    primary_objects:
+      - name: "ℍ"
+        type: "contact 3‑manifold (ℝ³, θ=dt+x dy−y dx)"
+        role: "ambient Heisenberg group"
+      - name: "H₁"
+        type: "constrained slice {x²+y²=1}≅S¹×ℝ"
+        role: "base for holonomy calculus"
+      - name: "α_H"
+        type: "1‑form on H₁"
+        role: "pulled back x dy−y dx; equals dθ"
+      - name: "α_C"
+        type: "1‑form on |z|=1"
+        role: "log diff dz/z"
+      - name: "J"
+        type: "2×2 matrix [[0,-1],[1,0]]"
+        role: "quarter‑turn; model for i"
+      - name: "A_g"
+        type: "connection on S¹×ℝ"
+        role: "dt+(z g(z))α_H; encodes residues via holonomy"
+      - name: "proj"
+        type: "map H₁→ℝ²"
+        role: "‘shadow’ projection to the plane"
+    normalization_sheet:
+      finite_places: "UNKNOWN"
+      arch_place: "UNKNOWN"
+      dictionary_constants:
+        - "dz = z α_C = J z α_H on |z|=1 (src: lem:kernel-identity)"
+        - "α_C = J α_H on |z|=1 (src: eq:kernel-identity)"
+        - "Cauchy 1/(2πi) normalization on S¹ (src: paper:general)"
+    identities_checked:
+      - "α_C = J α_H on |z|=1 (eq:kernel-identity; src: lem:kernel-identity)"
+      - "a_n = (1/2πi)∮ f(z) z^{-(n+1)}dz = (1/2π)∫ f(e^{Jθ})e^{-Jnθ}α_H (src: thm:coeff, eq:coeff)"
+      - "dz = J z α_H along |z|=1 (src: lem:kernel-identity)"
+      - "(1/2πi)∮ g(z)dz = (1/2π)∫ (z(θ)g(z(θ)))α_H = Σ Res g (src: thm:res-hol, eq:res-equality)"
+      - "Δt = −∫ (z g(z)) α_H = −2π Σ Res g (src: thm:res-hol, eq:vert-hol)"
+    asks: "If any constant differs from a standard reference, cite it explicitly and justify (orientation, 2π factors, J vs i)."
+
+  problem_and_claim:
+    problem: "Reinterpret classical one‑variable contour calculus (Cauchy/Laurent/residues) as a holonomy calculus on a constrained Heisenberg slice H₁, with the complex plane appearing as its projection."
+    core_claims:
+      - {id: L1, name: "Kernel identity", status: proved, statement: "On |z|=1, α_C = J α_H.", src: lem:kernel-identity}
+      - {id: T1, name: "Coefficient extraction", status: proved, statement: "Laurent/Cauchy coefficients equal holonomy Fourier coefficients on S¹ (eq:coeff).", src: thm:coeff}
+      - {id: T2, name: "Residues as holonomy", status: proved, statement: "Vertical holonomy for A_g equals −2π Σ Res g; equivalently (1/2πi)∮ g dz = (1/2π)∫(z g)α_H.", src: thm:res-hol}
+      - {id: P1, name: "Centers/radii absorption", status: proved, statement: "For z=z₀+r e^{Jθ}, centers/radii are absorbed into the weight; kernel remains α_H.", src: prop:center-radius}
+      - {id: P2, name: "Distributional residue theorem", status: proved, statement: "d(g dz)=∂̄g d\bar z∧dz=2πi Σ Res g δ_a dx∧dy; Stokes gives residue theorem.", src: sec:distribution}
+    route_map:
+      - {id: R1, name: "Form‑theoretic route", inputs: ["param z=e^{Jθ}", "α_C=Jα_H"], output: "T1,T2", status: "proved"}
+      - {id: R2, name: "Connection/holonomy route", inputs: ["A_g=dt+(z g)α_H"], output: "T2 via Δt", status: "proved"}
+      - {id: R3, name: "Distributional curvature", inputs: ["∂̄(1/(z-a))=πδ_a"], output: "Residue theorem", status: "proved"}
+    asks: "Provide ‘why now’ and the single minimal new ingredient versus standard CR/Heisenberg expositions."
+
+  notation:
+    symbols:
+      "ℍ": "Heisenberg group (ℝ³, θ=dt+x dy−y dx)"
+      "H₁": "slice {x²+y²=1}≅S¹×ℝ"
+      "S¹": "unit circle; θ∈[0,2π)"
+      "𝔻": "unit disk in ℂ"
+      "α_H": "dθ on H₁"
+      "α_C": "dz/z on |z|=1"
+      "J": "quarter‑turn [[0,-1],[1,0]]; J²=-I"
+      "z(θ)": "e^{Jθ}"
+      "A_g": "dt+(z(θ)g(z(θ)))α_H"
+      "Δt": "vertical holonomy shift after one loop"
+      "Res": "residue operator"
+      "proj": "H₁→ℝ², (x,y,t)↦(x,y)"
+      "Φ": "conformal map 𝔻→Ω"
+      "∂̄": "Cauchy–Riemann operator"
+      "H²(𝔻)": "Hardy space"
+    equivalences:
+      "i ↔ J": "2D real model"
+      "dz = J z α_H": "on |z|=1"
+      "Fourier coefficients on S¹ ↔ Laurent coefficients": "via eq:coeff"
+    asks: "List domains/codomains for all maps (proj, Φ), and any hidden identifications (e.g., ℂ≅ℝ² with J)."
+
+  spaces_and_classes:
+    classes:
+      - name: "Hol(𝔻̄_ε)"
+        membership: "f holomorphic on a nbhd of the closed unit disk"
+        norms: "sup on 𝔻̄_ε; boundary values on S¹"
+      - name: "Mer(annulus S¹)"
+        membership: "g meromorphic on an annulus containing S¹; no poles on S¹"
+        norms: "principal value not needed when no pole on S¹"
+      - name: "H²(𝔻)"
+        membership: "f holomorphic in 𝔻; radial boundary f*∈L²(S¹)"
+        norms: "∥f∥²=(1/2π)∫|f(e^{Jθ})|² α_H=Σ_{n≥0}|a_n|²"
+      - name: "Jordan Ω with C^{1,α} boundary"
+        membership: "Φ:𝔻→Ω conformal; Φ'∈C^{α}(S¹)"
+        norms: "pullback measure |Φ'(e^{iθ})| dθ"
+    asks: "Give minimal examples/counterexamples for each class (e.g., pole on S¹; rough boundary)."
+
+  assumptions:
+    items:
+      - {id: A1, statement: "S¹ oriented CCW; α_H=dθ; z(θ)=e^{Jθ}.", params: "θ∈[0,2π)", proved_here: true, proof_src: "app:signs", portability: "any smooth loop with consistent orientation"}
+      - {id: A2, statement: "f holomorphic on a nbhd of 𝔻̄.", params: "radius>1 if needed", proved_here: false, proof_src: "thm:coeff (uses)", portability: "to other loops via conformal map"}
+      - {id: A3, statement: "g meromorphic on annulus around S¹; no poles on S¹.", params: "finite order poles", proved_here: false, proof_src: "thm:res-hol (uses)", portability: "standard"}
+      - {id: A4, statement: "Distributional identity ∂̄(1/(z-a))=πδ_a.", params: "in 𝒟'(ℂ)", proved_here: false, proof_src: "sec:distribution", portability: "classical"}
+      - {id: A5, statement: "Parameterization invariance for 1‑form integrals under orientation‑preserving reparam.", params: "θ↦ϕ(θ), ϕ' > 0", proved_here: true, proof_src: "app:signs", portability: "general"}
+    counterexamples_or_limits: ["Pole on S¹ invalidates naive equalities without PV; reversing orientation inserts − sign (src: app:signs)."]
+    asks: "State sharpness (e.g., minimal boundary regularity for Φ, necessity of z‑factor)."
+
+  constructions_and_kernels:
+    operators:
+      - {name: "α_H", formula: "dθ on H₁", properties: "closed on S¹; invariant under rotations"}
+      - {name: "α_C", formula: "dz/z on |z|=1", properties: "pullback by z=e^{Jθ} gives Jα_H"}
+      - {name: "A_g", formula: "dt+(z g(z))α_H", properties: "vertical holonomy encodes Σ Res g"}
+    identities:
+      - "dz = z α_C = J z α_H (|z|=1)"
+      - "α_C = J α_H (kernel identity)"
+    compatibility_checklist:
+      commute_pairwise: "UNKNOWN"
+      weyl_invariant: "UNKNOWN"
+      bounded_on_Hilbert_space: "UNKNOWN"
+      model_independence_R_t: "UNKNOWN"
+    asks: "Specify functional calculus used (none/elementary) and where symbol bounds enter, if any."
+
+  explicit_formula_block:
+    geometric_side: "UNKNOWN"
+    spectral_side: "UNKNOWN"
+    regularizations: "UNKNOWN"
+    weil_functional_GL1: "UNKNOWN"
+    rho_W_density: "UNKNOWN"
+    ramified_ledger: {when_present: "UNKNOWN", sign: "UNKNOWN", bound: "UNKNOWN", vanishing_cases: "UNKNOWN"}
+    positivity_table: "UNKNOWN"
+    asks: "Confirm not applicable; else map each EF term to a holonomy analogue."
+
+  main_results:
+    results:
+      - {id: L1, name: "Kernel identity", statement: "α_C=J α_H on |z|=1.", conditions: "z(θ)=e^{Jθ}", dependencies: [A1], status: proved, src: lem:kernel-identity}
+      - {id: T1, name: "Coefficient extraction", statement: "a_n=(1/2πi)∮ f(z)z^{-(n+1)}dz=(1/2π)∫ f(e^{Jθ})e^{-Jnθ}α_H.", conditions: "f holomorphic near 𝔻̄", dependencies: [A1,A2,L1], status: proved, src: thm:coeff}
+      - {id: T2, name: "Residues as holonomy", statement: "Δt=−∫(z g)α_H=−2πΣ Res g and (1/2πi)∮ g dz=(1/2π)∫(z g)α_H.", conditions: "g meromorphic annulus; no S¹ poles", dependencies: [A1,A3,L1], status: proved, src: thm:res-hol}
+      - {id: P1, name: "Centers/radii absorption", statement: "For z=z₀+r e^{Jθ}, weights absorb (z₀,r); kernel α_H unchanged.", conditions: "holomorphic near circle", dependencies: [A1], status: proved, src: prop:center-radius}
+      - {id: P2, name: "Distributional residue theorem", statement: "d(g dz)=2πi Σ Res g δ_a dx∧dy; Stokes ⇒ residue theorem.", conditions: "no poles on ∂Ω", dependencies: [A4], status: proved, src: sec:distribution}
+    asks: "Provide one‑line invariant explanation for positivity/monotonicity claims (if any)."
+
+  dependency_graph:
+    nodes: [A1,A2,A3,A4,A5,L1,T1,T2,P1,P2]
+    edges:
+      - "A1 -> L1"
+      - "L1 -> T1"
+      - "A2 -> T1"
+      - "L1 -> T2"
+      - "A3 -> T2"
+      - "A4 -> P2"
+      - "A1 -> P1"
+    asks: "Mark any optional branches or cycles; indicate where distributional route can replace form‑route."
+
+  proof_skeletons:
+    T1:
+      steps:
+        - "Param: z=e^{Jθ}, dz=J e^{Jθ} dθ."
+        - "Compute ∮ f(z)z^{-(n+1)}dz = ∫ f(e^{Jθ})e^{-J(n+1)θ}(J e^{Jθ})dθ."
+        - "Cancel e^{Jθ}; divide by 2πi; use α_H=dθ to get Fourier coefficient."
+        - "Edge cases n<0 handled identically via Laurent."
+      fragile_step: "Orientation and J‑vs‑i identification (signs/2π)."
+      alt_route: "Hardy boundary values and orthogonality on L²(S¹) (src: sec:hardy)."
+    T2:
+      steps:
+        - "Use dz=J z α_H on |z|=1."
+        - "(1/2πi)∮ g dz = (1/2π)∫ (z g) α_H."
+        - "Residue theorem gives equality to Σ Res g."
+        - "Parallel transport for A_g: dt+(z g)α_H=0 ⇒ Δt=−∫(z g)α_H."
+      fragile_step: "Necessity of the z‑factor in the weight."
+      alt_route: "Distributional curvature d(g dz)=2πi Σ Res g δ_a and Stokes (src: sec:distribution)."
+    P1:
+      steps:
+        - "Affine change z=z₀+r w, w=e^{Jθ}."
+        - "Kernel α_C (hence α_H) unchanged; weight picks up Φ'(w)=r."
+        - "Apply T1/T2 on S¹; pull back by Φ."
+      fragile_step: "Regularity/branch issues for Φ and orientation."
+      alt_route: "Direct parameterization of the circle and substitution."
+    asks: "Identify the unique step most likely to fail in higher rank/CR settings."
+
+  limits_and_continuity:
+    passages:
+      - "Hardy: radial limits f* exist a.e.; L² isometry to coefficients (src: sec:hardy)."
+      - "Distributional: ∂̄(1/(z-a))=πδ_a; Stokes valid for Lipschitz boundaries (src: sec:distribution)."
+    constants_table:
+      - {name: "2π factors", uniform_in_t: "N/A", depends_on: "orientation", arises_in: "Cauchy/residue normalizations"}
+      - {name: "Φ'", uniform_in_t: "N/A", depends_on: "Ω regularity", arises_in: "domain change"}
+    asks: "State where constants blow up (e.g., moduli of continuity of Φ' near corners)."
+
+  checks_and_recipes:
+    numerical_recipe: "For g(z)=1/(z−a), |a|<1, compute (1/2π)∫ (z g) dθ = 1 and Δt=−2π (src: sec:examples)."
+    symbolic_recipe: "Verify α_C=Jα_H via z(θ)=e^{Jθ}; substitute into Cauchy/Residue integrals to match holonomy forms."
+    pseudocode: |
+      Input f,g on annulus; param θ∈[0,2π).
+      z = expJ(θ);  αH = dθ;  val_coeff(n) = (1/2π)∫ f(z) exp(−J n θ) αH.
+      val_res = (1/2π)∫ z*g(z) αH;  Δt = − val_res * 2π.
+    toy_numeric:
+      - "Take f(z)=z^m. (1/2π)∫_0^{2π} e^{J m θ} e^{−J n θ} dθ = δ_{mn}."
+      - "Take g(z)=1/(z−a), |a|<1. (1/2πi)∮ g dz = 1."
+      - "Thus Δt=−2π for A_g with this g."
+    asks: "Provide a canonical smoke‑test input emphasizing sign/orientation (e.g., clockwise parameterization)."
+
+  scope_and_unconditionality:
+    unconditional: ["L1,T1,T2,P1,P2 under stated function‑class hypotheses."]
+    program_inputs:
+      - {id: PI1, formal_statement: "∂̄(1/(z−a))=πδ_a in 𝒟'(ℂ).", current_status: "standard", needed_for: "P2", candidates_for_proof: "distribution theory"}
+      - {id: PI2, formal_statement: "Φ boundary regularity for domain change.", current_status: "standard under C^{1,α}", needed_for: "extensions", candidates_for_proof: "classical conformal mapping"}
+    asks: "What is the minimum viable theorem if Φ has only rectifiable boundary data?"
+
+  limitations:
+    list:
+      - "One complex variable; circle S¹ as base; general loops handled by conformal pullback."
+      - "Requires g free of poles on S¹ unless PV used."
+      - "Higher‑dimensional ℍ_n and nontrivial bundles not treated."
+      - "Exact function‑space development (Smirnov, H^p) only sketched."
+    asks: "Provide counterexamples when dropping the z‑factor or orientation conditions."
+
+  projections:
+    ideas:
+      - "Extend to ℍ_n slices; identify analogues of α_C=Jα_H and holonomy/residue dictionary."
+      - "General Jordan domains via Φ; quantify dependence on Φ'."
+      - "CR‑geometric rephrasing on boundaries of strictly pseudoconvex domains."
+      - "Smirnov classes on arcs; PV refinements for boundary poles."
+    asks: "Prioritize milestones (H₂ case, PV rigor, domain‑change constants) and outline a verification plan with explicit test families."
+

@@ -1,0 +1,316 @@
+a2a_doc:
+  meta:
+    title_long: "A Direct Proof of Langlands Reciprocity via Geometric Rigidity in the Fixed-Heat Ledger"
+    title_short: "Direct Proof of Langlands Reciprocity via Geometric Rigidity"
+    authors: ["Michael Seiler"]
+    venue: "preprint (unrefereed)"
+    year: 2025
+    version: "preprint v1"
+    url: "N/A"
+    area: "analytic number theory, automorphic forms, Langlands program"
+    normalization: "Maaß–Selberg (MS) ledger; Fixed-Heat EF; Heisenberg Holonomy (HH VI)"
+    primary_objects:
+      - name: "K"
+        type: "number field"
+        role: "base"
+      - name: "G=GL(m)"
+        type: "reductive group"
+        role: "automorphic side"
+      - name: "ρ"
+        type: "Galois rep Gal(\\overline K/K)→GL(m,\\CC)"
+        role: "input"
+      - name: "π"
+        type: "automorphic rep of GL(m,\\A_K)"
+        role: "output"
+      - name: "\\SAa"
+        type: "test space"
+        role: "EF tests; positive cone \\PDplus"
+      - name: "R_t"
+        type: "operator (fixed-heat)"
+        role: "Weil energy kernel"
+      - name: "T^\\nu"
+        type: "involution"
+        role: "chiral splitter"
+      - name: "C_ρ"
+        type: "functional"
+        role: "chiral holonomy witness"
+      - name: "\\Xrho"
+        type: "restricted tensor product"
+        role: "proto-automorphic container"
+      - name: "\\Srho"
+        type: "analytic structure"
+        role: "EF-side object from local L/γ"
+      - name: "\\HmA"
+        type: "adelic Heisenberg manifold"
+        role: "geometric model"
+    normalization_sheet:
+      finite_places:
+        euler_factors: "L_v(s,ρ_v) via WD(ρ_v); L_v(s,π_v) via LLC (Godement–Jacquet conv.)"
+        measure: "Haar self-dual wrt fixed additive character ψ"
+        satake: "LLC/Satake parameters per Godement–Jacquet"
+        src: "§Normalization Sheet→Finite Places"
+      arch_place:
+        gamma_factors: "Γ_v(s,ρ_v) from LLC arch types"
+        pv: "principal value on zero-side per GRH I–III"
+        spectral_measure: "MS/EF conventions in fixed-heat window t∈[t_min,t_0]"
+        src: "§Normalization Sheet→Archimedean Places"
+      dictionary_constants:
+        mapping: "MS ledger ↔ higher-holonomy model has proportionality 1 in W_Φ(u)↔ĝ_Φ(2u)"
+        src: "§Normalization Sheet→Dictionary Constants"
+    identities_checked:
+      - "Q_W(Φ)=⟨\\widehat Φ, R_t \\widehat Φ⟩ (fixed-heat inner product). src: Def ‘Weil Energy’."
+      - "Φ_asym = ½(Φ − T^\\nu Φ) (ν-odd projection). src: Def ‘Chiral Energy’."
+      - "C_ρ(Φ)=⟨Φ_asym, R_t^{(ρ)} Φ_asym⟩_{PV}. src: Def ‘Chiral Holonomy Witness’."
+      - "GAP: \\mathcal Q_\\mathcal S(\\widehat Φ_asym)≡0 for realizable structures. src: Thm ‘GAP-restated’."
+    asks: "If any constant differs from Godement–Jacquet/LLC or HH VI/GRH I–III, document the factor and its origin."
+  problem_and_claim:
+    problem: "Show that a given m-dim complex Galois rep ρ over K corresponds to an automorphic rep π of GL(m,\\A_K) with matching L-function, using a fixed-heat EF + geometric rigidity method."
+    core_claims:
+      - id: "T4"
+        name: "Langlands Reciprocity via Geometric Rigidity"
+        status: "proved"
+        statement: "∃ automorphic π of GL(m,\\A_K) with L(s,ρ)=L(s,π). src: Thm ‘Langlands Reciprocity’."
+      - id: "T3"
+        name: "Chiral State Induction"
+        status: "proved"
+        statement: "Non-automorphy of ρ induces Φ_witness with C_ρ(Φ_witness)>0. src: Thm ‘Chiral State Induction’."
+      - id: "T2"
+        name: "GAP (restated)"
+        status: "proved_elsewhere"
+        statement: "Any realized structure on \\HmA has zero ν-odd energy. src: Thm ‘GAP-restated’, citing HH VI."
+    route_map:
+      - id: "R1"
+        name: "Contradiction route"
+        inputs: ["A1–A5,R*", "GAP", "local LLC/WD", "EF in fixed-heat window"]
+        output: "π with L(s,ρ)=L(s,π)"
+        status: "proved"
+    asks: "Provide a brief ‘why now’ and identify the single minimal new ingredient beyond GRH I–III and HH VI."
+  notation:
+    symbols:
+      "\\A_K": "adeles of K"
+      "G=GL(m)": "group"
+      "ρ, ρ_v": "Galois rep and locals"
+      "π, π_v": "automorphic rep and locals"
+      "L(s,·), γ_v": "L and γ factors"
+      "Φ, \\widehat Φ": "test and transform"
+      "R_t": "fixed-heat operator"
+      "T^\\nu": "ν-involution"
+      "Q_W": "Weil energy"
+      "C_ρ": "chiral witness"
+      "\\Xrho": "⊗′_v Π(ρ_v)"
+      "\\Srho": "EF-derived structure"
+      "\\PDplus": "positive cone in \\SAa"
+      "\\HmA": "adelic Heisenberg manifold"
+    equivalences:
+      - "local WD/LLC ↔ Satake on GL(m)"
+      - "MS ledger variables ↔ higher-holonomy variables with unit proportionality"
+    asks: "State explicit domains/codomains of R_t,T^\\nu; clarify X=G/K and its spherical Fourier side \\widehat X if used."
+  spaces_and_classes:
+    classes:
+      - name: "\\SAa"
+        membership: "admissible EF tests in fixed-heat window"
+        norms: "‖·‖_{\\SAa} (a>1/2) per GRH I def:SAa (MS spherical model)"
+        src: "Def ‘MS Ledger’"
+      - name: "\\PDplus"
+        membership: "Φ≥0 in EF sense; positivity constraints A1–A2"
+        norms: "induced"
+        src: "Def ‘MS Ledger’"
+      - name: "\\Xrho"
+        membership: "collections {π′_v} locally matching ρ_v"
+        src: "Def ‘Xrho’"
+    asks: "Give minimal examples and counterexamples for each class (e.g., a Φ∈\\PDplus at finite support)."
+  assumptions:
+    items:
+      - id: "A1"
+        statement: "R_t is positive (PSD) on the MS Hilbert model."
+        params: "t∈[t_min,t_0]"
+        proved_here: false
+        proof_src: "GRH I thm:A1 (MS slice frame)"
+        portability: "likely across GL(m) with same window"
+      - id: "A2"
+        statement: "Loewner sandwich / constructive half-shift giving Q_W(Φ)=⟨\\widehat Φ,R_t\\widehat Φ⟩."
+        params: "t∈[t_min,t_0]"
+        proved_here: false
+        proof_src: "GRH I thm:A2-constructive-main"
+        portability: "uniform on fixed-heat window; GL(m) with MS model"
+      - id: "A4"
+        statement: "Positivity reserve from local data of ρ gives lower bound R_pos(Φ)≥0."
+        params: "depends on local types; uniform in t-window"
+        proved_here: false
+        proof_src: "GRH I prop:A4 (second-moment amplifier)"
+        portability: "GL(m); uses RS≥0; uniform on [t_min,t_0]"
+      - id: "R*"
+        statement: "Uniform explicit bounds in ramified ledger."
+        params: "in terms of conductor Q(ρ)"
+        proved_here: false
+        proof_src: "GRH I thm:R; prop:ramified-uniform"
+        alias: "R (GRH I)"
+        portability: "GL(m); conductor-dependent; uniform on [t_min,t_0]"
+      - id: "GAP"
+        statement: "Geometric Annihilation Principle: chiral energy vanishes for realizable structures on \\HmA."
+        params: "model identifications per HH VI"
+        proved_here: false
+        proof_src: "HH VI thm:GAP-GLm"
+        portability: "depends on holonomy model"
+    counterexamples_or_limits: "If GAP fails or A4 is too weak, contradiction route fails; weakening A1/A2 breaks positivity calculus."
+    asks: "Quantify constants, monotonicities in t, and exact dependence on Q(ρ)."
+  constructions_and_kernels:
+    operators:
+      - name: "R_t"
+        formula: "Q_W(Φ)=⟨\\widehat Φ,R_t\\widehat Φ⟩"
+        psd: true
+        src: "Def ‘Weil Energy’"
+      - name: "T^\\nu"
+        formula: "Φ_asym=½(Φ−T^\\nu Φ)"
+        psd: "N/A; involutive"
+        src: "Def ‘Chiral Energy’"
+      - name: "C_ρ"
+        formula: "C_ρ(Φ)=⟨Φ_asym,R_t^{(ρ)}Φ_asym⟩_{PV}"
+        psd: "≥0 on \\PDplus if A1–A2"
+        src: "Def ‘Chiral Holonomy Witness’"
+    factorization: "Local WD/LLC fabricate \\Srho; realization on \\HmA via HH VI."
+    compatibility_checklist:
+      commute: "Yes on MS spherical ledger (GRH I A1–A2); matches HH VI realization"
+      weyl_invariance: "yes (HH VI compatibility_checklist)"
+      boundedness: "R_t bounded on MS Hilbert space (A1–A2); T^\\nu unitary."
+      model_independence: "Realization claimed unitary-equivalent; proof src HH VI."
+    asks: "State the functional calculus for R_t and where symbol bounds enter."
+  explicit_formula_block:
+    geometric_side: "{Primes, Arch, Ram} with fixed-heat cutoff; PV at Arch."
+    spectral_side: "discrete + continuous spectrum; ν-odd piece isolated by T^\\nu."
+    weil_functional_gl1: "Host–Weil Toeplitz form on S^1: Q_μ(W)=∑*{n∈ℤ} \\widehat W(n) \\widehat μ(n); ledger equality ⟨φ,μ_Z⟩=⟨φ,μ*{arith}⟩ for even φ; PSD⇔RH (HH VI thm:host-weil; prop:PSD-RH)."
+    rho_W_density: "ρ_W(x)=\\widehat{k_t}(x)\\,\\delta_H(x), with (\\delta_H(x)=\\frac{x^{r-1}}{|W|}\\,|c(\\ii x v_H)|^{-2}) on rays (GRH I arch_place.spectral_measure; thm:R-factor)."
+    ramified_ledger:
+      when_present: "finite set of v | cond(ρ)"
+      sign: "unsigned in bounds (no fixed sign)"
+      bound: "R* bounds in terms of Q(ρ)"
+      vanishing_cases: "NONE stated (ζ-case note not applicable here)"
+    positivity_table:
+      - term: "spectral ν-odd"
+        status: "≥0 on witness by A4"
+        condition: "Φ∈\\PDplus"
+      - term: "geometric ν-odd"
+        status: "0 under GAP"
+        condition: "realizable structure on \\HmA"
+    asks: "List exact ≥0 conditions for each EF term under the chosen test class."
+  main_results:
+    results:
+      - id: "P1"
+        name: "Admissibility and Realization"
+        statement: "\\Srho admits realization as higher-holonomy profile on \\HmA."
+        conditions: "infrastructure A1–A5,R*"
+        dependencies: ["A1","A2","R*","HH VI"]
+        status: "proved"
+        src: "Prop ‘Admissibility...’"
+      - id: "L1"
+        name: "Two-Ray Incompatibility"
+        statement: "Failure of global coherence forces ν-asymmetry detectable in EF."
+        conditions: "Hyp NonAut"
+        dependencies: ["A1–A2"]
+        status: "proved"
+        src: "Lemma ‘Two-Ray Incompatibility’"
+      - id: "T3"
+        name: "Chiral State Induction"
+        statement: "∃ Φ_witness with C_ρ(Φ_witness)>0."
+        conditions: "Hyp NonAut; A4"
+        dependencies: ["L1","A4"]
+        status: "proved"
+        src: "Thm ‘Chiral State Induction’"
+      - id: "T2"
+        name: "GAP (restated)"
+        statement: "All ν-odd energies vanish for realized structures."
+        conditions: "HH VI realization"
+        dependencies: ["GAP"]
+        status: "proved_elsewhere"
+        src: "Thm ‘GAP-restated’"
+      - id: "T4"
+        name: "Reciprocity"
+        statement: "∃ π with L(s,ρ)=L(s,π)."
+        conditions: "as above"
+        dependencies: ["P1","T3","T2"]
+        status: "proved"
+        src: "Thm ‘Langlands Reciprocity’"
+    asks: "Give a one-line invariant reason for each positivity claim."
+  dependency_graph:
+    nodes: ["A1","A2","A4","R*","GAP","P1","L1","T3","T2","T4","Hyp-NonAut"]
+    edges:
+      - "A1 -> P1"
+      - "A2 -> P1"
+      - "R* -> P1"
+      - "Hyp-NonAut -> L1"
+      - "L1 -> T3"
+      - "A4 -> T3"
+      - "GAP -> T2"
+      - "P1 -> T2"
+      - "T3 -> T4"
+      - "T2 -> T4"
+    asks: "Mark any optional branches or cycles; confirm no hidden dependencies."
+  proof_skeletons:
+    T4:
+      steps:
+        - "Build \\Srho from local WD/LLC data; realize on \\HmA (P1)."
+        - "Assume Hyp-NonAut: \\Xrho∩Aut_G=∅; derive ν-asymmetry (L1)."
+        - "Use A4 to produce Φ_witness with C_ρ>0 (T3)."
+        - "Apply GAP (T2): ν-odd energy must vanish for realizations."
+        - "Contradiction ⇒ Hyp-NonAut false ⇒ ∃ π with L(s,ρ)=L(s,π)."
+      fragile_step: "Realization fidelity linking EF structure \\Srho to \\HmA (P1/GAP interface)."
+      alt_route: "Use HH VI direct metaplectic mixing (T6 alt‑route) to annihilate ν‑odd energy without A4; combine with ledger equality on S^1 to force symmetry, yielding the same contradiction."
+    asks: "Identify the step most likely to fail in higher rank or other groups."
+  limits_and_continuity:
+    t_window: "All arguments confined to fixed-heat t∈[t_min,t_0]; no t↓0 needed."
+    constants_table:
+      - name: "R*"
+        origin: "ramified ledger bounds"
+        uniform_in_t: "within window"
+        depends_on: "Q(ρ)"
+      - name: "Positivity reserve"
+        origin: "A4"
+        uniform_in_t: "within window"
+        depends_on: "local types"
+    asks: "Provide exact norms and where constants blow up as t→t_min or with ramification."
+  checks_and_recipes:
+    numerical_recipe: "Select Φ∈\\PDplus supported in (0,X]; compute Q_W and verify C_ρ≥0 under A4."
+    symbolic_recipe: "Verify Q_W(Φ)=⟨\\widehat Φ,R_t\\widehat Φ⟩ and C_ρ(Φ)=⟨Φ_asym,R_t^{(ρ)}Φ_asym⟩_{PV} symbolically."
+    pseudocode: |
+      build_S_rho(ρ): assemble local WD/LLC data → EF kernels
+      realize_on_HA(S): invoke HH VI realization → R_t^(ρ)
+      find_witness(): optimize Φ∈PD^+ to maximize C_ρ(Φ)
+      assert C_ρ(Φ)>0 and apply GAP ⇒ contradiction ⇒ existence π
+    toy_numeric:
+      alpha_X: "ĝ(x)=e^{-αx} χ_{(0,X]}, α=1, X=10"
+      rho_W_int: "∫*0^X e^{-αx} [\\widehat{k_t}(x)\\,\\delta_H(x)]\\,dx  with (\\delta_H(x)=\\frac{x^{r-1}}{|W|}|c(\\ii x v_H)|^{-2}) (GRH I thm:R‑factor)."
+      prime_terms: "∑_{p≤e^X} (log p) g(log p) (local weights) ; signs/units per MS/EF"
+      smoke_test: "Check C_ρ(Φ)≥0 and GAP-implied 0 for realized structures."
+    asks: "Provide a canonical Φ and ρ_W to smoke-test constants/signs."
+  scope_and_unconditionality:
+    unconditional: "Core reciprocity (T4) is claimed unconditional given prior frameworks GRH I–III, HH VI."
+    program_inputs:
+      - id: "A1–A2"
+        formal_statement: "Fixed-heat positivity + Loewner sandwich"
+        current_status: "proved (cited)"
+        needed_for: "Weil energy positivity"
+        candidates_for_proof: "GRH I–III"
+      - id: "R*"
+        formal_statement: "Explicit ramified bounds"
+        current_status: "proved (cited)"
+        needed_for: "control of ramified terms"
+        candidates_for_proof: "GRH I–III"
+      - id: "GAP"
+        formal_statement: "Zero ν-odd energy for realizations"
+        current_status: "proved (cited)"
+        needed_for: "annihilation step"
+        candidates_for_proof: "HH VI"
+    asks: "State a minimum viable theorem if A4 is weakened."
+  limitations:
+    items:
+      - "Depends on fixed-heat normalization and HH VI realization."
+      - "Exact class \\SAa and bounds unspecified here."
+      - "Details of dictionary constants and ramified weights omitted."
+    asks: "Give counterexamples when A4 fails or when realization to \\HmA is obstructed."
+  projections:
+    items:
+      - "Port to other groups via analogous holonomy models."
+      - "Extend to specific L-functions with non-generic local factors."
+      - "Quantify constructive extraction of π (beyond existence)."
+    asks: "Prioritize milestones (normalize tests; compute explicit witnesses; certify dictionary=1) and provide a verification plan."
+

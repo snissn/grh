@@ -1,0 +1,198 @@
+a2a_doc:
+  meta:
+    title_long: "The Heisenberg Shadow: Reframing the Foundations of Analysis"
+    title_short: "Heisenberg Shadow"
+    authors: ["Michael Seiler"]
+    venue: "preprint"
+    year: UNKNOWN
+    version: UNKNOWN
+    url: "orcid:0009-0009-5529-2008"
+    area: "complex analysis, several complex variables, microlocal/CR, semiclassical"
+    normalization: "Heisenberg contact form; unit circle calibration"
+    primary_objects:
+      - {name: "H_1", type: "Lie group/contact manifold", role: "native space for analysis (projection source)"}
+      - {name: "π: H_1→ℝ^2≅ℂ", type: "projection", role: "Heisenberg shadow map"}
+      - {name: "θ", type: "contact 1-form", role: "horizontal distribution ker θ; θ = dt + x dy − y dx", src: "Program A"}
+      - {name: "J", type: "endomorphism on ker θ", role: "quarter-turn; J(∂_x)=∂_y, J(∂_y)=−∂_x", src: "Anatomy/Demystify i"}
+      - {name: "ω_H", type: "horizontal 1-form", role: "ω_H := π^*dz|_{ker θ}", src: "Program A"}
+      - {name: "Δt(γ)", type: "holonomy/invariant", role: "vertical holonomy along lift; = −∮(x dy−y dx)=−2 Area(γ)", src: "lem:action-holonomy"}
+      - {name: "S_Ω", type: "Szegő projector", role: "L^2 boundary projector", src: "thm:Szego-universal"}
+      - {name: "S_{H_n}", type: "model Szegő on Heisenberg", role: "reference kernel", src: "thm:Szego-universal"}
+      - {name: "L_ρ", type: "Levi form", role: "contact/CR curvature on ∂Ω", src: "thm:Szego-universal"}
+      - {name: "w_ρ", type: "weight", role: "c_n (det L_ρ)^{1/4}", src: "thm:Szego-universal"}
+      - {name: "𝒲_{Ω,z0,n}", type: "coefficient functionals", role: "Cauchy/Laurent via host pairing", src: "def:host-III"}
+    normalization_sheet:
+      finite_places: UNKNOWN
+      arch_place:
+        scattering_matrix: UNKNOWN
+        pv_convention: "∮ counterclockwise; (2πJ)^{-1}∮⋯dz; on S¹, dz/z = J dθ"
+        spectral_measure: UNKNOWN
+      dictionary_constants: UNKNOWN
+    identities_checked:
+      - "∮_{γ̃} dt = −∮_γ (x dy−y dx) = −2 Area(γ). src: lem:action-holonomy"
+      - "ℋ[f;Γ] = ∫_{Γ} f(z) dz with ℋ via ω_H. src: Program A"
+      - "(2πJ)^{-1}∮_{∂Ω} f(z)/(z−z0)^{n+1} dz = ⟨f∘Φ, 𝒲_{Ω,z0,n}⟩_β. src: def:host-III"
+      - "S_Ω = U_Φ^* M_{w_ρ} S_{H_n} M_{w_ρ} U_Φ + R (microlocal). src: thm:Szego-universal"
+      - "|S(γ)| = |Δt(γ)|/2 (convex γ). src: lem:action-holonomy"
+    asks: ["If any constant differs from a standard reference, document and justify; fix c_n by a cited model computation."]
+
+  problem_and_claim:
+    problem: "Reframe complex/real analysis as the shadow of Heisenberg geometry; derive residues, Szegő asymptotics, and semiclassical quantization from holonomy and contact data."
+    core_claims:
+      - {id: C1, name: "Complex analysis = Heisenberg shadow", status: "proved", statement: "Classical Cauchy/residue data equal horizontal holonomy data in H_1.", src: "Program A, Geometric Residue Thm"}
+      - {id: C2, name: "Corners stable", status: "proved", statement: "Residue identity holds for piecewise C¹ Jordan curves; holonomy integral stable under corner smoothing.", src: "thm:ResiduesCorners"}
+      - {id: C3, name: "Universal Szegő parametrix", status: "proved", statement: "Microlocally S_Ω equals weighted model S_{H_n} up to smoothing; weight (det L_ρ)^{1/4}.", src: "thm:Szego-universal"}
+      - {id: C4, name: "First variation", status: "proved", statement: "dS_Ω/dε ≡ U_Φ^*(M_{w'_ρ}S_{H_n}+S_{H_n}M_{w'_ρ})U_Φ, w'_ρ=(1/4)w_ρ tr(L_ρ^{-1}L'_ρ).", src: "cor:variation"}
+      - {id: C5, name: "Bohr–Sommerfeld via holonomy", status: "proved", statement: "For 1D oscillator, Δt = −4πE and E_n = ℏ(n+1/2).", src: "thm:BS"}
+      - {id: C6, name: "i = J in the shadow", status: "proved", statement: "Algebraic i represents quarter-turn J after projection π.", src: "Anatomy/Demystify i"}
+      - {id: C7, name: "Rigidity/initiality of host", status: "proved", statement: "Circle host is unique (up to norm.) and initial in HolCalc.", src: "thm:rigidity-III, thm:initial-object, cor:unique-host"}
+      - {id: C8, name: "Zeta/Heisenberg link", status: "conjectured", statement: "ζ(s) properties reflect deeper Heisenberg structure.", src: "Conjecture on ζ"}
+    route_map:
+      - {id: R1, name: "Holonomy→Residues", inputs: ["(H_1,θ,J,π)", "ω_H", "Γ piecewise C¹", "f holomorphic"], output: "Residue identity + corner stability", status: "complete"}
+      - {id: R2, name: "Heisenberg parametrix", inputs: ["∂Ω strictly pseudoconvex", "charts Φ_p", "Levi L_ρ"], output: "S_Ω ≍ U^* M_w S_{H_n} M_w U", status: "complete"}
+      - {id: R3, name: "Holonomy→BS quantization", inputs: ["Hamiltonian orbit γ_E", "Δt", "Maslov μ"], output: "E_n", status: "complete"}
+      - {id: R4, name: "Host category", inputs: ["(M,β,𝒲) axioms"], output: "Rigidity + initial object", status: "complete"}
+    asks: ["Provide 'why now' and the minimal new ingredient in each route (e.g., ω_H identification; weight universality; holonomy/action identity)."]
+
+  notation:
+    symbols:
+      H1: "Heisenberg group ℝ³(x,y,t) with θ; ker θ horizontal"
+      π: "H_1→ℝ², (x,y,t)↦(x,y)"
+      θ: "dt + x dy − y dx"
+      J: "quarter-turn on ker θ"
+      ω_H: "π^*(dz)|_{ker θ}, dz=dx+i dy"
+      Δt(γ): "∮_{γ̃} dt = −∮_γ (x dy−y dx)"
+      S_Ω: "Szegő projector on ∂Ω"
+      S_Hn: "model Szegő on H_n"
+      L_ρ: "Levi form on ∂Ω"
+      w_ρ: "c_n(det L_ρ)^{1/4}"
+      U_Φ: "unitary pullback by contact chart Φ"
+      M_φ: "multiplication by φ"
+      𝒲_{Ω,z0,n}: "coefficient functionals (host)"
+    equivalences:
+      - "i ↔ J under π (algebra ↔ geometry). src: Anatomy/Demystify i"
+      - "Cauchy ∮ ↔ holonomy ℋ via ω_H. src: Program A"
+    asks: ["Give explicit domains/codomains for all maps; state hidden IDs like X=G/K and model \u005EX."]
+
+  spaces_and_classes:
+    items:
+      - {name: "L²(∂Ω,dσ_{θ_ρ})", crit: "boundary L² with contact measure θ_ρ∧(dθ_ρ)^{n−1}", norms: "L²"}
+      - {name: "Hardy(H_n)", crit: "Folland–Stein model Hardy space", norms: "FS norms"}
+      - {name: "C^α(Γ)", crit: "Hölder boundary data on Γ", params: "α∈(0,1]"}
+      - {name: "Curves Γ", crit: "rectifiable piecewise C¹ Jordan"}
+    asks: ["Provide minimal examples and counterexamples (e.g., fractal Γ where corner stability fails)."]
+
+  assumptions:
+    list:
+      - {id: A1, statement: "H_1 with θ = dt + x dy − y dx; ker θ horizontal; J as above.", params: "global left-invariant", proved_here: true, proof_src: "Program A", portability: "H_n"}
+      - {id: A2, statement: "Ω⊂ℂ^n smoothly bounded, strictly pseudoconvex; ρ smooth; θ_ρ from ρ.", params: "local charts Φ_p with λ_p>0", proved_here: false, proof_src: "std CR", portability: "CR manifolds"}
+      - {id: A3, statement: "Γ piecewise C¹ Jordan; f holomorphic near Ω̄; f|_Γ∈C^α.", params: "α∈(0,1]", proved_here: true, proof_src: "thm:ResiduesCorners", portability: "Lipschitz Γ"}
+      - {id: A4, statement: "Hamiltonian orbit γ_E (1D oscillator); μ(γ_E)=2.", params: "E>0", proved_here: true, proof_src: "thm:BS", portability: "integrable systems"}
+      - {id: A5, statement: "Weight constant c_n fixed by unit ball normalization.", params: "dimension n", proved_here: outlined, proof_src: "thm:Szego-universal (Consequences)", portability: "local"}
+    counterexamples_or_limits: ["Non-strictly pseudoconvex boundary: universality may fail.", "Non-rectifiable Γ: holonomy ill-defined."]
+    asks: ["Sharpness of α in corner stability? Portability of parametrix to weakly pseudoconvex/CR."]
+
+  constructions_and_kernels:
+    defs:
+      - {name: "ω_H", formula: "π^*(dz)|_{ker θ}", props: "pullback; complex-linear on ker θ", src: "Program A"}
+      - {name: "ℋ[f;Γ]", formula: "∫_{γ̃} (f∘π) ω_H", props: "equals ∫_Γ f dz", src: "Program A"}
+      - {name: "Δt(γ)", formula: "∮_{γ̃} dt = −∮_γ (x dy−y dx)", props: "area invariant", src: "lem:action-holonomy"}
+      - {name: "S_Ω", formula: "U_Φ^* M_{w_ρ} S_{H_n} M_{w_ρ} U_Φ + R", props: "R smoothing; weight positive", src: "thm:Szego-universal"}
+      - {name: "Transport A", formula: "d/dt log A = −½ div_hor(X_H)", props: "leads to Van Vleck", src: "prop:amplitude"}
+      - {name: "Host pairings", formula: "⟨f∘Φ, 𝒲_{Ω,z0,n}⟩ = (2πJ)^{-1}∮ f(z)/(z−z0)^{n+1} dz", props: "natural in charts", src: "def:host-III"}
+    compatibility_checklist:
+      pairwise_commute: [{ops: "M_{w_ρ}, S_{H_n}", status: "only if w_ρ const"}, {ops: "U_Φ, S_{H_n}", status: "unitary conjugation"}, {ops: "—", status: "UNKNOWN"}]
+      weyl_invariance: [{op: "S_{H_n}", status: "Heisenberg-invariant"}, {op: "M_{w_ρ}", status: "not invariant unless constant"}]
+      boundedness: [{op: "S_Ω,S_{H_n}", status: "bounded on L²"}, {op: "M_{w_ρ}", status: "bounded if w_ρ∈C^∞, w_ρ>0"}]
+      model_independence: "R smoothing class independent of chart (unitary equivalence)."
+    asks: ["State the exact functional calculus/symbol bounds used in the parametrix and where they enter."]
+
+  explicit_formula_block:
+    geometric_side: UNKNOWN
+    spectral_side: UNKNOWN
+    regularizations: UNKNOWN
+    weil_functional: UNKNOWN
+    ramified_ledger: {when_present: UNKNOWN, sign: UNKNOWN, bound: UNKNOWN, vanishing_cases: UNKNOWN}
+    positivity_table: []
+    asks: ["Not an EF paper, but if a ζ-link is intended, specify the EF specialization and test space."]
+
+  main_results:
+    items:
+      - {id: T1, name: "Residues at corners", statement: "(2πi)^{-1}ℋ[f;Γ] = Σ Res(f,a_k); stability under corner smoothing with Hölder control.", conditions: "A3", dependencies: ["ω_H id"], status: "proved", src: "thm:ResiduesCorners"}
+      - {id: T2, name: "Szegő universality", statement: "S_Ω ≍ U^* M_{w_ρ} S_{H_n} M_{w_ρ} U microlocally; R smoothing.", conditions: "A2,A5", dependencies: [], status: "proved", src: "thm:Szego-universal"}
+      - {id: T3, name: "First variation", statement: "dS_Ω/dε ≡ U^*(M_{w'_ρ}S_{H_n}+S_{H_n}M_{w'_ρ})U with w'_ρ=(1/4)w_ρ tr(L^{-1}L').", conditions: "smooth deformation", dependencies: ["T2"], status: "proved", src: "cor:variation"}
+      - {id: T4, name: "Action–holonomy", statement: "|S(γ)|=|Δt(γ)|/2.", conditions: "convex γ", dependencies: [], status: "proved", src: "lem:action-holonomy"}
+      - {id: T5, name: "Bohr–Sommerfeld", statement: "E_n=ℏ(n+1/2) from Δt and μ=2 (oscillator).", conditions: "A4", dependencies: ["T4"], status: "proved", src: "thm:BS"}
+      - {id: T6, name: "Rigidity", statement: "Host (M,β,𝒲) ≅ (S¹,c dθ, 𝒲^{circle}); normalize ∫β=2π ⇒ c=1.", conditions: "disk calibration + rotation equiv.", dependencies: [], status: "proved", src: "thm:rigidity-III, cor:unique-host"}
+      - {id: T7, name: "Initial object", statement: "(S¹,dθ,𝒲^{circle}) initial in HolCalc; unique morphism to any host.", conditions: "host axioms", dependencies: ["T6"], status: "proved", src: "thm:initial-object"}
+    asks: ["For each positivity claim, supply the invariant-theoretic reason (e.g., PSD of S_{H_n})."]
+
+  dependency_graph:
+    nodes: [A1,A2,A3,A4,A5,T1,T2,T3,T4,T5,T6,T7]
+    edges:
+      - "A1 -> T1"
+      - "A3 -> T1"
+      - "A2 -> T2"
+      - "A5 -> T2"
+      - "T2 -> T3"
+      - "T4 -> T5"
+      - "T6 -> T7"
+    asks: ["Mark any optional branches/cycles explicitly."]
+
+  proof_skeletons:
+    T1:
+      steps: ["Lift Γ to γ̃ with θ(γ̃̇)=0", "Identify ℋ with ∮ f dz", "Apply classical residue theorem", "For corners, smooth locally; Hölder control ⇒ convergence"]
+      fragile_step: "Corner smoothing error estimates"
+      alt_route: "Approximate Γ by analytic boundaries; use Plemelj"
+    T2:
+      steps: ["Choose contact chart Φ_p", "Unitary U_Φ and weight w_ρ from L_ρ", "Conjugate S_Ω to model; match principal symbol", "Absorb remainder into smoothing R"]
+      fragile_step: "Weight normalization (c_n) and symbol matching"
+      alt_route: "Boutet de Monvel–Sjöstrand phase comparison"
+    T5:
+      steps: ["Compute Δt via area: −2 Area(γ_E)", "Relate S(γ)=∮ p dq to Δt/2", "Impose BS phase with μ", "Solve for E_n"]
+      fragile_step: "Maslov index bookkeeping"
+      alt_route: "EBK quantization with action variables"
+    T6:
+      steps: ["Use rotation equivariance on disk", "Show (M,β) ≅ (S¹,c dθ)", "Calibrate coefficients via ⟨e^{J mθ},𝒲_{D,0,n}⟩=δ_{mn}", "Conclude c=1 and explicit 𝒲"]
+      fragile_step: "Uniqueness from calibration"
+      alt_route: "Fourier decomposition and Schur orthogonality"
+    asks: ["Identify the unique step likely to fail in higher rank (e.g., chart globalization)."]
+
+  limits_and_continuity:
+    passages:
+      - {type: "ε→0", context: "corner smoothing Γ_ε→Γ", space: "C^α", uniformity: "C(Γ,α)"}
+      - {type: "microlocal", context: "R smoothing → negligible", space: "ΨDO classes", uniformity: "local"}
+      - {type: "deformation", context: "ρ_ε boundary variation", space: "C^∞ in ε", constants: "tr(L^{-1}L')"}
+    constants_table:
+      - {name: "c_n", arises: "weight normalization", uniform_in_t: "N/A", depends_on: "n"}
+      - {name: "C(Γ,α)", arises: "corner estimates", uniform_in_t: "N/A", depends_on: "geometry, α"}
+    asks: ["Provide where constants blow up (e.g., near Levi degeneracy; small angles)."]
+
+  checks_and_recipes:
+    numerical_recipe: ["Oscillator: parametrize γ_E, compute Δt and S, recover E_n.", "Unit circle: verify (2πJ)^{-1}∮ (z−z0)^{-1}dz = 1."]
+    symbolic_recipe: ["Show ω_H pullback gives dz on Γ; hence holonomy=Cauchy.", "Conjugate S_Ω by U_Φ and match principal symbol with S_{H_n}."]
+    pseudocode: |
+      # Holonomy/Residue check
+      Given Γ, f:
+        lift γ̃ with θ(γ̃̇)=0
+        I := ∫_{γ̃} (f∘π) ω_H
+        return I/(2π i)
+    toy_numeric: ["Take Γ=S¹, z0=0: (2πi)^{-1}∮ dz/z = 1.", "Oscillator E=1: Δt=−4π, S=2π ⇒ e^{iS/ℏ−iπ}=1 ⇒ E_0=ℏ/2.", "EF-style ĝ not used in this paper."]
+    asks: ["Provide a canonical toy input for Szegő weight check (e.g., unit ball)."]
+
+  scope_and_unconditionality:
+    unconditional: ["T1 (residues/corners)", "T2 (microlocal universality) modulo standard CR microlocal framework", "T5 (oscillator)"]
+    programmatic: ["Extensions to general Hamiltonians and higher-rank groups", "ζ-link conjecture"]
+    program_inputs:
+      - {id: P1, formal_statement: "Strict pseudoconvex CR microlocal calculus applies", current_status: "standard", needed_for: "T2,T3", candidates_for_proof: "Boutet de Monvel–Sjöstrand"}
+      - {id: P2, formal_statement: "Global charts or partition of unity suffice", current_status: "standard", needed_for: "T2", candidates_for_proof: "subelliptic parametrix"}
+    asks: ["Supply a minimum viable theorem if some inputs are weakened (e.g., Lipschitz ∂Ω)."]
+
+  limitations:
+    list: ["Relies on strict pseudoconvexity and smoothness for Szegő part.", "Corner stability assumes Hölder boundary data.", "Semiclassical demo done for oscillator; general systems not derived."]
+    asks: ["Give counterexamples when assumptions are dropped (e.g., weakly pseudoconvex)."]
+
+  projections:
+    items: ["Extend host formalism to H_n and general CR manifolds.", "Globalize Szegő universality with explicit remainders.", "Derive BS/EBK for broader integrable systems via holonomy.", "Investigate ζ via Heisenberg models of test functions."]
+    asks: ["Prioritize milestones and a verification plan (unit ball calibration → general domains → quantitative remainders)."]
+
