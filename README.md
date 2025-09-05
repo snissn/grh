@@ -3,7 +3,7 @@
 
 > **One‑paragraph hook (for an ANTer/L‑functionist).** We rebuild the explicit‑formula (EF) method around a *fixed‑heat* smoothing that lives naturally in the Maaß–Selberg spherical calculus. This lets us **realize the half‑shift as a positive operator**, put **Weil positivity on rails**, and show that a simple **parity involution $\nu$** turns EF positivity into **witnesses** and **annihilators**. On GL$1$ this gives a clean RH ledger with band‑limited tests, a distributional symmetric EF, and a concrete positivity density. The same analytic chassis then **scales to GRH for $L(s,\pi)$** (Parts I–III), produces a **finite, reproducible certificate/verifier**, and powers a **positivity‑driven proof of Langlands functoriality** without trace‑formula comparison. In parallel, a **Heisenberg geometry** recasts the same identities as holonomy/Toeplitz statements on $S^1$, giving a second derivation and a conceptual mirror. Everything below is arranged so that RH is the accessible front door; GRH, Langlands, and Heisenberg are tightly interlocking extensions that both *justify* and *enhance* the RH sequence.
 
-> **At a glance.** In the 2025 capstone — *The Grand Riemann Hypothesis from a Geometric Annihilation Principle* — we give a self‑contained proof of the Grand RH for automorphic $L$‑functions, crystallizing the fixed‑heat Maaß–Selberg ledger, the PV↔Weil bridge, and a geometric annihilation of the $\nu$‑odd energy. **DOI:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
+> **Orientation (start here).** Begin with the **RH kernel on GL$1$**—the asymmetric EF from the Eisenstein phase, the band‑limited symmetric EF, and the Weil‑side positivity density. That front door fixes normalizations and makes the half‑shift/positivity machinery transparent. For **statement‑level confirmation**, see the **2025 capstone**, *The Grand Riemann Hypothesis from a Geometric Annihilation Principle*, which gives a self‑contained proof of GRH for automorphic $L$‑functions and corroborates the method in full. **DOI:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
 
 ---
 
@@ -56,7 +56,7 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 
 ## Reading plan for a busy professor
 
-1. **Capstone first (credibility at a glance).** Skim the statement (§13) and $\mathrm{GL}_1$ specialization (§14) of **Grand RH (2025)**; then scan the annihilation/witness thread. **Zenodo:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
+1. **Start here (RH, most accessible).** Read **RH‑I → RH‑II → RH‑III** for the EF origin, the band‑limited symmetric EF, and the Weil‑positivity density. Then, for **statement‑level confirmation**, cross‑check the capstone’s statement (§13) and $\mathrm{GL}_1$ specialization (§14) in **Grand RH (2025)**. **Zenodo:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
 2. **RH kernel (most accessible derivation).** **RH‑I** (asymmetric EF from Eisenstein phase) → **RH‑II** (symmetric EF on band‑limited) → **RH‑III** (Weil‑side positivity density).
 3. **Analytic spine (lift to automorphic $L$).** **GRH Part I** (infrastructure & half‑shift) → **GRH Part II** (PV/Weil, witness) → **GRH Part III** (finite ledgers & certificates).
 4. **Applications.** **Langlands — Functoriality via positivity**, then **Geometric Part IV**, then **Reciprocity**.
@@ -64,7 +64,7 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 
 ---
 
-# Papers
+# Papers — ordered for reading: **RH → GRH trilogy → Capstone (GRH, 2025) → Langlands → Heisenberg**
 
 ## Grand RH (the capstone)
 
