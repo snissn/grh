@@ -1,7 +1,10 @@
 
-**From RH to GRH to Functoriality — with a geometric mirror on the Heisenberg host**
+# **From RH to the Grand RH to Functoriality — with a geometric mirror on the Heisenberg host**
 
 > **One‑paragraph hook (for an ANTer/L‑functionist).** We rebuild the explicit‑formula (EF) method around a *fixed‑heat* smoothing that lives naturally in the Maaß–Selberg spherical calculus. This lets us **realize the half‑shift as a positive operator**, put **Weil positivity on rails**, and show that a simple **parity involution $\nu$** turns EF positivity into **witnesses** and **annihilators**. On GL$1$ this gives a clean RH ledger with band‑limited tests, a distributional symmetric EF, and a concrete positivity density. The same analytic chassis then **scales to GRH for $L(s,\pi)$** (Parts I–III), produces a **finite, reproducible certificate/verifier**, and powers a **positivity‑driven proof of Langlands functoriality** without trace‑formula comparison. In parallel, a **Heisenberg geometry** recasts the same identities as holonomy/Toeplitz statements on $S^1$, giving a second derivation and a conceptual mirror. Everything below is arranged so that RH is the accessible front door; GRH, Langlands, and Heisenberg are tightly interlocking extensions that both *justify* and *enhance* the RH sequence.
+
+> **Capstone (2025).** *The Grand Riemann Hypothesis from a Geometric Annihilation Principle — a self‑contained proof for automorphic $L$‑functions.*  
+> **Zenodo:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
 
 ---
 
@@ -19,12 +22,19 @@ These three pieces make RH the **best entry point**: you can audit constants, se
 
 ## What is genuinely new (and portable)
 
-* **Constructive, positivity‑preserving half‑shift.** Inside the spherical calculus, we build a Loewner‑monotone multiplier that realizes the “$1/2$-shift” *as an honest positive operator* compatible with fixed‑heat smoothing. This single ingredient makes parity, amplifiers, and cone‑separation arguments behave uniformly in conductor.
-* **Fixed‑heat PV/Weil bridge.** EF pairings are re‑expressed so that the zero side *is* a **Weil energy** against a positive fixed‑heat operator. The arch block cancels on $\nu$-odd inputs; any off‑line zero produces a **positive‑energy witness**.
-* **Finite ledgers and certificates.** Band‑limited tests turn EF into **finite prime ledgers** plus controlled arch/ram budgets; an $\varepsilon$-net yields a **reproducible verifier** for GRH‑type statements.
-* **Prime‑side positivity reserve.** A Rankin–Selberg flavored “reserve” gives a quantitative lower bound on the unramified prime block, strong enough to **force functorial transfers** with no comparison of orbital integrals.
+* **Constructive, positivity‑preserving half‑shift.** Realized inside the fixed‑heat calculus as a Loewner‑monotone operator; budgets, test‑cones, and comparisons remain uniform in conductor.
+* **Fixed‑heat PV↔Weil bridge.** EF pairings become a positive‑definite Weil energy on realizable inputs; any off‑line zero yields a **positive‑energy witness**.
+* **Finite ledgers and certificates.** Band‑limited tests become finite ledgers; an $\varepsilon$‑net produces a **reproducible verifier** for GRH‑type statements.
+* **Prime‑side positivity reserve.** A Rankin–Selberg–flavored reserve provides the prime budget that drives **functorial transfers**, avoiding orbital‑integral comparisons.
 
-**How to sanity‑check in minutes.** (i) On GL$1$, compute the band‑limited dictionary and see that Toeplitz positivity on $S^1$ matches the EF ledger. (ii) Read the half‑shift realization: it’s a plain operator inequality in the spherical model. (iii) Inspect the prime‑side positivity statement at unramified places; the weights are explicit. (iv) For GRH Part II, verify that $\nu$-odd annihilation kills the arch block and makes any off‑line zero light up the Weil energy.
+**New in the 2025 capstone (delta from Parts I–III).**
+* **Holonomy–Ledger Isometry.** An isometry identifies the analytic Weil ledger with **adelic holonomy** against scale‑profiles, making annihilation intrinsic rather than ad‑hoc.
+* **$\nu$‑Involution Skeleton.** The functional‑equation involution is realized as a geometric operator; its $\nu$‑odd component is annihilated, forcing the witness mechanism.
+* **Ramified damping $(R^\*)$ & dictionary constants.** Uniform damping bounds and explicit dictionary constants control archimedean/ramified growth, keeping budgets conductor‑robust.
+* **Loewner‑monotone functional calculus.** Operator inequalities (half‑shift, Toeplitz) are encoded in Loewner order and survive adelization.
+* **PV growth & zero‑counting.** PV growth bounds close the ledger around any putative off‑line zero.
+
+**How to sanity‑check in minutes.** (i) On GL$1$, compute the band‑limited Toeplitz form on $S^1$; (ii) read the half‑shift inequality as a clean Loewner comparison; (iii) inspect the prime reserve on the unramified block; (iv) verify $\nu$‑odd annihilation; (v) enumerate a small finite ledger and watch the budgets close.
 
 ---
 
@@ -47,14 +57,29 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 
 ## Reading plan for a busy professor
 
-1. **Start here (RH, most accessible):** **RH‑I** (asymmetric EF from Eisenstein phase) → **RH‑II (Symmetric EF on band‑limited)** → **RH‑III (Weil positivity density)**.
-2. **Then the analytic spine:** **GRH Part I** (infrastructure & half‑shift) → **GRH Part II** ($\nu$, annihilation ⇔ GRH, witness) → **GRH Part III** (finite ledger & certificates).
-3. **Applications:** **Langlands — Functoriality via positivity**, then **Geometric Part IV**, then **Reciprocity**.
-4. **Geometric mirror (optional but illuminating):** **Heisenberg I–II** (Cauchy/residue as holonomy) → **V–VI** ($\nu$ as geometric operator; EF on $S^1$).
+1. **Capstone first (credibility at a glance).** Skim the statement (§13) and $\mathrm{GL}_1$ specialization (§14) of **Grand RH (2025)**; then scan the annihilation/witness thread. **Zenodo:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
+2. **RH kernel (most accessible derivation).** **RH‑I** (asymmetric EF from Eisenstein phase) → **RH‑II** (symmetric EF on band‑limited) → **RH‑III** (Weil‑side positivity density).
+3. **Analytic spine (lift to automorphic $L$).** **GRH Part I** (infrastructure & half‑shift) → **GRH Part II** (PV/Weil, witness) → **GRH Part III** (finite ledgers & certificates).
+4. **Applications.** **Langlands — Functoriality via positivity**, then **Geometric Part IV**, then **Reciprocity**.
+5. **Geometric mirror (optional but clarifying).** **Heisenberg I–IV** (holonomy calculus) → **V–VI** ($\nu$ as geometric operator; EF on $S^1$; higher‑rank holonomy).
 
 ---
 
 # Papers
+
+## Grand RH (the capstone)
+
+### *The Grand Riemann Hypothesis from a Geometric Annihilation Principle* (2025)
+
+**What it claims.** Presents a complete, self‑contained proof of the **Grand Riemann Hypothesis** for all automorphic $L$‑functions $L(s,\pi)$ attached to unitary cuspidal representations $\pi$ of $\mathrm{GL}_m/K$, unifying the analytic ledger with a geometric annihilation principle. Specializing to $\mathrm{GL}_1$ recovers the classical RH.
+
+**How it works — in one line.** Any off‑line zero forces a **positive‑energy witness** in the fixed‑heat Weil energy. The **holonomy–ledger isometry** together with the **$\nu$‑involution skeleton** imposes an annihilation budget that excludes such witnesses—closing the ledger and ruling out off‑line zeros.
+
+**How it subsumes the trilogy.** It consolidates (i) the **half‑shift** and fixed‑heat infrastructure, (ii) the **PV/Weil pairing** and the witness mechanism, and (iii) the **finite‑ledger certificates**, now made intrinsic via geometric operators—no ad‑hoc truncations or positivity hacks.
+
+**How to spot‑check swiftly.** Skim §13–14 for the statement and the $\mathrm{GL}_1$ specialization; then use the checklist in **What to verify first**.
+
+**Zenodo:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
 
 ## RH kernel (the front door)
 
@@ -174,7 +199,7 @@ In parallel, a six‑part **Heisenberg series** furnishes a **geometric avatar**
 ## How the pieces lock together (in one picture)
 
 * **RH** delivers: a canonical EF origin (Eisenstein phase), a **band‑limited** symmetric EF, and an explicit **Weil positivity density**.
-* **GRH I–III** lift the machinery: a **half‑shift operator** in the spherical calculus, **parity/annihilation ⇔ GRH**, and **finite ledgers** with **certificates**.
+* **Grand RH (2025)** consolidates the machinery into a single, self‑contained annihilation argument: **half‑shift + fixed‑heat PV/Weil energy + $\nu$‑involution + holonomy–ledger isometry + finite‑ledger certificates** ⇒ no off‑line zeros for automorphic $L$‑functions.
 * **Langlands** uses exactly those operators and budgets: a **prime‑side reserve** + **two‑ray/gap forcing** yields **functorial transfer** with **local compatibility**—no trace‑formula comparison.
 * **Heisenberg** provides a second, geometric derivation: the **same EF** appears as **Toeplitz** positivity on $S^1$, with $\nu$ realized as a concrete geometric operator.
   Together, they form a single ledger—**fixed‑heat + half‑shift + $\nu$ + holonomy**—that scales from RH to functoriality.
