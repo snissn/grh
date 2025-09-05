@@ -3,8 +3,7 @@
 
 > **One‑paragraph hook (for an ANTer/L‑functionist).** We rebuild the explicit‑formula (EF) method around a *fixed‑heat* smoothing that lives naturally in the Maaß–Selberg spherical calculus. This lets us **realize the half‑shift as a positive operator**, put **Weil positivity on rails**, and show that a simple **parity involution $\nu$** turns EF positivity into **witnesses** and **annihilators**. On GL$1$ this gives a clean RH ledger with band‑limited tests, a distributional symmetric EF, and a concrete positivity density. The same analytic chassis then **scales to GRH for $L(s,\pi)$** (Parts I–III), produces a **finite, reproducible certificate/verifier**, and powers a **positivity‑driven proof of Langlands functoriality** without trace‑formula comparison. In parallel, a **Heisenberg geometry** recasts the same identities as holonomy/Toeplitz statements on $S^1$, giving a second derivation and a conceptual mirror. Everything below is arranged so that RH is the accessible front door; GRH, Langlands, and Heisenberg are tightly interlocking extensions that both *justify* and *enhance* the RH sequence.
 
-> **Capstone (2025).** *The Grand Riemann Hypothesis from a Geometric Annihilation Principle — a self‑contained proof for automorphic $L$‑functions.*  
-> **Zenodo:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
+> **At a glance.** In the 2025 capstone — *The Grand Riemann Hypothesis from a Geometric Annihilation Principle* — we give a self‑contained proof of the Grand RH for automorphic $L$‑functions, crystallizing the fixed‑heat Maaß–Selberg ledger, the PV↔Weil bridge, and a geometric annihilation of the $\nu$‑odd energy. **DOI:** [10.5281/zenodo.17059104](https://doi.org/10.5281/zenodo.17059104).
 
 ---
 
